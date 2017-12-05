@@ -178,6 +178,41 @@ for your record's pages:
 }
 ```
 
+This package exposes a `HelmetDatoCms` component to make it easier use these information with Helmet:
+
+```js
+import React from 'react'
+import Link from 'gatsby-link'
+import { HelmetDatoCms } from 'gatsby-source-datocms'
+
+const About = ({ data }) => (
+  <article className="sheet">
+    <HelmetDatoCms record={data.datoCmsAboutPage} />
+    <h1>{data.datoCmsAboutPage.title}</h1>
+    <p>{data.datoCmsAboutPage.subtitle}</p>
+  </article>
+)
+
+export default About;
+
+export const query = graphql`
+  query AboutQuery {
+    datoCmsAboutPage {
+      seoMetaTags {
+        tagName
+        attributes {
+          property
+          content
+          name
+        }
+        content
+      }
+      title
+      subtitle
+    }
+  }
+```
+
 ### Tree-like collections
 
 If you have a model configured as a tree, you can navigate the hierarchy with

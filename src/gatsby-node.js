@@ -24,4 +24,3 @@ exports.sourceNodes = async (
   createItemNodes(repo, createNode);
   createSiteNode(repo, createNode);
 }
-
