@@ -1,5 +1,5 @@
 const React = require('react');
-const Helmet = require('react-helmet');
+const Helmet = require('react-helmet').default;
 
 const HelmetDatoCms = ({ record }) => (
   React.createElement(
