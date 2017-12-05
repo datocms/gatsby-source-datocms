@@ -1,4 +1,5 @@
 const { SiteClient } = require('datocms-client');
+const SiteChangeWatcher = require('datocms-client/lib/dump/SiteChangeWatcher');
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -8,7 +9,7 @@ const createItemNodes = require('./createItemNodes');
 const createSiteNode = require('./createSiteNode');
 
 exports.sourceNodes = async (
-  { boundActionCreators, getNodes, hasNodeChanged, store },
+  { boundActionCreators, getNodes, hasNodeChanged, store, reporter },
   { apiToken }
 ) => {
   const {
@@ -18,14 +19,49 @@ exports.sourceNodes = async (
     setPluginStatus,
   } = boundActionCreators;
 
-  const client = new SiteClient(apiToken);
-  const repo = await fetch(client);
+  const client = new SiteClient(
+    apiToken,
+    {
+      'X-Reason': 'dump',
+      'X-SSG': 'gatsby',
+    }
+  );
 
-  const itemTypes = repo.findEntitiesOfType('item_type');
+  const sync = async () => {
+    if (
+      store.getState().status.plugins &&
+      store.getState().status.plugins[`gatsby-source-datocms`]
+    ) {
+      const oldNodeIds = store.getState().status.plugins[`gatsby-source-datocms`].nodeIds;
+      deleteNodes(oldNodeIds);
+    }
 
-  createItemTypeNodes(itemTypes, createNode);
-  createItemNodes(repo, createNode);
-  createSiteNode(repo, createNode);
+    const nodeIds = [];
+    const createNodeWrapper = (node) => {
+      nodeIds.push(node.id);
+      createNode(node);
+    }
+
+    const repo = await fetch(client);
+    const itemTypes = repo.findEntitiesOfType('item_type');
+    const site = repo.findEntitiesOfType('site')[0];
+
+    createItemTypeNodes(itemTypes, createNodeWrapper);
+    createItemNodes(repo, createNodeWrapper);
+    createSiteNode(repo, createNodeWrapper);
+
+    setPluginStatus({ nodeIds });
+
+    return site.id;
+  }
+
+  const siteId = await sync();
+
+  const watcher = new SiteChangeWatcher(siteId);
+  watcher.connect(() => {
+    reporter.info('Detected DatoCMS data change!');
+    sync();
+  });
 }
 
 exports.onPreExtractQueries = async ({ store }) => {
