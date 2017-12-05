@@ -421,9 +421,9 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-datocms-client@0.3.39:
-  version "0.3.39"
-  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-0.3.39.tgz#e387645b7e0c0cedf3beb232920e2fad9be6e8a7"
+datocms-client@>=0.3.40:
+  version "0.3.40"
+  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-0.3.40.tgz#e3db59b2d4c875e270f7ce9266d2fc89e92e2e49"
   dependencies:
     babel-polyfill "6.16.0"
     chokidar "^1.6.1"
@@ -579,9 +579,13 @@ extglob@^0.3.1:
   dependencies:
     is-extglob "^1.0.0"
 
-extsprintf@1.3.0, extsprintf@^1.2.0:
+extsprintf@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.3.0.tgz#96918440e3041a7a414f8c52e3c574eb3c3e1e05"
+
+extsprintf@^1.2.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
 
 faye-websocket@0.9.4:
   version "0.9.4"
@@ -633,7 +637,7 @@ form-data@~2.1.1:
     combined-stream "^1.0.5"
     mime-types "^2.1.12"
 
-fs-extra@4.0.2:
+fs-extra@>=4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.2.tgz#f91704c53d1b461f893452b0c307d9997647ab6b"
   dependencies:
@@ -817,7 +821,7 @@ humps@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/humps/-/humps-1.1.0.tgz#99a05cc80b13ae754a3d1e1a92182f271ef1d98f"
 
-humps@2.0.1:
+humps@>=2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
 
@@ -988,7 +992,7 @@ json-stable-stringify@^1.0.1:
   dependencies:
     jsonify "~0.0.0"
 
-json-stringify-safe@5.0.1, json-stringify-safe@~5.0.1:
+json-stringify-safe@>=5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 

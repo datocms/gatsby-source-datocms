@@ -14,10 +14,10 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "datocms-client": "0.3.39",
-    "fs-extra": "4.0.2",
-    "humps": "2.0.1",
-    "json-stringify-safe": "5.0.1"
+    "datocms-client": ">=0.3.40",
+    "fs-extra": ">=4.0.2",
+    "humps": ">=2.0.1",
+    "json-stringify-safe": ">=5.0.1"
   },
   "keywords": [
     "gatsby",
@@ -27,7 +27,7 @@
   "author": "DatoCMS <support@datocms.com>",
   "license": "ISC",
   "peerDependencies": {
-    "react": "16.2.0",
-    "react-helmet": "5.2.0"
+    "react": ">=16.2.0",
+    "react-helmet": ">=5.2.0"
   }
 }
