@@ -1,7 +1,7 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+const React = require('react');
+const Helmet = require('react-helmet');
 
-export const HelmetDatoCms = ({ record }) => (
+const HelmetDatoCms = ({ record }) => (
   React.createElement(
     Helmet,
     null,
@@ -14,3 +14,5 @@ export const HelmetDatoCms = ({ record }) => (
     )
   )
 )
+
+module.exports = { HelmetDatoCms };
