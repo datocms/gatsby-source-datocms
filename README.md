@@ -162,14 +162,15 @@ for your record's pages:
     edges {
       node {
         title
-        
         seoMetaTags {
-          tagName
-          content
-          attributes {
-            property
+          tags {
+            tagName
             content
-            name
+            attributes {
+              property
+              content
+              name
+            }
           }
         }
       }
@@ -178,7 +179,8 @@ for your record's pages:
 }
 ```
 
-This package exposes a `HelmetDatoCms` component to make it easier use these information with Helmet:
+This package exposes a `HelmetDatoCms` component and a `datoCmsSeoMetaTagsFields` 
+GraphQL fragment to make it easier use these information in your website:
 
 ```js
 import React from 'react'
@@ -198,20 +200,18 @@ export default About;
 export const query = graphql`
   query AboutQuery {
     datoCmsAboutPage {
-      seoMetaTags {
-        tagName
-        attributes {
-          property
-          content
-          name
-        }
-        content
-      }
       title
       subtitle
+      seoMetaTags {
+        ...datoCmsSeoMetaTagsFields
+      }
     }
   }
 ```
+
+PS. The `datoCmsSeoMetaTagsFields` fragment won't be available in GraphiQL, only
+in your component query!
+
 
 ### Tree-like collections
 

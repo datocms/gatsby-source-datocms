@@ -1,4 +1,7 @@
 const { SiteClient } = require('datocms-client');
+const fs = require('fs-extra');
+const path = require('path');
+
 const fetch = require('./fetch');
 const createItemTypeNodes = require('./createItemTypeNodes');
 const createItemNodes = require('./createItemNodes');
@@ -23,4 +26,13 @@ exports.sourceNodes = async (
   createItemTypeNodes(itemTypes, createNode);
   createItemNodes(repo, createNode);
   createSiteNode(repo, createNode);
+}
+
+exports.onPreExtractQueries = async ({ store }) => {
+  const program = store.getState().program;
+
+  await fs.copy(
+    path.join(__dirname, 'src', 'fragments.js'),
+    `${program.directory}/.cache/fragments/datocms-seometatags-fragments.js`
+  )
 }

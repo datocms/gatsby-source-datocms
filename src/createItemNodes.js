@@ -3,7 +3,7 @@ const initNodeFromEntity = require('./initNodeFromEntity');
 const addDigestToNode = require('./addDigestToNode');
 const mId = require('./makeId');
 const createTextNode = require('./createTextNode');
-const seoTagsBuilder = require('datocms-client/lib/utils/seoTagsBuilder').default;
+const createSeoMetaTagsNode = require('./createSeoMetaTagsNode');
 const Item = require('datocms-client/lib/local/Item');
 const ItemsRepo = require('datocms-client/lib/local/ItemsRepo');
 const i18n = require('datocms-client/lib/utils/i18n');
@@ -78,16 +78,20 @@ module.exports = function createItemNodes(repo, createNode) {
             }
           default:
             {
-              const fieldValue = build(field.fieldType, value, itemsRepo)
-              itemNode[key] = fieldValue && fieldValue.toMap ?
-                fieldValue.toMap() :
-                fieldValue;
+              const fieldValue = build(field.fieldType, value, itemsRepo);
+              itemNode[key] = fieldValue && fieldValue.toMap ? fieldValue.toMap() : fieldValue;
               break;
             }
         }
       });
 
-      itemNode.seoMetaTags = seoTagsBuilder(itemsRepo.find(item.id), itemsRepo.site);
+      itemNode.seoMetaTags___NODE = createSeoMetaTagsNode(
+        itemNode,
+        itemsRepo.find(item.id),
+        itemsRepo.site,
+        createNode
+      );
+
       itemNode.updatedAt = item.updatedAt;
 
       if (item.itemType.sortable) {
