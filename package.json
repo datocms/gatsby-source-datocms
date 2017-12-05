@@ -27,7 +27,7 @@
   "author": "DatoCMS <support@datocms.com>",
   "license": "ISC",
   "peerDependencies": {
-    "react": ">=16.2.0",
-    "react-helmet": ">=5.2.0"
+    "react": ">=15.0.0",
+    "react-helmet": ">=5.0.0"
   }
 }
