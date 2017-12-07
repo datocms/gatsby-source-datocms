@@ -1,5 +1,5 @@
-export const datoCmsSeoMetaTags = graphql`
-  fragment datoCmsSeoMetaTagsFields on DatoCmsSeoMetaTags {
+export const datoCmsMetaTags = graphql`
+  fragment GatsbyDatoCmsMetaTags on DatoCmsSeoMetaTags {
     tags {
       tagName
       content
@@ -11,6 +11,7 @@ export const datoCmsSeoMetaTags = graphql`
     }
   }
 `
+
 export const datoCmsAssetResolutions = graphql`
   fragment GatsbyDatoCmsResolutions on DatoCmsResolutions {
     base64

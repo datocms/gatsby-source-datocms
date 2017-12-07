@@ -201,8 +201,11 @@ for your record's pages:
 }
 ```
 
-This package exposes a `HelmetDatoCms` component and a `datoCmsSeoMetaTagsFields` 
+This package exposes a `HelmetDatoCms` component and a `GatsbyDatoCmsMetaTags` 
 GraphQL fragment to make it easier use these information in your website:
+
+PS. [Due to a limitation of GraphiQL](https://github.com/graphql/graphiql/issues/612), 
+you can not currently use the `GatsbyDatoCmsMetaTags` fragment in the GraphiQL IDE.
 
 ```js
 import React from 'react'
@@ -225,14 +228,11 @@ export const query = graphql`
       title
       subtitle
       seoMetaTags {
-        ...datoCmsSeoMetaTagsFields
+        ...GatsbyDatoCmsMetaTags
       }
     }
   }
 ```
-
-PS. The `datoCmsSeoMetaTagsFields` fragment won't be available in GraphiQL, only
-in your component query!
 
 
 ### Tree-like collections
