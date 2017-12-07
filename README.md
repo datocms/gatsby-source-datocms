@@ -6,6 +6,10 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 
 `npm install --save gatsby-source-datocms`
 
+## Sample project
+
+We've prepared a [sample Gatsby project](https://github.com/datocms/gatsby-portfolio) for you!
+
 ## How to use
 
 ```javascript
