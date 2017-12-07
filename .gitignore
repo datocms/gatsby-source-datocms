@@ -6,6 +6,7 @@
 /createSeoMetaTagsNode.js
 /createSiteNode.js
 /createTextNode.js
+/createFaviconMetaTagsNode.js
 /digest.js
 /extendAssetNode.js
 /fetch.js

@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-datocms",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Gatsby source plugin for building websites using DatoCMS as data source",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,6 @@
   "author": "DatoCMS <support@datocms.com>",
   "license": "ISC",
   "peerDependencies": {
-    "react": ">=15.0.0",
-    "react-helmet": ">=5.0.0"
+    "react-helmet": "*"
   }
 }

@@ -11,7 +11,7 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
    * [Accessing records](#accessing-records)
    * [Multiple-paragraph text fields](#multiple-paragraph-text-fields)
    * [Modular content fields](#modular-content-fields)
-   * [Favicon](#favicon)
+   * [Favicon meta tags](#favicon-meta-tags)
    * [SEO meta tags](#seo-meta-tags)
    * [Tree-like collections](#tree-like-collections)
    * [Single instance models](#single-instance-models)
@@ -151,28 +151,6 @@ if you want to apply further transformations, like converting markdown with [`ga
 }
 ```
 
-### Favicon
-
-You can get the complete set of meta tags related to your site favicon like this:
-
-```graphql
-{
-  datoCmsSite {
-    faviconMetaTags {
-      tagName
-      attributes {
-        rel
-        sizes
-        href
-        name
-        content
-        type
-      }
-    }
-  }
-}
-```
-
 ### SEO meta tags
 
 All records have a `seoMetaTags` field that you can use to build SEO meta tags
@@ -201,11 +179,11 @@ for your record's pages:
 }
 ```
 
-This package exposes a `HelmetDatoCms` component and a `GatsbyDatoCmsMetaTags` 
+This package exposes a `HelmetDatoCms` component and a `GatsbyDatoCmsSeoMetaTags` 
 GraphQL fragment to make it easier use these information in your website:
 
 PS. [Due to a limitation of GraphiQL](https://github.com/graphql/graphiql/issues/612), 
-you can not currently use the `GatsbyDatoCmsMetaTags` fragment in the GraphiQL IDE.
+you can not currently use the `GatsbyDatoCmsSeoMetaTags` fragment in the GraphiQL IDE.
 
 ```js
 import React from 'react'
@@ -214,7 +192,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 
 const About = ({ data }) => (
   <article className="sheet">
-    <HelmetDatoCms record={data.datoCmsAboutPage} />
+    <HelmetDatoCms seo={data.datoCmsAboutPage.seoMetaTags} />
     <h1>{data.datoCmsAboutPage.title}</h1>
     <p>{data.datoCmsAboutPage.subtitle}</p>
   </article>
@@ -228,12 +206,60 @@ export const query = graphql`
       title
       subtitle
       seoMetaTags {
-        ...GatsbyDatoCmsMetaTags
+        ...GatsbyDatoCmsSeoMetaTags
       }
     }
   }
 ```
 
+### Favicon meta tags
+
+You can get the complete set of meta tags related to your site favicon this way:
+
+```graphql
+{
+  datoCmsSite {
+    faviconMetaTags {
+      tagName
+      attributes {
+        rel
+        sizes
+        href
+        name
+        content
+        type
+      }
+    }
+  }
+}
+```
+
+Similarly to what happens with SEO meta tags, you can use the `HelmetDatoCms` component with the `GatsbyDatoCmsFaviconMetaTags` fragment to make it easier use these information in your website:
+
+```js
+import React from 'react'
+import Link from 'gatsby-link'
+import { HelmetDatoCms } from 'gatsby-source-datocms'
+
+const TemplateWrapper = ({ data }) => (
+  <article className="sheet">
+    <HelmetDatoCms favicon={data.datoCmsSite.faviconMetaTags} />
+    <h1>{data.datoCmsAboutPage.title}</h1>
+    <p>{data.datoCmsAboutPage.subtitle}</p>
+  </article>
+)
+
+export default TemplateWrapper
+
+export const query = graphql`
+  query LayoutQuery {
+    datoCmsSite {
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
+      }
+    }
+  }
+```
 
 ### Tree-like collections
 

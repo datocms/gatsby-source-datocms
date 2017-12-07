@@ -1,18 +1,29 @@
 const React = require('react');
 const Helmet = require('react-helmet').default;
 
-const HelmetDatoCms = ({ record }) => (
-  React.createElement(
+const HelmetDatoCms = ({ seo, favicon }) => {
+  return React.createElement(
     Helmet,
     null,
-    record.seoMetaTags.tags.map((item, i) =>
-      React.createElement(
-        item.tagName,
-        Object.assign({ key: i }, item.attributes),
-        item.content
-      )
+    (seo ? seo.tags : [])
+      .concat(favicon ? favicon.tags : [])
+      .map((item, i) =>
+        React.createElement(
+          item.tagName,
+          Object.assign(
+            { key: i },
+            Object.entries(item.attributes || {})
+              .reduce((acc, [name, value]) => {
+                if (value) {
+                  acc[name] = value;
+                }
+                return acc;
+              }, {})
+          ),
+          item.content
+        )
     )
-  )
-)
+  );
+}
 
 module.exports = { HelmetDatoCms };
