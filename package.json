@@ -19,6 +19,7 @@
     "fs-extra": ">=4.0.2",
     "graphql-type-json": "0.1.4",
     "humps": ">=2.0.1",
+    "imgix-url-params": "7.4.0",
     "json-stringify-safe": ">=5.0.1",
     "query-string": "5.0.1"
   },

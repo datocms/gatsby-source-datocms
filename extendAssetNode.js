@@ -1,13 +1,16 @@
-const { GraphQLObjectType, GraphQLBoolean, GraphQLString, GraphQLInt, GraphQLFloat, GraphQLEnumType } = require('graphql');
+const { GraphQLInputObjectType, GraphQLObjectType, GraphQLBoolean, GraphQLString, GraphQLInt, GraphQLFloat, GraphQLEnumType } = require('graphql');
 const GraphQLJSONType = require('graphql-type-json');
-const base64Img = require(`base64-img`);
-const queryString = require(`query-string`);
+const base64Img = require('base64-img');
+const queryString = require('query-string');
+const imgixParams = require('imgix-url-params/dist/parameters');
+const { decamelizeKeys, camelize, pascalize } = require('humps');
 
 const isImage = ({ format, width, height }) => ['png', 'jpg', 'jpeg', 'gif'].includes(format) && width && height;
 
 const createUrl = function () {
   const image = arguments[0];
-  const options = Object.assign.apply(null, [{}].concat(Array.prototype.slice.call(arguments, 1)));
+  const options = decamelizeKeys(Object.assign.apply(null, [{}].concat(Array.prototype.slice.call(arguments, 1))), { separator: '-' });
+
   return `${image.url}?${queryString.stringify(options)}`;
 };
 
@@ -202,6 +205,33 @@ const resolveResize = (image, options) => {
 };
 
 module.exports = function extendAssetNode() {
+
+  const fields = {};
+  const mappings = {
+    boolean: GraphQLBoolean,
+    hex_color: GraphQLString,
+    integer: GraphQLInt,
+    list: GraphQLString,
+    number: GraphQLFloat,
+    path: GraphQLString,
+    string: GraphQLString,
+    timestamp: GraphQLString,
+    unit_scalar: GraphQLFloat,
+    url: GraphQLString
+  };
+
+  Object.entries(imgixParams.parameters).forEach(([param, doc]) => {
+    fields[camelize(param)] = {
+      type: doc.expects.length === 1 ? mappings[doc.expects[0].type] : GraphQLString,
+      description: `${doc.short_description} (${doc.url})`
+    };
+  });
+
+  const ImgixParamsType = new GraphQLInputObjectType({
+    name: `DatoCmsImgixParams`,
+    fields
+  });
+
   return {
     resolutions: {
       type: new GraphQLObjectType({
@@ -224,7 +254,7 @@ module.exports = function extendAssetNode() {
           type: GraphQLInt
         },
         imgixParams: {
-          type: GraphQLJSONType
+          type: ImgixParamsType
         }
       },
       resolve(image, options, context) {
@@ -254,7 +284,7 @@ module.exports = function extendAssetNode() {
           type: GraphQLString
         },
         imgixParams: {
-          type: GraphQLJSONType
+          type: ImgixParamsType
         }
       },
       resolve(image, options, context) {
@@ -284,7 +314,7 @@ module.exports = function extendAssetNode() {
           defaultValue: false
         },
         imgixParams: {
-          type: GraphQLJSONType
+          type: ImgixParamsType
         }
       },
       resolve(image, options, context) {

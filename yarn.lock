@@ -864,6 +864,10 @@ iconv-lite@~0.4.13:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
 
+imgix-url-params@7.4.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/imgix-url-params/-/imgix-url-params-7.4.0.tgz#bc5ade015654997d6766ee9c72a63b7a5456f6bf"
+
 inflight@^1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
