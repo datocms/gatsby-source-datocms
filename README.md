@@ -330,7 +330,7 @@ Images coming from DatoCMS can be queried so that they can be used with [gatsby-
 
 This GraphQL option allows you to generate responsive images that automatically respond to different device screen resolution and widths. E.g. a smartphone browser will download a much smaller image than a desktop device.
 
-Instead of specifying a width and height, with sizes you specify a `maxWidth`, the max width the container of the images reaches.
+Instead of specifying a width and height, with `sizes` you specify a `maxWidth`, the max width the container of the images reaches.
 
 ```jsx
 import React from 'react'
@@ -359,7 +359,7 @@ export const query = graphql`
 
 ### Responsive Resolution
 
-If you make queries with resolutions then Gatsby automatically generates images with 1x, 1.5x, 2x, and 3x versions so your images look great on whatever screen resolution of device they're on. If you're on a retina class screen, notice how much sharper these images are than the above "resized" images.
+If you make queries with resolutions then Gatsby automatically generates images with 1x, 1.5x, 2x, and 3x versions so your images look great on whatever screen resolution of device they're on. If you're on a retina class screen, notice how much sharper these images are.
 
 ```jsx
 import React from 'react'
