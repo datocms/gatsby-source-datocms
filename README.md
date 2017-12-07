@@ -2,6 +2,24 @@
 
 Source plugin for pulling models and records into Gatsby from DatoCMS administrative areas. It creates links between records so they can be queried in Gatsby using GraphQL.
 
+## Table of Contents
+
+* [Install](#install)
+* [Sample project](#sample-project)
+* [How to use](#how-to-use)
+* [How to query](#how-to-query)
+   * [Accessing records](#accessing-records)
+   * [Multiple-paragraph text fields](#multiple-paragraph-text-fields)
+   * [Modular content fields](#modular-content-fields)
+   * [Favicon](#favicon)
+   * [SEO meta tags](#seo-meta-tags)
+   * [Tree-like collections](#tree-like-collections)
+   * [Single instance models](#single-instance-models)
+   * [Localized fields](#localized-fields)
+* [Integration with gatsby-image](#integration-with-gatsby-image)
+   * [Responsive Sizes](#responsive-sizes)
+   * [Responsive Resolution](#responsive-resolution)
+
 ## Install
 
 `npm install --save gatsby-source-datocms`
@@ -278,11 +296,11 @@ node:
 }
 ```
 
-### Integration with `gatsby-image`
+## Integration with `gatsby-image`
 
 Images coming from DatoCMS can be queried so that they can be used with [gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image), a React component specially designed to work seamlessly with Gatsby's GraphQL queries that implements advanced image loading techniques to easily and completely optimize image loading for your sites.
 
-#### Responsive Sizes
+### Responsive Sizes
 
 This GraphQL option allows you to generate responsive images that automatically respond to different device screen resolution and widths. E.g. a smartphone browser will download a much smaller image than a desktop device.
 
@@ -313,7 +331,7 @@ export const query = graphql`
 `
 ```
 
-#### Responsive Resolution
+### Responsive Resolution
 
 If you make queries with resolutions then Gatsby automatically generates images with 1x, 1.5x, 2x, and 3x versions so your images look great on whatever screen resolution of device they're on. If you're on a retina class screen, notice how much sharper these images are than the above "resized" images.
 
