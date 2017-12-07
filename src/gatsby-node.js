@@ -7,6 +7,7 @@ const fetch = require('./fetch');
 const createItemTypeNodes = require('./createItemTypeNodes');
 const createItemNodes = require('./createItemNodes');
 const createSiteNode = require('./createSiteNode');
+const extendAssetNode = require('./extendAssetNode');
 
 exports.sourceNodes = async (
   { boundActionCreators, getNodes, hasNodeChanged, store, reporter },
@@ -71,4 +72,13 @@ exports.onPreExtractQueries = async ({ store }) => {
     path.join(__dirname, 'src', 'fragments.js'),
     `${program.directory}/.cache/fragments/datocms-seometatags-fragments.js`
   )
+}
+
+
+exports.setFieldsOnGraphQLNodeType = ({ type }) => {
+  if (type.name !== 'DatoCmsAsset') {
+    return {};
+  }
+
+  return extendAssetNode();
 }

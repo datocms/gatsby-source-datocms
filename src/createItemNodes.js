@@ -3,6 +3,7 @@ const initNodeFromEntity = require('./initNodeFromEntity');
 const addDigestToNode = require('./addDigestToNode');
 const mId = require('./makeId');
 const createTextNode = require('./createTextNode');
+const createAssetNode = require('./createAssetNode');
 const createSeoMetaTagsNode = require('./createSeoMetaTagsNode');
 const Item = require('datocms-client/lib/local/Item');
 const ItemsRepo = require('datocms-client/lib/local/ItemsRepo');
@@ -76,6 +77,15 @@ module.exports = function createItemNodes(repo, createNode) {
               itemNode[key] = value;
               break;
             }
+          case 'image':
+          case 'file': {
+            itemNode[`${key}___NODE`] = createAssetNode(itemNode, key, value, itemsRepo, createNode);
+            break;
+          }
+          case 'gallery': {
+            itemNode[`${key}___NODE`] = (value || []).map(asset => createAssetNode(itemNode, key, asset, itemsRepo, createNode));
+            break;
+          }
           default:
             {
               const fieldValue = build(field.fieldType, value, itemsRepo);

@@ -14,10 +14,13 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "base64-img": "1.0.3",
     "datocms-client": ">=0.3.40",
     "fs-extra": ">=4.0.2",
+    "graphql-type-json": "0.1.4",
     "humps": ">=2.0.1",
-    "json-stringify-safe": ">=5.0.1"
+    "json-stringify-safe": ">=5.0.1",
+    "query-string": "5.0.1"
   },
   "keywords": [
     "gatsby",
