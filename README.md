@@ -277,3 +277,68 @@ node:
   }
 }
 ```
+
+### Integration with `gatsby-image`
+
+Images coming from DatoCMS can be queried so that they can be used with [gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image), a React component specially designed to work seamlessly with Gatsby's GraphQL queries that implements advanced image loading techniques to easily and completely optimize image loading for your sites.
+
+#### Responsive Sizes
+
+This GraphQL option allows you to generate responsive images that automatically respond to different device screen resolution and widths. E.g. a smartphone browser will download a much smaller image than a desktop device.
+
+Instead of specifying a width and height, with sizes you specify a `maxWidth`, the max width the container of the images reaches.
+
+```jsx
+import React from 'react'
+import Img from 'gatsby-image'
+
+const About = ({ data }) => (
+  <article>
+    <Img sizes={data.datoCmsAboutPage.photo.sizes} />
+  </article>
+)
+
+export default About
+
+export const query = graphql`
+  query AboutQuery {
+    datoCmsAboutPage {
+      photo {
+        sizes(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+    }
+  }
+`
+```
+
+#### Responsive Resolution
+
+If you make queries with resolutions then Gatsby automatically generates images with 1x, 1.5x, 2x, and 3x versions so your images look great on whatever screen resolution of device they're on. If you're on a retina class screen, notice how much sharper these images are than the above "resized" images.
+
+```jsx
+import React from 'react'
+import Img from 'gatsby-image'
+
+const About = ({ data }) => (
+  <article>
+    <Img resolutions={data.datoCmsAboutPage.photo.resolutions} />
+  </article>
+)
+
+export default About
+
+export const query = graphql`
+  query AboutQuery {
+    datoCmsAboutPage {
+      photo {
+        resolutions(width: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsResolutions
+        }
+      }
+    }
+  }
+`
+```
+
