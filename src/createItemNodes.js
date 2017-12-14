@@ -54,7 +54,10 @@ module.exports = function createItemNodes(repo, createNode) {
         switch (fieldType) {
           case 'link':
             {
-              itemNode[`${key}___NODE`] = itemNodeId(repo, value, locale);
+              itemNode[`${key}___NODE`] = value ?
+                itemNodeId(repo, value, locale) :
+                null;
+
               break;
             }
           case 'rich_text':
