@@ -52,37 +52,36 @@ module.exports = function createItemNodes(repo, createNode) {
         const key = camelize(field.apiKey);
 
         switch (fieldType) {
-          case 'link':
-            {
-              itemNode[`${key}___NODE`] = value ?
-                itemNodeId(repo, value, locale) :
-                null;
-
-              break;
+          case 'link': {
+            if (value) {
+              itemNode[`${key}___NODE`] = itemNodeId(repo, value, locale);
             }
+
+            break;
+          }
           case 'rich_text':
-          case 'links':
-            {
-              itemNode[`${key}___NODE`] = (value || []).map(id => itemNodeId(repo, id, locale));
-              break;
-            }
-          case 'text':
-            {
-              let mediaType = 'text/plain';
+          case 'links': {
+            itemNode[`${key}___NODE`] = (value || []).map(id => itemNodeId(repo, id, locale));
+            break;
+          }
+          case 'text': {
+            let mediaType = 'text/plain';
 
-              if (field.appeareance.type === 'markdown') {
-                mediaType = 'text/markdown';
-              } else if (field.appeareance.type === 'wysiwyg') {
-                mediaType = 'text/html';
-              }
-
-              itemNode[`${key}Node___NODE`] = createTextNode(itemNode, key, value, mediaType, createNode);
-              itemNode[key] = value;
-              break;
+            if (field.appeareance.type === 'markdown') {
+              mediaType = 'text/markdown';
+            } else if (field.appeareance.type === 'wysiwyg') {
+              mediaType = 'text/html';
             }
+
+            itemNode[`${key}Node___NODE`] = createTextNode(itemNode, key, value, mediaType, createNode);
+            itemNode[key] = value;
+            break;
+          }
           case 'image':
           case 'file': {
-            itemNode[`${key}___NODE`] = createAssetNode(itemNode, key, value, itemsRepo, createNode);
+            if (value) {
+              itemNode[`${key}___NODE`] = createAssetNode(itemNode, key, value, itemsRepo, createNode);
+            }
             break;
           }
           case 'gallery': {
