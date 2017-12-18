@@ -1,33 +1,3 @@
-export const datoCmsSeoMetaTags = graphql`
-  fragment GatsbyDatoCmsSeoMetaTags on DatoCmsSeoMetaTags {
-    tags {
-      tagName
-      content
-      attributes {
-        property
-        content
-        name
-      }
-    }
-  }
-`
-
-export const datoCmsFaviconMetaTags = graphql`
-  fragment GatsbyDatoCmsFaviconMetaTags on DatoCmsFaviconMetaTags {
-    tags {
-      tagName
-      attributes {
-        rel
-        sizes
-        href
-        name
-        content
-        type
-      }
-    }
-  }
-`
-
 export const datoCmsAssetResolutions = graphql`
   fragment GatsbyDatoCmsResolutions on DatoCmsResolutions {
     base64

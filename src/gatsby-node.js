@@ -65,13 +65,30 @@ exports.sourceNodes = async (
   });
 }
 
-exports.onPreExtractQueries = async ({ store }) => {
+exports.onPreExtractQueries = async ({ store, getNodes }) => {
   const program = store.getState().program;
+  const nodes = getNodes();
 
-  await fs.copy(
-    path.join(__dirname, 'src', 'fragments.js'),
-    `${program.directory}/.cache/fragments/datocms-seometatags-fragments.js`
-  )
+  if (nodes.some(n => n.internal.type === `DatoCmsAsset`)) {
+    await fs.copy(
+      path.join(__dirname, 'src', 'assetFragments.js'),
+      `${program.directory}/.cache/fragments/datocms-asset-fragments.js`
+    )
+  }
+
+  if (nodes.some(n => n.internal.type === `DatoCmsSeoMetaTags`)) {
+    await fs.copy(
+      path.join(__dirname, 'src', 'seoFragments.js'),
+      `${program.directory}/.cache/fragments/datocms-seo-fragments.js`
+    )
+  }
+
+  if (nodes.some(n => n.internal.type === `DatoCmsFaviconMetaTags`)) {
+    await fs.copy(
+      path.join(__dirname, 'src', 'faviconFragments.js'),
+      `${program.directory}/.cache/fragments/datocms-favicon-fragments.js`
+    )
+  }
 }
 
 
