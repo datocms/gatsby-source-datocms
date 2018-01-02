@@ -2,8 +2,12 @@ const { GraphQLInputObjectType, GraphQLObjectType, GraphQLBoolean, GraphQLString
 const GraphQLJSONType = require('graphql-type-json');
 const base64Img = require('base64-img');
 const queryString = require('query-string');
+const md5 = require('md5');
+const path = require('path');
 const imgixParams = require('imgix-url-params/dist/parameters');
 const { decamelizeKeys, camelize, pascalize } = require('humps');
+const fs = require('fs');
+const Queue = require('promise-queue');
 
 const isImage = ({ format, width, height }) => (
   ['png', 'jpg', 'jpeg', 'gif'].includes(format) && width && height
@@ -22,18 +26,33 @@ const createUrl = function() {
   return `${image.url}?${queryString.stringify(options)}`;
 }
 
-const getBase64Image = (image) => {
-  const requestUrl = `${image.url}?w=20`;
+const queue = new Queue(10, Infinity);
 
-  return new Promise(resolve => {
-    base64Img.requestBase64(requestUrl, (a, b, body) => {
-      resolve(body);
+const getBase64Image = (image, cacheDir) => {
+  const requestUrl = `${image.url}?w=20`;
+  const cacheFile = path.join(cacheDir, md5(requestUrl));
+
+  if (fs.existsSync(cacheFile)) {
+    const body = fs.readFileSync(cacheFile, 'utf8');
+    return Promise.resolve(body);
+  }
+
+  return queue.add(() => {
+    return new Promise((resolve, reject) => {
+      base64Img.requestBase64(requestUrl, (err, res, body) => {
+        if (err) {
+          reject(err);
+        } else {
+          fs.writeFileSync(cacheFile, body, 'utf8');
+          resolve(body);
+        }
+      });
     });
   });
 }
 
-const getBase64ImageAndBasicMeasurements = (image, args) => (
-  getBase64Image(image).then(base64Str => {
+const getBase64ImageAndBasicMeasurements = (image, args, cacheDir) => (
+  getBase64Image(image, cacheDir).then(base64Str => {
     let aspectRatio;
 
     if (args.width && args.height) {
@@ -51,10 +70,10 @@ const getBase64ImageAndBasicMeasurements = (image, args) => (
   })
 );
 
-const resolveResolution = (image, options) => {
+const resolveResolution = (image, options, cacheDir) => {
   if (!isImage(image)) return null;
 
-  return getBase64ImageAndBasicMeasurements(image, options).then(
+  return getBase64ImageAndBasicMeasurements(image, options, cacheDir).then(
     ({ base64Str, width, height, aspectRatio }) => {
       let desiredAspectRatio = aspectRatio;
 
@@ -128,10 +147,10 @@ const resolveResolution = (image, options) => {
   );
 }
 
-const resolveSizes = (image, options) => {
+const resolveSizes = (image, options, cacheDir) => {
   if (!isImage(image)) return null;
 
-  return getBase64ImageAndBasicMeasurements(image, options).then(
+  return getBase64ImageAndBasicMeasurements(image, options, cacheDir).then(
     ({ base64Str, width, height, aspectRatio }) => {
       let desiredAspectRatio = aspectRatio;
 
@@ -187,10 +206,10 @@ const resolveSizes = (image, options) => {
   );
 }
 
-const resolveResize = (image, options) => {
+const resolveResize = (image, options, cacheDir) => {
   if (!isImage(image)) return null;
 
-  return getBase64ImageAndBasicMeasurements(image, options).then(
+  return getBase64ImageAndBasicMeasurements(image, options, cacheDir).then(
     ({ base64Str, width, height, aspectRatio }) => {
 
       // If the user selected a height (so cropping) and fit option
@@ -225,7 +244,7 @@ const resolveResize = (image, options) => {
   );
 }
 
-module.exports = function extendAssetNode() {
+module.exports = function extendAssetNode({ cacheDir }) {
 
   const fields = {};
   const mappings = {
@@ -281,7 +300,7 @@ module.exports = function extendAssetNode() {
         },
       },
       resolve(image, options, context) {
-        return resolveResolution(image, options);
+        return resolveResolution(image, options, cacheDir);
       },
     },
     sizes: {
@@ -311,7 +330,7 @@ module.exports = function extendAssetNode() {
         },
       },
       resolve(image, options, context) {
-        return resolveSizes(image, options)
+        return resolveSizes(image, options, cacheDir)
       },
     },
     resize: {
@@ -341,7 +360,7 @@ module.exports = function extendAssetNode() {
         },
       },
       resolve(image, options, context) {
-        return resolveResize(image, options)
+        return resolveResize(image, options, cacheDir)
       },
     },
   };

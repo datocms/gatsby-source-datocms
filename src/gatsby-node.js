@@ -92,10 +92,17 @@ exports.onPreExtractQueries = async ({ store, getNodes }) => {
 }
 
 
-exports.setFieldsOnGraphQLNodeType = ({ type }) => {
+exports.setFieldsOnGraphQLNodeType = ({ type, store }) => {
   if (type.name !== 'DatoCmsAsset') {
     return {};
   }
 
-  return extendAssetNode();
+  const program = store.getState().program;
+  const cacheDir = `${program.directory}/.cache/datocms-assets`;
+
+  if (!fs.existsSync(cacheDir)){
+    fs.mkdirSync(cacheDir);
+  }
+
+  return extendAssetNode({ cacheDir });
 }

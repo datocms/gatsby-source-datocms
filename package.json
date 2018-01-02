@@ -21,6 +21,8 @@
     "humps": ">=2.0.1",
     "imgix-url-params": "7.4.0",
     "json-stringify-safe": ">=5.0.1",
+    "md5": "2.2.1",
+    "promise-queue": "2.2.3",
     "query-string": "5.0.1"
   },
   "keywords": [
