@@ -26,7 +26,7 @@ const createUrl = function() {
   return `${image.url}?${queryString.stringify(options)}`;
 }
 
-const queue = new Queue(10, Infinity);
+const queue = new Queue(3, Infinity);
 
 const getBase64Image = (image, cacheDir) => {
   const requestUrl = `${image.url}?w=20`;
@@ -55,7 +55,10 @@ const getBase64ImageAndBasicMeasurements = (image, args, cacheDir) => (
   getBase64Image(image, cacheDir).then(base64Str => {
     let aspectRatio;
 
-    if (args.width && args.height) {
+    if (args.imgixParams && args.imgixParams.rect) {
+      const [x, y, width, height] = args.imgixParams.rect.split(/\s*,\s*/);
+      aspectRatio = width / height;
+    } else if (args.width && args.height) {
       aspectRatio = args.width / args.height;
     } else {
       aspectRatio = image.width / image.height;
