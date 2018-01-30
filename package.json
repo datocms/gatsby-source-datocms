@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-datocms",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Gatsby source plugin for building websites using DatoCMS as data source",
   "main": "index.js",
   "scripts": {
