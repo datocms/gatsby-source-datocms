@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-datocms",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Gatsby source plugin for building websites using DatoCMS as data source",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
     "md5": "2.2.1",
     "promise-queue": "2.2.3",
     "query-string": "5.0.1",
-    "request-promise-native": "1.0.5"
+    "request-promise-native": "1.0.5",
+    "svg-inline-loader": "0.8.0"
   },
   "keywords": [
     "gatsby",

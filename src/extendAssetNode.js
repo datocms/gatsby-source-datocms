@@ -9,6 +9,7 @@ const { decamelizeKeys, camelize, pascalize } = require('humps');
 const fs = require('fs');
 const Queue = require('promise-queue');
 const request = require('request-promise-native');
+const getExtractedSVG = require('svg-inline-loader').getExtractedSVG;
 
 const isImage = ({ format, width, height }) => (
   ['png', 'jpg', 'jpeg', 'gif'].includes(format) && width && height
@@ -42,7 +43,14 @@ const getImage = (image, cacheDir) => {
 
   return request(image.url)
   .then((body) => {
-    fs.writeFileSync(cacheFile, body, 'utf8');
+    const prefix = md5(image.url);
+
+    const fixedBody = getExtractedSVG(
+      body,
+      { classPrefix: prefix, idPrefix: prefix }
+    ).replace(/url\(#/g, `url(#${prefix}`);
+
+    fs.writeFileSync(cacheFile, fixedBody, 'utf8');
     return body;
   });
 }
