@@ -8,7 +8,7 @@ const imgixParams = require('imgix-url-params/dist/parameters');
 const { decamelizeKeys, camelize, pascalize } = require('humps');
 const fs = require('fs');
 const Queue = require('promise-queue');
-const request = require('request-promise');
+const request = require('request-promise-native');
 
 const isImage = ({ format, width, height }) => (
   ['png', 'jpg', 'jpeg', 'gif'].includes(format) && width && height
