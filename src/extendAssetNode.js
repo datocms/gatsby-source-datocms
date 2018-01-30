@@ -8,10 +8,13 @@ const imgixParams = require('imgix-url-params/dist/parameters');
 const { decamelizeKeys, camelize, pascalize } = require('humps');
 const fs = require('fs');
 const Queue = require('promise-queue');
+const request = require('request-promise');
 
 const isImage = ({ format, width, height }) => (
   ['png', 'jpg', 'jpeg', 'gif'].includes(format) && width && height
 );
+
+const isSvg = ({ format, width, height }) => format === 'svg';
 
 const createUrl = function() {
   const image = arguments[0];
@@ -27,6 +30,22 @@ const createUrl = function() {
 }
 
 const queue = new Queue(3, Infinity);
+
+const getImage = (image, cacheDir) => {
+  const requestUrl = image.url;
+  const cacheFile = path.join(cacheDir, md5(requestUrl));
+
+  if (fs.existsSync(cacheFile)) {
+    const body = fs.readFileSync(cacheFile, 'utf8');
+    return Promise.resolve(body);
+  }
+
+  return request(image.url)
+  .then((body) => {
+    fs.writeFileSync(cacheFile, body, 'utf8');
+    return body;
+  });
+}
 
 const getBase64Image = (image, cacheDir) => {
   const requestUrl = `${image.url}?w=20`;
@@ -72,6 +91,11 @@ const getBase64ImageAndBasicMeasurements = (image, args, cacheDir) => (
     };
   })
 );
+
+const resolveInlineSvg = (image, options, cacheDir) => {
+  if (!isSvg(image)) return null;
+  return getImage(image, cacheDir);
+}
 
 const resolveResolution = (image, options, cacheDir) => {
   if (!isImage(image)) return null;
@@ -365,6 +389,12 @@ module.exports = function extendAssetNode({ cacheDir }) {
       resolve(image, options, context) {
         return resolveResize(image, options, cacheDir)
       },
+    },
+    inlineSvg: {
+      type: GraphQLString,
+      resolve(image, options, context) {
+        return resolveInlineSvg(image, options, cacheDir);
+      }
     },
   };
 }
