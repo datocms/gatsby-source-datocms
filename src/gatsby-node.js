@@ -11,7 +11,7 @@ const extendAssetNode = require('./extendAssetNode');
 
 exports.sourceNodes = async (
   { boundActionCreators, getNodes, hasNodeChanged, store, reporter },
-  { apiToken }
+  { apiToken, disableLiveReload }
 ) => {
   const {
     createNode,
@@ -58,11 +58,13 @@ exports.sourceNodes = async (
 
   const siteId = await sync();
 
-  const watcher = new SiteChangeWatcher(siteId);
-  watcher.connect(() => {
-    reporter.info('Detected DatoCMS data change!');
-    sync();
-  });
+  if (!disableLiveReload) {
+    const watcher = new SiteChangeWatcher(siteId);
+    watcher.connect(() => {
+      reporter.info('Detected DatoCMS data change!');
+      sync();
+    });
+  }
 }
 
 exports.onPreExtractQueries = async ({ store, getNodes }) => {
