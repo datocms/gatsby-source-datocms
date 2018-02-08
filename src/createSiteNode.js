@@ -21,11 +21,13 @@ module.exports = function(repo, createNode) {
     delete node.favicon;
     delete node.faviconMetaTags;
 
-    node.faviconMetaTags___NODE = createFaviconMetaTagsNode(
-      node,
-      site,
-      createNode
-    );
+    if (site.favicon) {
+      node.faviconMetaTags___NODE = createFaviconMetaTagsNode(
+        node,
+        site,
+        createNode
+      );
+    }
 
     node.locale = locale;
 
