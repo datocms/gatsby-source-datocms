@@ -11,7 +11,7 @@ const extendAssetNode = require('./extendAssetNode');
 
 exports.sourceNodes = async (
   { boundActionCreators, getNodes, hasNodeChanged, store, reporter },
-  { apiToken, disableLiveReload }
+  { apiToken, disableLiveReload, draftMode }
 ) => {
   const {
     createNode,
@@ -43,7 +43,7 @@ exports.sourceNodes = async (
       createNode(node);
     }
 
-    const repo = await fetch(client);
+    const repo = await fetch(client, draftMode);
     const itemTypes = repo.findEntitiesOfType('item_type');
     const site = repo.findEntitiesOfType('site')[0];
 
