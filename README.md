@@ -42,7 +42,7 @@ plugins: [
 
       // If you are working on development/staging environment, you might want to 
       // preview the latest version of records instead of the published one:
-      preview: false,
+      previewMode: false,
 
       // Disable automatic reloading of content when some change occurs on DatoCMS:
       disableLiveReload: false,
