@@ -19,15 +19,27 @@ exports.sourceNodes = async (
     touchNode,
     setPluginStatus,
   } = boundActionCreators;
+  let client;
 
-  const client = new SiteClient(
-    apiToken,
-    {
-      'X-Reason': 'dump',
-      'X-SSG': 'gatsby',
-    },
-    apiUrl,
-  );
+  if (apiUrl) {
+    client = new SiteClient(
+      apiToken,
+      {
+        'X-Reason': 'dump',
+        'X-SSG': 'gatsby',
+      },
+      apiUrl,
+    );
+  } else {
+    client = new SiteClient(
+      apiToken,
+      {
+        'X-Reason': 'dump',
+        'X-SSG': 'gatsby',
+      },
+    );
+  }
+
 
   const sync = async () => {
     if (
