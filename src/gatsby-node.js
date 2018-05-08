@@ -11,7 +11,7 @@ const extendAssetNode = require('./extendAssetNode');
 
 exports.sourceNodes = async (
   { boundActionCreators, getNodes, hasNodeChanged, store, reporter },
-  { apiToken, disableLiveReload, previewMode }
+  { apiToken, disableLiveReload, previewMode, apiUrl }
 ) => {
   const {
     createNode,
@@ -19,14 +19,27 @@ exports.sourceNodes = async (
     touchNode,
     setPluginStatus,
   } = boundActionCreators;
+  let client;
 
-  const client = new SiteClient(
-    apiToken,
-    {
-      'X-Reason': 'dump',
-      'X-SSG': 'gatsby',
-    }
-  );
+  if (apiUrl) {
+    client = new SiteClient(
+      apiToken,
+      {
+        'X-Reason': 'dump',
+        'X-SSG': 'gatsby',
+      },
+      apiUrl,
+    );
+  } else {
+    client = new SiteClient(
+      apiToken,
+      {
+        'X-Reason': 'dump',
+        'X-SSG': 'gatsby',
+      },
+    );
+  }
+
 
   const sync = async () => {
     if (
