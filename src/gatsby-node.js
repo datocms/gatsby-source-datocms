@@ -15,8 +15,8 @@ exports.sourceNodes = async (
 ) => {
   const {
     createNode,
-    deleteNodes,
     touchNode,
+    deleteNode,
     setPluginStatus,
   } = boundActionCreators;
 
@@ -29,14 +29,6 @@ exports.sourceNodes = async (
   );
 
   const sync = async () => {
-    if (
-      store.getState().status.plugins &&
-      store.getState().status.plugins[`gatsby-source-datocms`]
-    ) {
-      const oldNodeIds = store.getState().status.plugins[`gatsby-source-datocms`].nodeIds;
-      deleteNodes(oldNodeIds);
-    }
-
     const nodeIds = [];
     const createNodeWrapper = (node) => {
       nodeIds.push(node.id);
@@ -50,6 +42,21 @@ exports.sourceNodes = async (
     createItemTypeNodes(itemTypes, createNodeWrapper);
     createItemNodes(repo, createNodeWrapper);
     createSiteNode(repo, createNodeWrapper);
+
+    if (
+      store.getState().status.plugins &&
+      store.getState().status.plugins[`gatsby-source-datocms`]
+    ) {
+      const oldNodeIds = store.getState().status.plugins[`gatsby-source-datocms`].nodeIds;
+
+      oldNodeIds.forEach((id) => {
+        if (nodeIds.includes(id)) {
+          touchNode(id);
+        } else {
+          deleteNode(id);
+        }
+      });
+    }
 
     setPluginStatus({ nodeIds });
 
