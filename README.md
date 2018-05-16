@@ -160,7 +160,7 @@ if you want to apply further transformations, like converting markdown with [`ga
 
 You can then present your blocks in a similar manner: 
 
-```
+```jsx
 <div>
   {
     data.datoCmsBlogPost.content.map((block) => (
