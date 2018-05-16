@@ -140,24 +140,43 @@ if you want to apply further transformations, like converting markdown with [`ga
 
 ```graphql
 {
-  allDatoCmsBlogPost {
-    edges {
-      node {
-        title
-        content {
-          ... on DatoCmsText {
-            text
-          }
-          ... on DatoCmsImage {
-            image {
-              url
-            }
-          }
+  datoCmsBlogPost {
+    title
+    content {
+      ... on DatoCmsText {
+        model { apiKey }
+        text
+      }
+      ... on DatoCmsImage {
+        model { apiKey }
+        image {
+          url
         }
       }
     }
   }
 }
+```
+
+You can then present your blocks in a similar manner: 
+
+```
+<div>
+  {
+    data.datoCmsBlogPost.content.map((block) => (
+      <div key={block.id}>
+        {
+          block.model.apiKey === 'text' &&
+            <div>{block.text}</div>
+        }
+        {
+          block.model.apiKey === 'image' &&
+            <img src={block.image.url} />
+        }
+      </div>
+    ))
+  }
+</div>
 ```
 
 ### SEO meta tags
