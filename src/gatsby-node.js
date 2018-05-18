@@ -1,5 +1,6 @@
 const { SiteClient } = require('datocms-client');
 const SiteChangeWatcher = require('datocms-client/lib/dump/SiteChangeWatcher');
+const ItemsRepo = require('datocms-client/lib/local/ItemsRepo');
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -38,10 +39,11 @@ exports.sourceNodes = async (
     const repo = await fetch(client, previewMode);
     const itemTypes = repo.findEntitiesOfType('item_type');
     const site = repo.findEntitiesOfType('site')[0];
+    const itemsRepo = new ItemsRepo(repo);
 
     createItemTypeNodes(itemTypes, createNodeWrapper);
-    createItemNodes(repo, createNodeWrapper);
-    createSiteNode(repo, createNodeWrapper);
+    createItemNodes(repo, itemsRepo, createNodeWrapper);
+    createSiteNode(repo, itemsRepo, createNodeWrapper);
 
     if (
       store.getState().status.plugins &&

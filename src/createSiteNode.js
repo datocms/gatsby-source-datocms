@@ -6,9 +6,9 @@ const i18n = require('datocms-client/lib/utils/i18n');
 const createFaviconMetaTagsNode = require('./createFaviconMetaTagsNode');
 const objectAssign =require('object-assign');
 
-module.exports = function(repo, createNode) {
+module.exports = function(repo, itemsRepo, createNode) {
   const siteEntity = repo.findEntitiesOfType('site')[0];
-  const site = new Site(siteEntity);
+  const site = new Site(siteEntity, itemsRepo);
 
   i18n.availableLocales = site.locales;
 

@@ -9,7 +9,7 @@ module.exports = function createAssetNode(parent, field, value, itemsRepo, creat
 
   const node = objectAssign(
     {
-      id: value.path,
+      id: `DatoCmsAsset-${value}`,
       parent: parent.id,
       children: [],
       internal: {
