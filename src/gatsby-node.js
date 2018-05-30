@@ -12,7 +12,7 @@ const extendAssetNode = require('./extendAssetNode');
 
 exports.sourceNodes = async (
   { boundActionCreators, getNodes, hasNodeChanged, store, reporter },
-  { apiToken, disableLiveReload, previewMode }
+  { apiToken, disableLiveReload, previewMode, apiUrl }
 ) => {
   const {
     createNode,
@@ -21,13 +21,18 @@ exports.sourceNodes = async (
     setPluginStatus,
   } = boundActionCreators;
 
-  const client = new SiteClient(
-    apiToken,
-    {
-      'X-Reason': 'dump',
-      'X-SSG': 'gatsby',
-    }
-  );
+  let client;
+
+  const clientHeaders = {
+    'X-Reason': 'dump',
+    'X-SSG': 'gatsby',
+  };
+
+  if (apiUrl) {
+    client = new SiteClient(apiToken, clientHeaders, apiUrl);
+  } else {
+    client = new SiteClient(apiToken, clientHeaders);
+  }
 
   const sync = async () => {
     const nodeIds = [];
