@@ -9,6 +9,7 @@ const Item = require('datocms-client/lib/local/Item');
 const ItemsRepo = require('datocms-client/lib/local/ItemsRepo');
 const i18n = require('datocms-client/lib/utils/i18n');
 const build = require('datocms-client/lib/local/fields/build');
+const objectEntries =  require('object.entries');
 
 const itemNodeId = (repo, id, locale) => {
   if (!id) {
@@ -137,7 +138,7 @@ module.exports = function createItemNodes(repo, createNode) {
     });
   });
 
-  Object.entries(itemNodes).forEach(([key, itemNode]) => {
+  objectEntries(itemNodes).forEach(([key, itemNode]) => {
     addDigestToNode(itemNode);
     createNode(itemNode);
   });

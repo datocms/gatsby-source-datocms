@@ -1,5 +1,7 @@
 const React = require('react');
 const Helmet = require('react-helmet').default;
+const objectEntries =  require('object.entries');
+const objectAssign =require('object-assign');
 
 const HelmetDatoCms = ({ seo, favicon }) => {
   return React.createElement(
@@ -10,9 +12,9 @@ const HelmetDatoCms = ({ seo, favicon }) => {
       .map((item, i) =>
         React.createElement(
           item.tagName,
-          Object.assign(
+          objectAssign(
             { key: i },
-            Object.entries(item.attributes || {})
+            objectEntries(item.attributes || {})
               .reduce((acc, [name, value]) => {
                 if (value) {
                   acc[name] = value;

@@ -1,7 +1,7 @@
+const objectEntries =  require('object.entries');
+
 module.exports = function addEntityAttributes(node, entity) {
-  Object.entries(entity.payload.attributes || {}).forEach(([name, value]) => {
+  objectEntries(entity.payload.attributes || {}).forEach(([name, value]) => {
     node[name] = value;
   });
 }
-
-

@@ -23,6 +23,8 @@
     "imgix-url-params": "7.4.0",
     "json-stringify-safe": ">=5.0.1",
     "md5": "2.2.1",
+    "object-assign": "^4.1.1",
+    "object.entries": "^1.0.4",
     "promise-queue": "2.2.3",
     "query-string": "5.0.1",
     "request-promise-native": "1.0.5",

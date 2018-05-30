@@ -10,6 +10,8 @@ const fs = require('fs');
 const Queue = require('promise-queue');
 const request = require('request-promise-native');
 const getExtractedSVG = require('svg-inline-loader').getExtractedSVG;
+const objectEntries =  require('object.entries');
+const objectAssign =require('object-assign');
 
 const isImage = ({ format, width, height }) => (
   ['png', 'jpg', 'jpeg', 'gif'].includes(format) && width && height
@@ -20,7 +22,7 @@ const isSvg = ({ format, width, height }) => format === 'svg';
 const createUrl = function() {
   const image = arguments[0];
   const options = decamelizeKeys(
-    Object.assign.apply(
+    objectAssign.apply(
       null,
       [{}].concat(Array.prototype.slice.call(arguments, 1))
     ),
@@ -119,7 +121,7 @@ const resolveResolution = (image, options, cacheDir) => {
 
       if (options.height) {
         if (!options.imgixParams || !options.imgixParams.fit) {
-          options.imgixParams = Object.assign(options.imgixParams || {}, { fit: 'crop' });
+          options.imgixParams = objectAssign(options.imgixParams || {}, { fit: 'crop' });
         }
       }
 
@@ -251,7 +253,7 @@ const resolveResize = (image, options, cacheDir) => {
       // is not set, we'll set our defaults
       if (options.height) {
         if (!options.imgixParams || !options.imgixParams.fit) {
-          options.imgixParams = Object.assign(options.imgixParams || {}, { fit: 'crop' });
+          options.imgixParams = objectAssign(options.imgixParams || {}, { fit: 'crop' });
         }
       }
 
@@ -295,7 +297,7 @@ module.exports = function extendAssetNode({ cacheDir }) {
     url: GraphQLString,
   }
 
-  Object.entries(imgixParams.parameters).forEach(([param, doc]) => {
+  objectEntries(imgixParams.parameters).forEach(([param, doc]) => {
     fields[camelize(param)] = {
       type: doc.expects.length === 1 ?
         mappings[doc.expects[0].type] :
