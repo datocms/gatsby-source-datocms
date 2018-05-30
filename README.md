@@ -46,6 +46,9 @@ plugins: [
 
       // Disable automatic reloading of content when some change occurs on DatoCMS:
       disableLiveReload: false,
+
+      // Custom API base URL
+      apiUrl: 'https://site-api.datocms.com',
     },
   },
 ]
