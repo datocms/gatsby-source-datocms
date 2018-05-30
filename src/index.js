@@ -3,17 +3,17 @@ const Helmet = require('react-helmet').default;
 const objectEntries =  require('object.entries');
 const objectAssign =require('object-assign');
 
-const HelmetDatoCms = ({ seo, favicon }) => {
+const HelmetDatoCms = ({ seo, favicon, children, ...rest }) => {
   return React.createElement(
     Helmet,
-    null,
+    rest,
     (seo ? seo.tags : [])
       .concat(favicon ? favicon.tags : [])
       .map((item, i) =>
         React.createElement(
           item.tagName,
           objectAssign(
-            { key: i },
+            { key: `helmet-datocms-${i}` },
             objectEntries(item.attributes || {})
               .reduce((acc, [name, value]) => {
                 if (value) {
@@ -24,7 +24,7 @@ const HelmetDatoCms = ({ seo, favicon }) => {
           ),
           item.content
         )
-    )
+    ).concat(children)
   );
 }
 
