@@ -40,7 +40,7 @@ plugins: [
       // section of your administrative area:
       apiToken: `YOUR_READONLY_API_TOKEN`,
 
-      // If you are working on development/staging environment, you might want to 
+      // If you are working on development/staging environment, you might want to
       // preview the latest version of records instead of the published one:
       previewMode: false,
 
@@ -114,7 +114,7 @@ if you have a `blog_post` model, you will be able to query it like the following
 ### Multiple-paragraph text fields
 
 Fields of type *Multiple-paragraph text* will be available both as simple
-strings (ie. `excerpt`) and nodes (ie. `excerptNode`). You can use the latter 
+strings (ie. `excerpt`) and nodes (ie. `excerptNode`). You can use the latter
 if you want to apply further transformations, like converting markdown with [`gatsby-transformer-remark`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark)):
 
 ```graphql
@@ -158,7 +158,7 @@ if you want to apply further transformations, like converting markdown with [`ga
 }
 ```
 
-You can then present your blocks in a similar manner: 
+You can then present your blocks in a similar manner:
 
 ```jsx
 <div>
@@ -207,10 +207,10 @@ for your record's pages:
 }
 ```
 
-This package exposes a `HelmetDatoCms` component and a `GatsbyDatoCmsSeoMetaTags` 
+This package exposes a `HelmetDatoCms` component and a `GatsbyDatoCmsSeoMetaTags`
 GraphQL fragment to make it easier use these information in your website:
 
-PS. [Due to a limitation of GraphiQL](https://github.com/graphql/graphiql/issues/612), 
+PS. [Due to a limitation of GraphiQL](https://github.com/graphql/graphiql/issues/612),
 you can not currently use the `GatsbyDatoCmsSeoMetaTags` fragment in the GraphiQL IDE.
 
 ```js
@@ -238,6 +238,15 @@ export const query = graphql`
       }
     }
   }
+```
+
+If you need to pass additional meta tags to the underlying `Helmet` component, you can add them as children and props to `HelmetDatoCms`:
+
+```js
+<HelmetDatoCms seo={data.datoCmsAboutPage.seoMetaTags}>
+  <link rel="alternate" href="http://www.mysite.com/it/" hreflang="it" />
+  <link rel="alternate" href="http://www.mysite.com/fr/" hreflang="fr" />
+</HelmetDatoCms>
 ```
 
 ### Favicon meta tags
@@ -327,7 +336,7 @@ You can access to single instance models like this:
 
 ### Localized fields
 
-If your site is multi-lingual, records will be duplicated for every locale 
+If your site is multi-lingual, records will be duplicated for every locale
 available, so you can query them like this. The same applies for the `DatoCmsSite`
 node:
 
