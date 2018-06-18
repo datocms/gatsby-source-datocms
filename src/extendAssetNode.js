@@ -311,7 +311,7 @@ module.exports = function extendAssetNode({ cacheDir }) {
     fields
   });
 
-  return {
+  const extension = {
     resolutions: {
       type: new GraphQLObjectType({
         name: `DatoCmsResolutions`,
@@ -407,4 +407,9 @@ module.exports = function extendAssetNode({ cacheDir }) {
       }
     },
   };
+
+  extension.fluid = extension.sizes;
+  extension.fixed = extension.resolutions;
+
+  return extension;
 }

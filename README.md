@@ -17,8 +17,8 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
    * [Single instance models](#single-instance-models)
    * [Localized fields](#localized-fields)
 * [Integration with gatsby-image](#integration-with-gatsby-image)
-   * [Responsive Sizes](#responsive-sizes)
-   * [Responsive Resolution](#responsive-resolution)
+   * [Responsive fluid](#responsive-fluid)
+   * [Responsive fixed](#responsive-fixed)
 
 ## Install
 
@@ -366,11 +366,11 @@ node:
 
 Images coming from DatoCMS can be queried so that they can be used with [gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image), a React component specially designed to work seamlessly with Gatsby's GraphQL queries that implements advanced image loading techniques to easily and completely optimize image loading for your sites.
 
-### Responsive Sizes
+### Responsive fluid
 
 This GraphQL option allows you to generate responsive images that automatically respond to different device screen resolution and widths. E.g. a smartphone browser will download a much smaller image than a desktop device.
 
-Instead of specifying a width and height, with `sizes` you specify a `maxWidth`, the max width the container of the images reaches.
+Instead of specifying a width and height, with `fluid` you specify a `maxWidth`, the max width the container of the images reaches.
 
 ```jsx
 import React from 'react'
@@ -378,7 +378,7 @@ import Img from 'gatsby-image'
 
 const About = ({ data }) => (
   <article>
-    <Img sizes={data.datoCmsAboutPage.photo.sizes} />
+    <Img fluid={data.datoCmsAboutPage.photo.fluid} />
   </article>
 )
 
@@ -388,8 +388,8 @@ export const query = graphql`
   query AboutQuery {
     datoCmsAboutPage {
       photo {
-        sizes(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
+        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFluid
         }
       }
     }
@@ -397,7 +397,7 @@ export const query = graphql`
 `
 ```
 
-### Responsive Resolution
+### Responsive fixed
 
 If you make queries with resolutions then Gatsby automatically generates images with 1x, 1.5x, 2x, and 3x versions so your images look great on whatever screen resolution of device they're on. If you're on a retina class screen, notice how much sharper these images are.
 
@@ -407,7 +407,7 @@ import Img from 'gatsby-image'
 
 const About = ({ data }) => (
   <article>
-    <Img resolutions={data.datoCmsAboutPage.photo.resolutions} />
+    <Img fixed={data.datoCmsAboutPage.photo.fixed} />
   </article>
 )
 
@@ -417,8 +417,8 @@ export const query = graphql`
   query AboutQuery {
     datoCmsAboutPage {
       photo {
-        resolutions(width: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsResolutions
+        fixed(width: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFixed
         }
       }
     }
