@@ -314,7 +314,7 @@ module.exports = function extendAssetNode({ cacheDir }) {
   const extension = {
     resolutions: {
       type: new GraphQLObjectType({
-        name: `DatoCmsResolutions`,
+        name: `DatoCmsFixed`,
         fields: {
           base64: { type: GraphQLString },
           aspectRatio: { type: GraphQLFloat },
@@ -342,7 +342,7 @@ module.exports = function extendAssetNode({ cacheDir }) {
     },
     sizes: {
       type: new GraphQLObjectType({
-        name: `DatoCmsSizes`,
+        name: `DatoCmsFluid`,
         fields: {
           base64: { type: GraphQLString },
           aspectRatio: { type: GraphQLFloat },

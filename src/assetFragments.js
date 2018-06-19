@@ -1,5 +1,5 @@
 export const datoCmsAssetResolutions = graphql`
-  fragment GatsbyDatoCmsResolutions on DatoCmsResolutions {
+  fragment GatsbyDatoCmsResolutions on DatoCmsFixed {
     base64
     width
     height
@@ -9,7 +9,7 @@ export const datoCmsAssetResolutions = graphql`
 `
 
 export const datoCmsAssetResolutionsNoBase64 = graphql`
-  fragment GatsbyDatoCmsResolutions_noBase64 on DatoCmsResolutions {
+  fragment GatsbyDatoCmsResolutions_noBase64 on DatoCmsFixed {
     width
     height
     src
@@ -18,7 +18,7 @@ export const datoCmsAssetResolutionsNoBase64 = graphql`
 `
 
 export const datoCmsAssetSizes = graphql`
-  fragment GatsbyDatoCmsSizes on DatoCmsSizes {
+  fragment GatsbyDatoCmsSizes on DatoCmsFluid {
     base64
     aspectRatio
     src
@@ -28,7 +28,7 @@ export const datoCmsAssetSizes = graphql`
 `
 
 export const datoCmsAssetSizesNoBase64 = graphql`
-  fragment GatsbyDatoCmsSizes_noBase64 on DatoCmsSizes {
+  fragment GatsbyDatoCmsSizes_noBase64 on DatoCmsFluid {
     aspectRatio
     src
     srcSet
