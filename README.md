@@ -2,6 +2,8 @@
 
 Source plugin for pulling models and records into Gatsby from DatoCMS administrative areas. It creates links between records so they can be queried in Gatsby using GraphQL.
 
+NOTE: If you want to use this plugin with Gatsby v2, please add the `gatsby-source-datocms@next` package!
+
 ## Table of Contents
 
 * [Install](#install)
