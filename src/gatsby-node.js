@@ -1,3 +1,5 @@
+require('babel-polyfill');
+
 const { SiteClient } = require('datocms-client');
 const SiteChangeWatcher = require('datocms-client/lib/dump/SiteChangeWatcher');
 const ItemsRepo = require('datocms-client/lib/local/ItemsRepo');
@@ -11,7 +13,7 @@ const createSiteNode = require('./createSiteNode');
 const extendAssetNode = require('./extendAssetNode');
 
 exports.sourceNodes = async (
-  { boundActionCreators, getNodes, hasNodeChanged, store, reporter },
+  { boundActionCreators, getNode, getNodes, hasNodeChanged, store, reporter },
   { apiToken, disableLiveReload, previewMode, apiUrl }
 ) => {
   const {
@@ -58,9 +60,9 @@ exports.sourceNodes = async (
 
       oldNodeIds.forEach((id) => {
         if (nodeIds.includes(id)) {
-          touchNode(id);
+          touchNode({ nodeId: id });
         } else {
-          deleteNode(id);
+          deleteNode(getNode(id));
         }
       });
     }

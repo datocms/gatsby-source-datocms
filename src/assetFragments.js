@@ -1,3 +1,5 @@
+const { graphql } = require('gatsby');
+
 export const datoCmsAssetResolutions = graphql`
   fragment GatsbyDatoCmsResolutions on DatoCmsFixed {
     base64
