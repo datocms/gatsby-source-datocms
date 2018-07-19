@@ -57,8 +57,7 @@ const getImage = (image, cacheDir) => {
   });
 }
 
-const getBase64Image = (image, cacheDir) => {
-  const requestUrl = `${image.url}?w=20`;
+const getBase64Image = (requestUrl, cacheDir) => {
   const cacheFile = path.join(cacheDir, md5(requestUrl));
 
   if (fs.existsSync(cacheFile)) {
@@ -80,27 +79,58 @@ const getBase64Image = (image, cacheDir) => {
   });
 }
 
-const getBase64ImageAndBasicMeasurements = (image, args, cacheDir) => (
-  getBase64Image(image, cacheDir).then(base64Str => {
-    let aspectRatio;
+const getBase64ImageAndBasicMeasurements = (image, args, cacheDir) => {
+  const argsWidth = args.width || args.maxWidth;
+  const argsHeight = args.height || args.maxHeight;
+  const originalAspectRatio = image.width / image.height;
 
-    if (args.imgixParams && args.imgixParams.rect) {
-      const [x, y, width, height] = args.imgixParams.rect.split(/\s*,\s*/);
-      aspectRatio = width / height;
-    } else if (args.width && args.height) {
-      aspectRatio = args.width / args.height;
+  let height;
+  let width;
+
+  if (argsWidth) {
+    width = argsWidth;
+
+    if (argsHeight) {
+      height = argsHeight;
     } else {
-      aspectRatio = image.width / image.height;
+      height = width / originalAspectRatio;
     }
+  } else if (argsHeight) {
+    height = argsHeight;
 
+    if (argsWidth) {
+      width = argsWidth;
+    } else {
+      width = height * originalAspectRatio;
+    }
+  }
+
+  const aspectRatio = width / height;
+  let previewUrl;
+
+  if (width > height) {
+    previewUrl = createUrl(
+      image,
+      args.imgixParams,
+      { fit: 'crop', w: 20, h: parseInt(20.0 / aspectRatio) }
+    );
+  } else {
+    previewUrl = createUrl(
+      image,
+      args.imgixParams,
+      { fit: 'crop', h: 20, w: parseInt(20.0 * aspectRatio) }
+    );
+  }
+
+  return getBase64Image(previewUrl, cacheDir).then(base64Str => {
     return {
       base64Str,
       aspectRatio,
-      width: image.width,
-      height: image.height,
+      width,
+      height,
     };
   })
-);
+};
 
 const resolveInlineSvg = (image, options, cacheDir) => {
   if (!isSvg(image)) return null;
@@ -112,18 +142,6 @@ const resolveResolution = (image, options, cacheDir) => {
 
   return getBase64ImageAndBasicMeasurements(image, options, cacheDir).then(
     ({ base64Str, width, height, aspectRatio }) => {
-      let desiredAspectRatio = aspectRatio;
-
-      // If we're cropping, calculate the specified aspect ratio.
-      if (options.height) {
-        desiredAspectRatio = options.width / options.height;
-      }
-
-      if (options.height) {
-        if (!options.imgixParams || !options.imgixParams.fit) {
-          options.imgixParams = objectAssign(options.imgixParams || {}, { fit: 'crop' });
-        }
-      }
 
       // Create sizes (in width) for the image. If the width of the
       // image is 800px, the sizes would then be: 800, 1200, 1600,
@@ -140,7 +158,7 @@ const resolveResolution = (image, options, cacheDir) => {
 
       // Create the srcSet
       const srcSet = sizes
-      .filter(size => size < width)
+      .filter(size => size < image.width)
       .map((size, i) => {
         let resolution
         switch (i) {
@@ -158,8 +176,12 @@ const resolveResolution = (image, options, cacheDir) => {
           break
           default:
         }
-          const h = Math.round(size / desiredAspectRatio);
-          const url = createUrl(image, options.imgixParams, { w: size, h: h });
+          const h = Math.round(size / aspectRatio);
+          const url = createUrl(
+            image,
+            options.imgixParams,
+            { w: size, h: h, fit: 'crop' }
+          );
           return `${url} ${resolution}`;
       })
       .join(`,\n`);
@@ -169,7 +191,7 @@ const resolveResolution = (image, options, cacheDir) => {
       if (options.height) {
         pickedHeight = options.height;
       } else {
-        pickedHeight = options.width / desiredAspectRatio;
+        pickedHeight = options.width / aspectRatio;
       }
 
       return {
@@ -189,11 +211,9 @@ const resolveSizes = (image, options, cacheDir) => {
 
   return getBase64ImageAndBasicMeasurements(image, options, cacheDir).then(
     ({ base64Str, width, height, aspectRatio }) => {
-      let desiredAspectRatio = aspectRatio;
 
-      // If we're cropping, calculate the specified aspect ratio.
-      if (options.maxHeight) {
-        desiredAspectRatio = options.maxWidth / options.maxHeight;
+      if (!options.maxWidth) {
+        options.maxWidth = options.maxHeight * aspectRatio;
       }
 
       // If the users didn't set a default sizes, we'll make one.
@@ -217,7 +237,7 @@ const resolveSizes = (image, options, cacheDir) => {
       sizes = sizes.map(Math.round);
 
       // Filter out sizes larger than the image's maxWidth.
-      const filteredSizes = sizes.filter(size => size < width)
+      const filteredSizes = sizes.filter(size => size < image.width)
 
       // Add the original image to ensure the largest image possible
       // is available for small images.
@@ -226,8 +246,8 @@ const resolveSizes = (image, options, cacheDir) => {
       // Create the srcSet.
       const srcSet = filteredSizes
         .map(width => {
-          const h = Math.round(width / desiredAspectRatio);
-          const url = createUrl(image, options.imgixParams, { w: width, h });
+          const h = Math.round(width / aspectRatio);
+          const url = createUrl(image, options.imgixParams, { fit: 'crop', w: width, h });
           return `${url} ${Math.round(width)}w`;
         })
         .join(`,\n`);
@@ -235,47 +255,9 @@ const resolveSizes = (image, options, cacheDir) => {
       return {
         base64: base64Str,
         aspectRatio: aspectRatio,
-        src: createUrl(image, options.imgixParams, { w: options.maxWidth, h: options.maxHeight }),
+        src: createUrl(image, options.imgixParams, { w: options.maxWidth, h: options.maxWidth / aspectRatio }),
         srcSet,
         sizes: options.sizes,
-      };
-    }
-  );
-}
-
-const resolveResize = (image, options, cacheDir) => {
-  if (!isImage(image)) return null;
-
-  return getBase64ImageAndBasicMeasurements(image, options, cacheDir).then(
-    ({ base64Str, width, height, aspectRatio }) => {
-
-      // If the user selected a height (so cropping) and fit option
-      // is not set, we'll set our defaults
-      if (options.height) {
-        if (!options.imgixParams || !options.imgixParams.fit) {
-          options.imgixParams = objectAssign(options.imgixParams || {}, { fit: 'crop' });
-        }
-      }
-
-      if (options.base64) {
-        return base64Str;
-      }
-
-      const pickedWidth = options.width;
-      let pickedHeight;
-
-      if (options.height) {
-        pickedHeight = options.height;
-      } else {
-        pickedHeight = Math.round(pickedWidth / aspectRatio);
-      }
-
-      return {
-        src: createUrl(image, options.imgixParams, { w: pickedWidth, h: pickedHeight }),
-        width: pickedWidth,
-        height: pickedHeight,
-        aspectRatio,
-        base64: base64Str,
       };
     }
   );
@@ -368,36 +350,6 @@ module.exports = function extendAssetNode({ cacheDir }) {
       },
       resolve(image, options, context) {
         return resolveSizes(image, options, cacheDir)
-      },
-    },
-    resize: {
-      type: new GraphQLObjectType({
-        name: `DatoCmsResize`,
-        fields: {
-          src: { type: GraphQLString },
-          width: { type: GraphQLInt },
-          height: { type: GraphQLInt },
-          aspectRatio: { type: GraphQLFloat },
-        },
-      }),
-      args: {
-        width: {
-          type: GraphQLInt,
-          defaultValue: 400,
-        },
-        height: {
-          type: GraphQLInt,
-        },
-        base64: {
-          type: GraphQLBoolean,
-          defaultValue: false,
-        },
-        imgixParams: {
-          type: ImgixParamsType,
-        },
-      },
-      resolve(image, options, context) {
-        return resolveResize(image, options, cacheDir)
       },
     },
     inlineSvg: {

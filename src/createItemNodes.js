@@ -66,9 +66,9 @@ module.exports = function createItemNodes(repo, itemsRepo, createNode) {
           case 'text': {
             let mediaType = 'text/plain';
 
-            if (field.appeareance.type === 'markdown') {
+            if (field.appeareance.editor === 'markdown') {
               mediaType = 'text/markdown';
-            } else if (field.appeareance.type === 'wysiwyg') {
+            } else if (field.appeareance.editor === 'wysiwyg') {
               mediaType = 'text/html';
             }
 
