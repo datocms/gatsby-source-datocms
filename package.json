@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-datocms",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.3",
   "description": "Gatsby source plugin for building websites using DatoCMS as data source",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "base64-img": "1.0.3",
-    "datocms-client": ">=0.5.1",
+    "datocms-client": "^0.6.1",
     "fs-extra": ">=4.0.2",
     "graphql-type-json": "0.1.4",
     "humps": ">=2.0.1",

@@ -1,5 +1,5 @@
 const addDigestToNode = require('./addDigestToNode');
-const build = require('datocms-client/lib/local/fields/build');
+const { buildField } = require('datocms-client');
 const objectAssign =require('object-assign');
 
 module.exports = function createAssetNode(parent, field, value, itemsRepo, createNode) {
