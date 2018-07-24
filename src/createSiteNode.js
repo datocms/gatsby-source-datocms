@@ -1,8 +1,7 @@
-const Site = require('datocms-client/lib/local/Site');
+const { Site, i18n } = require('datocms-client/lib/local/Site');
 const initNodeFromEntity = require('./initNodeFromEntity');
 const addDigestToNode = require('./addDigestToNode');
 const addEntityAttributes = require('./addEntityAttributes');
-const i18n = require('datocms-client/lib/utils/i18n');
 const createFaviconMetaTagsNode = require('./createFaviconMetaTagsNode');
 const objectAssign =require('object-assign');
 

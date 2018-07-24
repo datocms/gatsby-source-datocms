@@ -1,6 +1,4 @@
-const { SiteClient } = require('datocms-client');
-const SiteChangeWatcher = require('datocms-client/lib/dump/SiteChangeWatcher');
-const ItemsRepo = require('datocms-client/lib/local/ItemsRepo');
+const { SiteClient, SiteChangeWatcher, ItemsRepo } = require('datocms-client');
 const fs = require('fs-extra');
 const path = require('path');
 

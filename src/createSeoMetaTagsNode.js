@@ -1,5 +1,5 @@
+const { seoTagsBuilder } = require('datocms-client');
 const addDigestToNode = require('./addDigestToNode');
-const seoTagsBuilder = require('datocms-client/lib/utils/seoTagsBuilder').default;
 
 module.exports = function createSeoMetaTagsNode(node, item, site, createNode) {
   const seoNode = {

@@ -1,5 +1,5 @@
 const addDigestToNode = require('./addDigestToNode');
-const faviconTagsBuilder = require('datocms-client/lib/utils/faviconTagsBuilder');
+const { faviconTagsBuilder } = require('datocms-client');
 
 module.exports = function createFaviconMetaTagsNode(node, site, createNode) {
   const faviconNode = {

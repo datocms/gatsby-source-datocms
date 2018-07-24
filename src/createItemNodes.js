@@ -5,9 +5,7 @@ const mId = require('./makeId');
 const createTextNode = require('./createTextNode');
 const createAssetNode = require('./createAssetNode');
 const createSeoMetaTagsNode = require('./createSeoMetaTagsNode');
-const Item = require('datocms-client/lib/local/Item');
-const i18n = require('datocms-client/lib/utils/i18n');
-const build = require('datocms-client/lib/local/fields/build');
+const { Item, i18n, buildField } = require('datocms-client');
 const objectEntries =  require('object.entries');
 
 const itemNodeId = (repo, id, locale) => {
@@ -88,7 +86,7 @@ module.exports = function createItemNodes(repo, itemsRepo, createNode) {
           }
           default:
             {
-              const fieldValue = build(field.fieldType, value, itemsRepo);
+              const fieldValue = buildField(field.fieldType, value, itemsRepo);
               itemNode[key] = fieldValue && fieldValue.toMap ? fieldValue.toMap() : fieldValue;
               break;
             }
