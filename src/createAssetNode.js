@@ -16,7 +16,7 @@ module.exports = function createAssetNode(parent, field, value, itemsRepo, creat
         type: `DatoCmsAsset`,
       }
     },
-    build('file', value, itemsRepo).toMap()
+    buildField('file', value, itemsRepo).toMap()
   );
 
   parent.children = node.children.concat([node.id]);
