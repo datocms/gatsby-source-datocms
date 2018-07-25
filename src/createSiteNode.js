@@ -1,4 +1,4 @@
-const { Site, i18n } = require('datocms-client/lib/local/Site');
+const { Site, i18n } = require('datocms-client');
 const initNodeFromEntity = require('./initNodeFromEntity');
 const addDigestToNode = require('./addDigestToNode');
 const addEntityAttributes = require('./addEntityAttributes');
