@@ -3,7 +3,7 @@ const initNodeFromEntity = require('./initNodeFromEntity');
 const addDigestToNode = require('./addDigestToNode');
 const addEntityAttributes = require('./addEntityAttributes');
 const createFaviconMetaTagsNode = require('./createFaviconMetaTagsNode');
-const objectAssign =require('object-assign');
+const objectAssign = require('object-assign');
 
 module.exports = function(repo, itemsRepo, createNode) {
   const siteEntity = repo.findEntitiesOfType('site')[0];

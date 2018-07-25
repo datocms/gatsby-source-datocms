@@ -6,13 +6,15 @@
   "scripts": {
     "build": "babel src --out-dir . --ignore __tests__",
     "watch": "babel -w src --out-dir . --ignore __tests__",
-    "prepublish": "cross-env NODE_ENV=production npm run build"
+    "prepublish": "cross-env NODE_ENV=production npm run build",
+    "test": "echo 1"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.6.1",
-    "cross-env": "^5.0.5"
+    "cross-env": "^5.0.5",
+    "np": "^3.0.4"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
