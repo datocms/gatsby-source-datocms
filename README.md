@@ -24,7 +24,7 @@ NOTE: If you want to use this plugin with Gatsby v2, please add the `gatsby-sour
 
 ## Install
 
-`npm install --save gatsby-source-datocms`
+`npm install --save gatsby-source-datocms@gatsby1`
 
 ## Sample project
 
