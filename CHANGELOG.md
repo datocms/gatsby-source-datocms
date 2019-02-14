@@ -1,3 +1,7 @@
+### v2.0.2
+
+* Restore support of gatsby-image base64 field
+
 ### v1.1.9
 
 * Added support for the new Gatsby v2 `fixed` and `fluid` responsive image queries (see https://next.gatsbyjs.org/docs/migrating-from-v1-to-v2/#rename-responsive-image-queries)

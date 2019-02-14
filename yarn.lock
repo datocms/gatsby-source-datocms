@@ -1235,7 +1235,7 @@ date-fns@^1.27.2:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.29.0.tgz#12e609cdcb935127311d04d33334e2960a2a54e6"
 
-datocms-client@~0.8.0:
+datocms-client@~0.8.14:
   version "0.8.14"
   resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-0.8.14.tgz#9aa3a0856610d9da4ff1ee10b3213146b7c599e9"
   integrity sha512-9MRTPWCd191dj9KJ9Q9do/bCyFVszCtTSozZnRyD8vHzMiNkx3u3RArsC41q2uWV+b1wX5iSbY0fNVqO4pL/rA==
