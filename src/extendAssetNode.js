@@ -1,6 +1,5 @@
 const { GraphQLInputObjectType, GraphQLObjectType, GraphQLBoolean, GraphQLString, GraphQLInt, GraphQLFloat, GraphQLEnumType } = require('graphql');
 const GraphQLJSONType = require('graphql-type-json');
-const base64Img = require('base64-img');
 const queryString = require('query-string');
 const md5 = require('md5');
 const path = require('path');
@@ -66,15 +65,14 @@ const getBase64Image = (requestUrl, cacheDir) => {
   }
 
   return queue.add(() => {
-    return new Promise((resolve, reject) => {
-      base64Img.requestBase64(requestUrl, (err, res, body) => {
-        if (err) {
-          reject(err);
-        } else {
-          fs.writeFileSync(cacheFile, body, 'utf8');
-          resolve(body);
-        }
-      });
+    return request({
+      uri: requestUrl,
+      resolveWithFullResponse: true,
+      encoding: 'base64'
+    }).then(res => {
+      const data = 'data:' + res.headers['content-type'] + ';base64,' + res.body;
+      fs.writeFileSync(cacheFile, data, 'utf8');
+      return data;
     });
   });
 }
