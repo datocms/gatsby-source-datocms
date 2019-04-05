@@ -3,9 +3,9 @@
 * GraphQL schema customization (no more random errors due to inferred types!)
 * Support for traced SVG image placeholders (`GatsbyDatoCmsFixed_tracedSVG` and `GatsbyDatoCmsFluid_tracedSVG`)
 * Automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, fall back to the default image format
-* Hyper fast real-rime content preview in watch mode (just the content that actually changes gets downloaded)
-* Fixed some bugs on gatsby-image responses
-* Disable watch mode when gatsby is in build mode
+* Hyper fast real-rime content preview in watch mode (just the content that actually changes gets re-downloaded)
+* Fixed some bugs when using Imgix transformations on `gatsby-image` queries
+* Disable watch mode when Gatsby is in build mode
 * Locale fallbacks:
 
 ```js
@@ -22,7 +22,7 @@
   ]
 ```
 
-* If you need to get every locale for a specific field, you can use the `_all<FIELD>Locales` query:
+* If you need to get every locale for a specific field, you can now use the `_all<FIELD>Locales` query:
 
 ```graphql
 {
