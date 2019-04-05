@@ -1,0 +1,34 @@
+const Queue = require('promise-queue');
+const fs = require('fs-extra');
+const path = require('path');
+const md5 = require('md5');
+const request = require('request-promise-native');
+const resizeUrl = require('./resizeUrl');
+
+const queue = new Queue(3, Infinity);
+
+function download(requestUrl, cacheDir) {
+  const cacheFile = path.join(cacheDir, md5(requestUrl));
+
+  if (fs.existsSync(cacheFile)) {
+    const body = fs.readFileSync(cacheFile, 'utf8');
+    return Promise.resolve(body);
+  }
+
+  return queue.add(() => {
+    return request({
+      uri: requestUrl,
+      resolveWithFullResponse: true,
+      encoding: 'base64'
+    }).then(res => {
+      const data = 'data:' + res.headers['content-type'] + ';base64,' + res.body;
+      fs.writeFileSync(cacheFile, data, 'utf8');
+      return data;
+    });
+  });
+}
+
+
+module.exports = ({ src, width, height, aspectRatio }, cacheDir) => {
+  return download(resizeUrl({ url: src, aspectRatio, width, height }, 20), cacheDir);
+};

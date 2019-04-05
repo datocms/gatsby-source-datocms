@@ -726,7 +726,6 @@ babylon@^6.18.0:
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
-  integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
 base@^0.11.1:
   version "0.11.2"
@@ -747,10 +746,6 @@ bcrypt-pbkdf@^1.0.0:
   integrity sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
   dependencies:
     tweetnacl "^0.14.3"
-
-big.js@^3.1.3:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
 
 binary-extensions@^1.0.0:
   version "1.13.0"
@@ -1235,10 +1230,10 @@ date-fns@^1.27.2:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.29.0.tgz#12e609cdcb935127311d04d33334e2960a2a54e6"
 
-datocms-client@~0.8.14:
-  version "0.8.14"
-  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-0.8.14.tgz#9aa3a0856610d9da4ff1ee10b3213146b7c599e9"
-  integrity sha512-9MRTPWCd191dj9KJ9Q9do/bCyFVszCtTSozZnRyD8vHzMiNkx3u3RArsC41q2uWV+b1wX5iSbY0fNVqO4pL/rA==
+datocms-client@1.0.0-beta.0:
+  version "1.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-1.0.0-beta.0.tgz#6084c5fb6c8b8672c06a0d991083817a72ec0350"
+  integrity sha512-mLq5ApnTOmIQlDoDvgHr7ckn4OV5Wo3wZ/zXvjFkOsp2GWOb6Yphwu9O2Zn85Yb9f4VvEeYoCsOlGB50UGOW3A==
   dependencies:
     arr-diff "^4.0.0"
     babel-polyfill "^6.26.0"
@@ -1475,10 +1470,6 @@ electron-to-chromium@^1.3.30:
 elegant-spinner@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/elegant-spinner/-/elegant-spinner-1.0.1.tgz#db043521c95d7e303fd8f345bedc3349cfb0729e"
-
-emojis-list@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
 
 encoding@^0.1.11:
   version "0.1.12"
@@ -2019,10 +2010,6 @@ graceful-fs@^4.1.2:
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
   integrity sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
-
-graphql-type-json@0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/graphql-type-json/-/graphql-type-json-0.1.4.tgz#89f13f5d32ce08c9a76c79fdf9c1968384d81a4e"
 
 har-schema@^1.0.5:
   version "1.0.5"
@@ -2644,7 +2631,7 @@ json-stringify-safe@>=5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
-json5@^0.5.0, json5@^0.5.1:
+json5@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
 
@@ -2771,15 +2758,6 @@ load-json-file@^4.0.0:
     parse-json "^4.0.0"
     pify "^3.0.0"
     strip-bom "^3.0.0"
-
-loader-utils@^0.2.11:
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
-  dependencies:
-    big.js "^3.1.3"
-    emojis-list "^2.0.0"
-    json5 "^0.5.0"
-    object-assign "^4.0.1"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -4000,10 +3978,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
 
-simple-html-tokenizer@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.1.1.tgz#05c2eec579ffffe145a030ac26cfea61b980fabe"
-
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
@@ -4275,14 +4249,6 @@ supports-hyperlinks@^1.0.1:
     has-flag "^2.0.0"
     supports-color "^5.0.0"
 
-svg-inline-loader@0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/svg-inline-loader/-/svg-inline-loader-0.8.0.tgz#7e9d905d80d0b4e68d2df21afcd08ee9e9a3ea6e"
-  dependencies:
-    loader-utils "^0.2.11"
-    object-assign "^4.0.1"
-    simple-html-tokenizer "^0.1.1"
-
 symbol-observable@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
@@ -4551,7 +4517,6 @@ util-deprecate@^1.0.1, util-deprecate@~1.0.1:
 utila@^0.4.0, utila@~0.4:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
-  integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
 
 uuid@^3.0.0:
   version "3.1.0"

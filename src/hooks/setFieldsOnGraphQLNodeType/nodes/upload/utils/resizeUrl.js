@@ -1,0 +1,22 @@
+const queryString = require('query-string');
+const createUrl = require('./createUrl');
+
+module.exports = ({ url, aspectRatio, width, height }, size) => {
+  const [baseUrl, query] = url.split('?');
+  const imgixParams = queryString.parse(query);
+
+  const dpr = aspectRatio > 1 ?
+    Math.ceil(size / width * 100) / 100 :
+    Math.ceil(size / height * 100) / 100;
+
+  let extraParams = { dpr: Math.max(0.01, dpr) };
+
+  if (!imgixParams.w && !imgixParams.h) {
+    extraParams.w = width;
+  }
+
+  extraParams.fm = 'jpg';
+  extraParams.q = '30';
+
+  return createUrl({ url: baseUrl }, imgixParams, extraParams);
+}
