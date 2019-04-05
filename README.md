@@ -364,6 +364,27 @@ node:
 }
 ```
 
+If you need to get every locale for a specific field, you can use the `_all<FIELD>Locales` query:
+
+```graphql
+{
+  allDatoCmsBlogPost(filter: { locale: { eq: "en" } }) {
+    edges {
+      node {
+        _allTitleLocales {
+          locale
+          value
+        }
+        _allExcerptLocales {
+          locale
+          value
+        }
+      }
+    }
+  }
+}
+```
+
 ## Integration with `gatsby-image`
 
 Images coming from DatoCMS can be queried so that they can be used with [gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image), a React component specially designed to work seamlessly with Gatsby's GraphQL queries that implements advanced image loading techniques to easily and completely optimize image loading for your sites.
@@ -399,6 +420,14 @@ export const query = graphql`
 `
 ```
 
+The fragments you can use are:
+
+* `GatsbyDatoCmsFixed`: "blur-up" technique to show a preview of the image while it loads;
+* `GatsbyDatoCmsFixed_tracedSVG`: "traced placeholder" SVG technique to show a preview of the image while it loads;
+* `GatsbyDatoCmsFixed_noBase64`: no preview effects.
+
+`gatsby-image` will automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, `gatsby-image` will fall back to the default image format.
+
 ### Responsive fixed
 
 If you make queries with resolutions then Gatsby automatically generates images with 1x, 1.5x, 2x, and 3x versions so your images look great on whatever screen resolution of device they're on. If you're on a retina class screen, notice how much sharper these images are.
@@ -428,3 +457,10 @@ export const query = graphql`
 `
 ```
 
+The fragments you can use are:
+
+* `GatsbyDatoCmsFluid`: "blur-up" technique to show a preview of the image while it loads;
+* `GatsbyDatoCmsFluid_tracedSVG`: "traced placeholder" SVG technique to show a preview of the image while it loads;
+* `GatsbyDatoCmsFluid_noBase64`: no preview effects.
+
+`gatsby-image` will automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, `gatsby-image` will fall back to the default image format.

@@ -1,3 +1,12 @@
+### v2.1.0
+
+* Hyper fast real-rime content preview in watch mode
+* Locale fallbacks
+* Support for traced SVG image placeholders
+* Fixed some bugs on gatsby-image responses
+* Added `_all<FIELD>Locales` method for every localized field
+* GraphQL schema customization (no more random errors due to inferred types!)
+
 ### v2.0.2
 
 * Restore support of gatsby-image base64 field
