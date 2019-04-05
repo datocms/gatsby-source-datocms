@@ -34,11 +34,11 @@ module.exports = cacheDir => ({
     fields: {
       base64: {
         type: GraphQLString,
-        resolve: (image, args, context) => getBase64(image, cacheDir),
+        resolve: (image) => getBase64(image, cacheDir),
       },
       tracedSVG: {
         type: GraphQLString,
-        resolve: (image, args, context) => getTracedSVG(image, cacheDir),
+        resolve: (image) => getTracedSVG(image, cacheDir),
       },
       aspectRatio: { type: GraphQLFloat },
       width: { type: GraphQLInt },
@@ -49,7 +49,7 @@ module.exports = cacheDir => ({
     },
   }),
   args,
-  resolve: (image, { maxWidth, maxHeight, imgixParams = {}, sizes }, context) => {
+  resolve: (image, { maxWidth, maxHeight, imgixParams = {}, sizes }) => {
     if (!isImage(image)) {
       return null;
     }
