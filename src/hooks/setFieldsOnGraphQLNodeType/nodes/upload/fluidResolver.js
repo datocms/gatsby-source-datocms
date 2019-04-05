@@ -77,7 +77,7 @@ module.exports = cacheDir => ({
           extraParams.w = finalWidth;
         }
 
-        const url = createUrl(image, imgixParams, extraParams);
+        const url = createUrl(image, imgixParams, extraParams, true);
 
         return `${url} ${Math.round(screen)}w`;
       })
@@ -85,7 +85,7 @@ module.exports = cacheDir => ({
 
     return {
       aspectRatio,
-      src: createUrl(image, imgixParams),
+      src: createUrl(image, imgixParams, {}, true),
       width: finalWidth,
       height: finalHeight,
       format: image.format,

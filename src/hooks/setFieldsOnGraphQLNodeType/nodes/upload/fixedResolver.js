@@ -71,7 +71,7 @@ module.exports = cacheDir => ({
       if (!mergedImgixParams.w && !mergedImgixParams.h) {
         extraParams.w = finalWidth;
       }
-      const url = createUrl(image, mergedImgixParams, extraParams);
+      const url = createUrl(image, mergedImgixParams, extraParams, true);
 
       return `${url} ${dpr}x`;
     }).join(`,\n`);
@@ -81,7 +81,7 @@ module.exports = cacheDir => ({
       width: finalWidth,
       height: finalHeight,
       format: image.format,
-      src: createUrl(image, mergedImgixParams),
+      src: createUrl(image, mergedImgixParams, {}, true),
       srcSet,
     };
   },

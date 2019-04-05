@@ -3,9 +3,12 @@
 * Hyper fast real-rime content preview in watch mode
 * Locale fallbacks
 * Support for traced SVG image placeholders
+* Automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, fall back to the default image format
 * Fixed some bugs on gatsby-image responses
 * Added `_all<FIELD>Locales` method for every localized field
 * GraphQL schema customization (no more random errors due to inferred types!)
+* Added `meta` fields to records (`createdAt`, `updatedAt`, `publishedAt`, `firstPublishedAt`, `isValid`, `status`)
+* Do not enable preview mode if we're building
 
 ### v2.0.2
 
