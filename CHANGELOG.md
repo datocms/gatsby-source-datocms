@@ -1,14 +1,68 @@
 ### v2.1.0
 
-* Hyper fast real-rime content preview in watch mode
-* Locale fallbacks
-* Support for traced SVG image placeholders
-* Automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, fall back to the default image format
-* Fixed some bugs on gatsby-image responses
-* Added `_all<FIELD>Locales` method for every localized field
 * GraphQL schema customization (no more random errors due to inferred types!)
-* Added `meta` fields to records (`createdAt`, `updatedAt`, `publishedAt`, `firstPublishedAt`, `isValid`, `status`)
-* Do not enable preview mode if we're building
+* Support for traced SVG image placeholders (`GatsbyDatoCmsFixed_tracedSVG` and `GatsbyDatoCmsFluid_tracedSVG`)
+* Automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, fall back to the default image format
+* Hyper fast real-rime content preview in watch mode (just the content that actually changes gets downloaded)
+* Fixed some bugs on gatsby-image responses
+* Disable watch mode when gatsby is in build mode
+* Locale fallbacks:
+
+```js
+  plugins: [
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        // In this example, if some field value is missing in Italian, fall back to English
+        localeFallbacks: {
+          it: ['en'],
+        },
+      },
+    },
+  ]
+```
+
+* If you need to get every locale for a specific field, you can use the `_all<FIELD>Locales` query:
+
+```graphql
+{
+  allDatoCmsBlogPost(filter: { locale: { eq: "en" } }) {
+    edges {
+      node {
+        _allTitleLocales {
+          locale
+          value
+        }
+        _allExcerptLocales {
+          locale
+          value
+        }
+      }
+    }
+  }
+}
+```
+
+* Added `meta` fields to records:
+
+```graphql
+{
+  allDatoCmsBlogPost {
+    edges {
+      node {
+        meta {
+          createdAt
+          updatedAt
+          publishedAt
+          firstPublishedAt
+          isValid
+          status
+        }
+      }
+    }
+  }
+}
+```
 
 ### v2.0.2
 

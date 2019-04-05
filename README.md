@@ -51,6 +51,12 @@ plugins: [
 
       // Custom API base URL
       apiUrl: 'https://site-api.datocms.com',
+
+      // Setup locale fallbacks
+      // In this example, if some field value is missing in Italian, fall back to English
+      localeFallbacks: {
+        it: ['en'],
+      },
     },
   },
 ]
