@@ -66,6 +66,12 @@ module.exports = function addField(
       }
       break;
     }
+    case 'json': {
+      if (value) {
+        root[key] = JSON.parse(value);
+      }
+      break;
+    }
     default: {
       root[key] = value;
       break;
