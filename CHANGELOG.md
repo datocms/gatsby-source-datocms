@@ -1,3 +1,7 @@
+### v2.1.2
+
+* Bugfix: JSON fields where returned as strings
+
 ### v2.1.0
 
 * GraphQL schema customization (no more random errors due to inferred types!)
