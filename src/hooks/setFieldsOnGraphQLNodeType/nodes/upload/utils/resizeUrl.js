@@ -15,7 +15,6 @@ module.exports = ({ url, aspectRatio, width, height }, size) => {
     extraParams.w = width;
   }
 
-  extraParams.fm = 'jpg';
   extraParams.q = '30';
 
   return createUrl({ url: baseUrl }, imgixParams, extraParams);
