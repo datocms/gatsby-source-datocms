@@ -19,7 +19,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
-    "datocms-client": "1.0.0-beta.0",
+    "datocms-client": "~1.0.0",
     "fs-extra": ">=4.0.2",
     "humps": ">=2.0.1",
     "imgix-url-params": "7.4.0",

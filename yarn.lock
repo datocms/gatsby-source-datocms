@@ -1230,10 +1230,10 @@ date-fns@^1.27.2:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.29.0.tgz#12e609cdcb935127311d04d33334e2960a2a54e6"
 
-datocms-client@1.0.0-beta.0:
-  version "1.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-1.0.0-beta.0.tgz#6084c5fb6c8b8672c06a0d991083817a72ec0350"
-  integrity sha512-mLq5ApnTOmIQlDoDvgHr7ckn4OV5Wo3wZ/zXvjFkOsp2GWOb6Yphwu9O2Zn85Yb9f4VvEeYoCsOlGB50UGOW3A==
+datocms-client@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-1.0.0.tgz#d32e0d2a48d88cbaea23f9fac2bb8ae6826e0f4d"
+  integrity sha512-DtPv5HIcjftuj4Y4Igsm1CkpCcwAsA0S3hrrIPEJy3tybK2vHB/0C5qqYJP3eTJSVENUPTkVVBsFOOiIGOtpzw==
   dependencies:
     arr-diff "^4.0.0"
     babel-polyfill "^6.26.0"
