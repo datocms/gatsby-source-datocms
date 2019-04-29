@@ -1,5 +1,6 @@
 const item = require('./item');
+const upload = require('./upload');
 
 module.exports = (context) => {
-  [item].forEach(fn => fn(context));
+  [item, upload].forEach(fn => fn(context));
 };
