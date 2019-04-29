@@ -1,3 +1,7 @@
+### v2.1.4
+
+* Bugfix: Fixed error when no uploads were present in the Media Area
+
 ### v2.1.2
 
 * Bugfix: JSON fields where returned as strings
