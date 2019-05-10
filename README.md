@@ -260,6 +260,29 @@ If you need to pass additional meta tags to the underlying `Helmet` component, y
 </HelmetDatoCms>
 ```
 
+The `datoCmsSite` global settings has also the `globalSeo` field that contains the fallback fields:
+
+```graphql
+{
+  datoCmsSite {
+    globalSeo {
+      siteName
+      titleSuffix
+      twitterAccount
+      facebookPageUrl
+      fallbackSeo {
+        title
+        description
+        image {
+          url
+        }
+        twitterCard
+      }
+    }
+  }
+}
+```
+
 ### Favicon meta tags
 
 You can get the complete set of meta tags related to your site favicon this way:
