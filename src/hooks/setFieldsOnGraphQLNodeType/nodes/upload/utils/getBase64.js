@@ -17,7 +17,7 @@ function download(requestUrl, cacheDir) {
 
   return queue.add(() => {
     return request({
-      uri: requestUrl,
+      uri: encodeURI(requestUrl),
       resolveWithFullResponse: true,
       encoding: 'base64'
     }).then(res => {
