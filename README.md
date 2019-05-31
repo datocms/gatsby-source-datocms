@@ -451,9 +451,9 @@ export const query = graphql`
 
 The fragments you can use are:
 
-* `GatsbyDatoCmsFixed`: "blur-up" technique to show a preview of the image while it loads;
-* `GatsbyDatoCmsFixed_tracedSVG`: "traced placeholder" SVG technique to show a preview of the image while it loads;
-* `GatsbyDatoCmsFixed_noBase64`: no preview effects.
+- `GatsbyDatoCmsFluid`: "blur-up" technique to show a preview of the image while it loads;
+- `GatsbyDatoCmsFluid_tracedSVG`: "traced placeholder" SVG technique to show a preview of the image while it loads;
+- `GatsbyDatoCmsFluid_noBase64`: no preview effects.
 
 `gatsby-image` will automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, `gatsby-image` will fall back to the default image format.
 
@@ -488,8 +488,8 @@ export const query = graphql`
 
 The fragments you can use are:
 
-* `GatsbyDatoCmsFluid`: "blur-up" technique to show a preview of the image while it loads;
-* `GatsbyDatoCmsFluid_tracedSVG`: "traced placeholder" SVG technique to show a preview of the image while it loads;
-* `GatsbyDatoCmsFluid_noBase64`: no preview effects.
+- `GatsbyDatoCmsFixed`: "blur-up" technique to show a preview of the image while it loads;
+- `GatsbyDatoCmsFixed_tracedSVG`: "traced placeholder" SVG technique to show a preview of the image while it loads;
+- `GatsbyDatoCmsFixed_noBase64`: no preview effects.
 
 `gatsby-image` will automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, `gatsby-image` will fall back to the default image format.
