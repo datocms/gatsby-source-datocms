@@ -9,7 +9,7 @@ const {
   GraphQLFloat,
 } = require('gatsby/graphql');
 
-const objectEntries =  require('object.entries');
+const objectEntries = require('object.entries');
 
 const fields = {};
 
@@ -24,18 +24,17 @@ const mappings = {
   timestamp: GraphQLString,
   unit_scalar: GraphQLFloat,
   url: GraphQLString,
-}
+};
 
 objectEntries(imgixParams.parameters).forEach(([param, doc]) => {
   fields[camelize(param)] = {
-    type: doc.expects.length === 1 ?
-      mappings[doc.expects[0].type] :
-      GraphQLString,
+    type:
+      doc.expects.length === 1 ? mappings[doc.expects[0].type] : GraphQLString,
     description: `${doc.short_description} (${doc.url})`,
-  }
+  };
 });
 
 module.exports = new GraphQLInputObjectType({
   name: `DatoCmsImgixParams`,
-  fields
+  fields,
 });

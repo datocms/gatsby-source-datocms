@@ -11,7 +11,7 @@ module.exports = function extendAssetNode({ type, store }) {
   const program = store.getState().program;
   const cacheDir = `${program.directory}/.cache/datocms-assets`;
 
-  if (!fs.existsSync(cacheDir)){
+  if (!fs.existsSync(cacheDir)) {
     fs.mkdirSync(cacheDir);
   }
 
@@ -24,4 +24,4 @@ module.exports = function extendAssetNode({ type, store }) {
     sizes: fluid,
     resolutions: fixed,
   };
-}
+};

@@ -10,4 +10,4 @@ module.exports = function updateDigest(node) {
     .digest('hex');
 
   return node;
-}
+};

@@ -1,4 +1,8 @@
-module.exports = function getSizeAfterTransformations(originalWidth, originalHeight, params = {}) {
+module.exports = function getSizeAfterTransformations(
+  originalWidth,
+  originalHeight,
+  params = {},
+) {
   const originalAspectRatio = originalWidth / originalHeight;
 
   let width = originalWidth;
@@ -11,7 +15,13 @@ module.exports = function getSizeAfterTransformations(originalWidth, originalHei
     height = Math.min(Math.max(0, parseInt(h)), originalHeight);
   }
 
-  if (['facearea', 'clamp', 'crop', 'fill', 'fillmax', 'scale'].includes(params.fit) && params.w && params.h) {
+  if (
+    ['facearea', 'clamp', 'crop', 'fill', 'fillmax', 'scale'].includes(
+      params.fit,
+    ) &&
+    params.w &&
+    params.h
+  ) {
     width = parseInt(params.w);
     height = parseInt(params.h);
 
@@ -37,8 +47,12 @@ module.exports = function getSizeAfterTransformations(originalWidth, originalHei
   }
 
   if (params.fit === 'min' && (params.w || params.h)) {
-    const w = params.w ? parseInt(params.w) : Math.round(parseInt(params.h) * originalAspectRatio);
-    const h = params.h ? parseInt(params.h) : Math.round(parseInt(params.w) / originalAspectRatio);
+    const w = params.w
+      ? parseInt(params.w)
+      : Math.round(parseInt(params.h) * originalAspectRatio);
+    const h = params.h
+      ? parseInt(params.h)
+      : Math.round(parseInt(params.w) / originalAspectRatio);
     const resize = Math.min(width / w, height / h);
     width = Math.round(width * resize);
     height = Math.round(height * resize);
@@ -70,4 +84,4 @@ module.exports = function getSizeAfterTransformations(originalWidth, originalHei
   }
 
   return { width, height };
-}
+};

@@ -1,7 +1,10 @@
 const { camelize, pascalize } = require('humps');
 const updateDigest = require('./createNodeFromEntity/utils/updateDigest');
 
-function addChildrenToTreeLikeCollection(itemType, { entitiesRepo, getNodesByType, actions }) {
+function addChildrenToTreeLikeCollection(
+  itemType,
+  { entitiesRepo, getNodesByType, actions },
+) {
   const nodes = getNodesByType(`DatoCms${pascalize(itemType.apiKey)}`);
 
   const childrenByNode = {};
@@ -32,7 +35,8 @@ function addChildrenToTreeLikeCollection(itemType, { entitiesRepo, getNodesByTyp
 function addChildrenToTreeLikeCollections(context) {
   const { entitiesRepo } = context;
 
-  entitiesRepo.findEntitiesOfType('item_type')
+  entitiesRepo
+    .findEntitiesOfType('item_type')
     .filter(itemType => itemType.tree)
     .forEach(itemType => addChildrenToTreeLikeCollection(itemType, context));
 }
@@ -40,4 +44,3 @@ function addChildrenToTreeLikeCollections(context) {
 module.exports = function finalizeNodesCreation(context) {
   addChildrenToTreeLikeCollections(context);
 };
-

@@ -19,16 +19,19 @@ function download(requestUrl, cacheDir) {
     return request({
       uri: encodeURI(requestUrl),
       resolveWithFullResponse: true,
-      encoding: 'base64'
+      encoding: 'base64',
     }).then(res => {
-      const data = 'data:' + res.headers['content-type'] + ';base64,' + res.body;
+      const data =
+        'data:' + res.headers['content-type'] + ';base64,' + res.body;
       fs.writeFileSync(cacheFile, data, 'utf8');
       return data;
     });
   });
 }
 
-
 module.exports = ({ src, width, height, aspectRatio }, cacheDir) => {
-  return download(resizeUrl({ url: src, aspectRatio, width, height }, 20), cacheDir);
+  return download(
+    resizeUrl({ url: src, aspectRatio, width, height }, 20),
+    cacheDir,
+  );
 };

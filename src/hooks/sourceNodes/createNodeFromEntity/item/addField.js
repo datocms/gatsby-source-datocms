@@ -12,10 +12,14 @@ module.exports = function addField(
   node,
   entitiesRepo,
   i18n,
-  additionalNodesToCreate
+  additionalNodesToCreate,
 ) {
-
-  const value = localizedRead(entity, camelize(field.apiKey), field.localized, i18n);
+  const value = localizedRead(
+    entity,
+    camelize(field.apiKey),
+    field.localized,
+    i18n,
+  );
 
   switch (field.fieldType) {
     case 'link': {
@@ -24,7 +28,9 @@ module.exports = function addField(
     }
     case 'rich_text':
     case 'links': {
-      root[`${key}___NODE`] = (value || []).map(id => itemNodeId(id, i18n.locale, entitiesRepo));
+      root[`${key}___NODE`] = (value || []).map(id =>
+        itemNodeId(id, i18n.locale, entitiesRepo),
+      );
       break;
     }
     case 'text': {
@@ -62,7 +68,7 @@ module.exports = function addField(
           description: value.description,
           twitterCard: value.twitterCard,
           image___NODE: value.image && `DatoCmsAsset-${value.image}`,
-        }
+        };
       }
       break;
     }
@@ -77,4 +83,4 @@ module.exports = function addField(
       break;
     }
   }
-}
+};

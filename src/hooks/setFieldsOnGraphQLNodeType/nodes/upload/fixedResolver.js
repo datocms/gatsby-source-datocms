@@ -32,11 +32,11 @@ module.exports = cacheDir => ({
     fields: {
       base64: {
         type: GraphQLString,
-        resolve: (image) => getBase64(image, cacheDir),
+        resolve: image => getBase64(image, cacheDir),
       },
       tracedSVG: {
         type: GraphQLString,
-        resolve: (image) => getTracedSVG(image, cacheDir),
+        resolve: image => getTracedSVG(image, cacheDir),
       },
       aspectRatio: { type: GraphQLFloat },
       width: { type: GraphQLFloat },
@@ -58,23 +58,28 @@ module.exports = cacheDir => ({
       height && { h: height },
     );
 
-    const { width: finalWidth, height: finalHeight } = getSizeAfterTransformations(
+    const {
+      width: finalWidth,
+      height: finalHeight,
+    } = getSizeAfterTransformations(
       image.width,
       image.height,
-      mergedImgixParams
+      mergedImgixParams,
     );
 
     const aspectRatio = finalWidth / finalHeight;
 
-    const srcSet = [1, 1.5, 2, 3].map((dpr) => {
-      let extraParams = { dpr };
-      if (!mergedImgixParams.w && !mergedImgixParams.h) {
-        extraParams.w = finalWidth;
-      }
-      const url = createUrl(image, mergedImgixParams, extraParams, true);
+    const srcSet = [1, 1.5, 2, 3]
+      .map(dpr => {
+        let extraParams = { dpr };
+        if (!mergedImgixParams.w && !mergedImgixParams.h) {
+          extraParams.w = finalWidth;
+        }
+        const url = createUrl(image, mergedImgixParams, extraParams, true);
 
-      return `${url} ${dpr}x`;
-    }).join(`,\n`);
+        return `${url} ${dpr}x`;
+      })
+      .join(`,\n`);
 
     return {
       aspectRatio,

@@ -1,22 +1,26 @@
 const { camelize, pascalize } = require('humps');
 const objectAssign = require('object-assign');
 
-const gqlItemTypeName = (itemType) => `DatoCms${pascalize(itemType.apiKey)}`;
+const gqlItemTypeName = itemType => `DatoCms${pascalize(itemType.apiKey)}`;
 
-const simpleTypeResolver = (type) => ({ field }) => ({ fieldType: type });
+const simpleTypeResolver = type => ({ field }) => ({ fieldType: type });
 
-const combineResolvers = (resolvers) => (context) => (
-  resolvers.reduce((acc, resolver) => objectAssign(acc, resolver(context)))
-);
+const combineResolvers = resolvers => context =>
+  resolvers.reduce((acc, resolver) => objectAssign(acc, resolver(context)));
+
+const dateType = {
+  type: 'Date',
+  extensions: { dateformat: {} },
+};
 
 const fieldResolvers = {
   boolean: simpleTypeResolver('Boolean'),
   color: simpleTypeResolver('DatoCmsColorField'),
-  date: simpleTypeResolver('Date'),
-  date_time: simpleTypeResolver('Date'),
-  file: simpleTypeResolver('DatoCmsAsset'),
+  date: simpleTypeResolver(dateType),
+  date_time: simpleTypeResolver(dateType),
+  file: require('./fields/file'),
   float: simpleTypeResolver('Float'),
-  gallery: simpleTypeResolver('[DatoCmsAsset]'),
+  gallery: require('./fields/gallery'),
   integer: simpleTypeResolver('Int'),
   json: simpleTypeResolver('JSON'),
   lat_lon: simpleTypeResolver('DatoCmsLatLonField'),
@@ -26,7 +30,7 @@ const fieldResolvers = {
   seo: simpleTypeResolver('DatoCmsSeoField'),
   slug: simpleTypeResolver('String'),
   string: simpleTypeResolver('String'),
-  text: simpleTypeResolver('String'),
+  text: require('./fields/text'),
   video: simpleTypeResolver('DatoCmsVideoField'),
 };
 
@@ -34,6 +38,7 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
   actions.createTypes([
     schema.buildObjectType({
       name: 'DatoCmsColorField',
+      extensions: { infer: false },
       fields: {
         red: 'Int',
         green: 'Int',
@@ -41,31 +46,34 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
         alpha: 'Int',
         rgb: {
           type: 'String',
-          resolve: (parent) => {
+          resolve: parent => {
             if (parent.alpha === 255) {
               return `rgb(${parent.red}, ${parent.green}, ${parent.blue})`;
             }
 
-            return `rgba(${parent.red}, ${parent.green}, ${parent.blue}, ${parent.alpha})`;
+            return `rgba(${parent.red}, ${parent.green}, ${parent.blue}, ${
+              parent.alpha
+            })`;
           },
         },
         hex: {
           type: 'String',
-          resolve: (parent) => {
-            const rgba = ['red', 'green', 'blue', 'alpha'].map((component) => {
+          resolve: parent => {
+            const rgba = ['red', 'green', 'blue', 'alpha'].map(component => {
               const hex = parent[component].toString(16);
               return hex.length === 1 ? `0${hex}` : hex;
             });
 
-            return rgba[3] === 'ff' ?
-              `#${rgba.slice(0, 3).join('')}` :
-              `#${rgba.join('')}`;
+            return rgba[3] === 'ff'
+              ? `#${rgba.slice(0, 3).join('')}`
+              : `#${rgba.join('')}`;
           },
         },
       },
     }),
     schema.buildObjectType({
       name: 'DatoCmsLatLonField',
+      extensions: { infer: false },
       fields: {
         latitude: 'Float',
         longitude: 'Float',
@@ -73,6 +81,7 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
     }),
     schema.buildObjectType({
       name: 'DatoCmsSeoField',
+      extensions: { infer: false },
       fields: {
         title: 'String',
         description: 'String',
@@ -82,6 +91,7 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
     }),
     schema.buildObjectType({
       name: 'DatoCmsVideoField',
+      extensions: { infer: false },
       fields: {
         url: 'String',
         title: 'String',
@@ -94,25 +104,34 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
     }),
     schema.buildObjectType({
       name: 'DatoCmsMetaField',
+      extensions: { infer: false },
       fields: {
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        publishedAt: 'Date',
-        firstPublishedAt: 'Date',
+        createdAt: dateType,
+        updatedAt: dateType,
+        publishedAt: dateType,
+        firstPublishedAt: dateType,
         isValid: 'Boolean',
         status: 'String',
       },
     }),
+    schema.buildObjectType({
+      name: 'DatoCmsSeoMetaTags',
+      extensions: { infer: false },
+      fields: {
+        tags: 'JSON',
+      },
+      interfaces: [`Node`],
+    }),
   ]);
 
-  entitiesRepo.findEntitiesOfType('item_type').forEach((entity) => {
+  entitiesRepo.findEntitiesOfType('item_type').forEach(entity => {
     const type = gqlItemTypeName(entity);
 
     const fields = entity.fields.reduce((acc, field) => {
       const resolver = fieldResolvers[field.fieldType];
 
       if (resolver) {
-        const { types = [], fieldType } = resolver({
+        const { types = [], fieldType, nodeFieldType } = resolver({
           parentItemType: entity,
           field,
           gqlItemTypeName,
@@ -123,13 +142,22 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
         actions.createTypes(types);
         objectAssign(acc, { [camelize(field.apiKey)]: fieldType });
 
+        if (nodeFieldType) {
+          objectAssign(acc, {
+            [`${camelize(field.apiKey)}Node`]: nodeFieldType,
+          });
+        }
+
         if (field.localized) {
           const parentItemTypeName = gqlItemTypeName(entity);
-          const allLocalesTypeName = `DatoCmsAllLocalesFor${parentItemTypeName}${pascalize(field.apiKey)}`;
+          const allLocalesTypeName = `DatoCmsAllLocalesFor${parentItemTypeName}${pascalize(
+            field.apiKey,
+          )}`;
 
           actions.createTypes([
             schema.buildObjectType({
               name: allLocalesTypeName,
+              extensions: { infer: false },
               fields: {
                 locale: 'String',
                 value: fieldType,
@@ -137,22 +165,69 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
             }),
           ]);
 
-          objectAssign(acc, { [`_all${pascalize(field.apiKey)}Locales`]: `[${allLocalesTypeName}]` });
+          objectAssign(acc, {
+            [`_all${pascalize(
+              field.apiKey,
+            )}Locales`]: `[${allLocalesTypeName}]`,
+          });
         }
       }
 
       return acc;
     }, {});
 
+    if (entity.sortable || entity.tree) {
+      objectAssign(fields, {
+        position: 'Int',
+      });
+    }
+
+    if (entity.tree) {
+      objectAssign(fields, {
+        treeParent: {
+          type,
+          extensions: {
+            link: {
+              by: 'id',
+              from: 'treeParent___NODE',
+            },
+          },
+        },
+        treeChildren: {
+          type: `[${type}]`,
+          extensions: {
+            link: {
+              by: 'id',
+              from: 'treeChildren___NODE',
+            },
+          },
+        },
+      });
+    }
 
     actions.createTypes([
       schema.buildObjectType({
         name: type,
+        extensions: { infer: false },
         fields: objectAssign(fields, {
-          meta: `DatoCmsMetaField`
+          meta: 'DatoCmsMetaField',
+          originalId: 'String',
+          locale: 'String',
+          seoMetaTags: {
+            type: 'DatoCmsSeoMetaTags',
+            extensions: {
+              link: { to: 'id', from: 'seoMetaTags___NODE' },
+            },
+          },
+          model: {
+            type: 'DatoCmsModel',
+            extensions: {
+              link: { to: 'id', from: 'model___NODE' },
+            },
+          },
         }),
         interfaces: [`Node`],
-      })
+      }),
     ]);
   });
-}
+};

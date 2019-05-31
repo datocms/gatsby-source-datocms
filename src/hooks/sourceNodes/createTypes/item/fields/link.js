@@ -1,6 +1,12 @@
 const { camelize, pascalize } = require('humps');
 
-module.exports = ({ parentItemType, field, schema, gqlItemTypeName, entitiesRepo }) => {
+module.exports = ({
+  parentItemType,
+  field,
+  schema,
+  gqlItemTypeName,
+  entitiesRepo,
+}) => {
   const fieldKey = camelize(field.apiKey);
 
   const parentItemTypeName = gqlItemTypeName(parentItemType);
@@ -18,9 +24,10 @@ module.exports = ({ parentItemType, field, schema, gqlItemTypeName, entitiesRepo
       fieldType: {
         type: gqlItemTypeName(linkedItemType),
         resolve: (parent, args, context) => {
-          const id = ('locale' in parent && 'value___NODE' in parent) ?
-            parent.value___NODE :
-            parent[`${fieldKey}___NODE`];
+          const id =
+            'locale' in parent && 'value___NODE' in parent
+              ? parent.value___NODE
+              : parent[`${fieldKey}___NODE`];
 
           if (id) {
             return context.nodeModel.getNodeById({ id });
@@ -30,19 +37,22 @@ module.exports = ({ parentItemType, field, schema, gqlItemTypeName, entitiesRepo
     };
   }
 
-  const unionType = `DatoCmsUnionFor${parentItemTypeName}${pascalize(field.apiKey)}`;
-  const unionTypes = itemTypeIds.map(id => gqlItemTypeName(entitiesRepo.findEntity('item_type', id)));
+  const unionType = `DatoCmsUnionFor${parentItemTypeName}${pascalize(
+    field.apiKey,
+  )}`;
+  const unionTypes = itemTypeIds.map(id =>
+    gqlItemTypeName(entitiesRepo.findEntity('item_type', id)),
+  );
 
   return {
-    types: [
-      schema.buildUnionType({ name: unionType, types: unionTypes }),
-    ],
+    types: [schema.buildUnionType({ name: unionType, types: unionTypes })],
     fieldType: {
       type: unionType,
       resolve: (parent, args, context) => {
-        const id = ('locale' in parent && 'value___NODE' in parent) ?
-          parent.value___NODE :
-          parent[`${fieldKey}___NODE`];
+        const id =
+          'locale' in parent && 'value___NODE' in parent
+            ? parent.value___NODE
+            : parent[`${fieldKey}___NODE`];
 
         if (id) {
           return context.nodeModel.getNodeById({ id });
@@ -50,4 +60,4 @@ module.exports = ({ parentItemType, field, schema, gqlItemTypeName, entitiesRepo
       },
     },
   };
-}
+};

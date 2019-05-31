@@ -34,11 +34,11 @@ module.exports = cacheDir => ({
     fields: {
       base64: {
         type: GraphQLString,
-        resolve: (image) => getBase64(image, cacheDir),
+        resolve: image => getBase64(image, cacheDir),
       },
       tracedSVG: {
         type: GraphQLString,
-        resolve: (image) => getTracedSVG(image, cacheDir),
+        resolve: image => getTracedSVG(image, cacheDir),
       },
       aspectRatio: { type: GraphQLFloat },
       width: { type: GraphQLInt },
@@ -63,7 +63,8 @@ module.exports = cacheDir => ({
 
     const realMaxWidth = maxWidth || maxHeight * aspectRatio;
 
-    const realSizes = sizes || `(max-width: ${realMaxWidth}px) 100vw, ${realMaxWidth}px`;
+    const realSizes =
+      sizes || `(max-width: ${realMaxWidth}px) 100vw, ${realMaxWidth}px`;
 
     const srcSet = [0.25, 0.5, 1, 1.5, 2, 3]
       .map(m => realMaxWidth * m)
@@ -71,7 +72,9 @@ module.exports = cacheDir => ({
       .filter(screen => screen < finalWidth)
       .concat([finalWidth])
       .map(screen => {
-        let extraParams = { dpr: Math.max(0.01, Math.ceil(screen / finalWidth * 100) / 100) };
+        let extraParams = {
+          dpr: Math.max(0.01, Math.ceil((screen / finalWidth) * 100) / 100),
+        };
 
         if (!imgixParams.w && !imgixParams.h) {
           extraParams.w = finalWidth;
@@ -92,5 +95,5 @@ module.exports = cacheDir => ({
       srcSet,
       sizes: realSizes,
     };
-  }
+  },
 });

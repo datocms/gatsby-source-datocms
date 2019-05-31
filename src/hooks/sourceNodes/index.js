@@ -12,12 +12,17 @@ const CLIENT_HEADERS = {
 
 module.exports = async (
   { actions, getNode, getNodesByType, reporter, parentSpan, schema },
-  { apiToken, disableLiveReload, previewMode, apiUrl, localeFallbacks: rawLocaleFallbacks }
+  {
+    apiToken,
+    disableLiveReload,
+    previewMode,
+    apiUrl,
+    localeFallbacks: rawLocaleFallbacks,
+  },
 ) => {
-
-  let client = apiUrl ?
-    new SiteClient(apiToken, CLIENT_HEADERS, apiUrl) :
-    new SiteClient(apiToken, CLIENT_HEADERS);
+  let client = apiUrl
+    ? new SiteClient(apiToken, CLIENT_HEADERS, apiUrl)
+    : new SiteClient(apiToken, CLIENT_HEADERS);
 
   const localeFallbacks = rawLocaleFallbacks || {};
 
@@ -32,20 +37,17 @@ module.exports = async (
     schema,
   };
 
-  loader.entitiesRepo.addUpsertListener((entity) => {
+  loader.entitiesRepo.addUpsertListener(entity => {
     createNodeFromEntity(entity, context);
   });
 
-  loader.entitiesRepo.addDestroyListener((entity) => {
+  loader.entitiesRepo.addDestroyListener(entity => {
     destroyEntityNode(entity, context);
   });
 
   let activity;
 
-  activity = reporter.activityTimer(
-    `loading DatoCMS content`,
-    { parentSpan }
-  );
+  activity = reporter.activityTimer(`loading DatoCMS content`, { parentSpan });
 
   activity.start();
   await loader.load();
@@ -60,11 +62,11 @@ module.exports = async (
   const queue = new Queue(1, Infinity);
 
   if (process.env.NODE_ENV !== `production` && !disableLiveReload) {
-    loader.watch((loadPromise) => {
+    loader.watch(loadPromise => {
       queue.add(async () => {
         const activity = reporter.activityTimer(
           `detected change in DatoCMS content, loading new data`,
-          { parentSpan }
+          { parentSpan },
         );
         activity.start();
 
@@ -75,4 +77,4 @@ module.exports = async (
       });
     });
   }
-}
+};

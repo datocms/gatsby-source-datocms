@@ -14,20 +14,23 @@ function download(requestUrl, cacheDir) {
     return Promise.resolve(cacheFile);
   }
 
-  return queue.add(() => new Promise((resolve, reject) => {
-    const r = request(requestUrl);
+  return queue.add(
+    () =>
+      new Promise((resolve, reject) => {
+        const r = request(requestUrl);
 
-    r.on('error', reject);
-    r.on('response', function (resp) {
-      if (resp.statusCode !== 200) {
-        reject();
-      }
+        r.on('error', reject);
+        r.on('response', function(resp) {
+          if (resp.statusCode !== 200) {
+            reject();
+          }
 
-      r.pipe(fs.createWriteStream(cacheFile))
-        .on('finish', () => resolve(cacheFile))
-        .on('error', reject);
-    });
-  }));
+          r.pipe(fs.createWriteStream(cacheFile))
+            .on('finish', () => resolve(cacheFile))
+            .on('error', reject);
+        });
+      }),
+  );
 }
 
 module.exports = async ({ src, width, height, aspectRatio }, cacheDir) => {
@@ -35,7 +38,7 @@ module.exports = async ({ src, width, height, aspectRatio }, cacheDir) => {
 
   const absolutePath = await download(
     resizeUrl({ url: src, aspectRatio, width, height }, 100),
-    cacheDir
+    cacheDir,
   );
 
   const name = path.basename(absolutePath);

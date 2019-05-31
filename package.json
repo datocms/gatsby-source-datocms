@@ -4,6 +4,7 @@
   "description": "Gatsby source plugin for building websites using DatoCMS as data source",
   "main": "index.js",
   "scripts": {
+    "prettier": "prettier --write \"src/**/*.{js,jsx}\"",
     "build": "babel src --out-dir . --ignore __tests__",
     "watch": "babel -w src --out-dir . --ignore __tests__",
     "prepublish": "cross-env NODE_ENV=production npm run build",
@@ -14,7 +15,8 @@
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.6.1",
     "cross-env": "^5.0.5",
-    "np": "^5.0.1"
+    "np": "^5.0.1",
+    "prettier": "^1.17.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

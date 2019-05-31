@@ -7,21 +7,21 @@ module.exports = async ({ store, getNodesByType }) => {
   if (getNodesByType(`DatoCmsAsset`).length > 0) {
     await fs.copy(
       path.join(__dirname, '..', '..', 'fragments', 'asset.js'),
-      `${program.directory}/.cache/fragments/datocms-asset-fragments.js`
-    )
+      `${program.directory}/.cache/fragments/datocms-asset-fragments.js`,
+    );
   }
 
   if (getNodesByType(`DatoCmsSeoMetaTags`).length > 0) {
     await fs.copy(
       path.join(__dirname, '..', '..', 'fragments', 'seo.js'),
-      `${program.directory}/.cache/fragments/datocms-seo-fragments.js`
-    )
+      `${program.directory}/.cache/fragments/datocms-seo-fragments.js`,
+    );
   }
 
-    if (getNodesByType(`DatoCmsFaviconMetaTags`).length > 0) {
+  if (getNodesByType(`DatoCmsFaviconMetaTags`).length > 0) {
     await fs.copy(
       path.join(__dirname, '..', '..', 'fragments', 'favicon.js'),
-      `${program.directory}/.cache/fragments/datocms-favicon-fragments.js`
-    )
+      `${program.directory}/.cache/fragments/datocms-favicon-fragments.js`,
+    );
   }
-}
+};

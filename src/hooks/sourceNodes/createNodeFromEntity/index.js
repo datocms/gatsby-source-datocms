@@ -5,11 +5,11 @@ const buildItemNode = require('./item');
 const buildSiteNode = require('./site');
 
 const BUILDERS = {
-  'item_type': buildItemTypeNode,
-  'field': buildFieldNode,
-  'upload': buildUploadNode,
-  'item': buildItemNode,
-  'site': buildSiteNode,
+  item_type: buildItemTypeNode,
+  field: buildFieldNode,
+  upload: buildUploadNode,
+  item: buildItemNode,
+  site: buildSiteNode,
 };
 
 module.exports = (entity, context) => {
@@ -21,7 +21,7 @@ module.exports = (entity, context) => {
   const result = BUILDERS[entity.type](entity, context);
   const nodesToCreate = Array.isArray(result) ? result : [result];
 
-  nodesToCreate.map((node) => {
+  nodesToCreate.map(node => {
     context.actions.createNode(node);
   });
-}
+};

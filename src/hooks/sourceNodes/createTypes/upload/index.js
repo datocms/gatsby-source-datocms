@@ -2,6 +2,7 @@ module.exports = ({ actions, schema }) => {
   actions.createTypes([
     schema.buildObjectType({
       name: 'DatoCmsAsset',
+      extensions: { infer: false },
       fields: {
         size: 'Int',
         width: 'Int',
@@ -9,8 +10,13 @@ module.exports = ({ actions, schema }) => {
         path: 'String',
         format: 'String',
         isImage: 'Boolean',
-        createdAt: 'Date',
+        createdAt: {
+          type: 'Date',
+          extensions: { dateformat: {} },
+        },
         url: 'String',
+        alt: 'String',
+        title: 'String',
         originalid: 'String',
       },
       interfaces: ['Node'],
