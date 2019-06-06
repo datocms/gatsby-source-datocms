@@ -1,3 +1,8 @@
+### v2.1.7
+
+- Remove Gatsby v3 warnings 
+- Upgrade deps  0f4f939
+
 ### v2.1.4
 
 * Bugfix: Fixed error when no uploads were present in the Media Area
