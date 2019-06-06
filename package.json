@@ -15,7 +15,7 @@
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.6.1",
     "cross-env": "^5.0.5",
-    "np": "^5.0.1",
+    "np": "^5.0.3",
     "prettier": "^1.17.1"
   },
   "dependencies": {
@@ -24,14 +24,14 @@
     "datocms-client": "~1.0.5",
     "fs-extra": ">=4.0.2",
     "humps": ">=2.0.1",
-    "imgix-url-params": "7.4.0",
+    "imgix-url-params": "10.0.0",
     "json-stringify-safe": ">=5.0.1",
     "md5": "2.2.1",
     "object-assign": "^4.1.1",
-    "object.entries": "^1.0.4",
+    "object.entries": "^1.1.0",
     "promise-queue": "2.2.3",
     "query-string": "5.0.1",
-    "request-promise-native": "1.0.5"
+    "request-promise-native": "1.0.7"
   },
   "keywords": [
     "gatsby",
