@@ -28,6 +28,7 @@ module.exports = ({ actions, schema }) => {
         siteName: 'String',
         titleSuffix: 'String',
         twitterAccount: 'String',
+        facebookPageUrl: 'String',
         fallbackSeo: 'DatoCmsSeoField',
       },
     }),
