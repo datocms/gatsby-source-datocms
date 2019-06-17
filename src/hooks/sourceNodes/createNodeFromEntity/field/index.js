@@ -1,10 +1,22 @@
-const objectAssign = require('object-assign');
-
 const buildNode = require('../utils/buildNode');
+
+const attributes = [
+  'label',
+  'fieldType',
+  'apiKey',
+  'localized',
+  'validators',
+  'position',
+  'appeareance',
+  'defaultValue',
+];
 
 module.exports = function buildFieldNode(entity) {
   return buildNode('DatoCmsField', entity.id, node => {
-    objectAssign(node, entity.payload.attributes);
+    attributes.forEach(attribute => {
+      node[attribute] = entity[attribute];
+    });
+
     node.originalId = entity.id;
   });
 };
