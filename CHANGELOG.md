@@ -1,3 +1,7 @@
+### v2.1.9
+
+- Prevent missing entities from causing exceptions during create nodes
+
 ### v2.1.8
 
 - Add facebookPageUrl
