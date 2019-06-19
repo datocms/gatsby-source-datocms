@@ -6,6 +6,10 @@ module.exports = function itemNodeId(id, locale, entitiesRepo) {
   }
 
   const entity = entitiesRepo.findEntity('item', id);
+  if (!entity) {
+    return null;
+  }
+
   const type = pascalize(entity.itemType.apiKey);
 
   return `DatoCms${type}-${entity.id}-${locale}`;
