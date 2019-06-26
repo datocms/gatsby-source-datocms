@@ -86,7 +86,15 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
         title: 'String',
         description: 'String',
         twitterCard: 'String',
-        image: 'DatoCmsAsset',
+        image: {
+          type: 'DatoCmsAsset',
+          resolve: (parent, args, context) => {
+            const id = parent.image___NODE;
+            if (id) {
+              return context.nodeModel.getNodeById({ id: id });
+            }
+          }
+        },
       },
     }),
     schema.buildObjectType({
