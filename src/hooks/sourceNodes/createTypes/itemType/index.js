@@ -19,7 +19,7 @@ module.exports = ({ actions, schema }) => {
         fields: {
           type: 'DatoCmsFaviconMetaTags',
           extensions: {
-            link: { to: 'id', from: 'fields___NODE' },
+            link: { by: 'id', from: 'fields___NODE' },
           },
         },
       },

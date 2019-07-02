@@ -14,7 +14,7 @@ module.exports = ({ actions, schema }) => {
         faviconMetaTags: {
           type: 'DatoCmsFaviconMetaTags',
           extensions: {
-            link: { to: 'id', from: 'faviconMetaTags___NODE' },
+            link: { by: 'id', from: 'faviconMetaTags___NODE' },
           },
         },
         originalId: 'String',

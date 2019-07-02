@@ -224,13 +224,13 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
           seoMetaTags: {
             type: 'DatoCmsSeoMetaTags',
             extensions: {
-              link: { to: 'id', from: 'seoMetaTags___NODE' },
+              link: { by: 'id', from: 'seoMetaTags___NODE' },
             },
           },
           model: {
             type: 'DatoCmsModel',
             extensions: {
-              link: { to: 'id', from: 'model___NODE' },
+              link: { by: 'id', from: 'model___NODE' },
             },
           },
         }),
