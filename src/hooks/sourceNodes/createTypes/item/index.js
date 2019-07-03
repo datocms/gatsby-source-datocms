@@ -210,6 +210,7 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
             },
           },
         },
+        root: 'Boolean',
       });
     }
 

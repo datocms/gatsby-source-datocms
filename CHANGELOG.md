@@ -1,3 +1,7 @@
+### v2.1.13
+
+- Fix missing root boolean in tree item
+
 ### v2.1.9
 
 - Prevent missing entities from causing exceptions during create nodes
