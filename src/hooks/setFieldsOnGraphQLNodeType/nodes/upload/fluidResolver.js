@@ -61,7 +61,7 @@ module.exports = cacheDir => ({
 
     const aspectRatio = finalWidth / finalHeight;
 
-    const realMaxWidth = maxWidth || maxHeight * aspectRatio;
+    const realMaxWidth = maxHeight ? maxHeight * aspectRatio : maxWidth;
 
     const realSizes =
       sizes || `(max-width: ${realMaxWidth}px) 100vw, ${realMaxWidth}px`;
