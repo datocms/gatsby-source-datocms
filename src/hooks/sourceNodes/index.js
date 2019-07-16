@@ -26,7 +26,7 @@ module.exports = async (
 
   const localeFallbacks = rawLocaleFallbacks || {};
 
-  const loader = new Loader(client, previewMode);
+  const loader = new Loader(client, process.env.GATSBY_CLOUD || previewMode);
 
   const context = {
     entitiesRepo: loader.entitiesRepo,
