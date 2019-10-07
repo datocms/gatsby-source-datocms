@@ -11,26 +11,27 @@
     "test": "echo 1"
   },
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-env": "1.6.1",
-    "cross-env": "^5.0.5",
-    "np": "^5.0.3",
-    "prettier": "^1.17.1"
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-object-rest-spread": "7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "cross-env": "^6.0.3",
+    "np": "^5.1.0",
+    "prettier": "^1.18.2"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
-    "datocms-client": "~2.0.0",
-    "fs-extra": ">=4.0.2",
+    "datocms-client": "~3.0.3",
+    "fs-extra": ">=8.1.0",
     "humps": ">=2.0.1",
-    "imgix-url-params": "10.0.0",
+    "imgix-url-params": "11.2.0",
     "json-stringify-safe": ">=5.0.1",
     "md5": "2.2.1",
     "object-assign": "^4.1.1",
     "object.entries": "^1.1.0",
-    "promise-queue": "2.2.3",
-    "query-string": "5.0.1",
+    "promise-queue": "2.2.5",
+    "query-string": "6.8.3",
     "request-promise-native": "1.0.7"
   },
   "keywords": [
