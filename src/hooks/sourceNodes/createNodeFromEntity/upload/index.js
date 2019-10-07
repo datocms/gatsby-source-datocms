@@ -8,8 +8,10 @@ const attributes = [
   'format',
   'isImage',
   'createdAt',
-  'alt',
-  'title',
+  'notes',
+  'author',
+  'copyright',
+  'defaultFieldMetadata',
 ];
 
 module.exports = function buildUploadNode(entity, { entitiesRepo }) {

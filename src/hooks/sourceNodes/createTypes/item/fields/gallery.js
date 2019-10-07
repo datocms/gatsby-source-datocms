@@ -11,7 +11,7 @@ module.exports = ({
 
   return {
     fieldType: {
-      type: '[DatoCmsAsset]',
+      type: '[DatoCmsFileField]',
       resolve: (parent, args, context) => {
         const ids =
           'locale' in parent && 'value___NODE' in parent
@@ -21,6 +21,27 @@ module.exports = ({
         if (ids) {
           return context.nodeModel.getNodesByIds({ ids });
         }
+
+        const fileObjects =
+          'locale' in parent && 'value' in parent
+            ? parent.value
+            : parent[fieldKey];
+
+        if (!fileObjects) {
+          return null;
+        }
+
+        return fileObjects.map(fileObject => {
+          const upload = context.nodeModel.getNodeById({ id: fileObject.uploadId___NODE });
+          const defaults = upload.defaultFieldMetadata[fileObject.locale];
+
+          return {
+            ...upload,
+            alt: fileObject.alt || defaults.alt,
+            title: fileObject.title || defaults.title,
+            customData: { ...defaults.customData, ...fileObject.customData },
+          };
+        });
       },
     },
   };

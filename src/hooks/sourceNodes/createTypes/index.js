@@ -1,9 +1,17 @@
 const item = require('./item');
 const upload = require('./upload');
 const site = require('./site');
-const itemType = require('./itemType');
-const field = require('./field');
+const schema = require('./schema');
+const gatsbyImage = require('./gatsbyImage');
+const fieldTypes = require('./fieldTypes');
 
 module.exports = context => {
-  [item, upload, site, itemType, field].forEach(fn => fn(context));
+  [
+    gatsbyImage,
+    fieldTypes,
+    item,
+    upload,
+    site,
+    schema
+  ].forEach(fn => fn(context));
 };

@@ -53,12 +53,26 @@ module.exports = function addField(
     }
     case 'file': {
       if (value) {
-        root[`${key}___NODE`] = `DatoCmsAsset-${value}`;
+        root[key] = {
+          alt: value.alt,
+          title: value.title,
+          customData: value.customData,
+          uploadId___NODE: `DatoCmsAsset-${value.uploadId}`,
+          locale: i18n.locale,
+        };
       }
       break;
     }
     case 'gallery': {
-      root[`${key}___NODE`] = (value || []).map(id => `DatoCmsAsset-${id}`);
+      root[key] = (value || []).map(v => { 
+        return {
+          alt: v.alt,
+          title: v.title,
+          customData: v.customData,
+          uploadId___NODE: `DatoCmsAsset-${v.uploadId}`,
+          locale: i18n.locale,
+        };
+      });
       break;
     }
     case 'seo': {

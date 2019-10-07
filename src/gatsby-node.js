@@ -6,6 +6,3 @@ exports.sourceNodes = sourceNodes;
 
 const onPreExtractQueries = require('./hooks/onPreExtractQueries');
 exports.onPreExtractQueries = onPreExtractQueries;
-
-const setFieldsOnGraphQLNodeType = require('./hooks/setFieldsOnGraphQLNodeType');
-exports.setFieldsOnGraphQLNodeType = setFieldsOnGraphQLNodeType;

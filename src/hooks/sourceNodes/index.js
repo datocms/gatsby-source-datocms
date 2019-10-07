@@ -1,3 +1,4 @@
+const fs = require('fs-extra');
 const { SiteClient, Loader } = require('datocms-client');
 const createNodeFromEntity = require('./createNodeFromEntity');
 const destroyEntityNode = require('./destroyEntityNode');
@@ -11,7 +12,7 @@ const CLIENT_HEADERS = {
 };
 
 module.exports = async (
-  { actions, getNode, getNodesByType, reporter, parentSpan, schema },
+  { actions, getNode, getNodesByType, reporter, parentSpan, schema, store },
   {
     apiToken,
     disableLiveReload,
@@ -28,6 +29,13 @@ module.exports = async (
 
   const loader = new Loader(client, process.env.GATSBY_CLOUD || previewMode);
 
+  const program = store.getState().program;
+  const cacheDir = `${program.directory}/.cache/datocms-assets`;
+
+  if (!fs.existsSync(cacheDir)) {
+    fs.mkdirSync(cacheDir);
+  }
+
   const context = {
     entitiesRepo: loader.entitiesRepo,
     actions,
@@ -35,6 +43,8 @@ module.exports = async (
     getNodesByType,
     localeFallbacks,
     schema,
+    store,
+    cacheDir,
   };
 
   loader.entitiesRepo.addUpsertListener(entity => {
