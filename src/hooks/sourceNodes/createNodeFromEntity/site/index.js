@@ -48,7 +48,6 @@ module.exports = function buildSiteNode(
             const faviconNode = buildFaviconMetaTagsNode(node, entitiesRepo);
             additionalNodesToCreate.push(faviconNode);
             node.faviconMetaTags___NODE = faviconNode.id;
-            node.children = node.children.concat([faviconNode.id]);
           }
 
           node.originalId = entity.id;

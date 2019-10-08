@@ -1,9 +1,11 @@
 module.exports = ({ entitiesRepo, actions, schema }) => {
   actions.createTypes([
     schema.buildObjectType({
-      name: 'DatoCmsTextNode',
+      name: 'DatoCmsSeoMetaTags',
       extensions: { infer: false },
-      fields: {},
+      fields: {
+        tags: 'JSON',
+      },
       interfaces: [`Node`],
     }),
   ]);

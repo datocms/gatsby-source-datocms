@@ -8,7 +8,6 @@ module.exports = function buildSeoMetaTagsNode(
   i18n,
 ) {
   return buildNode('DatoCmsSeoMetaTags', itemNode.id, node => {
-    node.parent = itemNode.id;
     node.tags = seoTagsBuilder(itemEntity, entitiesRepo, i18n);
   });
 };

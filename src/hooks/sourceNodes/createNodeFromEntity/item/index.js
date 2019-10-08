@@ -65,7 +65,6 @@ module.exports = function buildItemNode(
             entitiesRepo,
             i18n,
           );
-          node.children = node.children.concat([seoNode.id]);
           additionalNodesToCreate.push(seoNode);
 
           node.seoMetaTags___NODE = seoNode.id;

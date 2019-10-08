@@ -45,8 +45,6 @@ module.exports = function addField(
       const textNode = buildTextNode(node, key, value, mediaType);
       additionalNodesToCreate.push(textNode);
 
-      node.children = node.children.concat([textNode.id]);
-
       root[`${key}Node___NODE`] = textNode.id;
       root[key] = value;
       break;

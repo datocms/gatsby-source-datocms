@@ -5,6 +5,7 @@ import DatoCmsMetaField from './DatoCmsMetaField';
 import DatoCmsSeoField from './DatoCmsSeoField';
 import DatoCmsSeoMetaTags from './DatoCmsSeoMetaTags';
 import DatoCmsVideoField from './DatoCmsVideoField';
+import DatoCmsTextNode from './DatoCmsTextNode';
 
 module.exports = (context) => {
   [
@@ -15,5 +16,6 @@ module.exports = (context) => {
     DatoCmsSeoField,
     DatoCmsSeoMetaTags,
     DatoCmsVideoField,
+    DatoCmsTextNode,
   ].forEach(fn => fn(context));
 }
