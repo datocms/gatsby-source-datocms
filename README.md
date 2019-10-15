@@ -418,7 +418,7 @@ If you need to get every locale for a specific field, you can use the `_all<FIEL
 
 Images coming from DatoCMS can be queried so that they can be used with [gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image), a React component specially designed to work seamlessly with Gatsby's GraphQL queries that implements advanced image loading techniques to easily and completely optimize image loading for your sites.
 
-**NOTE:** [gatsby-image-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) needs to be listed as a dependancy for the `_tracedSVG` fragments to function.
+**NOTE:** [gatsby-plugin-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) needs to be listed as a dependancy for the `_tracedSVG` fragments to function.
 
 ### Responsive fluid
 
