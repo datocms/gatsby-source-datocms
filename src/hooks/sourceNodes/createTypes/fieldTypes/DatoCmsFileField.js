@@ -1,5 +1,4 @@
-const buildFluidFields = require('../utils/buildFluidFields');
-const buildFixedFields = require('../utils/buildFixedFields');
+const buildAssetFields = require('../utils/buildAssetFields');
 
 module.exports = ({ actions, schema }) => {
   actions.createTypes([
@@ -7,26 +6,10 @@ module.exports = ({ actions, schema }) => {
       name: 'DatoCmsFileField',
       extensions: { infer: false },
       fields: {
-        size: 'Int',
-        width: 'Int',
-        height: 'Int',
-        path: 'String',
-        format: 'String',
-        isImage: 'Boolean',
-        createdAt: {
-          type: 'Date',
-          extensions: { dateformat: {} },
-        },
-        url: 'String',
-        notes: 'String',
-        author: 'String',
-        copyright: 'String',
-        originalId: 'String',
+        ...buildAssetFields(),
         alt: 'String',
         title: 'String',
         customData: 'JSON',
-        ...buildFluidFields(),
-        ...buildFixedFields()
       },
     }),
   ]);

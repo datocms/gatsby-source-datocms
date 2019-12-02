@@ -12,6 +12,18 @@ const attributes = [
   'author',
   'copyright',
   'defaultFieldMetadata',
+  'tags',
+  'smartTags',
+  'filename',
+  'basename',
+  'exifInfo',
+  'mimeType',
+  'blurhash',
+  'colors',
+  'muxPlaybackId',
+  'muxMp4HighestRes',
+  'frameRate',
+  'duration',
 ];
 
 module.exports = function buildUploadNode(entity, { entitiesRepo }) {

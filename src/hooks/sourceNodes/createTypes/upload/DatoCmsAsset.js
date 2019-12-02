@@ -1,5 +1,4 @@
-const buildFluidFields = require('../utils/buildFluidFields');
-const buildFixedFields = require('../utils/buildFixedFields');
+const buildAssetFields = require('../utils/buildAssetFields');
 
 module.exports = ({ actions, schema, store }) => {
   actions.createTypes([
@@ -7,25 +6,97 @@ module.exports = ({ actions, schema, store }) => {
       name: 'DatoCmsAsset',
       extensions: { infer: false },
       fields: {
-        size: 'Int',
-        width: 'Int',
-        height: 'Int',
-        path: 'String',
-        format: 'String',
-        isImage: 'Boolean',
-        createdAt: {
-          type: 'Date',
-          extensions: { dateformat: {} },
-        },
-        url: 'String',
-        notes: 'String',
-        author: 'String',
-        copyright: 'String',
-        originalId: 'String',
-        ...buildFluidFields(),
-        ...buildFixedFields()
+        ...buildAssetFields(),
       },
       interfaces: ['Node'],
+    }),
+    schema.buildEnumType({
+      name: 'DatoCmsAssetVideoThumbnailFormat',
+      values: {
+        'jpg': { value: 'jpg' },
+        'png': { value: 'png' },
+        'gif': { value: 'gif' }
+      },
+    }),
+    schema.buildEnumType({
+      name: 'DatoCmsAssetVideoMp4ResolutionQuality',
+      values: {
+        'low': { value: 'low' },
+        'medium': { value: 'medium' },
+        'high': { value: 'high' }
+      },
+    }),
+    schema.buildObjectType({
+      name: 'DatoCmsAssetVideo',
+      extensions: { infer: false },
+      fields: {
+        muxPlaybackId: 'String',
+        frameRate: 'Int',
+        duration: 'Int',
+        streamingUrl: {
+          type: 'String',
+          resolve: (upload) => {
+            return `https://stream.mux.com/${upload.muxPlaybackId}.m3u8`;
+          },
+        },
+        thumbnailUrl: {
+          type: 'String',
+          args: {
+            format: 'DatoCmsAssetVideoThumbnailFormat'
+          },
+          resolve: (upload, { format = 'jpg' }) => {
+            if (format === 'gif') {
+              return `https://image.mux.com/${upload.muxPlaybackId}/animated.gif`;
+            }
+
+            return `https://image.mux.com/${upload.muxPlaybackId}/thumbnail.${format}`;
+          },
+        },
+        mp4Url: {
+          type: 'String',
+          args: {
+            res: 'DatoCmsAssetVideoMp4ResolutionQuality',
+            exactRes: 'DatoCmsAssetVideoMp4ResolutionQuality'
+          },
+          resolve: (upload, options) => {
+            if (!upload.muxMp4HighestRes) {
+              return null;
+            }
+
+            if (options.exactRes) {
+              if (options.exactRes === 'low') {
+                return `https://stream.mux.com/${upload.muxPlaybackId}/low.mp4`;
+              }
+
+              if (options.exactRes === 'medium') {
+                return ['medium', 'high'].includes(upload.muxMp4HighestRes)
+                  ? `https://stream.mux.com/${upload.muxPlaybackId}/medium.mp4`
+                  : null;
+              }
+
+              if (upload.muxMp4HighestRes === 'high') {
+                return `https://stream.mux.com/${upload.muxPlaybackId}/high.mp4`;
+              }
+
+              return null;
+            }
+
+            if (options.res === 'low') {
+              return `https://stream.mux.com/${upload.muxPlaybackId}/low.mp4`;
+            }
+
+            if (options.res === 'medium') {
+              if (['low', 'medium'].includes(upload.muxMp4HighestRes)) {
+                return `https://stream.mux.com/${upload.muxPlaybackId}/${upload.muxMp4HighestRes}.mp4`;
+              }
+
+              return `https://stream.mux.com/${upload.muxPlaybackId}/medium.mp4`;
+            }
+
+            return `https://stream.mux.com/${upload.muxPlaybackId}/${upload.muxMp4HighestRes}.mp4`;
+          },
+        },
+      },
     }),
   ]);
 };
