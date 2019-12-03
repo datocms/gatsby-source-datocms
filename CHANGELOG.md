@@ -1,3 +1,7 @@
+### v2.1.19
+
+* Added new queries to assets and file fields
+
 ### v2.1.13
 
 - Fix missing root boolean in tree item
