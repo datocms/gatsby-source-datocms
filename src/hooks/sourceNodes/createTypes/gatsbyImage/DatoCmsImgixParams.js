@@ -16,7 +16,7 @@ module.exports = ({ actions, schema, store }) => {
     timestamp: 'String',
     unit_scalar: 'Float',
     font: 'String',
-    ratio: 'Float',
+    ratio: 'String',
     url: 'String',
   };
 
