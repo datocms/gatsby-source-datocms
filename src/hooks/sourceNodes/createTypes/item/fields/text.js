@@ -15,8 +15,8 @@ module.exports = ({
       type: 'DatoCmsTextNode',
       resolve: (parent, args, context) => {
         const id =
-          'locale' in parent && 'value___NODE' in parent
-            ? parent.value___NODE
+          'locale' in parent && 'valueNode___NODE' in parent
+            ? parent.valueNode___NODE
             : parent[`${fieldKey}Node___NODE`];
 
         if (id) {

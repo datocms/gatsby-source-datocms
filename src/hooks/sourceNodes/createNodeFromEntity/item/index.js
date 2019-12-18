@@ -44,6 +44,7 @@ module.exports = function buildItemNode(
               ).map(([locale, v]) => {
                 const result = { locale };
                 const innerI18n = { locale, fallbacks: localeFallbacks };
+
                 addField(
                   result,
                   'value',
@@ -53,6 +54,7 @@ module.exports = function buildItemNode(
                   entitiesRepo,
                   innerI18n,
                   additionalNodesToCreate,
+                  `${camelize(field.apiKey)}-${locale}-`
                 );
                 return result;
               });

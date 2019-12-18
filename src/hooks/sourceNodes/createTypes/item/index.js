@@ -65,14 +65,22 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
             field.apiKey,
           )}`;
 
+          const fields = {
+            locale: 'String',
+            value: fieldType,
+          };
+
+          if (nodeFieldType) {
+            objectAssign(fields, {
+              valueNode: nodeFieldType,
+            });
+          }
+
           actions.createTypes([
             schema.buildObjectType({
               name: allLocalesTypeName,
               extensions: { infer: false },
-              fields: {
-                locale: 'String',
-                value: fieldType,
-              },
+              fields,
             }),
           ]);
 

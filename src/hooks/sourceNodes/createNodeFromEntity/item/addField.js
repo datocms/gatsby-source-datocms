@@ -13,6 +13,7 @@ module.exports = function addField(
   entitiesRepo,
   i18n,
   additionalNodesToCreate,
+  additionalNodesPrefix = ''
 ) {
   const value = localizedRead(
     entity,
@@ -42,7 +43,7 @@ module.exports = function addField(
         mediaType = 'text/html';
       }
 
-      const textNode = buildTextNode(node, key, value, mediaType);
+      const textNode = buildTextNode(node, additionalNodesPrefix + key, value, mediaType);
       additionalNodesToCreate.push(textNode);
 
       root[`${key}Node___NODE`] = textNode.id;
@@ -62,7 +63,7 @@ module.exports = function addField(
       break;
     }
     case 'gallery': {
-      root[key] = (value || []).map(v => { 
+      root[key] = (value || []).map(v => {
         return {
           alt: v.alt,
           title: v.title,
