@@ -16,12 +16,12 @@ module.exports = ({ actions, schema, store, cacheDir }) => {
           resolve: image => getTracedSVG(image, cacheDir),
         },
         aspectRatio: 'Float',
-        width: 'Int',
-        height: 'Int',
-        src: 'String',
-        srcSet: 'String',
-        sizes: 'String'
-      }
+        width: 'Int!',
+        height: 'Int!',
+        src: 'String!',
+        srcSet: 'String!',
+        sizes: 'String',
+      },
     }),
   ]);
-}
+};

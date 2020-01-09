@@ -15,13 +15,13 @@ module.exports = ({ actions, schema, store, cacheDir }) => {
           type: 'String',
           resolve: image => getTracedSVG(image, cacheDir),
         },
-        aspectRatio: 'Float',
+        aspectRatio: 'Float!',
         width: 'Int',
         height: 'Int',
-        src: 'String',
-        srcSet: 'String',
-        sizes: 'String'
-      }
+        src: 'String!',
+        srcSet: 'String!',
+        sizes: 'String!',
+      },
     }),
   ]);
-}
+};
