@@ -1,4 +1,4 @@
-const { graphql } = require('gatsby');
+import { graphql } from 'gatsby';
 
 export const datoCmsFaviconMetaTags = graphql`
   fragment GatsbyDatoCmsFaviconMetaTags on DatoCmsFaviconMetaTags {
