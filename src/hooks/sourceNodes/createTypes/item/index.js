@@ -50,12 +50,28 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
           entitiesRepo,
         });
 
+        const valueFieldType = typeof fieldType === 'string' ? fieldType : ({
+          type: fieldType.type,
+          resolve: (parent, args, context) => {
+            const value = fieldType.normalResolver(parent, args, context);
+            return fieldType.resolveFromValue(value, args, context);
+          },
+        })
+
         actions.createTypes(types);
-        objectAssign(acc, { [camelize(field.apiKey)]: fieldType });
+        objectAssign(acc, { [camelize(field.apiKey)]: valueFieldType });
 
         if (nodeFieldType) {
+          const nodeValueFieldType = typeof nodeFieldType === 'string' ? nodeFieldType : ({
+            type: nodeFieldType.type,
+            resolve: (parent, args, context) => {
+              const value = nodeFieldType.normalResolver(parent, args, context);
+              return nodeFieldType.resolveFromValue(value, args, context);
+            },
+          })
+
           objectAssign(acc, {
-            [`${camelize(field.apiKey)}Node`]: nodeFieldType,
+            [`${camelize(field.apiKey)}Node`]: nodeValueFieldType,
           });
         }
 
@@ -65,14 +81,30 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
             field.apiKey,
           )}`;
 
+          const allLocalesFieldType = typeof fieldType === 'string' ? fieldType : ({
+            type: fieldType.type,
+            resolve: (parent, args, context) => {
+              const value = fieldType.allLocalesResolver(parent, args, context);
+              return fieldType.resolveFromValue(value, args, context);
+            },
+          })
+
           const fields = {
             locale: 'String',
-            value: fieldType,
+            value: allLocalesFieldType,
           };
 
           if (nodeFieldType) {
+            const allLocalesNodeFieldType = typeof nodeFieldType === 'string' ? nodeFieldType : ({
+              type: nodeFieldType.type,
+              resolve: (parent, args, context) => {
+                const value = nodeFieldType.allLocalesResolver(parent, args, context);
+                return nodeFieldType.resolveFromValue(value, args, context);
+              },
+            })
+
             objectAssign(fields, {
-              valueNode: nodeFieldType,
+              valueNode: allLocalesNodeFieldType,
             });
           }
 

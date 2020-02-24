@@ -12,12 +12,9 @@ module.exports = ({
   return {
     fieldType: {
       type: 'DatoCmsFileField',
-      resolve: (parent, args, context) => {
-        const fileObject =
-          'locale' in parent && 'value' in parent
-            ? parent.value
-            : parent[fieldKey];
-
+      allLocalesResolver: (parent) => parent.value,
+      normalResolver: (parent) => parent[fieldKey],
+      resolveFromValue: (fileObject, args, context) => {
         if (!fileObject) {
           return null;
         }

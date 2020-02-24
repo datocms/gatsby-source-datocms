@@ -23,12 +23,9 @@ module.exports = ({
     return {
       fieldType: {
         type: gqlItemTypeName(linkedItemType),
-        resolve: (parent, args, context) => {
-          const id =
-            'locale' in parent && 'value___NODE' in parent
-              ? parent.value___NODE
-              : parent[`${fieldKey}___NODE`];
-
+        allLocalesResolver: (parent) => parent.value___NODE,
+        normalResolver: (parent) => parent[`${fieldKey}___NODE`],
+        resolveFromValue: (id, args, context) => {
           if (id) {
             return context.nodeModel.getNodeById({ id });
           }
@@ -48,12 +45,9 @@ module.exports = ({
     types: [schema.buildUnionType({ name: unionType, types: unionTypes })],
     fieldType: {
       type: unionType,
-      resolve: (parent, args, context) => {
-        const id =
-          'locale' in parent && 'value___NODE' in parent
-            ? parent.value___NODE
-            : parent[`${fieldKey}___NODE`];
-
+      allLocalesResolver: (parent) => parent.value___NODE,
+      normalResolver: (parent) => parent[`${fieldKey}___NODE`],
+      resolveFromValue: (id, args, context) => {
         if (id) {
           return context.nodeModel.getNodeById({ id });
         }

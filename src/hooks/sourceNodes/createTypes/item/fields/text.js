@@ -13,12 +13,9 @@ module.exports = ({
     fieldType: 'String',
     nodeFieldType: {
       type: 'DatoCmsTextNode',
-      resolve: (parent, args, context) => {
-        const id =
-          'locale' in parent && 'valueNode___NODE' in parent
-            ? parent.valueNode___NODE
-            : parent[`${fieldKey}Node___NODE`];
-
+      allLocalesResolver: (parent) => parent.valueNode___NODE,
+      normalResolver: (parent) => parent[`${fieldKey}Node___NODE`],
+      resolveFromValue: (id, args, context) => {
         if (id) {
           return context.nodeModel.getNodeById({ id });
         }
