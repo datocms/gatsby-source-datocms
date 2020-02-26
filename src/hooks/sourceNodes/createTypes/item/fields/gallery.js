@@ -14,7 +14,7 @@ module.exports = ({
       type: '[DatoCmsFileField]',
       allLocalesResolver: (parent) => parent.value___NODE,
       normalResolver: (parent) => parent[`${fieldKey}___NODE`],
-      resolveFromValue: (id, args, context) => {
+      resolveFromValue: (ids, args, context) => {
         if (ids) {
           return context.nodeModel.getNodesByIds({ ids });
         }
