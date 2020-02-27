@@ -12,24 +12,17 @@ module.exports = ({
   return {
     fieldType: {
       type: '[DatoCmsFileField]',
-      allLocalesResolver: (parent) => parent.value___NODE,
-      normalResolver: (parent) => parent[`${fieldKey}___NODE`],
-      resolveFromValue: (ids, args, context) => {
-        if (ids) {
-          return context.nodeModel.getNodesByIds({ ids });
-        }
-
-        const fileObjects =
-          'locale' in parent && 'value' in parent
-            ? parent.value
-            : parent[fieldKey];
-
+      allLocalesResolver: parent => parent.value,
+      normalResolver: parent => parent[fieldKey],
+      resolveFromValue: (fileObjects, args, context) => {
         if (!fileObjects) {
           return null;
         }
 
         return fileObjects.map(fileObject => {
-          const upload = context.nodeModel.getNodeById({ id: fileObject.uploadId___NODE });
+          const upload = context.nodeModel.getNodeById({
+            id: fileObject.uploadId___NODE,
+          });
           const defaults = upload.defaultFieldMetadata[fileObject.locale];
 
           return {
