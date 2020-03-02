@@ -34,6 +34,8 @@ const fieldResolvers = {
   video: simpleTypeResolver('DatoCmsVideoField'),
 };
 
+const isSimpleFieldType = (x) => typeof x === 'string' || !x.resolveFromValue;
+
 module.exports = ({ entitiesRepo, actions, schema }) => {
   entitiesRepo.findEntitiesOfType('item_type').forEach(entity => {
     const type = gqlItemTypeName(entity);
@@ -50,7 +52,7 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
           entitiesRepo,
         });
 
-        const valueFieldType = typeof fieldType === 'string' ? fieldType : ({
+        const valueFieldType = isSimpleFieldType(fieldType) ? fieldType : ({
           type: fieldType.type,
           resolve: (parent, args, context) => {
             const value = fieldType.normalResolver(parent, args, context);
@@ -62,7 +64,7 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
         objectAssign(acc, { [camelize(field.apiKey)]: valueFieldType });
 
         if (nodeFieldType) {
-          const nodeValueFieldType = typeof nodeFieldType === 'string' ? nodeFieldType : ({
+          const nodeValueFieldType = isSimpleFieldType(nodeFieldType) ? nodeFieldType : ({
             type: nodeFieldType.type,
             resolve: (parent, args, context) => {
               const value = nodeFieldType.normalResolver(parent, args, context);
@@ -81,7 +83,7 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
             field.apiKey,
           )}`;
 
-          const allLocalesFieldType = typeof fieldType === 'string' ? fieldType : ({
+          const allLocalesFieldType = isSimpleFieldType(fieldType) ? fieldType : ({
             type: fieldType.type,
             resolve: (parent, args, context) => {
               const value = fieldType.allLocalesResolver(parent, args, context);
@@ -95,7 +97,7 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
           };
 
           if (nodeFieldType) {
-            const allLocalesNodeFieldType = typeof nodeFieldType === 'string' ? nodeFieldType : ({
+            const allLocalesNodeFieldType = isSimpleFieldType(nodeFieldType) ? nodeFieldType : ({
               type: nodeFieldType.type,
               resolve: (parent, args, context) => {
                 const value = nodeFieldType.allLocalesResolver(parent, args, context);
