@@ -4,7 +4,6 @@ const createNodeFromEntity = require('./createNodeFromEntity');
 const destroyEntityNode = require('./destroyEntityNode');
 const finalizeNodesCreation = require('./finalizeNodesCreation');
 const Queue = require('promise-queue');
-const createTypes = require('./createTypes');
 
 const CLIENT_HEADERS = {
   'X-Reason': 'dump',
@@ -64,10 +63,6 @@ module.exports = async (
   finalizeNodesCreation(context);
 
   activity.end();
-
-  if (actions.createTypes) {
-    createTypes(context);
-  }
 
   const queue = new Queue(1, Infinity);
 
