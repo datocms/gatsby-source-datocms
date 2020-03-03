@@ -42,6 +42,7 @@
   "author": "DatoCMS <support@datocms.com>",
   "license": "ISC",
   "peerDependencies": {
-    "react-helmet": "*"
+    "react-helmet": "*",
+    "gatsby": "^2.12.1"
   }
 }
