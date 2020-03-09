@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const { SiteClient, Loader } = require('datocms-client');
-const createTypes = require('./createTypes');
+const createTypes = require('../sourceNodes/createTypes');
 
 const CLIENT_HEADERS = {
   'X-Reason': 'dump',
