@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const { SiteClient, Loader } = require('datocms-client');
+const finalizeNodesCreation = require('../sourceNodes/finalizeNodesCreation');
 const createTypes = require('../sourceNodes/createTypes');
 
 const CLIENT_HEADERS = {
@@ -8,7 +9,7 @@ const CLIENT_HEADERS = {
 };
 
 module.exports = async (
-  { actions, getNode, getNodesByType, schema, store },
+  { actions, getNode, getNodesByType, reporter, parentSpan, schema, store },
   { apiToken, previewMode, apiUrl, localeFallbacks: rawLocaleFallbacks },
 ) => {
   let client = apiUrl
@@ -36,6 +37,19 @@ module.exports = async (
     store,
     cacheDir,
   };
+
+  let activity;
+
+  activity = reporter.activityTimer(`loading DatoCMS schema`, {
+    parentSpan,
+  });
+
+  activity.start();
+
+  await loader.loadSchema();
+  finalizeNodesCreation(context);
+
+  activity.end();
 
   createTypes(context);
 };
