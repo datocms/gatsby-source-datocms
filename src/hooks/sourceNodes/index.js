@@ -7,7 +7,16 @@ const Queue = require('promise-queue');
 const { getClient, getLoader } = require('../../utils');
 
 module.exports = async (
-  { actions, getNode, getNodesByType, reporter, parentSpan, schema, store },
+  {
+    actions,
+    getNode,
+    getNodesByType,
+    reporter,
+    parentSpan,
+    schema,
+    store,
+    webhookBody,
+  },
   {
     apiToken,
     disableLiveReload,
@@ -18,6 +27,7 @@ module.exports = async (
 ) => {
   const localeFallbacks = rawLocaleFallbacks || {};
 
+  const client = getClient({ apiToken, previewMode, apiUrl });
   const loader = getLoader({ apiToken, previewMode, apiUrl });
 
   const program = store.getState().program;
@@ -45,6 +55,31 @@ module.exports = async (
   loader.entitiesRepo.addDestroyListener(entity => {
     destroyEntityNode(entity, context);
   });
+
+  if (webhookBody) {
+    const { entity_id, entity_type, event_type } = webhookBody;
+    if (event_type) {
+      const changesActivity = reporter.activityTimer(
+        `loading DatoCMS content changes`,
+        {
+          parentSpan,
+        },
+      );
+      if (event_type === `update`) {
+        changesActivity.start();
+        const payload = await client.items.all(
+          {
+            'filter[ids]': [entity_id].join(','),
+            version: 'published',
+          },
+          { deserializeResponse: false, allPages: true },
+        );
+        loader.entitiesRepo.upsertEntities(payload);
+        changesActivity.end();
+      }
+      return;
+    }
+  }
 
   let activity;
 
