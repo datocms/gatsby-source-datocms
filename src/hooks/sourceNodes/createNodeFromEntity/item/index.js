@@ -1,5 +1,4 @@
 const { camelize, pascalize } = require('humps');
-const { Site, Item } = require('datocms-client');
 const entries = require('object.entries');
 
 const buildNode = require('../utils/buildNode');
@@ -9,7 +8,7 @@ const addField = require('./addField');
 
 module.exports = function buildItemNode(
   entity,
-  { entitiesRepo, getNode, actions, localeFallbacks },
+  { entitiesRepo, localeFallbacks },
 ) {
   const siteEntity = entitiesRepo.site;
   const type = pascalize(entity.itemType.apiKey);
@@ -54,7 +53,7 @@ module.exports = function buildItemNode(
                   entitiesRepo,
                   innerI18n,
                   additionalNodesToCreate,
-                  `${camelize(field.apiKey)}-${locale}-`
+                  `${camelize(field.apiKey)}-${locale}-`,
                 );
                 return result;
               });
