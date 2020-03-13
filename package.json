@@ -47,5 +47,13 @@
     "gatsby": "^2.12.1",
     "react": "*",
     "react-helmet": "*"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidharthachatterjee/gatsby-source-datocms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sidharthachatterjee/gatsby-source-datocms/issues"
+  },
+  "homepage": "https://github.com/sidharthachatterjee/gatsby-source-datocms#readme"
 }
