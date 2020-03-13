@@ -1,3 +1,8 @@
+### v2.1.28
+
+* Improvements on builds, allowing change of schema on active `gatsby develop` instance
+* Fix for fallback locales for assets, fixed in `datocms-client` v3.0.16
+
 ### v2.1.19
 
 * Added new queries to assets and file fields
