@@ -49,8 +49,8 @@ plugins: [
       // Disable automatic reloading of content when some change occurs on DatoCMS:
       disableLiveReload: false,
 
-      // Custom API base URL
-      apiUrl: 'https://site-api.datocms.com',
+      // Custom API base URL (most don't need this)
+      // apiUrl: 'https://site-api.datocms.com',
 
       // Setup locale fallbacks
       // In this example, if some field value is missing in Italian, fall back to English
