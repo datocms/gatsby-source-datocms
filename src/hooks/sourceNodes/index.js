@@ -4,7 +4,7 @@ const destroyEntityNode = require('./destroyEntityNode');
 const finalizeNodesCreation = require('./finalizeNodesCreation');
 const Queue = require('promise-queue');
 
-const { getClient, getLoader } = require('../../utils');
+const { getClient, getLoader, getEntity } = require('../../utils');
 
 module.exports = async (
   {
@@ -56,29 +56,51 @@ module.exports = async (
     destroyEntityNode(entity, context);
   });
 
-  if (webhookBody) {
+  if (webhookBody && Object.keys(webhookBody).length) {
     const { entity_id, entity_type, event_type } = webhookBody;
-    if (event_type) {
-      const changesActivity = reporter.activityTimer(
-        `loading DatoCMS content changes`,
-        {
-          parentSpan,
-        },
-      );
-      if (event_type === `update`) {
-        changesActivity.start();
-        const payload = await client.items.all(
-          {
-            'filter[ids]': [entity_id].join(','),
-            version: 'published',
-          },
-          { deserializeResponse: false, allPages: true },
-        );
-        loader.entitiesRepo.upsertEntities(payload);
-        changesActivity.end();
-      }
-      return;
+    console.log({ entity_id, entity_type, event_type });
+    const changesActivity = reporter.activityTimer(
+      `loading DatoCMS content changes`,
+      {
+        parentSpan,
+      },
+    );
+    changesActivity.start();
+    switch (entity_type) {
+      case 'item':
+        if (event_type === 'publish') {
+          const payload = await getEntity(client.items, entity_id, previewMode);
+          if (payload) {
+            loader.entitiesRepo.upsertEntities([payload]);
+          }
+        } else if (event_type === 'unpublish') {
+          loader.entitiesRepo.destroyEntities('item', [entity_id]);
+        } else {
+          console.log(`Invalid event type ${event_type}`);
+        }
+        break;
+
+      case 'upload':
+        if (event_type === 'create') {
+          const payload = await getEntity(
+            client.uploads,
+            entity_id,
+            previewMode,
+          );
+          if (payload) {
+            loader.entitiesRepo.upsertEntities([payload]);
+          }
+        } else if (event_type === 'delete') {
+          loader.entitiesRepo.destroyEntities('upload', [entity_id]);
+        } else {
+          console.log(`Invalid event type ${event_type}`);
+        }
+        break;
+      default:
+        console.log(`Invalid entity type ${entity_type}`);
+        break;
     }
+    changesActivity.end();
   }
 
   let activity;
