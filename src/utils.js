@@ -36,21 +36,7 @@ function getClient(options) {
   return client;
 }
 
-async function getEntity(items, id, version) {
-  try {
-    const result = await items.find(id, {
-      version,
-    });
-    return result;
-  } catch (err) {
-    console.log('Error loading entity', err);
-    return undefined;
-  }
-}
-
 module.exports = {
   getClient,
   getLoader,
-  getEntity,
 };
-  

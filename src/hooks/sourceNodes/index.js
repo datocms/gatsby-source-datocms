@@ -4,7 +4,7 @@ const destroyEntityNode = require('./destroyEntityNode');
 const finalizeNodesCreation = require('./finalizeNodesCreation');
 const Queue = require('promise-queue');
 
-const { getClient, getLoader, getEntity } = require('../../utils');
+const { getClient, getLoader } = require('../../utils');
 
 module.exports = async (
   {
@@ -48,17 +48,11 @@ module.exports = async (
     cacheDir,
   };
 
-  loader.entitiesRepo.addUpsertListener(entity => {
-    createNodeFromEntity(entity, context);
-  });
-
-  loader.entitiesRepo.addDestroyListener(entity => {
-    destroyEntityNode(entity, context);
-  });
-
   if (webhookBody && Object.keys(webhookBody).length) {
     const { entity_id, entity_type, event_type } = webhookBody;
-    console.log({ entity_id, entity_type, event_type });
+    reporter.info(
+      `Received ${event_type} event for ${entity_type} ${entity_id} from DatoCMS`,
+    );
     const changesActivity = reporter.activityTimer(
       `loading DatoCMS content changes`,
       {
@@ -69,9 +63,15 @@ module.exports = async (
     switch (entity_type) {
       case 'item':
         if (event_type === 'publish') {
-          const payload = await getEntity(client.items, entity_id, previewMode);
+          const payload = await client.items.all(
+            {
+              'filter[ids]': [entity_id].join(','),
+              version: 'published',
+            },
+            { deserializeResponse: false, allPages: true },
+          );
           if (payload) {
-            loader.entitiesRepo.upsertEntities([payload]);
+            loader.entitiesRepo.upsertEntities(payload);
           }
         } else if (event_type === 'unpublish') {
           loader.entitiesRepo.destroyEntities('item', [entity_id]);
@@ -82,13 +82,15 @@ module.exports = async (
 
       case 'upload':
         if (event_type === 'create') {
-          const payload = await getEntity(
-            client.uploads,
-            entity_id,
-            previewMode,
+          const payload = await client.uploads.all(
+            {
+              'filter[ids]': [entity_id].join(','),
+              version: 'published',
+            },
+            { deserializeResponse: false, allPages: true },
           );
           if (payload) {
-            loader.entitiesRepo.upsertEntities([payload]);
+            loader.entitiesRepo.upsertEntities(payload);
           }
         } else if (event_type === 'delete') {
           loader.entitiesRepo.destroyEntities('upload', [entity_id]);
@@ -101,7 +103,16 @@ module.exports = async (
         break;
     }
     changesActivity.end();
+    return;
   }
+
+  loader.entitiesRepo.addUpsertListener(entity => {
+    createNodeFromEntity(entity, context);
+  });
+
+  loader.entitiesRepo.addDestroyListener(entity => {
+    destroyEntityNode(entity, context);
+  });
 
   let activity;
 
