@@ -981,6 +981,11 @@ boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
+bottleneck@^2.19.5:
+  version "2.19.5"
+  resolved "https://registry.yarnpkg.com/bottleneck/-/bottleneck-2.19.5.tgz#5df0b90f59fd47656ebe63c78a98419205cadd91"
+  integrity sha512-VHiNCbI1lKdl44tGrhNfU3lup0Tj/ZBMJB5/2ZbNXRCPuRCO7ed2mgcK4r17y+KB2EfuYuRaVlwNbAeaWGSpbw==
+
 boxen@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-3.2.0.tgz#fbdff0de93636ab4450886b6ff45b92d098f45eb"
@@ -1511,14 +1516,15 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-datocms-client@>=3.0.16:
-  version "3.0.16"
-  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-3.0.16.tgz#2623dfd46626bacc3f6b3dcfe3d3dde1fcd50acf"
-  integrity sha512-X82PtiD13q5AhKynCBrC4COIM9pSJ5a5Xw5oTzBe4+b8yRboBrJSdndiBf1r8od0wWKw9kZMyMJx2LP6iom3RQ==
+datocms-client@>=3.0.18:
+  version "3.0.18"
+  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-3.0.18.tgz#a9df403516ea98802efae10c580f8808f1ae85f3"
+  integrity sha512-5pSJjsyF7mvtPFQZ3RUFWK4Lz01Kg3Hq1glCKCzsuhfwN/iGnLoe1/nmyInLAQoiEMSl/f2AnOvt3stINrp6fw==
   dependencies:
     "@iarna/toml" "^2.2.3"
     arr-diff "^4.0.0"
     axios "^0.19.0"
+    bottleneck "^2.19.5"
     chokidar "^3.3.0"
     clui "^0.3.6"
     colors "^1.4.0"
