@@ -1,6 +1,6 @@
 {
-  "name": "@gatsbyjs/gatsby-source-datocms",
-  "version": "2.2.2",
+  "name": "gatsby-source-datocms",
+  "version": "2.1.29",
   "description": "Gatsby source plugin for building websites using DatoCMS as data source",
   "main": "index.js",
   "scripts": {
@@ -47,13 +47,5 @@
     "gatsby": "^2.12.1",
     "react": "*",
     "react-helmet": "*"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sidharthachatterjee/gatsby-source-datocms.git"
-  },
-  "bugs": {
-    "url": "https://github.com/sidharthachatterjee/gatsby-source-datocms/issues"
-  },
-  "homepage": "https://github.com/sidharthachatterjee/gatsby-source-datocms#readme"
+  }
 }
