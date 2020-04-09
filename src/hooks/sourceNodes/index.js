@@ -76,7 +76,7 @@ module.exports = async (
         } else if (event_type === 'unpublish') {
           loader.entitiesRepo.destroyEntities('item', [entity_id]);
         } else {
-          console.log(`Invalid event type ${event_type}`);
+          reporter.warn(`Invalid event type ${event_type}`);
         }
         break;
 
@@ -95,11 +95,11 @@ module.exports = async (
         } else if (event_type === 'delete') {
           loader.entitiesRepo.destroyEntities('upload', [entity_id]);
         } else {
-          console.log(`Invalid event type ${event_type}`);
+          reporter.warn(`Invalid event type ${event_type}`);
         }
         break;
       default:
-        console.log(`Invalid entity type ${entity_type}`);
+        reporter.warn(`Invalid entity type ${entity_type}`);
         break;
     }
     changesActivity.end();
