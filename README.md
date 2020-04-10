@@ -495,3 +495,10 @@ The fragments you can use are:
 - `GatsbyDatoCmsFixed_noBase64`: no preview effects.
 
 `gatsby-image` will automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, `gatsby-image` will fall back to the default image format.
+
+
+### Field customisations
+
+If you need to customize the GraphQL response that you get from DatoCMS (e.g augmenting models, manipulating fields), you should include your logic in the `createResolvers` API.
+
+Read more about how to customise the GraphQL schema in the [Gatsby documentation](https://www.gatsbyjs.org/docs/schema-customization/#extending-third-party-types)
