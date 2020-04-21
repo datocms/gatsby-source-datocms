@@ -1,5 +1,5 @@
 const React = require('react');
-const Helmet = require('react-helmet').default;
+const { Helmet } = require('react-helmet');
 const objectEntries = require('object.entries');
 const objectAssign = require('object-assign');
 

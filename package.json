@@ -46,7 +46,7 @@
   "peerDependencies": {
     "gatsby": "^2.12.1",
     "react": "*",
-    "react-helmet": "*"
+    "react-helmet": ">= 5.0.0"
   },
   "repository": {
     "type": "git",
