@@ -1,3 +1,7 @@
+### v2.2.0
+
+* Added support for incremental builds in Gatsby Cloud
+
 ### v2.1.28
 
 * Improvements on builds, allowing change of schema on active `gatsby develop` instance
