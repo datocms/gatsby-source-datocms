@@ -9,15 +9,15 @@ const GATSBY_CLOUD = process.env.GATSBY_CLOUD;
 
 let client, loader;
 
-function createClient({ apiToken, apiUrl }) {
+function createClient({ apiToken, apiUrl, environment }) {
   return apiUrl
-    ? new SiteClient(apiToken, CLIENT_HEADERS, apiUrl)
-    : new SiteClient(apiToken, CLIENT_HEADERS);
+    ? new SiteClient(apiToken, { ...CLIENT_HEADERS, environment }, apiUrl)
+    : new SiteClient(apiToken, { ...CLIENT_HEADERS, environment });
 }
 
-function createLoader({ apiToken, apiUrl, previewMode }) {
+function createLoader({ apiToken, apiUrl, previewMode, environment }) {
   if (!client) {
-    client = createClient({ apiToken, apiUrl });
+    client = createClient({ apiToken, apiUrl, environment });
   }
   return new Loader(client, GATSBY_CLOUD || previewMode);
 }

@@ -19,6 +19,7 @@ module.exports = async (
   },
   {
     apiToken,
+    environment,
     disableLiveReload,
     previewMode,
     apiUrl,
@@ -27,8 +28,8 @@ module.exports = async (
 ) => {
   const localeFallbacks = rawLocaleFallbacks || {};
 
-  const client = getClient({ apiToken, previewMode, apiUrl });
-  const loader = getLoader({ apiToken, previewMode, apiUrl });
+  const client = getClient({ apiToken, previewMode, environment, apiUrl });
+  const loader = getLoader({ apiToken, previewMode, environment, apiUrl });
 
   const program = store.getState().program;
   const cacheDir = `${program.directory}/.cache/datocms-assets`;
