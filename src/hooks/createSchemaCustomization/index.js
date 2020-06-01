@@ -1,8 +1,9 @@
 const fs = require('fs-extra');
-const finalizeNodesCreation = require('../sourceNodes/finalizeNodesCreation');
+const createNodeFromEntity = require('../sourceNodes/createNodeFromEntity');
+const destroyEntityNode = require('../sourceNodes/destroyEntityNode');
 const createTypes = require('../sourceNodes/createTypes');
 
-const { getClient, getLoader } = require('../../utils');
+const { getLoader } = require('../../utils');
 
 module.exports = async (
   { actions, getNode, getNodesByType, reporter, parentSpan, schema, store },
@@ -38,8 +39,18 @@ module.exports = async (
 
   activity.start();
 
+  const removeUpserListener = loader.entitiesRepo.addUpsertListener(entity => {
+    createNodeFromEntity(entity, context);
+  });
+
+  const removeDestroyListener = loader.entitiesRepo.addDestroyListener(entity => {
+    destroyEntityNode(entity, context);
+  });
+
   await loader.loadSchema();
-  finalizeNodesCreation(context);
+
+  removeUpserListener();
+  removeDestroyListener();
 
   activity.end();
 

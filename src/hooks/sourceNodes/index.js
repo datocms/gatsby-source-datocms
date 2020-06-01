@@ -106,6 +106,9 @@ module.exports = async (
     return;
   }
 
+  let activity = reporter.activityTimer(`loading DatoCMS content`, { parentSpan });
+  activity.start();
+
   loader.entitiesRepo.addUpsertListener(entity => {
     createNodeFromEntity(entity, context);
   });
@@ -114,11 +117,6 @@ module.exports = async (
     destroyEntityNode(entity, context);
   });
 
-  let activity;
-
-  activity = reporter.activityTimer(`loading DatoCMS content`, { parentSpan });
-
-  activity.start();
   await loader.load();
   finalizeNodesCreation(context);
 
