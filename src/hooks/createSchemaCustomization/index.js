@@ -47,7 +47,7 @@ module.exports = async (
     destroyEntityNode(entity, context);
   });
 
-  await loader.loadSchema();
+  await loader.loadSchemaWithinEnvironment();
 
   removeUpsertListener();
   removeDestroyListener();

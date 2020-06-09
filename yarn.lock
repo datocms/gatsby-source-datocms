@@ -1608,10 +1608,10 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-datocms-client@>=3.0.32:
-  version "3.0.32"
-  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-3.0.32.tgz#6780885a7efde85136ea911506c5a5747a21f097"
-  integrity sha512-jeamJkzVoftIm+xnJl/BDv8IxuSvmPCG1PtEU+vaWLbr3pN3f8e8AKjlEY8nkFlwZWTZ8dnKWSMjrW982nD3Vw==
+datocms-client@>=3.0.34:
+  version "3.0.34"
+  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-3.0.34.tgz#1d4eb6df62201d809ad76256b073507eef601188"
+  integrity sha512-qLF1zNW7T251ImaVYJaWUdI17UfZiO/nECsTSGNQvxpZw2YT/n2jgy6RiPs76dBxgU1cRw7eVr5gIoO+jjoUSg==
   dependencies:
     "@iarna/toml" "^2.2.3"
     arr-diff "^4.0.0"
