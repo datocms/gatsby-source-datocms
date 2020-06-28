@@ -3,7 +3,20 @@ const { Helmet } = require('react-helmet');
 const objectEntries = require('object.entries');
 const objectAssign = require('object-assign');
 
-const HelmetDatoCms = ({ seo, favicon, children, ...rest }) => {
+const globalTagsSwitch = (item) => {
+	switch (item[0]) {
+		case 'siteName':
+			return 'title'
+		case 'twitterAccount':
+			return 'twitter:site'
+		case 'facebookPageUrl':
+			return 'og:facebook'
+		default:
+			return 'description'
+	}
+}
+
+const HelmetDatoCms = ({ seo, globalSeo, favicon, children, ...rest }) => {
   return React.createElement(
     Helmet,
     rest,
@@ -28,6 +41,15 @@ const HelmetDatoCms = ({ seo, favicon, children, ...rest }) => {
         ),
       )
       .concat(children),
+    (globalSeo ? objectEntries(globalSeo) : [])
+			.map((item, i) => {
+				React.createElement(
+					'meta',
+					globalTagsSwitch(item[0]),
+					item[1] ? item[1] : ''
+				)
+			})
+			.concat(children)
   );
 };
 
