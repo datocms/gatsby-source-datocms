@@ -16,7 +16,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.6.2",
     "@babel/preset-env": "^7.6.2",
     "cross-env": "^6.0.3",
-    "np": "^5.1.0",
+    "np": "^6.2.5",
     "prettier": "^1.18.2",
     "react": "^16.10.2",
     "react-helmet": "^5.2.0"
