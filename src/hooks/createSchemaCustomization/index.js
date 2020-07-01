@@ -7,11 +7,11 @@ const { getLoader } = require('../../utils');
 
 module.exports = async (
   { actions, getNode, getNodesByType, reporter, parentSpan, schema, store },
-  { apiToken, previewMode, apiUrl, localeFallbacks: rawLocaleFallbacks },
+  { apiToken, previewMode, environment, apiUrl, localeFallbacks: rawLocaleFallbacks },
 ) => {
   const localeFallbacks = rawLocaleFallbacks || {};
 
-  const loader = getLoader({ apiToken, previewMode, apiUrl });
+  const loader = getLoader({ apiToken, previewMode, environment, apiUrl });
 
   const program = store.getState().program;
   const cacheDir = `${program.directory}/.cache/datocms-assets`;
