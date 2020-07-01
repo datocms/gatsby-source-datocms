@@ -1,3 +1,7 @@
+### v2.3.0
+
+* Introduction of support for [environments](https://www.datocms.com/docs/general-concepts/primary-and-sandbox-environments).
+
 ### v2.2.0
 
 * Added support for incremental builds in Gatsby Cloud
