@@ -4,6 +4,7 @@ const path = require('path');
 const md5 = require('md5');
 const request = require('request-promise-native');
 const resizeUrl = require('./resizeUrl');
+const queryString = require('query-string');
 
 const queue = new Queue(3, Infinity);
 
@@ -30,8 +31,20 @@ function download(requestUrl, cacheDir) {
 }
 
 module.exports = ({ src, width, height, aspectRatio }, cacheDir) => {
+  const [baseUrl, query] = src.split('?');
+
+  if (!baseUrl.startsWith('https://www.datocms-assets.com/')) {
+    return download(
+      resizeUrl({ url: src, aspectRatio, width, height }, 20),
+      cacheDir,
+    );
+  }
+
+  const imgixParams = queryString.parse(query);
+  imgixParams.lqip = 'blurhash';
+
   return download(
-    resizeUrl({ url: src, aspectRatio, width, height }, 20),
+    `${baseUrl}?${queryString.stringify(imgixParams)}`,
     cacheDir,
   );
 };
