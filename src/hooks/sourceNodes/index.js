@@ -72,6 +72,51 @@ module.exports = async (
             { deserializeResponse: false, allPages: true },
           );
           if (payload) {
+            // `rich_text`, `links`, `link` fields link to other entities and we need to
+            // fetch them separately to make sure we have all the data
+            const linkedEntitiesIdsToFetch = payload.data.reduce(
+              (acc, payload) => {
+                const item_type_rel = payload.relationships.item_type.data;
+                const itemTypeForThis = loader.entitiesRepo.findEntity(
+                  item_type_rel.type,
+                  item_type_rel.id,
+                );
+                const fieldsToResolve = itemTypeForThis.fields.filter(
+                  fieldDef =>
+                    [`rich_text`, `links`, `link`].includes(fieldDef.fieldType),
+                );
+
+                const fieldsToResolveKeys = fieldsToResolve.map(
+                  field => field.apiKey,
+                );
+                fieldsToResolveKeys.forEach(f => {
+                  const v = payload.attributes[f];
+                  if (Array.isArray(v)) {
+                    v.forEach(acc.add.bind(acc));
+                  } else if (v) {
+                    acc.add(v);
+                  }
+                });
+
+                return acc;
+              },
+              new Set(),
+            );
+
+            const linkedEntitiesPayload = await client.items.all(
+              {
+                'filter[ids]': Array.from(linkedEntitiesIdsToFetch).join(','),
+                version: 'published',
+              },
+              {
+                deserializeResponse: false,
+                allPages: true,
+              },
+            );
+
+            // attach included portion of payload
+            payload.included = linkedEntitiesPayload.data;
+
             loader.entitiesRepo.upsertEntities(payload);
           }
         } else if (event_type === 'unpublish') {
@@ -107,7 +152,9 @@ module.exports = async (
     return;
   }
 
-  let activity = reporter.activityTimer(`loading DatoCMS content`, { parentSpan });
+  let activity = reporter.activityTimer(`loading DatoCMS content`, {
+    parentSpan,
+  });
   activity.start();
 
   loader.entitiesRepo.addUpsertListener(entity => {
