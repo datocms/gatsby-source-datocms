@@ -75,7 +75,7 @@ module.exports = async (
             // `rich_text`, `links`, `link` fields link to other entities and we need to
             // fetch them separately to make sure we have all the data
             const linkedEntitiesIdsToFetch = payload.data.reduce(
-              (acc, payload) => {
+              (collectedIds, payload) => {
                 const item_type_rel = payload.relationships.item_type.data;
                 const itemTypeForThis = loader.entitiesRepo.findEntity(
                   item_type_rel.type,
@@ -86,19 +86,31 @@ module.exports = async (
                     [`rich_text`, `links`, `link`].includes(fieldDef.fieldType),
                 );
 
-                const fieldsToResolveKeys = fieldsToResolve.map(
-                  field => field.apiKey,
-                );
-                fieldsToResolveKeys.forEach(f => {
-                  const v = payload.attributes[f];
-                  if (Array.isArray(v)) {
-                    v.forEach(acc.add.bind(acc));
-                  } else if (v) {
-                    acc.add(v);
+                function addRawValueToCollectedIds(fieldRawValue) {
+                  if (Array.isArray(fieldRawValue)) {
+                    fieldRawValue.forEach(collectedIds.add.bind(collectedIds));
+                  } else if (fieldRawValue) {
+                    collectedIds.add(fieldRawValue);
+                  }
+                }
+
+                fieldsToResolve.forEach(fieldInfo => {
+                  const fieldRawValue = payload.attributes[fieldInfo.apiKey];
+                  if (fieldInfo.localized) {
+                    // Localized fields raw values are object with lang codes
+                    // as keys. We need to iterate over properties to
+                    // collect ids from all languages
+                    Object.values(fieldRawValue).forEach(
+                      fieldTranslationRawValue => {
+                        addRawValueToCollectedIds(fieldTranslationRawValue);
+                      },
+                    );
+                  } else {
+                    addRawValueToCollectedIds(fieldRawValue);
                   }
                 });
 
-                return acc;
+                return collectedIds;
               },
               new Set(),
             );
