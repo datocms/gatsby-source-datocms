@@ -72,6 +72,63 @@ module.exports = async (
             { deserializeResponse: false, allPages: true },
           );
           if (payload) {
+            // `rich_text`, `links`, `link` fields link to other entities and we need to
+            // fetch them separately to make sure we have all the data
+            const linkedEntitiesIdsToFetch = payload.data.reduce(
+              (collectedIds, payload) => {
+                const item_type_rel = payload.relationships.item_type.data;
+                const itemTypeForThis = loader.entitiesRepo.findEntity(
+                  item_type_rel.type,
+                  item_type_rel.id,
+                );
+                const fieldsToResolve = itemTypeForThis.fields.filter(
+                  fieldDef =>
+                    [`rich_text`, `links`, `link`].includes(fieldDef.fieldType),
+                );
+
+                function addRawValueToCollectedIds(fieldRawValue) {
+                  if (Array.isArray(fieldRawValue)) {
+                    fieldRawValue.forEach(collectedIds.add.bind(collectedIds));
+                  } else if (fieldRawValue) {
+                    collectedIds.add(fieldRawValue);
+                  }
+                }
+
+                fieldsToResolve.forEach(fieldInfo => {
+                  const fieldRawValue = payload.attributes[fieldInfo.apiKey];
+                  if (fieldInfo.localized) {
+                    // Localized fields raw values are object with lang codes
+                    // as keys. We need to iterate over properties to
+                    // collect ids from all languages
+                    Object.values(fieldRawValue).forEach(
+                      fieldTranslationRawValue => {
+                        addRawValueToCollectedIds(fieldTranslationRawValue);
+                      },
+                    );
+                  } else {
+                    addRawValueToCollectedIds(fieldRawValue);
+                  }
+                });
+
+                return collectedIds;
+              },
+              new Set(),
+            );
+
+            const linkedEntitiesPayload = await client.items.all(
+              {
+                'filter[ids]': Array.from(linkedEntitiesIdsToFetch).join(','),
+                version: 'published',
+              },
+              {
+                deserializeResponse: false,
+                allPages: true,
+              },
+            );
+
+            // attach included portion of payload
+            payload.included = linkedEntitiesPayload.data;
+
             loader.entitiesRepo.upsertEntities(payload);
           }
         } else if (event_type === 'unpublish') {
@@ -107,7 +164,9 @@ module.exports = async (
     return;
   }
 
-  let activity = reporter.activityTimer(`loading DatoCMS content`, { parentSpan });
+  let activity = reporter.activityTimer(`loading DatoCMS content`, {
+    parentSpan,
+  });
   activity.start();
 
   loader.entitiesRepo.addUpsertListener(entity => {
