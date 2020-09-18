@@ -6,6 +6,7 @@ const CLIENT_HEADERS = {
 };
 
 const GATSBY_CLOUD = process.env.GATSBY_CLOUD;
+const GATSBY_EXECUTING_COMMAND = process.env.gatsby_executing_command;
 
 let client, loader;
 
@@ -19,7 +20,10 @@ function createLoader({ apiToken, apiUrl, previewMode, environment }) {
   if (!client) {
     client = createClient({ apiToken, apiUrl, environment });
   }
-  return new Loader(client, GATSBY_CLOUD || previewMode);
+  return new Loader(
+    client,
+    (GATSBY_CLOUD && GATSBY_EXECUTING_COMMAND === 'develop') || previewMode,
+  );
 }
 
 function getLoader(options) {
