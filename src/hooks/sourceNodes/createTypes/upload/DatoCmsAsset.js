@@ -13,17 +13,17 @@ module.exports = ({ actions, schema, store }) => {
     schema.buildEnumType({
       name: 'DatoCmsAssetVideoThumbnailFormat',
       values: {
-        'jpg': { value: 'jpg' },
-        'png': { value: 'png' },
-        'gif': { value: 'gif' }
+        jpg: { value: 'jpg' },
+        png: { value: 'png' },
+        gif: { value: 'gif' },
       },
     }),
     schema.buildEnumType({
       name: 'DatoCmsAssetVideoMp4ResolutionQuality',
       values: {
-        'low': { value: 'low' },
-        'medium': { value: 'medium' },
-        'high': { value: 'high' }
+        low: { value: 'low' },
+        medium: { value: 'medium' },
+        high: { value: 'high' },
       },
     }),
     schema.buildObjectType({
@@ -35,14 +35,14 @@ module.exports = ({ actions, schema, store }) => {
         duration: 'Int',
         streamingUrl: {
           type: 'String',
-          resolve: (upload) => {
+          resolve: upload => {
             return `https://stream.mux.com/${upload.muxPlaybackId}.m3u8`;
           },
         },
         thumbnailUrl: {
           type: 'String',
           args: {
-            format: 'DatoCmsAssetVideoThumbnailFormat'
+            format: 'DatoCmsAssetVideoThumbnailFormat',
           },
           resolve: (upload, { format = 'jpg' }) => {
             if (format === 'gif') {
@@ -56,19 +56,19 @@ module.exports = ({ actions, schema, store }) => {
           type: 'String',
           args: {
             res: 'DatoCmsAssetVideoMp4ResolutionQuality',
-            exactRes: 'DatoCmsAssetVideoMp4ResolutionQuality'
+            exactRes: 'DatoCmsAssetVideoMp4ResolutionQuality',
           },
-          resolve: (upload, options) => {
+          resolve: (upload, args) => {
             if (!upload.muxMp4HighestRes) {
               return null;
             }
 
-            if (options.exactRes) {
-              if (options.exactRes === 'low') {
+            if (args.exactRes) {
+              if (args.exactRes === 'low') {
                 return `https://stream.mux.com/${upload.muxPlaybackId}/low.mp4`;
               }
 
-              if (options.exactRes === 'medium') {
+              if (args.exactRes === 'medium') {
                 return ['medium', 'high'].includes(upload.muxMp4HighestRes)
                   ? `https://stream.mux.com/${upload.muxPlaybackId}/medium.mp4`
                   : null;
@@ -81,11 +81,11 @@ module.exports = ({ actions, schema, store }) => {
               return null;
             }
 
-            if (options.res === 'low') {
+            if (args.res === 'low') {
               return `https://stream.mux.com/${upload.muxPlaybackId}/low.mp4`;
             }
 
-            if (options.res === 'medium') {
+            if (args.res === 'medium') {
               if (['low', 'medium'].includes(upload.muxMp4HighestRes)) {
                 return `https://stream.mux.com/${upload.muxPlaybackId}/${upload.muxMp4HighestRes}.mp4`;
               }

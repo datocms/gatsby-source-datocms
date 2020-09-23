@@ -1,7 +1,11 @@
+/.yalc
+/.yalc.lock
 /index.js
 /gatsby-node.js
 /hooks
 /old
 /node_modules
 /utils.js
-
+/test/fixtures/sample-gatsby-structure/.cache
+/test/fixtures/sample-gatsby-structure/node_modules
+/test/fixtures/sample-gatsby-structure/public

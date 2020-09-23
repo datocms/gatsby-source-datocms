@@ -1,0 +1,29 @@
+{
+  "data": {
+    "datoCmsAsset": {
+      "size": 1098,
+      "width": null,
+      "height": null,
+      "path": "/34723/1600784903-samplecsvfile2kb.csv",
+      "format": "csv",
+      "isImage": false,
+      "notes": null,
+      "author": null,
+      "copyright": null,
+      "tags": [],
+      "smartTags": [],
+      "filename": "samplecsvfile2kb.csv",
+      "basename": "samplecsvfile2kb",
+      "exifInfo": {},
+      "mimeType": "text/csv",
+      "blurhash": null,
+      "originalId": "2637251",
+      "url": "https://www.datocms-assets.com/34723/1600784903-samplecsvfile2kb.csv",
+      "createdAt": "2020-09-22T14:28:23.693Z",
+      "colors": [],
+      "video": null,
+      "fixed": null,
+      "fluid": null
+    }
+  }
+}

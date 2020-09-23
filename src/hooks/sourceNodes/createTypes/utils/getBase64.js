@@ -43,8 +43,5 @@ module.exports = ({ src, width, height, aspectRatio }, cacheDir) => {
   const imgixParams = queryString.parse(query);
   imgixParams.lqip = 'blurhash';
 
-  return download(
-    `${baseUrl}?${queryString.stringify(imgixParams)}`,
-    cacheDir,
-  );
+  return download(`${baseUrl}?${queryString.stringify(imgixParams)}`, cacheDir);
 };

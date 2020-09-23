@@ -1,0 +1,38 @@
+{
+  "data": {
+    "allDatoCmsHierarchical": {
+      "nodes": [
+        {
+          "id": "DatoCmsHierarchical-7378631-en",
+          "title": "Parent",
+          "position": 1,
+          "treeChildren": [
+            {
+              "id": "DatoCmsHierarchical-7378632-en",
+              "title": "Children",
+              "position": 0,
+              "treeParent": {
+                "id": "DatoCmsHierarchical-7378631-en",
+                "title": "Parent"
+              },
+              "treeChildren": [
+                {
+                  "id": "DatoCmsHierarchical-7378634-en",
+                  "title": "Grandchildren 1",
+                  "position": 0,
+                  "treeChildren": []
+                },
+                {
+                  "id": "DatoCmsHierarchical-7378650-en",
+                  "title": "Grandchildren 2",
+                  "position": 1,
+                  "treeChildren": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

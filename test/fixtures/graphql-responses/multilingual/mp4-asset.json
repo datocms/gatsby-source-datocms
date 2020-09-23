@@ -1,0 +1,40 @@
+{
+  "data": {
+    "datoCmsAsset": {
+      "size": 1055736,
+      "width": 1280,
+      "height": 720,
+      "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+      "format": "mp4",
+      "isImage": false,
+      "notes": null,
+      "author": null,
+      "copyright": null,
+      "tags": [],
+      "smartTags": [],
+      "filename": "samplevideo1280x7201mb.mp4",
+      "basename": "samplevideo1280x7201mb",
+      "exifInfo": {},
+      "mimeType": "video/mp4",
+      "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+      "originalId": "2637250",
+      "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+      "createdAt": "2020-09-22T14:28:22.847Z",
+      "colors": [],
+      "video": {
+        "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+        "frameRate": 25,
+        "duration": 5,
+        "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+        "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+        "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+        "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+        "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+        "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+        "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4"
+      },
+      "fixed": null,
+      "fluid": null
+    }
+  }
+}

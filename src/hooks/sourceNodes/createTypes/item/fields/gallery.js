@@ -1,38 +1,29 @@
-const { camelize } = require('humps');
+const { camelizeKeys } = require('humps');
 
-module.exports = ({
-  parentItemType,
-  field,
-  schema,
-  gqlItemTypeName,
-  entitiesRepo,
-}) => {
-  const fieldKey = camelize(field.apiKey);
+module.exports = () => ({
+  type: '[DatoCmsFileField]',
+  resolveForSimpleField: (fieldValue, context, node) => {
+    if (!fieldValue) {
+      return null;
+    }
 
-  return {
-    fieldType: {
-      type: '[DatoCmsFileField]',
-      allLocalesResolver: parent => parent.value,
-      normalResolver: parent => parent[fieldKey],
-      resolveFromValue: (fileObjects, args, context) => {
-        if (!fileObjects) {
-          return null;
-        }
+    return fieldValue.map(fileField => {
+      const upload = context.nodeModel.getNodeById({
+        id: `DatoCmsAsset-${fileField.upload_id}`,
+      });
 
-        return fileObjects.map(fileObject => {
-          const upload = context.nodeModel.getNodeById({
-            id: fileObject.uploadId___NODE,
-          });
-          const defaults = upload.defaultFieldMetadata[fileObject.locale];
+      const uploadDefaultFieldMetadata =
+        upload.entityPayload.attributes.default_field_metadata[node.locale];
 
-          return {
-            ...upload,
-            alt: fileObject.alt || defaults.alt,
-            title: fileObject.title || defaults.title,
-            customData: { ...defaults.customData, ...fileObject.customData },
-          };
-        });
-      },
-    },
-  };
-};
+      return {
+        ...upload,
+        alt: fileField.alt || uploadDefaultFieldMetadata.alt,
+        title: fileField.title || uploadDefaultFieldMetadata.title,
+        customData: {
+          ...camelizeKeys(uploadDefaultFieldMetadata.customData),
+          ...fileField.customData,
+        },
+      };
+    });
+  },
+});

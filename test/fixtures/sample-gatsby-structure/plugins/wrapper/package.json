@@ -1,0 +1,11 @@
+{
+  "name": "wrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gatsby-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefano Verna",
+  "license": "ISC"
+}

@@ -1,4 +1,5 @@
-const { camelize, pascalize } = require('humps');
+const { pascalize } = require('humps');
+const itemNodeId = require('../../utils/itemNodeId');
 
 module.exports = ({
   parentItemType,
@@ -7,8 +8,6 @@ module.exports = ({
   gqlItemTypeName,
   entitiesRepo,
 }) => {
-  const fieldKey = camelize(field.apiKey);
-
   const parentItemTypeName = gqlItemTypeName(parentItemType);
 
   const itemTypeIds =
@@ -24,13 +23,12 @@ module.exports = ({
     const linkedItemType = entitiesRepo.findEntity('item_type', itemTypeIds[0]);
 
     return {
-      fieldType: {
-        type: `[${gqlItemTypeName(linkedItemType)}]`,
-        allLocalesResolver: (parent) => parent.value___NODE,
-        normalResolver: (parent) => parent[`${fieldKey}___NODE`],
-        resolveFromValue: (ids, args, context) => {
-          return context.nodeModel.getNodesByIds({ ids });
-        },
+      type: `[${gqlItemTypeName(linkedItemType)}]`,
+      resolveForSimpleField: (fieldValue, context, node) => {
+        const ids = (fieldValue || []).map(id =>
+          itemNodeId(id, node.locale, entitiesRepo),
+        );
+        return context.nodeModel.getNodesByIds({ ids });
       },
     };
   }
@@ -40,7 +38,7 @@ module.exports = ({
   )}`;
 
   return {
-    types: [
+    additionalTypesToCreate: [
       schema.buildUnionType({
         name: unionType,
         types: itemTypeIds.map(id =>
@@ -48,13 +46,12 @@ module.exports = ({
         ),
       }),
     ],
-    fieldType: {
-      type: `[${unionType}]`,
-      allLocalesResolver: (parent) => parent.value___NODE,
-      normalResolver: (parent) => parent[`${fieldKey}___NODE`],
-      resolveFromValue: (ids, args, context) => {
-        return context.nodeModel.getNodesByIds({ ids });
-      },
+    type: `[${unionType}]`,
+    resolveForSimpleField: (fieldValue, context, node) => {
+      const ids = (fieldValue || []).map(id =>
+        itemNodeId(id, node.locale, entitiesRepo),
+      );
+      return context.nodeModel.getNodesByIds({ ids });
     },
   };
 };

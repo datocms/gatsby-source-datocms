@@ -7,7 +7,7 @@ import DatoCmsSeoMetaTags from './DatoCmsSeoMetaTags';
 import DatoCmsVideoField from './DatoCmsVideoField';
 import DatoCmsTextNode from './DatoCmsTextNode';
 
-module.exports = (context) => {
+module.exports = context => {
   [
     DatoCmsColorField,
     DatoCmsFileField,
@@ -18,4 +18,4 @@ module.exports = (context) => {
     DatoCmsVideoField,
     DatoCmsTextNode,
   ].forEach(fn => fn(context));
-}
+};

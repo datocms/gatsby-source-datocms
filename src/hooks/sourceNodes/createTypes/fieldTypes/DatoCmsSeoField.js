@@ -9,15 +9,15 @@ module.exports = ({ actions, schema }) => {
         twitterCard: 'String',
         image: {
           type: 'DatoCmsAsset',
-          resolve: (parent, args, context) => {
-            const id = parent.image___NODE;
-            if (id) {
-              return context.nodeModel.getNodeById({ id: id });
+          resolve: (fieldValue, args, context) => {
+            if (fieldValue && fieldValue.image) {
+              return context.nodeModel.getNodeById({
+                id: `DatoCmsAsset-${fieldValue.image}`,
+              });
             }
-          }
+          },
         },
       },
     }),
   ]);
-}
-
+};

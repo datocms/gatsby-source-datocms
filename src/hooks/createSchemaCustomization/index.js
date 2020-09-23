@@ -7,7 +7,13 @@ const { getLoader } = require('../../utils');
 
 module.exports = async (
   { actions, getNode, getNodesByType, reporter, parentSpan, schema, store },
-  { apiToken, previewMode, environment, apiUrl, localeFallbacks: rawLocaleFallbacks },
+  {
+    apiToken,
+    previewMode,
+    environment,
+    apiUrl,
+    localeFallbacks: rawLocaleFallbacks,
+  },
 ) => {
   const localeFallbacks = rawLocaleFallbacks || {};
 
@@ -43,9 +49,11 @@ module.exports = async (
     createNodeFromEntity(entity, context);
   });
 
-  const removeDestroyListener = loader.entitiesRepo.addDestroyListener(entity => {
-    destroyEntityNode(entity, context);
-  });
+  const removeDestroyListener = loader.entitiesRepo.addDestroyListener(
+    entity => {
+      destroyEntityNode(entity, context);
+    },
+  );
 
   await loader.loadSchemaWithinEnvironment();
 

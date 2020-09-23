@@ -1,0 +1,1140 @@
+{
+  "data": {
+    "enArticle": {
+      "__typename": "DatoCmsArticle",
+      "locale": "en",
+      "originalId": "7364344",
+      "id": "DatoCmsArticle-7364344-en",
+      "singleLineString": "Single line string",
+      "_allSingleLineStringLocales": [
+        {
+          "locale": "en",
+          "value": "Single line string"
+        },
+        {
+          "locale": "it",
+          "value": "Stringa semplice"
+        }
+      ],
+      "multipleParagraphText": "Multiple paragraph text",
+      "_allMultipleParagraphTextLocales": [
+        {
+          "locale": "en",
+          "value": "Multiple paragraph text"
+        },
+        {
+          "locale": "it",
+          "value": "Paragrafi multipli"
+        }
+      ],
+      "multipleParagraphTextNode": {
+        "id": "DatoCmsTextNode-DatoCmsArticle-7364344-en-multipleParagraphText",
+        "internal": {
+          "content": "Multiple paragraph text"
+        }
+      },
+      "singleAsset": {
+        "alt": "English alt caption",
+        "title": "Title",
+        "customData": {},
+        "size": 4278,
+        "width": 100,
+        "height": 75,
+        "path": "/34723/1600784341-plant.jpg",
+        "format": "jpg",
+        "isImage": true,
+        "notes": "Notes",
+        "author": "Mark",
+        "copyright": "Smith",
+        "tags": [
+          "vapor"
+        ],
+        "smartTags": [
+          "green",
+          "plant",
+          "fruit",
+          "food"
+        ],
+        "filename": "plant.jpg",
+        "basename": "plant",
+        "exifInfo": {
+          "iso": 100,
+          "model": "FinePix6900ZOOM",
+          "fNumber": 4,
+          "flashMode": 0,
+          "focalLength": 21.8
+        },
+        "mimeType": "image/jpeg",
+        "blurhash": "LBDwZP8#$+?Gu^4pt7%0.4RjQuRP",
+        "originalId": "2637142",
+        "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg",
+        "createdAt": "2020-09-22T14:19:04.256Z",
+        "colors": [
+          {
+            "red": 133,
+            "green": 181,
+            "blue": 73,
+            "alpha": 255,
+            "rgb": "rgb(133, 181, 73)",
+            "hex": "#85b549"
+          },
+          {
+            "red": 197,
+            "green": 192,
+            "blue": 143,
+            "alpha": 255,
+            "rgb": "rgb(197, 192, 143)",
+            "hex": "#c5c08f"
+          },
+          {
+            "red": 142,
+            "green": 176,
+            "blue": 80,
+            "alpha": 255,
+            "rgb": "rgb(142, 176, 80)",
+            "hex": "#8eb050"
+          },
+          {
+            "red": 71,
+            "green": 88,
+            "blue": 5,
+            "alpha": 255,
+            "rgb": "rgb(71, 88, 5)",
+            "hex": "#475805"
+          },
+          {
+            "red": 239,
+            "green": 250,
+            "blue": 174,
+            "alpha": 255,
+            "rgb": "rgb(239, 250, 174)",
+            "hex": "#effaae"
+          },
+          {
+            "red": 78,
+            "green": 84,
+            "blue": 42,
+            "alpha": 255,
+            "rgb": "rgb(78, 84, 42)",
+            "hex": "#4e542a"
+          }
+        ],
+        "video": null,
+        "fixed": {
+          "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+          "aspectRatio": 1.3333333333333333,
+          "width": 300,
+          "height": 225,
+          "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fm=auto&w=300",
+          "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1&fm=auto&w=300 1x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1.5&fm=auto&w=300 1.5x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=2&fm=auto&w=300 2x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=3&fm=auto&w=300 3x",
+          "sizes": null
+        },
+        "fluid": {
+          "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+          "aspectRatio": 1.3333333333333333,
+          "width": 100,
+          "height": 75,
+          "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fm=auto",
+          "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.75&fm=auto&w=100 75w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1&fm=auto&w=100 100w",
+          "sizes": "(max-width: 300px) 100vw, 300px"
+        }
+      },
+      "_allSingleAssetLocales": [
+        {
+          "locale": "en",
+          "value": {
+            "alt": "English alt caption",
+            "title": "Title",
+            "customData": {},
+            "size": 4278,
+            "width": 100,
+            "height": 75,
+            "path": "/34723/1600784341-plant.jpg",
+            "format": "jpg",
+            "isImage": true,
+            "notes": "Notes",
+            "author": "Mark",
+            "copyright": "Smith",
+            "tags": [
+              "vapor"
+            ],
+            "smartTags": [
+              "green",
+              "plant",
+              "fruit",
+              "food"
+            ],
+            "filename": "plant.jpg",
+            "basename": "plant",
+            "exifInfo": {
+              "iso": 100,
+              "model": "FinePix6900ZOOM",
+              "fNumber": 4,
+              "flashMode": 0,
+              "focalLength": 21.8
+            },
+            "mimeType": "image/jpeg",
+            "blurhash": "LBDwZP8#$+?Gu^4pt7%0.4RjQuRP",
+            "originalId": "2637142",
+            "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg",
+            "createdAt": "2020-09-22T14:19:04.256Z",
+            "colors": [
+              {
+                "red": 133,
+                "green": 181,
+                "blue": 73,
+                "alpha": 255,
+                "rgb": "rgb(133, 181, 73)",
+                "hex": "#85b549"
+              },
+              {
+                "red": 197,
+                "green": 192,
+                "blue": 143,
+                "alpha": 255,
+                "rgb": "rgb(197, 192, 143)",
+                "hex": "#c5c08f"
+              },
+              {
+                "red": 142,
+                "green": 176,
+                "blue": 80,
+                "alpha": 255,
+                "rgb": "rgb(142, 176, 80)",
+                "hex": "#8eb050"
+              },
+              {
+                "red": 71,
+                "green": 88,
+                "blue": 5,
+                "alpha": 255,
+                "rgb": "rgb(71, 88, 5)",
+                "hex": "#475805"
+              },
+              {
+                "red": 239,
+                "green": 250,
+                "blue": 174,
+                "alpha": 255,
+                "rgb": "rgb(239, 250, 174)",
+                "hex": "#effaae"
+              },
+              {
+                "red": 78,
+                "green": 84,
+                "blue": 42,
+                "alpha": 255,
+                "rgb": "rgb(78, 84, 42)",
+                "hex": "#4e542a"
+              }
+            ],
+            "video": null,
+            "fixed": {
+              "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+              "aspectRatio": 1.3333333333333333,
+              "width": 300,
+              "height": 225,
+              "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fm=auto&w=300",
+              "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1&fm=auto&w=300 1x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1.5&fm=auto&w=300 1.5x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=2&fm=auto&w=300 2x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=3&fm=auto&w=300 3x",
+              "sizes": null
+            },
+            "fluid": {
+              "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+              "aspectRatio": 1.3333333333333333,
+              "width": 100,
+              "height": 75,
+              "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fm=auto",
+              "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.75&fm=auto&w=100 75w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1&fm=auto&w=100 100w",
+              "sizes": "(max-width: 300px) 100vw, 300px"
+            }
+          }
+        },
+        {
+          "locale": "it",
+          "value": {
+            "alt": null,
+            "title": null,
+            "customData": {},
+            "size": 1055736,
+            "width": 1280,
+            "height": 720,
+            "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+            "format": "mp4",
+            "isImage": false,
+            "notes": null,
+            "author": null,
+            "copyright": null,
+            "tags": [],
+            "smartTags": [],
+            "filename": "samplevideo1280x7201mb.mp4",
+            "basename": "samplevideo1280x7201mb",
+            "exifInfo": {},
+            "mimeType": "video/mp4",
+            "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+            "originalId": "2637250",
+            "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+            "createdAt": "2020-09-22T14:28:22.847Z",
+            "colors": [],
+            "video": {
+              "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+              "frameRate": 25,
+              "duration": 5,
+              "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+              "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+              "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+              "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+              "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+              "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+              "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4"
+            },
+            "fixed": null,
+            "fluid": null
+          }
+        }
+      ],
+      "assetGallery": [
+        {
+          "alt": null,
+          "title": null,
+          "customData": {},
+          "size": 1055736,
+          "width": 1280,
+          "height": 720,
+          "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+          "format": "mp4",
+          "isImage": false,
+          "notes": null,
+          "author": null,
+          "copyright": null,
+          "tags": [],
+          "smartTags": [],
+          "filename": "samplevideo1280x7201mb.mp4",
+          "basename": "samplevideo1280x7201mb",
+          "exifInfo": {},
+          "mimeType": "video/mp4",
+          "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+          "originalId": "2637250",
+          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+          "createdAt": "2020-09-22T14:28:22.847Z",
+          "colors": [],
+          "video": {
+            "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+            "frameRate": 25,
+            "duration": 5,
+            "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+            "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+            "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+            "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+            "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+            "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+            "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4"
+          },
+          "fixed": null,
+          "fluid": null
+        },
+        {
+          "alt": "English alt caption",
+          "title": "Title",
+          "customData": {},
+          "size": 4278,
+          "width": 100,
+          "height": 75,
+          "path": "/34723/1600784341-plant.jpg",
+          "format": "jpg",
+          "isImage": true,
+          "notes": "Notes",
+          "author": "Mark",
+          "copyright": "Smith",
+          "tags": [
+            "vapor"
+          ],
+          "smartTags": [
+            "green",
+            "plant",
+            "fruit",
+            "food"
+          ],
+          "filename": "plant.jpg",
+          "basename": "plant",
+          "exifInfo": {
+            "iso": 100,
+            "model": "FinePix6900ZOOM",
+            "fNumber": 4,
+            "flashMode": 0,
+            "focalLength": 21.8
+          },
+          "mimeType": "image/jpeg",
+          "blurhash": "LBDwZP8#$+?Gu^4pt7%0.4RjQuRP",
+          "originalId": "2637142",
+          "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg",
+          "createdAt": "2020-09-22T14:19:04.256Z",
+          "colors": [
+            {
+              "red": 133,
+              "green": 181,
+              "blue": 73,
+              "alpha": 255,
+              "rgb": "rgb(133, 181, 73)",
+              "hex": "#85b549"
+            },
+            {
+              "red": 197,
+              "green": 192,
+              "blue": 143,
+              "alpha": 255,
+              "rgb": "rgb(197, 192, 143)",
+              "hex": "#c5c08f"
+            },
+            {
+              "red": 142,
+              "green": 176,
+              "blue": 80,
+              "alpha": 255,
+              "rgb": "rgb(142, 176, 80)",
+              "hex": "#8eb050"
+            },
+            {
+              "red": 71,
+              "green": 88,
+              "blue": 5,
+              "alpha": 255,
+              "rgb": "rgb(71, 88, 5)",
+              "hex": "#475805"
+            },
+            {
+              "red": 239,
+              "green": 250,
+              "blue": 174,
+              "alpha": 255,
+              "rgb": "rgb(239, 250, 174)",
+              "hex": "#effaae"
+            },
+            {
+              "red": 78,
+              "green": 84,
+              "blue": 42,
+              "alpha": 255,
+              "rgb": "rgb(78, 84, 42)",
+              "hex": "#4e542a"
+            }
+          ],
+          "video": null,
+          "fixed": {
+            "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+            "aspectRatio": 1.3333333333333333,
+            "width": 300,
+            "height": 225,
+            "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fm=auto&w=300",
+            "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1&fm=auto&w=300 1x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1.5&fm=auto&w=300 1.5x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=2&fm=auto&w=300 2x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=3&fm=auto&w=300 3x",
+            "sizes": null
+          },
+          "fluid": {
+            "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+            "aspectRatio": 1.3333333333333333,
+            "width": 100,
+            "height": 75,
+            "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fm=auto",
+            "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.75&fm=auto&w=100 75w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1&fm=auto&w=100 100w",
+            "sizes": "(max-width: 300px) 100vw, 300px"
+          }
+        }
+      ],
+      "_allAssetGalleryLocales": [
+        {
+          "locale": "en",
+          "value": [
+            {
+              "alt": null,
+              "title": null,
+              "customData": {},
+              "size": 1055736,
+              "width": 1280,
+              "height": 720,
+              "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+              "format": "mp4",
+              "isImage": false,
+              "notes": null,
+              "author": null,
+              "copyright": null,
+              "tags": [],
+              "smartTags": [],
+              "filename": "samplevideo1280x7201mb.mp4",
+              "basename": "samplevideo1280x7201mb",
+              "exifInfo": {},
+              "mimeType": "video/mp4",
+              "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+              "originalId": "2637250",
+              "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+              "createdAt": "2020-09-22T14:28:22.847Z",
+              "colors": [],
+              "video": {
+                "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+                "frameRate": 25,
+                "duration": 5,
+                "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+                "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+                "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+                "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+                "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+                "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+                "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4"
+              },
+              "fixed": null,
+              "fluid": null
+            },
+            {
+              "alt": "English alt caption",
+              "title": "Title",
+              "customData": {},
+              "size": 4278,
+              "width": 100,
+              "height": 75,
+              "path": "/34723/1600784341-plant.jpg",
+              "format": "jpg",
+              "isImage": true,
+              "notes": "Notes",
+              "author": "Mark",
+              "copyright": "Smith",
+              "tags": [
+                "vapor"
+              ],
+              "smartTags": [
+                "green",
+                "plant",
+                "fruit",
+                "food"
+              ],
+              "filename": "plant.jpg",
+              "basename": "plant",
+              "exifInfo": {
+                "iso": 100,
+                "model": "FinePix6900ZOOM",
+                "fNumber": 4,
+                "flashMode": 0,
+                "focalLength": 21.8
+              },
+              "mimeType": "image/jpeg",
+              "blurhash": "LBDwZP8#$+?Gu^4pt7%0.4RjQuRP",
+              "originalId": "2637142",
+              "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg",
+              "createdAt": "2020-09-22T14:19:04.256Z",
+              "colors": [
+                {
+                  "red": 133,
+                  "green": 181,
+                  "blue": 73,
+                  "alpha": 255,
+                  "rgb": "rgb(133, 181, 73)",
+                  "hex": "#85b549"
+                },
+                {
+                  "red": 197,
+                  "green": 192,
+                  "blue": 143,
+                  "alpha": 255,
+                  "rgb": "rgb(197, 192, 143)",
+                  "hex": "#c5c08f"
+                },
+                {
+                  "red": 142,
+                  "green": 176,
+                  "blue": 80,
+                  "alpha": 255,
+                  "rgb": "rgb(142, 176, 80)",
+                  "hex": "#8eb050"
+                },
+                {
+                  "red": 71,
+                  "green": 88,
+                  "blue": 5,
+                  "alpha": 255,
+                  "rgb": "rgb(71, 88, 5)",
+                  "hex": "#475805"
+                },
+                {
+                  "red": 239,
+                  "green": 250,
+                  "blue": 174,
+                  "alpha": 255,
+                  "rgb": "rgb(239, 250, 174)",
+                  "hex": "#effaae"
+                },
+                {
+                  "red": 78,
+                  "green": 84,
+                  "blue": 42,
+                  "alpha": 255,
+                  "rgb": "rgb(78, 84, 42)",
+                  "hex": "#4e542a"
+                }
+              ],
+              "video": null,
+              "fixed": {
+                "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+                "aspectRatio": 1.3333333333333333,
+                "width": 300,
+                "height": 225,
+                "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fm=auto&w=300",
+                "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1&fm=auto&w=300 1x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1.5&fm=auto&w=300 1.5x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=2&fm=auto&w=300 2x,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=3&fm=auto&w=300 3x",
+                "sizes": null
+              },
+              "fluid": {
+                "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+                "aspectRatio": 1.3333333333333333,
+                "width": 100,
+                "height": 75,
+                "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fm=auto",
+                "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.75&fm=auto&w=100 75w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1&fm=auto&w=100 100w",
+                "sizes": "(max-width: 300px) 100vw, 300px"
+              }
+            }
+          ]
+        },
+        {
+          "locale": "it",
+          "value": [
+            {
+              "alt": null,
+              "title": null,
+              "customData": {},
+              "size": 1098,
+              "width": null,
+              "height": null,
+              "path": "/34723/1600784903-samplecsvfile2kb.csv",
+              "format": "csv",
+              "isImage": false,
+              "notes": null,
+              "author": null,
+              "copyright": null,
+              "tags": [],
+              "smartTags": [],
+              "filename": "samplecsvfile2kb.csv",
+              "basename": "samplecsvfile2kb",
+              "exifInfo": {},
+              "mimeType": "text/csv",
+              "blurhash": null,
+              "originalId": "2637251",
+              "url": "https://www.datocms-assets.com/34723/1600784903-samplecsvfile2kb.csv",
+              "createdAt": "2020-09-22T14:28:23.693Z",
+              "colors": [],
+              "video": null,
+              "fixed": null,
+              "fluid": null
+            },
+            {
+              "alt": null,
+              "title": null,
+              "customData": {},
+              "size": 1055736,
+              "width": 1280,
+              "height": 720,
+              "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+              "format": "mp4",
+              "isImage": false,
+              "notes": null,
+              "author": null,
+              "copyright": null,
+              "tags": [],
+              "smartTags": [],
+              "filename": "samplevideo1280x7201mb.mp4",
+              "basename": "samplevideo1280x7201mb",
+              "exifInfo": {},
+              "mimeType": "video/mp4",
+              "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+              "originalId": "2637250",
+              "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+              "createdAt": "2020-09-22T14:28:22.847Z",
+              "colors": [],
+              "video": {
+                "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+                "frameRate": 25,
+                "duration": 5,
+                "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+                "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+                "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+                "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+                "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+                "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+                "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4"
+              },
+              "fixed": null,
+              "fluid": null
+            }
+          ]
+        }
+      ],
+      "externalVideo": {
+        "__typename": "DatoCmsVideoField",
+        "url": "https://www.youtube.com/watch?v=_WYSFUU8uD0",
+        "title": "RUBYDAY 2013 - Ju Liu & Stefano Verna - Fat models must die",
+        "provider": "youtube",
+        "providerUid": "_WYSFUU8uD0",
+        "thumbnailUrl": "https://i.ytimg.com/vi/_WYSFUU8uD0/hqdefault.jpg",
+        "width": 480,
+        "height": 270
+      },
+      "_allExternalVideoLocales": [
+        {
+          "locale": "en",
+          "value": {
+            "__typename": "DatoCmsVideoField",
+            "url": "https://www.youtube.com/watch?v=_WYSFUU8uD0",
+            "title": "RUBYDAY 2013 - Ju Liu & Stefano Verna - Fat models must die",
+            "provider": "youtube",
+            "providerUid": "_WYSFUU8uD0",
+            "thumbnailUrl": "https://i.ytimg.com/vi/_WYSFUU8uD0/hqdefault.jpg",
+            "width": 480,
+            "height": 270
+          }
+        },
+        {
+          "locale": "it",
+          "value": {
+            "__typename": "DatoCmsVideoField",
+            "url": "https://www.youtube.com/watch?v=fUJOJY_yVXg",
+            "title": "Frontend: riorganizzare (di nuovo) il caos by Matteo Papadopoulos and Stefano Verna",
+            "provider": "youtube",
+            "providerUid": "fUJOJY_yVXg",
+            "thumbnailUrl": "https://i.ytimg.com/vi/fUJOJY_yVXg/hqdefault.jpg",
+            "width": 480,
+            "height": 270
+          }
+        }
+      ],
+      "date": "2020 September 22",
+      "_allDateLocales": [
+        {
+          "locale": "en",
+          "value": "2020-09-22"
+        },
+        {
+          "locale": "it",
+          "value": "2020-08-31"
+        }
+      ],
+      "dateTime": "2020 September 22 @ 15:00",
+      "_allDateTimeLocales": [
+        {
+          "locale": "en",
+          "value": "2020-09-22T16:00:00+01:00"
+        },
+        {
+          "locale": "it",
+          "value": "2020-08-31T16:15:00+01:00"
+        }
+      ],
+      "integerNumber": 42,
+      "_allIntegerNumberLocales": [
+        {
+          "locale": "en",
+          "value": 42
+        },
+        {
+          "locale": "it",
+          "value": 666
+        }
+      ],
+      "floatingPointNumber": 3.14,
+      "_allFloatingPointNumberLocales": [
+        {
+          "locale": "en",
+          "value": 3.14
+        },
+        {
+          "locale": "it",
+          "value": 1.23
+        }
+      ],
+      "boolean": true,
+      "_allBooleanLocales": [
+        {
+          "locale": "en",
+          "value": true
+        },
+        {
+          "locale": "it",
+          "value": null
+        }
+      ],
+      "location": {
+        "latitude": 43.78527709999999,
+        "longitude": 11.2342448
+      },
+      "_allLocationLocales": [
+        {
+          "locale": "en",
+          "value": {
+            "__typename": "DatoCmsLatLonField",
+            "latitude": 43.78527709999999,
+            "longitude": 11.2342448
+          }
+        },
+        {
+          "locale": "it",
+          "value": {
+            "__typename": "DatoCmsLatLonField",
+            "latitude": 43.7695923,
+            "longitude": 11.2152132
+          }
+        }
+      ],
+      "color": {
+        "red": 226,
+        "green": 11,
+        "blue": 97,
+        "alpha": 255,
+        "rgb": "rgb(226, 11, 97)",
+        "hex": "#e20b61"
+      },
+      "_allColorLocales": [
+        {
+          "locale": "en",
+          "value": {
+            "red": 226,
+            "green": 11,
+            "blue": 97,
+            "alpha": 255,
+            "rgb": "rgb(226, 11, 97)",
+            "hex": "#e20b61"
+          }
+        },
+        {
+          "locale": "it",
+          "value": {
+            "red": 0,
+            "green": 166,
+            "blue": 7,
+            "alpha": 255,
+            "rgb": "rgb(0, 166, 7)",
+            "hex": "#00a607"
+          }
+        }
+      ],
+      "slug": "single-line-string",
+      "_allSlugLocales": [
+        {
+          "locale": "en",
+          "value": "single-line-string"
+        },
+        {
+          "locale": "it",
+          "value": "stringa-semplice"
+        }
+      ],
+      "seo": {
+        "title": "English SEO Title",
+        "description": "English SEO Description",
+        "twitterCard": "summary_large_image",
+        "image": {
+          "path": "/34723/1600784341-plant.jpg"
+        }
+      },
+      "_allSeoLocales": [
+        {
+          "locale": "en",
+          "value": {
+            "title": "English SEO Title",
+            "description": "English SEO Description",
+            "twitterCard": "summary_large_image",
+            "image": {
+              "path": "/34723/1600784341-plant.jpg"
+            }
+          }
+        },
+        {
+          "locale": "it",
+          "value": {
+            "title": "Titolo italiano",
+            "description": "Descrizione italiano",
+            "twitterCard": "summary",
+            "image": {
+              "path": "/34723/1600784341-plant.jpg"
+            }
+          }
+        }
+      ],
+      "singleLink": {
+        "id": "DatoCmsArticle-7364346-en",
+        "singleLineString": "Secondary article"
+      },
+      "_allSingleLinkLocales": [
+        {
+          "locale": "en",
+          "value": {
+            "id": "DatoCmsArticle-7364346-en",
+            "singleLineString": "Secondary article"
+          }
+        },
+        {
+          "locale": "it",
+          "value": {
+            "id": "DatoCmsArticle-7364344-it",
+            "singleLineString": "Stringa semplice"
+          }
+        }
+      ],
+      "advancedSingleLink": {
+        "__typename": "DatoCmsArticle",
+        "singleLineString": "Secondary article"
+      },
+      "_allAdvancedSingleLinkLocales": [
+        {
+          "locale": "en",
+          "value": {
+            "__typename": "DatoCmsArticle",
+            "singleLineString": "Secondary article"
+          }
+        },
+        {
+          "locale": "it",
+          "value": {
+            "__typename": "DatoCmsArticle",
+            "singleLineString": "Stringa semplice"
+          }
+        }
+      ],
+      "multipleLinks": [
+        {
+          "id": "DatoCmsArticle-7364346-en",
+          "singleLineString": "Secondary article"
+        },
+        {
+          "id": "DatoCmsArticle-7364344-en",
+          "singleLineString": "Single line string"
+        }
+      ],
+      "_allMultipleLinksLocales": [
+        {
+          "locale": "en",
+          "value": [
+            {
+              "id": "DatoCmsArticle-7364346-en",
+              "singleLineString": "Secondary article"
+            },
+            {
+              "id": "DatoCmsArticle-7364344-en",
+              "singleLineString": "Single line string"
+            }
+          ]
+        },
+        {
+          "locale": "it",
+          "value": [
+            {
+              "id": "DatoCmsArticle-7364344-it",
+              "singleLineString": "Stringa semplice"
+            },
+            {
+              "id": "DatoCmsArticle-7364346-it",
+              "singleLineString": "Articolo secondario"
+            }
+          ]
+        }
+      ],
+      "advancedMultipleLinks": [
+        {
+          "__typename": "DatoCmsArticle",
+          "singleLineString": "Secondary article"
+        },
+        {
+          "__typename": "DatoCmsSecondaryModel",
+          "title": "First"
+        }
+      ],
+      "_allAdvancedMultipleLinksLocales": [
+        {
+          "locale": "en",
+          "value": [
+            {
+              "__typename": "DatoCmsArticle",
+              "singleLineString": "Secondary article"
+            },
+            {
+              "__typename": "DatoCmsSecondaryModel",
+              "title": "First"
+            }
+          ]
+        },
+        {
+          "locale": "it",
+          "value": [
+            {
+              "__typename": "DatoCmsArticle",
+              "singleLineString": "Stringa semplice"
+            },
+            {
+              "__typename": "DatoCmsSecondaryModel",
+              "title": "Second"
+            }
+          ]
+        }
+      ],
+      "json": "{\n  \"foo\": \"english\"\n}",
+      "_allJsonLocales": [
+        {
+          "locale": "en",
+          "value": "{\n  \"foo\": \"english\"\n}"
+        },
+        {
+          "locale": "it",
+          "value": "{\n  \"foo\": \"italiano\"\n}"
+        }
+      ],
+      "modularContent": [
+        {
+          "title": "Block 1",
+          "originalId": "7364340"
+        },
+        {
+          "title": "Block 2",
+          "originalId": "7364341"
+        }
+      ],
+      "_allModularContentLocales": [
+        {
+          "locale": "en",
+          "value": [
+            {
+              "title": "Block 1",
+              "originalId": "7364340"
+            },
+            {
+              "title": "Block 2",
+              "originalId": "7364341"
+            }
+          ]
+        },
+        {
+          "locale": "it",
+          "value": [
+            {
+              "title": "Blocco 1",
+              "originalId": "7364342"
+            },
+            {
+              "title": "Blocco 2",
+              "originalId": "7364343"
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "createdAt": "2020-09-22T15:46:24.300+01:00",
+        "updatedAt": "2020-09-22T16:06:27.220+01:00",
+        "status": "published",
+        "isValid": true,
+        "publishedAt": "2020-09-22T16:06:27.258+01:00",
+        "__typename": "DatoCmsMetaField"
+      },
+      "seoMetaTags": {
+        "__typename": "DatoCmsSeoMetaTags",
+        "tags": [
+          {
+            "tagName": "title",
+            "content": "English SEO Title"
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "property": "og:title",
+              "content": "English SEO Title"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "name": "twitter:title",
+              "content": "English SEO Title"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "name": "description",
+              "content": "English SEO Description"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "property": "og:description",
+              "content": "English SEO Description"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "name": "twitter:description",
+              "content": "English SEO Description"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "name": "twitter:card",
+              "content": "summary_large_image"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "property": "article:modified_time",
+              "content": "2020-09-22T15:06:27Z"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "property": "article:published_time",
+              "content": "2020-09-22T14:46:24Z"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "property": "og:locale",
+              "content": "en_EN"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "property": "og:type",
+              "content": "article"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "property": "og:image",
+              "content": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?w=1000&fit=max&fm=jpg"
+            }
+          },
+          {
+            "tagName": "meta",
+            "attributes": {
+              "name": "twitter:image",
+              "content": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?w=1000&fit=max&fm=jpg"
+            }
+          }
+        ],
+        "id": "DatoCmsSeoMetaTags-DatoCmsArticle-7364344-en"
+      },
+      "model": {
+        "id": "DatoCmsModel-313513",
+        "name": "Article",
+        "singleton": false,
+        "sortable": false,
+        "apiKey": "article",
+        "orderingDirection": null,
+        "tree": false,
+        "modularBlock": false,
+        "draftModeActive": false,
+        "allLocalesRequired": true,
+        "collectionAppeareance": "table",
+        "hasSingletonItem": false,
+        "originalId": "313513"
+      }
+    }
+  }
+}

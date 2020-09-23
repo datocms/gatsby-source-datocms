@@ -15,9 +15,7 @@ module.exports = ({ actions, schema }) => {
               return `rgb(${parent.red}, ${parent.green}, ${parent.blue})`;
             }
 
-            return `rgba(${parent.red}, ${parent.green}, ${parent.blue}, ${
-            parent.alpha
-          })`;
+            return `rgba(${parent.red}, ${parent.green}, ${parent.blue}, ${parent.alpha})`;
           },
         },
         hex: {
@@ -34,7 +32,6 @@ module.exports = ({ actions, schema }) => {
           },
         },
       },
-    })
+    }),
   ]);
-}
-
+};

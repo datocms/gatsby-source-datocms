@@ -11,7 +11,7 @@ const attributes = [
   'draftModeActive',
   'allLocalesRequired',
   'collectionAppeareance',
-  'hasSingletonItem'
+  'hasSingletonItem',
 ];
 
 module.exports = function buildItemTypeNode(

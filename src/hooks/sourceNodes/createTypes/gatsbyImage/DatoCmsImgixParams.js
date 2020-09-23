@@ -38,7 +38,7 @@ module.exports = ({ actions, schema, store }) => {
   actions.createTypes([
     schema.buildInputObjectType({
       name: `DatoCmsImgixParams`,
-      fields: imgixParamsFields
+      fields: imgixParamsFields,
     }),
   ]);
-}
+};

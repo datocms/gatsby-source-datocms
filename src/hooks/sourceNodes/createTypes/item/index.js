@@ -1,42 +1,33 @@
 const { camelize, pascalize } = require('humps');
 const objectAssign = require('object-assign');
-
 const gqlItemTypeName = itemType => `DatoCms${pascalize(itemType.apiKey)}`;
-
-const simpleTypeResolver = type => ({ field }) => ({ fieldType: type });
-
-const combineResolvers = resolvers => context =>
-  resolvers.reduce((acc, resolver) => objectAssign(acc, resolver(context)));
-
-const dateType = {
-  type: 'Date',
-  extensions: { dateformat: {} },
-};
+const { camelizeKeys, localizedRead } = require('datocms-client');
+const simpleField = require('./fields/simpleField');
+const simpleFieldReturnCamelizedKeys = require('./fields/simpleFieldReturnCamelizedKeys');
+const itemNodeId = require('../utils/itemNodeId');
 
 const fieldResolvers = {
-  boolean: simpleTypeResolver('Boolean'),
-  color: simpleTypeResolver('DatoCmsColorField'),
-  date: simpleTypeResolver(dateType),
-  date_time: simpleTypeResolver(dateType),
+  boolean: simpleField('Boolean'),
+  color: simpleField('DatoCmsColorField'),
+  date: require('./fields/date'),
+  date_time: require('./fields/date'),
   file: require('./fields/file'),
-  float: simpleTypeResolver('Float'),
+  float: simpleField('Float'),
   gallery: require('./fields/gallery'),
-  integer: simpleTypeResolver('Int'),
-  json: simpleTypeResolver('JSON'),
-  lat_lon: simpleTypeResolver('DatoCmsLatLonField'),
+  integer: simpleField('Int'),
+  json: simpleField('JSON'),
+  lat_lon: simpleField('DatoCmsLatLonField'),
   link: require('./fields/link'),
   links: require('./fields/richText'),
   rich_text: require('./fields/richText'),
-  seo: simpleTypeResolver('DatoCmsSeoField'),
-  slug: simpleTypeResolver('String'),
-  string: simpleTypeResolver('String'),
+  seo: simpleFieldReturnCamelizedKeys('DatoCmsSeoField'),
+  slug: simpleField('String'),
+  string: simpleField('String'),
   text: require('./fields/text'),
-  video: simpleTypeResolver('DatoCmsVideoField'),
+  video: simpleFieldReturnCamelizedKeys('DatoCmsVideoField'),
 };
 
-const isSimpleFieldType = (x) => typeof x === 'string' || !x.resolveFromValue;
-
-module.exports = ({ entitiesRepo, actions, schema }) => {
+module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
   entitiesRepo.findEntitiesOfType('item_type').forEach(entity => {
     const type = gqlItemTypeName(entity);
 
@@ -44,7 +35,14 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
       const resolver = fieldResolvers[field.fieldType];
 
       if (resolver) {
-        const { types = [], fieldType, nodeFieldType } = resolver({
+        const {
+          additionalTypesToCreate = [],
+          type,
+          nodeType,
+          extensions,
+          resolveForSimpleField,
+          resolveForNodeField,
+        } = resolver({
           parentItemType: entity,
           field,
           gqlItemTypeName,
@@ -52,28 +50,40 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
           entitiesRepo,
         });
 
-        const valueFieldType = isSimpleFieldType(fieldType) ? fieldType : ({
-          type: fieldType.type,
-          resolve: (parent, args, context) => {
-            const value = fieldType.normalResolver(parent, args, context);
-            return fieldType.resolveFromValue(value, args, context);
-          },
-        })
+        actions.createTypes(additionalTypesToCreate);
 
-        actions.createTypes(types);
-        objectAssign(acc, { [camelize(field.apiKey)]: valueFieldType });
-
-        if (nodeFieldType) {
-          const nodeValueFieldType = isSimpleFieldType(nodeFieldType) ? nodeFieldType : ({
-            type: nodeFieldType.type,
-            resolve: (parent, args, context) => {
-              const value = nodeFieldType.normalResolver(parent, args, context);
-              return nodeFieldType.resolveFromValue(value, args, context);
+        objectAssign(acc, {
+          [camelize(field.apiKey)]: {
+            type,
+            extensions,
+            resolve: (node, _args, context) => {
+              const i18n = { locale: node.locale, localeFallbacks };
+              const value = localizedRead(
+                node.entityPayload.attributes,
+                field.apiKey,
+                field.localized,
+                i18n,
+              );
+              return resolveForSimpleField(value, context, node);
             },
-          })
+          },
+        });
 
+        if (nodeType) {
           objectAssign(acc, {
-            [`${camelize(field.apiKey)}Node`]: nodeValueFieldType,
+            [`${camelize(field.apiKey)}Node`]: {
+              type: nodeType,
+              resolve: (node, args, context) => {
+                const i18n = { locale: node.locale, localeFallbacks };
+                const value = localizedRead(
+                  node.entityPayload.attributes,
+                  field.apiKey,
+                  field.localized,
+                  i18n,
+                );
+                return resolveForNodeField(value, context, node);
+              },
+            },
           });
         }
 
@@ -83,45 +93,59 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
             field.apiKey,
           )}`;
 
-          const allLocalesFieldType = isSimpleFieldType(fieldType) ? fieldType : ({
-            type: fieldType.type,
-            resolve: (parent, args, context) => {
-              const value = fieldType.allLocalesResolver(parent, args, context);
-              return fieldType.resolveFromValue(value, args, context);
-            },
-          })
-
-          const fields = {
-            locale: 'String',
-            value: allLocalesFieldType,
-          };
-
-          if (nodeFieldType) {
-            const allLocalesNodeFieldType = isSimpleFieldType(nodeFieldType) ? nodeFieldType : ({
-              type: nodeFieldType.type,
-              resolve: (parent, args, context) => {
-                const value = nodeFieldType.allLocalesResolver(parent, args, context);
-                return nodeFieldType.resolveFromValue(value, args, context);
-              },
-            })
-
-            objectAssign(fields, {
-              valueNode: allLocalesNodeFieldType,
-            });
-          }
-
           actions.createTypes([
             schema.buildObjectType({
               name: allLocalesTypeName,
               extensions: { infer: false },
-              fields,
+              fields: {
+                locale: 'String',
+                value: {
+                  type,
+                  resolve: (node, args, context) => {
+                    const i18n = { locale: node.locale, localeFallbacks };
+                    const value = localizedRead(
+                      node.entityPayload.attributes,
+                      field.apiKey,
+                      field.localized,
+                      i18n,
+                    );
+                    return resolveForSimpleField(value, context, node);
+                  },
+                },
+                ...(nodeType
+                  ? {
+                      valueNode: {
+                        type: nodeType,
+                        resolve: (node, args, context) => {
+                          const i18n = { locale: node.locale, localeFallbacks };
+                          const value = localizedRead(
+                            node.entityPayload.attributes,
+                            field.apiKey,
+                            field.localized,
+                            i18n,
+                          );
+                          return resolveForNodeField(value, context, node);
+                        },
+                      },
+                    }
+                  : {}),
+              },
             }),
           ]);
 
           objectAssign(acc, {
-            [`_all${pascalize(
-              field.apiKey,
-            )}Locales`]: `[${allLocalesTypeName}]`,
+            [`_all${pascalize(field.apiKey)}Locales`]: {
+              type: `[${allLocalesTypeName}]`,
+              resolve: node => {
+                const locales = Object.keys(
+                  node.entityPayload.attributes[field.apiKey] || {},
+                );
+                return locales.map(locale => ({
+                  locale,
+                  entityPayload: node.entityPayload,
+                }));
+              },
+            },
           });
         }
       }
@@ -131,7 +155,10 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
 
     if (entity.sortable || entity.tree) {
       objectAssign(fields, {
-        position: 'Int',
+        position: {
+          type: 'Int',
+          resolve: node => node.entityPayload.attributes.position,
+        },
       });
     }
 
@@ -139,23 +166,33 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
       objectAssign(fields, {
         treeParent: {
           type,
-          extensions: {
-            link: {
-              by: 'id',
-              from: 'treeParent___NODE',
-            },
+          resolve: (node, args, context) => {
+            const parentId = node.entityPayload.attributes.parent_id;
+            if (parentId) {
+              return context.nodeModel.getNodeById({
+                id: itemNodeId(parentId, node.locale, entitiesRepo),
+              });
+            }
           },
         },
         treeChildren: {
           type: `[${type}]`,
-          extensions: {
-            link: {
-              by: 'id',
-              from: 'treeChildren___NODE',
-            },
+          resolve: (node, args, context) => {
+            const allItems = context.nodeModel.getAllNodes({ type: type });
+
+            const children = allItems.filter(
+              otherNode =>
+                otherNode.entityPayload.attributes.parent_id ===
+                  node.entityPayload.id && otherNode.locale === node.locale,
+            );
+
+            return children;
           },
         },
-        root: 'Boolean',
+        root: {
+          type: 'Boolean',
+          resolve: node => !node.entityPayload.attributes.parent_id,
+        },
       });
     }
 
@@ -164,19 +201,31 @@ module.exports = ({ entitiesRepo, actions, schema }) => {
         name: type,
         extensions: { infer: false },
         fields: objectAssign(fields, {
-          meta: 'DatoCmsMetaField',
-          originalId: 'String',
+          meta: {
+            type: 'DatoCmsMetaField',
+            resolve: node => camelizeKeys(node.entityPayload.meta),
+          },
+          originalId: {
+            type: 'String',
+            resolve: node => {
+              return node.entityPayload.id;
+            },
+          },
           locale: 'String',
           seoMetaTags: {
             type: 'DatoCmsSeoMetaTags',
-            extensions: {
-              link: { by: 'id', from: 'seoMetaTags___NODE' },
+            resolve: (node, args, context) => {
+              return context.nodeModel.getNodeById({
+                id: `DatoCmsSeoMetaTags-${node.id}`,
+              });
             },
           },
           model: {
             type: 'DatoCmsModel',
-            extensions: {
-              link: { by: 'id', from: 'model___NODE' },
+            resolve: (node, args, context) => {
+              return context.nodeModel.getNodeById({
+                id: `DatoCmsModel-${node.entityPayload.relationships.item_type.data.id}`,
+              });
             },
           },
         }),
