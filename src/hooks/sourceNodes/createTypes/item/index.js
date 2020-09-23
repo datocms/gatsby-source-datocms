@@ -55,7 +55,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
         objectAssign(acc, {
           [camelize(field.apiKey)]: {
             type,
-            extensions,
+            ...(extensions ? { extensions } : {}),
             resolve: (node, _args, context) => {
               const i18n = { locale: node.locale, localeFallbacks };
               const value = localizedRead(

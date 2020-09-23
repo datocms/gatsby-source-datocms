@@ -16,7 +16,7 @@ module.exports = ({
     ].itemTypes;
 
   if (itemTypeIds.length === 0) {
-    return { fieldType: 'String' };
+    return { type: 'String' };
   }
 
   if (itemTypeIds.length === 1) {
