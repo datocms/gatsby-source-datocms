@@ -4427,8 +4427,10 @@ date-fns@^2.0.1, date-fns@^2.14.0, date-fns@^2.8.1:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
   integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
 
-"datocms-client@file:.yalc/datocms-client":
-  version "3.0.45"
+datocms-client@>=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-3.1.0.tgz#8b91b28dc7376faca0646eec76f8dccac093748c"
+  integrity sha512-qfu7P+gYrSzwvB8DmfTOYGN6+oDr3zawmGlDdAg8dJZjdUmQAkZv8a7QPb2XNosgws/JQUlcipuqbY2IulkHEQ==
   dependencies:
     "@iarna/toml" "^2.2.3"
     arr-diff "^4.0.0"

@@ -67,6 +67,74 @@ GraphQLMultilingual('sortable collection', async () => {
   );
 });
 
+GraphQLMultilingual('site', async () => {
+  assertGraphQLResponseEqualToSnapshot(
+    'multilingual/site',
+    await executeQuery(`
+    {
+      enSite: datoCmsSite(locale: {eq: "en"}) {
+        __typename
+        id
+        originalId
+        name
+        locale
+        locales
+        domain
+        internalDomain
+        noIndex
+        globalSeo {
+          siteName
+          titleSuffix
+          twitterAccount
+          facebookPageUrl
+          fallbackSeo {
+            title
+            description
+            twitterCard
+            image {
+              path
+              url
+            }
+          }
+        }
+        faviconMetaTags {
+          tags
+        }
+      }
+      itSite: datoCmsSite(locale: {eq: "it"}) {
+        __typename
+        id
+        originalId
+        name
+        locale
+        locales
+        domain
+        internalDomain
+        noIndex
+        globalSeo {
+          siteName
+          titleSuffix
+          twitterAccount
+          facebookPageUrl
+          fallbackSeo {
+            title
+            description
+            twitterCard
+            image {
+              path
+              url
+            }
+          }
+        }
+        faviconMetaTags {
+          tags
+        }
+      }
+    }
+  `),
+  );
+});
+
 GraphQLMultilingual('tree collections', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'multilingual/tree',
@@ -360,7 +428,10 @@ GraphQLMultilingual('items', async () => {
     }
   `;
 
-  assertGraphQLResponseEqualToSnapshot('multilingual/item', await executeQuery(query));
+  assertGraphQLResponseEqualToSnapshot(
+    'multilingual/item',
+    await executeQuery(query),
+  );
 });
 
 GraphQLMultilingual.run();
