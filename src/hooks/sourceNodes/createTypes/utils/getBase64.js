@@ -30,10 +30,16 @@ function download(requestUrl, cacheDir) {
   });
 }
 
-module.exports = ({ src, width, height, aspectRatio }, cacheDir) => {
+module.exports = (
+  { forceBlurhash, format, src, width, height, aspectRatio },
+  cacheDir,
+) => {
   const [baseUrl, query] = src.split('?');
 
-  if (!baseUrl.startsWith('https://www.datocms-assets.com/')) {
+  if (
+    !baseUrl.startsWith('https://www.datocms-assets.com/') ||
+    (format === 'png' && !forceBlurhash)
+  ) {
     return download(
       resizeUrl({ url: src, aspectRatio, width, height }, 20),
       cacheDir,

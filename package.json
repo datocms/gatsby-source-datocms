@@ -29,7 +29,7 @@
     "datocms-client": ">=3.1.0",
     "fs-extra": ">=8.1.0",
     "humps": ">=2.0.1",
-    "imgix-url-params": "11.2.0",
+    "imgix-url-params": ">=11.2.0",
     "json-stringify-safe": ">=5.0.1",
     "md5": "2.2.1",
     "object-assign": "^4.1.1",

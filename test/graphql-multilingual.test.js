@@ -434,4 +434,20 @@ GraphQLMultilingual('items', async () => {
   );
 });
 
+GraphQLMultilingual('force blurhash', async () => {
+  assertGraphQLResponseEqualToSnapshot(
+    'multilingual/blurhash',
+    await executeQuery(
+      `{
+          datoCmsAsset(originalId: {eq: "2643791"}) {
+            fixed(width: 300, imgixParams: {fm: "auto"}) { base64 }
+            fluid(maxWidth: 300, imgixParams: {fm: "auto"}) { base64 }
+            forceBlurhashFixed: fixed(width: 300, forceBlurhash: true, imgixParams: {fm: "auto"}) { base64 }
+            forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true, imgixParams: {fm: "auto"}) { base64 }
+          }
+       }`,
+    ),
+  );
+});
+
 GraphQLMultilingual.run();

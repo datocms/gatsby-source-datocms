@@ -7348,10 +7348,10 @@ ignore@^5.1.1, ignore@^5.1.4:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
 
-imgix-url-params@11.2.0:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/imgix-url-params/-/imgix-url-params-11.2.0.tgz#77dace7df4980067b35b49da5c5db68bec2d9112"
-  integrity sha512-KSSnTUFMOlbgUr4S2jKhiDGfsmtH18MCV27OhbhQhB2obUM/XXrdx8B6ZyG5t/xaJKJHD/nB8cCLqNYm3ypDrg==
+imgix-url-params@>=11.2.0:
+  version "11.8.1"
+  resolved "https://registry.yarnpkg.com/imgix-url-params/-/imgix-url-params-11.8.1.tgz#0d52ebf9fcdd3362557e03444d9e1f87ff48f547"
+  integrity sha512-vqEh5AS4GpRviKA5kNir+3Y+NvfR359zXzsDhIZ/GuSqxiRpyiVth70ZUbbD0l0NJTey2Z/aH9JUXT2/bG4jeQ==
 
 import-cwd@^2.0.0:
   version "2.1.0"

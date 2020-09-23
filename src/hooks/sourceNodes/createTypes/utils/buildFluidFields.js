@@ -13,8 +13,9 @@ module.exports = () => {
       maxHeight: 'Int',
       sizes: 'String',
       imgixParams: 'DatoCmsImgixParams',
+      forceBlurhash: 'Boolean',
     },
-    resolve: (node, { maxWidth, maxHeight, imgixParams = {}, sizes }) => {
+    resolve: (node, { forceBlurhash, maxWidth, maxHeight, imgixParams = {}, sizes }) => {
       const image = node.entityPayload.attributes;
 
       if (!isImage(image)) {
@@ -61,6 +62,7 @@ module.exports = () => {
         format: image.format,
         srcSet,
         sizes: realSizes,
+        forceBlurhash,
       };
     },
   };

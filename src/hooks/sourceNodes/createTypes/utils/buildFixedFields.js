@@ -12,9 +12,10 @@ module.exports = () => {
         defaultValue: 400,
       },
       height: 'Int',
+      forceBlurhash: 'Boolean',
       imgixParams: 'DatoCmsImgixParams',
     },
-    resolve: (node, { width, height, imgixParams = {} }) => {
+    resolve: (node, { forceBlurhash, width, height, imgixParams = {} }) => {
       const image = node.entityPayload.attributes;
 
       if (!isImage(image)) {
@@ -58,6 +59,7 @@ module.exports = () => {
         format: image.format,
         src: createUrl(image, mergedImgixParams, {}, true),
         srcSet,
+        forceBlurhash,
       };
     },
   };
