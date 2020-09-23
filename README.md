@@ -445,7 +445,7 @@ export const query = graphql`
   query AboutQuery {
     datoCmsAboutPage {
       photo {
-        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxWidth: 600, forceBlurhash: false, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsFluid
         }
       }
@@ -453,6 +453,8 @@ export const query = graphql`
   }
 `
 ```
+
+The normal behaviour is to use DatoCMS blurhash placeholders, except for PNG files, which might require transparency. If you want to force blurhash placeholders also for PNGs, pass the option `forceBlurhash: true`.
 
 The fragments you can use are:
 
@@ -482,7 +484,7 @@ export const query = graphql`
   query AboutQuery {
     datoCmsAboutPage {
       photo {
-        fixed(width: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fixed(width: 200, forceBlurhash: false, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsFixed
         }
       }
@@ -490,6 +492,8 @@ export const query = graphql`
   }
 `
 ```
+
+The normal behaviour is to use DatoCMS blurhash placeholders, except for PNG files, which might require transparency. If you want to force blurhash placeholders also for PNGs, pass the option `forceBlurhash: true`.
 
 The fragments you can use are:
 
