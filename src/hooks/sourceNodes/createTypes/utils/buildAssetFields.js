@@ -63,7 +63,7 @@ module.exports = function() {
     },
     createdAt: resolveUsingEntityPayloadAttribute('created_at', {
       type: 'Date',
-      extensions: { dateformat: {} },
+      extensions: { dateformat: {}, proxy: {} },
     }),
     video: {
       type: 'DatoCmsAssetVideo',
