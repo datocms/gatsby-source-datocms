@@ -10,6 +10,15 @@ module.exports = ({ actions, schema }) => {
         alt: 'String',
         title: 'String',
         customData: 'JSON',
+        focalPoint: 'DatoCmsFocalPoint'
+      },
+    }),
+    schema.buildObjectType({
+      name: 'DatoCmsFocalPoint',
+      extensions: { infer: false },
+      fields: {
+        x: 'Float!',
+        y: 'Float!',
       },
     }),
   ]);

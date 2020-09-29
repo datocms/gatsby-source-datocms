@@ -22,6 +22,20 @@ module.exports = () => {
         return null;
       }
 
+      if (
+        node.focalPoint &&
+        imgixParams.fit === 'crop' &&
+        (imgixParams.h || imgixParams.height) &&
+        (imgixParams.w || imgixParams.width) &&
+        (!imgixParams.crop || imgixParams.crop === 'focalpoint') &&
+        !imgixParams['fp-x'] &&
+        !imgixParams['fp-y']
+      ) {
+        imgixParams.crop = 'focalpoint';
+        imgixParams['fp-x'] = node.focalPoint.x;
+        imgixParams['fp-y'] = node.focalPoint.y;
+      }
+
       const {
         width: finalWidth,
         height: finalHeight,

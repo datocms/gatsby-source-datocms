@@ -10,6 +10,29 @@ GraphQLMultilingual.before(async () => {
   executeQuery = await buildQueryExecutor('bb260a9bf12cccf24392dc68209a42');
 });
 
+GraphQLMultilingual.only('focalPoints', async () => {
+  const result = await executeQuery(`
+    {
+      datoCmsArticle(originalId: {eq: "7364344"}) {
+        singleAsset {
+          focalPoint {
+            x
+            y
+          }
+          url
+          urlWithFocalPoint: url(imgixParams: { w: "140", h: "40", fit: "crop" })
+          fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop" }) { base64 src srcSet }
+          blurhashFluid: fluid(maxWidth: 140, forceBlurhash: true, imgixParams: { w: "140", h: "40", fit: "crop" }) { base64 src srcSet }
+        }
+      }
+    }`);
+
+  assertGraphQLResponseEqualToSnapshot(
+    'multilingual/focal-point',
+    result
+  );
+});
+
 const assetFields = `
     size width height path format isImage notes author copyright tags
     smartTags filename basename exifInfo mimeType blurhash

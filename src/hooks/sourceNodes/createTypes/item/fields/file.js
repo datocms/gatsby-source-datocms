@@ -18,9 +18,10 @@ module.exports = () => ({
       ...upload,
       alt: fieldValue.alt || uploadDefaultFieldMetadata.alt,
       title: fieldValue.title || uploadDefaultFieldMetadata.title,
+      focalPoint: fieldValue.focal_point || uploadDefaultFieldMetadata.focal_point,
       customData: {
-        ...camelizeKeys(uploadDefaultFieldMetadata.customData),
-        ...fieldValue.customData,
+        ...camelizeKeys(uploadDefaultFieldMetadata.custom_data),
+        ...fieldValue.custom_data,
       },
     };
   },
