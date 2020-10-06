@@ -22,7 +22,10 @@
           "title": "English fallback title",
           "description": "English fallback description",
           "twitterCard": "summary",
-          "image": null
+          "image": {
+            "path": "/34723/1600784341-plant.jpg",
+            "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg"
+          }
         }
       },
       "faviconMetaTags": {
@@ -195,7 +198,10 @@
           "title": "Italian fallback title",
           "description": "Italian fallback description",
           "twitterCard": "summary_large_image",
-          "image": null
+          "image": {
+            "path": "/34723/1600784341-plant.jpg",
+            "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg"
+          }
         }
       },
       "faviconMetaTags": {

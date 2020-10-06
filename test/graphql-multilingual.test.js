@@ -10,7 +10,7 @@ GraphQLMultilingual.before(async () => {
   executeQuery = await buildQueryExecutor('bb260a9bf12cccf24392dc68209a42');
 });
 
-GraphQLMultilingual.only('focalPoints', async () => {
+GraphQLMultilingual('focalPoints', async () => {
   const result = await executeQuery(`
     {
       datoCmsArticle(originalId: {eq: "7364344"}) {
