@@ -27,10 +27,7 @@ GraphQLMultilingual('focalPoints', async () => {
       }
     }`);
 
-  assertGraphQLResponseEqualToSnapshot(
-    'multilingual/focal-point',
-    result
-  );
+  assertGraphQLResponseEqualToSnapshot('multilingual/focal-point', result);
 });
 
 const assetFields = `
@@ -216,6 +213,10 @@ GraphQLMultilingual('items', async () => {
           id
           internal {
             content
+          }
+          childMarkdownRemark {
+            html
+            timeToRead
           }
         }
         singleAsset {

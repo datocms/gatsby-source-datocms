@@ -6,5 +6,8 @@ module.exports = {
         apiToken: process.env.DATOCMS_API_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+    },
   ],
 }

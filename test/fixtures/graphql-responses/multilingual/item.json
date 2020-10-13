@@ -31,6 +31,10 @@
         "id": "DatoCmsTextNode-DatoCmsArticle-7364344-en-multipleParagraphText",
         "internal": {
           "content": "Multiple paragraph text"
+        },
+        "childMarkdownRemark": {
+          "html": "<p>Multiple paragraph text</p>",
+          "timeToRead": 1
         }
       },
       "singleAsset": {

@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.6.2",
     "cross-env": "^6.0.3",
     "gatsby": "^2.24.63",
+    "gatsby-transformer-remark": "^2.8.38",
     "np": "^6.2.5",
     "prettier": "^1.18.2",
     "react": "^16.10.2",
