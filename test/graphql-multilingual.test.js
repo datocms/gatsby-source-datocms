@@ -24,6 +24,16 @@ GraphQLMultilingual('focalPoints', async () => {
           fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop" }) { base64 src srcSet }
           blurhashFluid: fluid(maxWidth: 140, forceBlurhash: true, imgixParams: { w: "140", h: "40", fit: "crop" }) { base64 src srcSet }
         }
+        assetGallery {
+          focalPoint {
+            x
+            y
+          }
+          url
+          urlWithFocalPoint: url(imgixParams: { w: "140", h: "40", fit: "crop" })
+          fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop" }) { base64 src srcSet }
+          blurhashFluid: fluid(maxWidth: 140, forceBlurhash: true, imgixParams: { w: "140", h: "40", fit: "crop" }) { base64 src srcSet }
+        }
       }
     }`);
 
