@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/datocms/gatsby-source-datocms/workflows/Node.js%20CI/badge.svg)
+
 # gatsby-source-datocms
 
 Source plugin for pulling models and records into Gatsby from DatoCMS administrative areas. It creates links between records so they can be queried in Gatsby using GraphQL.
