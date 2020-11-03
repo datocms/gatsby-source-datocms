@@ -25,7 +25,7 @@ module.exports = function buildItemNode(
           node.digest = entity.meta.updatedAt;
 
           entity.itemType.fields
-            .filter(field => field.fieldType === 'text')
+            .filter(field => field.fieldType === 'string' || field.fieldType === 'text')
             .forEach(field => {
               const camelizedApiKey = camelize(field.apiKey);
 
