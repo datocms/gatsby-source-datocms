@@ -22,7 +22,7 @@ const fieldResolvers = {
   rich_text: require('./fields/richText'),
   seo: simpleFieldReturnCamelizedKeys('DatoCmsSeoField'),
   slug: simpleField('String'),
-  string: simpleField('String'),
+  string: require('./fields/text'),
   text: require('./fields/text'),
   video: simpleFieldReturnCamelizedKeys('DatoCmsVideoField'),
 };
