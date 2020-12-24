@@ -41,7 +41,7 @@ plugins: [
     resolve: `gatsby-source-datocms`,
     options: {
       // You can find your read-only API token under the Settings > API tokens
-      // section of your administrative area:
+      // section of your administrative area. Make sure to grant both CDA and CMA permissions.
       apiToken: `YOUR_READONLY_API_TOKEN`,
 
       // The project environment to read from. Defaults to the primary environment:
