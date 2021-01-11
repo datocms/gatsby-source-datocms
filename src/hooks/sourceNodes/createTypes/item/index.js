@@ -57,7 +57,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
             type,
             ...(extensions ? { extensions } : {}),
             resolve: (node, _args, context) => {
-              const i18n = { locale: node.locale, localeFallbacks };
+              const i18n = { locale: node.locale, fallbacks: localeFallbacks };
               const value = localizedRead(
                 node.entityPayload.attributes,
                 field.apiKey,
@@ -74,7 +74,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
             [`${camelize(field.apiKey)}Node`]: {
               type: nodeType,
               resolve: (node, args, context) => {
-                const i18n = { locale: node.locale, localeFallbacks };
+                const i18n = { locale: node.locale, fallbacks: localeFallbacks };
                 const value = localizedRead(
                   node.entityPayload.attributes,
                   field.apiKey,
@@ -102,7 +102,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
                 value: {
                   type,
                   resolve: (node, args, context) => {
-                    const i18n = { locale: node.locale, localeFallbacks };
+                    const i18n = { locale: node.locale, fallbacks: localeFallbacks };
                     const value = localizedRead(
                       node.entityPayload.attributes,
                       field.apiKey,
@@ -117,7 +117,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
                       valueNode: {
                         type: nodeType,
                         resolve: (node, args, context) => {
-                          const i18n = { locale: node.locale, localeFallbacks };
+                          const i18n = { locale: node.locale, fallbacks: localeFallbacks };
                           const value = localizedRead(
                             node.entityPayload.attributes,
                             field.apiKey,

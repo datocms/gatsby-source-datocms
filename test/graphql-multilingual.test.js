@@ -459,6 +459,9 @@ GraphQLMultilingual('items', async () => {
           originalId
         }
       }
+      datoCmsOptionalLocalesModel(originalId: {eq: "14830204"}, locale: {eq: "it"}) {
+        title
+      }
     }
   `;
 

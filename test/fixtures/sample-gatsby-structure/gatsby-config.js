@@ -4,6 +4,9 @@ module.exports = {
       resolve: `wrapper`,
       options: {
         apiToken: process.env.DATOCMS_API_TOKEN,
+        localeFallbacks: {
+          'it': ['en'],
+        },
       },
     },
     {
