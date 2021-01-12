@@ -15,6 +15,7 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
    * [Accessing records](#accessing-records)
    * [Multiple-paragraph text fields](#multiple-paragraph-text-fields)
    * [Modular content fields](#modular-content-fields)
+   * [Structured text fields](#structured-text-fields)
    * [Favicon meta tags](#favicon-meta-tags)
    * [SEO meta tags](#seo-meta-tags)
    * [Tree-like collections](#tree-like-collections)
@@ -152,7 +153,7 @@ if you want to apply further transformations, like converting markdown with [`ga
 
 ### Modular content fields
 
-[Modular-content fields](https://docs.datocms.com/schema/modular-content.html) can be queried this way:
+[Modular-content fields](https://www.datocms.com/docs/content-modelling/modular-content) can be queried this way:
 
 ```graphql
 {
@@ -193,6 +194,87 @@ You can then present your blocks in a similar manner:
     ))
   }
 </div>
+```
+
+### Structured text fields
+
+[Structured Text fields](https://www.datocms.com/docs/content-modelling/structured-text) can be queried this way:
+
+```graphql
+{
+  datoCmsBlogPost {
+    content {
+      value
+      links {
+        __typename
+        ... on DatoCmsArticle {
+          id: originalId
+          title
+          slug
+        }
+      }
+      blocks {
+        ... on DatoCmsImage {
+          id: originalId
+          image {
+            url
+            alt
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+You can then present your blocks using the [`<StructuredText>`](https://github.com/datocms/react-datocms/tree/structured-text#structured-text) component:
+
+```jsx
+import { StructuredText } from 'react-datocms';
+
+<div>
+  {
+    <StructuredText
+      structuredText={data.blogPost.content}
+      renderInlineRecord={({ record }) => {
+        switch (record.__typename) {
+          case "DatoCmsArticle":
+            return <a href={`/articles/${record.slug}`}>{record.title}</a>;
+          default:
+            return null;
+        }
+      }}
+      renderLinkToRecord={({ record, children }) => {
+        switch (record.__typename) {
+          case "DatoCmsArticle":
+            return <a href={`/articles/${record.slug}`}>{children}</a>;
+          default:
+            return null;
+        }
+      }}
+      renderBlock={({ record }) => {
+        switch (record.__typename) {
+          case "DatoCmsImage":
+            return <img src={record.image.url} alt={record.image.alt} />;
+          default:
+            return null;
+        }
+      }}
+    />
+  }
+</div>
+```
+
+If you need to generate an excerpt you can use the [`datocms-structured-text-to-plain-text`](https://github.com/stefanoverna/structured-text/blob/main/packages/to-plain-text/README.md) package to convert the document into plain text:
+
+```js
+import { render } from 'datocms-structured-text-to-plain-text';
+import ellipsize from 'ellipsize';
+
+ellipsize(
+  render({ structuredText: data.blogPost.content }),
+  100
+)
 ```
 
 ### SEO meta tags
