@@ -4512,6 +4512,29 @@ datocms-client@>=3.1.0:
     updeep "^1.2.0"
     wpapi "^1.2.1"
 
+datocms-structured-text-generic-html-renderer@^0.1.0-alpha.14:
+  version "0.1.0-alpha.14"
+  resolved "https://registry.yarnpkg.com/datocms-structured-text-generic-html-renderer/-/datocms-structured-text-generic-html-renderer-0.1.0-alpha.14.tgz#637045fd1b05609c491006433764e8175852cbe9"
+  integrity sha512-iFWRWcQQ9v9MWLmYWB8SCiZ9bJ/aridi9Paopklt7rezP50gYDAf/81KkuZs2yH3I76SvDLumYZZZjxzbVWXTA==
+  dependencies:
+    datocms-structured-text-utils "^0.1.0-alpha.14"
+
+datocms-structured-text-to-html-string@^0.1.0-alpha.15:
+  version "0.1.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/datocms-structured-text-to-html-string/-/datocms-structured-text-to-html-string-0.1.0-alpha.15.tgz#7bec3956d308171205d628ce6128b869db65e7fa"
+  integrity sha512-/BfYqveM+VDtI73scv5i3vnYHq1My06ssAQeEIwCZmfLHcHROtaGVwH/WDO5kNVGP4JNotnaLRhj/VtJnV693w==
+  dependencies:
+    datocms-structured-text-generic-html-renderer "^0.1.0-alpha.14"
+    datocms-structured-text-utils "^0.1.0-alpha.14"
+    vhtml "^2.2.0"
+
+datocms-structured-text-utils@^0.1.0-alpha.14:
+  version "0.1.0-alpha.14"
+  resolved "https://registry.yarnpkg.com/datocms-structured-text-utils/-/datocms-structured-text-utils-0.1.0-alpha.14.tgz#420ec28efb9dec06798829effcb1b99dc48d7d8f"
+  integrity sha512-6EVJ0GIJORcYtfl91M6+DQZiT59y4I3H0Oy0H0wVqx7/RzXsuze3FCRQR111ibNpn9ETd7uVDc8npBkJkyH3lA==
+  dependencies:
+    lodash.flatten "^4.4.0"
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -8796,6 +8819,11 @@ lodash.every@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.every/-/lodash.every-4.6.0.tgz#eb89984bebc4364279bb3aefbbd1ca19bfa6c6a7"
   integrity sha1-64mYS+vENkJ5uzrvu9HKGb+mxqc=
+
+lodash.flatten@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
+  integrity sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
 
 lodash.flattendeep@^4.4.0:
   version "4.4.0"
@@ -13809,7 +13837,7 @@ unist-util-visit-parents@^3.0.0:
     "@types/unist" "^2.0.0"
     unist-util-is "^4.0.0"
 
-unist-util-visit@2.0.3, unist-util-visit@^2.0.0, unist-util-visit@^2.0.2:
+unist-util-visit@2.0.3, unist-util-visit@^2.0.0, unist-util-visit@^2.0.2, unist-util-visit@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-2.0.3.tgz#c3703893146df47203bb8a9795af47d7b971208c"
   integrity sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==
@@ -14132,6 +14160,11 @@ vfile@^4.0.0:
     replace-ext "1.0.0"
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
+
+vhtml@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/vhtml/-/vhtml-2.2.0.tgz#369e6823ed6c32cbb9f6e33395bae7c65faa014c"
+  integrity sha512-TPXrXrxBOslRUVnlVkiAqhoXneiertIg86bdvzionrUYhEuiROvyPZNiiP6GIIJ2Q7oPNVyEtIx8gMAZZE9lCQ==
 
 vm-browserify@^1.0.1:
   version "1.1.2"

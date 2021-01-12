@@ -20,6 +20,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.6.2",
     "@babel/preset-env": "^7.6.2",
     "cross-env": "^6.0.3",
+    "datocms-structured-text-to-html-string": "^0.1.0-alpha.15",
     "gatsby": "^2.24.63",
     "gatsby-transformer-remark": "^2.8.38",
     "np": "^6.5.0",
@@ -32,17 +33,20 @@
   "dependencies": {
     "core-js": "^3.2.1",
     "datocms-client": ">=3.1.0",
+    "datocms-structured-text-utils": "^0.1.0-alpha.14",
     "fs-extra": ">=8.1.0",
     "humps": ">=2.0.1",
     "imgix-url-params": ">=11.2.0",
     "json-stringify-safe": ">=5.0.1",
+    "lodash.uniq": "^4.5.0",
     "md5": "2.2.1",
     "object-assign": "^4.1.1",
     "object.entries": "^1.1.0",
     "promise-queue": "2.2.5",
     "query-string": "6.8.3",
     "regenerator-runtime": "^0.13.3",
-    "request-promise-native": "1.0.7"
+    "request-promise-native": "1.0.7",
+    "unist-util-visit": "^2.0.3"
   },
   "keywords": [
     "gatsby",

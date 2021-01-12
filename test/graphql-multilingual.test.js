@@ -1,4 +1,5 @@
 const { suite } = require('uvu');
+const { render } = require('datocms-structured-text-to-html-string');
 const buildQueryExecutor = require('./support/buildQueryExecutor');
 const assertGraphQLResponseEqualToSnapshot = require('./support/assertGraphQLResponseEqualToSnapshot');
 
@@ -430,6 +431,37 @@ GraphQLMultilingual('items', async () => {
             originalId
           }
         }
+        structuredText {
+          value
+          blocks {
+            __typename
+            id: originalId
+            title
+          }
+          links {
+            __typename
+            id: originalId
+            singleLineString
+            slug
+          }
+        }
+        _allStructuredTextLocales {
+          locale
+          value {
+            value
+            blocks {
+              __typename
+              id: originalId
+              title
+            }
+            links {
+              __typename
+              id: originalId
+              singleLineString
+              slug
+            }
+          }
+        }
         meta {
           createdAt
           updatedAt
@@ -465,10 +497,47 @@ GraphQLMultilingual('items', async () => {
     }
   `;
 
-  assertGraphQLResponseEqualToSnapshot(
-    'multilingual/item',
-    await executeQuery(query),
-  );
+  const result = await executeQuery(query);
+
+  assertGraphQLResponseEqualToSnapshot('multilingual/item', result);
+
+  const output = render({
+    structuredText: result.data.enArticle.structuredText,
+    renderInlineRecord: ({ adapter, record }) => {
+      switch (record.__typename) {
+        case 'DatoCmsArticle':
+          return adapter.renderNode(
+            'a',
+            { href: `/docs/${record.slug}` },
+            record.singleLineString,
+          );
+        default:
+          return null;
+      }
+    },
+    renderLinkToRecord: ({ record, children, adapter }) => {
+      switch (record.__typename) {
+        case 'DatoCmsArticle':
+          return adapter.renderNode(
+            'a',
+            { href: `/docs/${record.slug}` },
+            children,
+          );
+        default:
+          return null;
+      }
+    },
+    renderBlock: ({ record, adapter }) => {
+      switch (record.__typename) {
+        case 'DatoCmsModularBlock':
+          return adapter.renderNode('figure', null, record.title);
+        default:
+          return null;
+      }
+    },
+  });
+
+  assertGraphQLResponseEqualToSnapshot('multilingual/structuredTextRender', output);
 });
 
 GraphQLMultilingual('force blurhash', async () => {
