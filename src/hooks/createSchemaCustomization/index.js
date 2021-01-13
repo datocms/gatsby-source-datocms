@@ -2,6 +2,7 @@ const fs = require('fs-extra');
 const createNodeFromEntity = require('../sourceNodes/createNodeFromEntity');
 const destroyEntityNode = require('../sourceNodes/destroyEntityNode');
 const createTypes = require('../sourceNodes/createTypes');
+const { prefixId, CODES } = require('../onPreInit/errorMap')
 
 const { getLoader } = require('../../utils');
 
@@ -16,6 +17,17 @@ module.exports = async (
   },
 ) => {
   const localeFallbacks = rawLocaleFallbacks || {};
+
+  if (!apiToken) {
+    const errorText = `API token must be provided!`
+    reporter.panic(
+      {
+        id: prefixId(CODES.MissingAPIToken),
+        context: {sourceMessage: errorText},
+      },
+      new Error(errorText),
+    )
+  }
 
   const loader = getLoader({ apiToken, previewMode, environment, apiUrl });
 

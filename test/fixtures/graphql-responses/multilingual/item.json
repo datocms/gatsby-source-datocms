@@ -1028,10 +1028,10 @@
       ],
       "meta": {
         "createdAt": "2020-09-22T15:46:24.300+01:00",
-        "updatedAt": "2020-10-15T09:44:31.461+01:00",
+        "updatedAt": "2021-01-12T14:20:45.515+00:00",
         "status": "published",
         "isValid": true,
-        "publishedAt": "2020-10-15T09:44:31.514+01:00",
+        "publishedAt": "2021-01-12T14:20:45.571+00:00",
         "__typename": "DatoCmsMetaField"
       },
       "seoMetaTags": {
@@ -1087,7 +1087,7 @@
             "tagName": "meta",
             "attributes": {
               "property": "article:modified_time",
-              "content": "2020-10-15T08:44:31Z"
+              "content": "2021-01-12T14:20:45Z"
             }
           },
           {

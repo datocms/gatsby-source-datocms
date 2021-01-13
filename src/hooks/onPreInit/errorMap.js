@@ -6,16 +6,16 @@ function prefixId(id) {
 }
 
 const ReporterLevel = {
-  Error = 'ERROR',
+  Error: 'ERROR',
 }
 
 const ReporterCategory = {
   // Error caused by user (typically, site misconfiguration)
-  User = 'USER',
+  User: 'USER',
   // Error caused by DatoCMS plugin ("third party" relative to Gatsby Cloud)
-  ThirdParty = 'THIRD_PARTY',
+  ThirdParty: 'THIRD_PARTY',
   // Error caused by Gatsby process
-  System = 'SYSTEM',
+  System: 'SYSTEM',
 }
 
 const CODES = {
