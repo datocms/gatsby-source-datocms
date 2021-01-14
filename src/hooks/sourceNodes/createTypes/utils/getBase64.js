@@ -6,7 +6,7 @@ const request = require('request-promise-native');
 const resizeUrl = require('./resizeUrl');
 const queryString = require('query-string');
 
-const queue = new Queue(3, Infinity);
+const queue = new Queue(10, Infinity);
 
 function download(requestUrl, cacheDir) {
   const cacheFile = path.join(cacheDir, md5(requestUrl));
