@@ -1026,6 +1026,567 @@
           ]
         }
       ],
+      "structuredText": {
+        "value": {
+          "schema": "dast",
+          "document": {
+            "type": "root",
+            "children": [
+              {
+                "type": "heading",
+                "level": 1,
+                "children": [
+                  {
+                    "type": "span",
+                    "value": "Heading"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "span",
+                    "value": "This "
+                  },
+                  {
+                    "type": "span",
+                    "marks": [
+                      "strikethrough"
+                    ],
+                    "value": "is"
+                  },
+                  {
+                    "type": "span",
+                    "value": " "
+                  },
+                  {
+                    "type": "span",
+                    "marks": [
+                      "highlight"
+                    ],
+                    "value": "just"
+                  },
+                  {
+                    "type": "span",
+                    "value": " "
+                  },
+                  {
+                    "type": "span",
+                    "marks": [
+                      "code"
+                    ],
+                    "value": "some"
+                  },
+                  {
+                    "type": "span",
+                    "value": " "
+                  },
+                  {
+                    "type": "span",
+                    "marks": [
+                      "strong"
+                    ],
+                    "value": "random"
+                  },
+                  {
+                    "type": "span",
+                    "value": " "
+                  },
+                  {
+                    "type": "span",
+                    "marks": [
+                      "emphasis"
+                    ],
+                    "value": "formatted"
+                  },
+                  {
+                    "type": "span",
+                    "value": " "
+                  },
+                  {
+                    "type": "span",
+                    "marks": [
+                      "underline"
+                    ],
+                    "value": "text"
+                  },
+                  {
+                    "type": "span",
+                    "value": " with a "
+                  },
+                  {
+                    "url": "http://www.datocms.com/",
+                    "type": "link",
+                    "children": [
+                      {
+                        "type": "span",
+                        "value": "regular link"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "span",
+                    "value": " and a "
+                  },
+                  {
+                    "item": "7364346",
+                    "type": "itemLink",
+                    "children": [
+                      {
+                        "type": "span",
+                        "value": "record link"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "span",
+                    "value": "."
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "style": "bulleted",
+                "children": [
+                  {
+                    "type": "listItem",
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "type": "span",
+                            "value": "List"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "list",
+                        "style": "bulleted",
+                        "children": [
+                          {
+                            "type": "listItem",
+                            "children": [
+                              {
+                                "type": "paragraph",
+                                "children": [
+                                  {
+                                    "type": "span",
+                                    "value": "Inner"
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "paragraph",
+                                "children": [
+                                  {
+                                    "type": "span",
+                                    "value": "Paragraph"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "item": "15073253",
+                "type": "block"
+              },
+              {
+                "type": "list",
+                "style": "numbered",
+                "children": [
+                  {
+                    "type": "listItem",
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "type": "span",
+                            "value": "One"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "listItem",
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "type": "span",
+                            "value": "Two"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "listItem",
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "item": "7364346",
+                            "type": "inlineItem"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "function foobar() {\n  alert('1');\n}",
+                "type": "code",
+                "language": "javascript"
+              },
+              {
+                "type": "blockquote",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "type": "span",
+                        "value": "This is "
+                      },
+                      {
+                        "type": "span",
+                        "marks": [
+                          "strong",
+                          "emphasis"
+                        ],
+                        "value": "a quote"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "blocks": [
+          {
+            "__typename": "DatoCmsModularBlock",
+            "id": "15073253",
+            "title": "Foobar"
+          }
+        ],
+        "links": [
+          {
+            "__typename": "DatoCmsArticle",
+            "id": "7364346",
+            "singleLineString": "Secondary article",
+            "slug": "secondary-article"
+          }
+        ]
+      },
+      "_allStructuredTextLocales": [
+        {
+          "locale": "en",
+          "value": {
+            "value": {
+              "schema": "dast",
+              "document": {
+                "type": "root",
+                "children": [
+                  {
+                    "type": "heading",
+                    "level": 1,
+                    "children": [
+                      {
+                        "type": "span",
+                        "value": "Heading"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "type": "span",
+                        "value": "This "
+                      },
+                      {
+                        "type": "span",
+                        "marks": [
+                          "strikethrough"
+                        ],
+                        "value": "is"
+                      },
+                      {
+                        "type": "span",
+                        "value": " "
+                      },
+                      {
+                        "type": "span",
+                        "marks": [
+                          "highlight"
+                        ],
+                        "value": "just"
+                      },
+                      {
+                        "type": "span",
+                        "value": " "
+                      },
+                      {
+                        "type": "span",
+                        "marks": [
+                          "code"
+                        ],
+                        "value": "some"
+                      },
+                      {
+                        "type": "span",
+                        "value": " "
+                      },
+                      {
+                        "type": "span",
+                        "marks": [
+                          "strong"
+                        ],
+                        "value": "random"
+                      },
+                      {
+                        "type": "span",
+                        "value": " "
+                      },
+                      {
+                        "type": "span",
+                        "marks": [
+                          "emphasis"
+                        ],
+                        "value": "formatted"
+                      },
+                      {
+                        "type": "span",
+                        "value": " "
+                      },
+                      {
+                        "type": "span",
+                        "marks": [
+                          "underline"
+                        ],
+                        "value": "text"
+                      },
+                      {
+                        "type": "span",
+                        "value": " with a "
+                      },
+                      {
+                        "url": "http://www.datocms.com/",
+                        "type": "link",
+                        "children": [
+                          {
+                            "type": "span",
+                            "value": "regular link"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "span",
+                        "value": " and a "
+                      },
+                      {
+                        "item": "7364346",
+                        "type": "itemLink",
+                        "children": [
+                          {
+                            "type": "span",
+                            "value": "record link"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "span",
+                        "value": "."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list",
+                    "style": "bulleted",
+                    "children": [
+                      {
+                        "type": "listItem",
+                        "children": [
+                          {
+                            "type": "paragraph",
+                            "children": [
+                              {
+                                "type": "span",
+                                "value": "List"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "list",
+                            "style": "bulleted",
+                            "children": [
+                              {
+                                "type": "listItem",
+                                "children": [
+                                  {
+                                    "type": "paragraph",
+                                    "children": [
+                                      {
+                                        "type": "span",
+                                        "value": "Inner"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "paragraph",
+                                    "children": [
+                                      {
+                                        "type": "span",
+                                        "value": "Paragraph"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "item": "15073253",
+                    "type": "block"
+                  },
+                  {
+                    "type": "list",
+                    "style": "numbered",
+                    "children": [
+                      {
+                        "type": "listItem",
+                        "children": [
+                          {
+                            "type": "paragraph",
+                            "children": [
+                              {
+                                "type": "span",
+                                "value": "One"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "listItem",
+                        "children": [
+                          {
+                            "type": "paragraph",
+                            "children": [
+                              {
+                                "type": "span",
+                                "value": "Two"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "listItem",
+                        "children": [
+                          {
+                            "type": "paragraph",
+                            "children": [
+                              {
+                                "item": "7364346",
+                                "type": "inlineItem"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "code": "function foobar() {\n  alert('1');\n}",
+                    "type": "code",
+                    "language": "javascript"
+                  },
+                  {
+                    "type": "blockquote",
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "type": "span",
+                            "value": "This is "
+                          },
+                          {
+                            "type": "span",
+                            "marks": [
+                              "strong",
+                              "emphasis"
+                            ],
+                            "value": "a quote"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "blocks": [
+              {
+                "__typename": "DatoCmsModularBlock",
+                "id": "15073253",
+                "title": "Foobar"
+              }
+            ],
+            "links": [
+              {
+                "__typename": "DatoCmsArticle",
+                "id": "7364346",
+                "singleLineString": "Secondary article",
+                "slug": "secondary-article"
+              }
+            ]
+          }
+        },
+        {
+          "locale": "it",
+          "value": {
+            "value": {
+              "schema": "dast",
+              "document": {
+                "type": "root",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "type": "span",
+                        "value": "Another document for Italian!"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "blocks": [],
+            "links": []
+          }
+        }
+      ],
       "meta": {
         "createdAt": "2020-09-22T15:46:24.300+01:00",
         "updatedAt": "2021-01-12T14:20:45.515+00:00",

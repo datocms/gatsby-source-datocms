@@ -20,6 +20,7 @@ const fieldResolvers = {
   link: require('./fields/link'),
   links: require('./fields/richText'),
   rich_text: require('./fields/richText'),
+  structured_text: require('./fields/structuredText'),
   seo: simpleFieldReturnCamelizedKeys('DatoCmsSeoField'),
   slug: simpleField('String'),
   string: simpleField('String'),
