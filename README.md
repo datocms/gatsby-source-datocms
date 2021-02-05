@@ -227,7 +227,9 @@ You can then present your blocks in a similar manner:
 }
 ```
 
-You can then present your blocks using the [`<StructuredText>`](https://github.com/datocms/react-datocms/tree/structured-text#structured-text) component:
+You can then present your blocks using the [`<StructuredText>`](https://github.com/datocms/react-datocms/tree/structured-text#structured-text) component.
+
+**Important**: make sure you add the `id: originalId` part in both the `blocks` and `links` sub-queries, or the `<StructuredText>` component won't work!
 
 ```jsx
 import { StructuredText } from 'react-datocms';
