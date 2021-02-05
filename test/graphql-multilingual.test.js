@@ -501,8 +501,7 @@ GraphQLMultilingual('items', async () => {
 
   assertGraphQLResponseEqualToSnapshot('multilingual/item', result);
 
-  const output = render({
-    structuredText: result.data.enArticle.structuredText,
+  const output = render(result.data.enArticle.structuredText, {
     renderInlineRecord: ({ adapter, record }) => {
       switch (record.__typename) {
         case 'DatoCmsArticle':
@@ -537,7 +536,10 @@ GraphQLMultilingual('items', async () => {
     },
   });
 
-  assertGraphQLResponseEqualToSnapshot('multilingual/structuredTextRender', output);
+  assertGraphQLResponseEqualToSnapshot(
+    'multilingual/structuredTextRender',
+    output,
+  );
 });
 
 GraphQLMultilingual('force blurhash', async () => {

@@ -1047,23 +1047,12 @@
                 "children": [
                   {
                     "type": "span",
-                    "value": "This "
+                    "value": "This is "
                   },
                   {
                     "type": "span",
                     "marks": [
-                      "strikethrough"
-                    ],
-                    "value": "is"
-                  },
-                  {
-                    "type": "span",
-                    "value": " "
-                  },
-                  {
-                    "type": "span",
-                    "marks": [
-                      "highlight"
+                      "strong"
                     ],
                     "value": "just"
                   },
@@ -1074,7 +1063,7 @@
                   {
                     "type": "span",
                     "marks": [
-                      "code"
+                      "emphasis"
                     ],
                     "value": "some"
                   },
@@ -1085,7 +1074,7 @@
                   {
                     "type": "span",
                     "marks": [
-                      "strong"
+                      "underline"
                     ],
                     "value": "random"
                   },
@@ -1096,7 +1085,7 @@
                   {
                     "type": "span",
                     "marks": [
-                      "emphasis"
+                      "code"
                     ],
                     "value": "formatted"
                   },
@@ -1107,7 +1096,7 @@
                   {
                     "type": "span",
                     "marks": [
-                      "underline"
+                      "highlight"
                     ],
                     "value": "text"
                   },
@@ -1195,7 +1184,7 @@
                 ]
               },
               {
-                "item": "15073253",
+                "item": "19156539",
                 "type": "block"
               },
               {
@@ -1271,7 +1260,8 @@
                       }
                     ]
                   }
-                ]
+                ],
+                "attribution": "Me"
               }
             ]
           }
@@ -1279,7 +1269,7 @@
         "blocks": [
           {
             "__typename": "DatoCmsModularBlock",
-            "id": "15073253",
+            "id": "19156539",
             "title": "Foobar"
           }
         ],
@@ -1316,23 +1306,12 @@
                     "children": [
                       {
                         "type": "span",
-                        "value": "This "
+                        "value": "This is "
                       },
                       {
                         "type": "span",
                         "marks": [
-                          "strikethrough"
-                        ],
-                        "value": "is"
-                      },
-                      {
-                        "type": "span",
-                        "value": " "
-                      },
-                      {
-                        "type": "span",
-                        "marks": [
-                          "highlight"
+                          "strong"
                         ],
                         "value": "just"
                       },
@@ -1343,7 +1322,7 @@
                       {
                         "type": "span",
                         "marks": [
-                          "code"
+                          "emphasis"
                         ],
                         "value": "some"
                       },
@@ -1354,7 +1333,7 @@
                       {
                         "type": "span",
                         "marks": [
-                          "strong"
+                          "underline"
                         ],
                         "value": "random"
                       },
@@ -1365,7 +1344,7 @@
                       {
                         "type": "span",
                         "marks": [
-                          "emphasis"
+                          "code"
                         ],
                         "value": "formatted"
                       },
@@ -1376,7 +1355,7 @@
                       {
                         "type": "span",
                         "marks": [
-                          "underline"
+                          "highlight"
                         ],
                         "value": "text"
                       },
@@ -1464,7 +1443,7 @@
                     ]
                   },
                   {
-                    "item": "15073253",
+                    "item": "19156539",
                     "type": "block"
                   },
                   {
@@ -1540,7 +1519,8 @@
                           }
                         ]
                       }
-                    ]
+                    ],
+                    "attribution": "Me"
                   }
                 ]
               }
@@ -1548,7 +1528,7 @@
             "blocks": [
               {
                 "__typename": "DatoCmsModularBlock",
-                "id": "15073253",
+                "id": "19156539",
                 "title": "Foobar"
               }
             ],
@@ -1589,10 +1569,10 @@
       ],
       "meta": {
         "createdAt": "2020-09-22T15:46:24.300+01:00",
-        "updatedAt": "2021-01-12T14:20:45.515+00:00",
+        "updatedAt": "2021-02-05T09:59:24.409+00:00",
         "status": "published",
         "isValid": true,
-        "publishedAt": "2021-01-12T14:20:45.571+00:00",
+        "publishedAt": "2021-02-05T09:59:24.468+00:00",
         "__typename": "DatoCmsMetaField"
       },
       "seoMetaTags": {
@@ -1648,7 +1628,7 @@
             "tagName": "meta",
             "attributes": {
               "property": "article:modified_time",
-              "content": "2021-01-12T14:20:45Z"
+              "content": "2021-02-05T09:59:24Z"
             }
           },
           {
