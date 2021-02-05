@@ -10,7 +10,7 @@ const itemNodeId = require('../../utils/itemNodeId');
 
 const buildFor = (unionType, itemTypeIds, entitiesRepo, gqlItemTypeName) => {
   if (itemTypeIds.length === 0) {
-    return { type: 'String' };
+    return ['String', null];
   }
 
   if (itemTypeIds.length === 1) {
