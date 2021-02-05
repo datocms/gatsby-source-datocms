@@ -268,11 +268,11 @@ import { StructuredText } from 'react-datocms';
 If you need to generate an excerpt you can use the [`datocms-structured-text-to-plain-text`](https://github.com/stefanoverna/structured-text/blob/main/packages/to-plain-text/README.md) package to convert the document into plain text:
 
 ```js
-import { render } from 'datocms-structured-text-to-plain-text';
+import { render as toPlainText } from 'datocms-structured-text-to-plain-text';
 import ellipsize from 'ellipsize';
 
 ellipsize(
-  render({ structuredText: data.blogPost.content }),
+  toPlainText(data.blogPost.content),
   100
 )
 ```
