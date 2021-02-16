@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-datocms",
-  "version": "2.5.10",
+  "version": "2.5.11",
   "description": "Gatsby source plugin for building websites using DatoCMS as data source",
   "main": "index.js",
   "repository": {
@@ -22,14 +22,14 @@
     "cross-env": "^6.0.3",
     "datocms-structured-text-to-html-string": "^1.0.1",
     "gatsby": "^2.24.63",
+    "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-transformer-remark": "^2.8.38",
     "np": "^6.5.0",
     "prettier": "^1.18.2",
     "react": "^16.10.2",
     "react-helmet": "^5.2.0",
     "rimraf": "^3.0.2",
-    "uvu": "^0.3.3",
-    "gatsby-plugin-sharp": "^2.14.1"
+    "uvu": "^0.3.3"
   },
   "dependencies": {
     "core-js": "^3.2.1",
