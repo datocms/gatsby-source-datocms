@@ -2,10 +2,10 @@ const Queue = require('promise-queue');
 const fs = require('fs-extra');
 const path = require('path');
 const md5 = require('md5');
-const request = require('request');
 const resizeUrl = require('./resizeUrl');
+const got = require('got');
 
-const queue = new Queue(3, Infinity);
+const queue = new Queue(10, Infinity);
 
 function download(requestUrl, cacheDir) {
   const cacheFile = path.join(cacheDir, md5(requestUrl));
@@ -14,23 +14,19 @@ function download(requestUrl, cacheDir) {
     return Promise.resolve(cacheFile);
   }
 
-  return queue.add(
-    () =>
-      new Promise((resolve, reject) => {
-        const r = request(requestUrl);
-
-        r.on('error', reject);
-        r.on('response', function(resp) {
-          if (resp.statusCode !== 200) {
-            reject();
-          }
-
-          r.pipe(fs.createWriteStream(cacheFile))
-            .on('finish', () => resolve(cacheFile))
-            .on('error', reject);
-        });
-      }),
-  );
+  return queue.add(() => {
+    return got(requestUrl, {
+      responseType: 'buffer',
+      maxRedirects: 10,
+      retry: {
+        limit: 100,
+        calculateDelay: () => 1000,
+      },
+    }).then(response => {
+      fs.writeFileSync(cacheFile, response.body);
+      return cacheFile;
+    });
+  });
 }
 
 module.exports = async ({ src, width, height, aspectRatio }, cacheDir) => {

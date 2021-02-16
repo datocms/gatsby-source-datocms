@@ -28,13 +28,15 @@
     "react": "^16.10.2",
     "react-helmet": "^5.2.0",
     "rimraf": "^3.0.2",
-    "uvu": "^0.3.3"
+    "uvu": "^0.3.3",
+    "gatsby-plugin-sharp": "^2.14.1"
   },
   "dependencies": {
     "core-js": "^3.2.1",
     "datocms-client": ">=3.2.3",
     "datocms-structured-text-utils": "^1.0.1",
     "fs-extra": ">=8.1.0",
+    "got": "^11.8.1",
     "humps": ">=2.0.1",
     "imgix-url-params": ">=11.2.0",
     "json-stringify-safe": ">=5.0.1",
@@ -45,7 +47,6 @@
     "promise-queue": "2.2.5",
     "query-string": "6.8.3",
     "regenerator-runtime": "^0.13.3",
-    "request-promise-native": "1.0.7",
     "unist-util-visit": "^2.0.3"
   },
   "keywords": [

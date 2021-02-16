@@ -2,7 +2,7 @@ const Queue = require('promise-queue');
 const fs = require('fs-extra');
 const path = require('path');
 const md5 = require('md5');
-const request = require('request-promise-native');
+const got = require('got');
 const resizeUrl = require('./resizeUrl');
 const queryString = require('query-string');
 
@@ -17,10 +17,12 @@ function download(requestUrl, cacheDir) {
   }
 
   return queue.add(() => {
-    return request({
-      uri: encodeURI(requestUrl),
-      resolveWithFullResponse: true,
+    return got(encodeURI(requestUrl), {
       encoding: 'base64',
+      retry: {
+        limit: 100,
+        calculateDelay: () => 1000,
+      }
     }).then(res => {
       const data =
         'data:' + res.headers['content-type'] + ';base64,' + res.body;
