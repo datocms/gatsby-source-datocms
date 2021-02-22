@@ -14,8 +14,9 @@ module.exports = () => {
       sizes: 'String',
       imgixParams: 'DatoCmsImgixParams',
       forceBlurhash: 'Boolean',
+      disableAutoFormat: 'Boolean',
     },
-    resolve: (node, { forceBlurhash, maxWidth, maxHeight, imgixParams = {}, sizes }) => {
+    resolve: (node, { forceBlurhash, maxWidth, maxHeight, imgixParams = {}, sizes, disableAutoFormat }) => {
       const image = node.entityPayload.attributes;
 
       if (!isImage(image)) {
@@ -62,7 +63,7 @@ module.exports = () => {
             extraParams.w = finalWidth;
           }
 
-          const url = createUrl(image, imgixParams, extraParams, true);
+          const url = createUrl(image, imgixParams, extraParams, disableAutoFormat !== true);
 
           return `${url} ${Math.round(screen)}w`;
         })
@@ -70,7 +71,7 @@ module.exports = () => {
 
       return {
         aspectRatio,
-        src: createUrl(image, imgixParams, {}, true),
+        src: createUrl(image, imgixParams, {}, disableAutoFormat !== true),
         width: finalWidth,
         height: finalHeight,
         format: image.format,

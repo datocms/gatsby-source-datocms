@@ -14,8 +14,9 @@ module.exports = () => {
       height: 'Int',
       forceBlurhash: 'Boolean',
       imgixParams: 'DatoCmsImgixParams',
+      disableAutoFormat: 'Boolean',
     },
-    resolve: (node, { forceBlurhash, width, height, imgixParams = {} }) => {
+    resolve: (node, { forceBlurhash, width, height, imgixParams = {}, disableAutoFormat }) => {
       const image = node.entityPayload.attributes;
 
       if (!isImage(image)) {
@@ -60,7 +61,7 @@ module.exports = () => {
           if (!mergedImgixParams.w && !mergedImgixParams.h) {
             extraParams.w = finalWidth;
           }
-          const url = createUrl(image, mergedImgixParams, extraParams, true);
+          const url = createUrl(image, mergedImgixParams, extraParams, disableAutoFormat !== true);
 
           return `${url} ${dpr}x`;
         })
@@ -71,7 +72,7 @@ module.exports = () => {
         width: finalWidth,
         height: finalHeight,
         format: image.format,
-        src: createUrl(image, mergedImgixParams, {}, true),
+        src: createUrl(image, mergedImgixParams, {}, disableAutoFormat !== true),
         srcSet,
         forceBlurhash,
       };
