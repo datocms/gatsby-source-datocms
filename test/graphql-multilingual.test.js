@@ -21,9 +21,9 @@ GraphQLMultilingual('focalPoints', async () => {
             y
           }
           url
-          urlWithFocalPoint: url(imgixParams: { w: "140", h: "40", fit: "crop" })
-          fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
-          blurhashFluid: fluid(maxWidth: 140, forceBlurhash: true, imgixParams: { w: "140", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
+          urlWithFocalPoint: url(imgixParams: { w: "150", h: "40", fit: "crop" })
+          fluid(maxWidth: 150, imgixParams: { w: "150", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
+          blurhashFluid: fluid(maxWidth: 150, forceBlurhash: true, imgixParams: { w: "150", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
         }
         assetGallery {
           focalPoint {
@@ -31,9 +31,9 @@ GraphQLMultilingual('focalPoints', async () => {
             y
           }
           url
-          urlWithFocalPoint: url(imgixParams: { w: "140", h: "40", fit: "crop" })
-          fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
-          blurhashFluid: fluid(maxWidth: 140, forceBlurhash: true, imgixParams: { w: "140", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
+          urlWithFocalPoint: url(imgixParams: { w: "150", h: "40", fit: "crop" })
+          fluid(maxWidth: 150, imgixParams: { w: "150", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
+          blurhashFluid: fluid(maxWidth: 150, forceBlurhash: true, imgixParams: { w: "150", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
         }
       }
     }`);
