@@ -454,14 +454,18 @@ GraphQLMultilingual('items', async () => {
           value
           blocks {
             __typename
-            id: originalId
-            title
+            ... on DatoCmsModularBlock {
+              id: originalId
+              title
+            }
           }
           links {
             __typename
-            id: originalId
-            singleLineString
-            slug
+            ... on DatoCmsArticle {
+              id: originalId
+              singleLineString
+              slug
+            }
           }
         }
         _allStructuredTextLocales {
@@ -470,14 +474,18 @@ GraphQLMultilingual('items', async () => {
             value
             blocks {
               __typename
-              id: originalId
-              title
+              ... on DatoCmsModularBlock {
+                id: originalId
+                title
+              }
             }
             links {
               __typename
-              id: originalId
-              singleLineString
-              slug
+              ... on DatoCmsArticle {
+                id: originalId
+                singleLineString
+                slug
+              }
             }
           }
         }

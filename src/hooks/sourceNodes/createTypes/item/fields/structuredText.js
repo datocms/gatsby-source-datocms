@@ -8,7 +8,7 @@ const {
 const uniq = require('lodash.uniq');
 const itemNodeId = require('../../utils/itemNodeId');
 
-const buildFor = (unionType, itemTypeIds, entitiesRepo, gqlItemTypeName) => {
+const buildFor = (unionType, itemTypeIds, entitiesRepo, gqlItemTypeName, schema) => {
   if (itemTypeIds.length === 0) {
     return ['String', null];
   }
@@ -58,12 +58,14 @@ module.exports = ({
     field.validators.structuredTextBlocks.itemTypes,
     entitiesRepo,
     gqlItemTypeName,
+    schema,
   );
   const [linkFieldTypeName, linkFieldType] = buildFor(
     `${fieldTypeName}Links`,
     field.validators.structuredTextLinks.itemTypes,
     entitiesRepo,
     gqlItemTypeName,
+    schema,
   );
 
   return {
