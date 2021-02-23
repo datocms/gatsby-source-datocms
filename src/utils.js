@@ -23,6 +23,7 @@ function createLoader({ apiToken, apiUrl, previewMode, environment }) {
   return new Loader(
     client,
     (GATSBY_CLOUD && GATSBY_EXECUTING_COMMAND === 'develop') || previewMode,
+    environment,
   );
 }
 
