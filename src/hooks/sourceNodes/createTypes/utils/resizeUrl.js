@@ -1,5 +1,6 @@
 const queryString = require('query-string');
 const createUrl = require('./createUrl');
+const objectAssign = require('object-assign');
 
 module.exports = ({ url, aspectRatio, width, height }, size) => {
   const [baseUrl, query] = url.split('?');
@@ -18,5 +19,9 @@ module.exports = ({ url, aspectRatio, width, height }, size) => {
 
   extraParams.q = '30';
 
-  return createUrl({ url: baseUrl }, imgixParams, extraParams);
+  return createUrl(
+    baseUrl,
+    objectAssign({}, imgixParams, extraParams),
+    { autoFormat: false },
+  );
 };

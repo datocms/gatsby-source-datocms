@@ -22,20 +22,6 @@ module.exports = () => {
         return null;
       }
 
-      if (
-        node.focalPoint &&
-        imgixParams.fit === 'crop' &&
-        (imgixParams.h || imgixParams.height) &&
-        (imgixParams.w || imgixParams.width) &&
-        (!imgixParams.crop || imgixParams.crop === 'focalpoint') &&
-        !imgixParams['fp-x'] &&
-        !imgixParams['fp-y']
-      ) {
-        imgixParams.crop = 'focalpoint';
-        imgixParams['fp-x'] = node.focalPoint.x;
-        imgixParams['fp-y'] = node.focalPoint.y;
-      }
-
       const mergedImgixParams = objectAssign(
         {},
         imgixParams,
@@ -60,7 +46,11 @@ module.exports = () => {
           if (!mergedImgixParams.w && !mergedImgixParams.h) {
             extraParams.w = finalWidth;
           }
-          const url = createUrl(image, mergedImgixParams, extraParams, true);
+          const url = createUrl(
+            image.url,
+            objectAssign({}, mergedImgixParams, extraParams),
+            { autoFormat: true, focalPoint: node.focalPoint },
+          );
 
           return `${url} ${dpr}x`;
         })
@@ -71,7 +61,10 @@ module.exports = () => {
         width: finalWidth,
         height: finalHeight,
         format: image.format,
-        src: createUrl(image, mergedImgixParams, {}, true),
+        src: createUrl(image.url, mergedImgixParams, {
+          autoFormat: true,
+          focalPoint: node.focalPoint,
+        }),
         srcSet,
         forceBlurhash,
       };

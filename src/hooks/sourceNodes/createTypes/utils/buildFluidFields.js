@@ -1,6 +1,7 @@
 const isImage = require('./isImage');
 const getSizeAfterTransformations = require('./getSizeAfterTransformations');
 const createUrl = require('./createUrl');
+const objectAssign = require('object-assign');
 
 module.exports = () => {
   const field = {
@@ -15,25 +16,14 @@ module.exports = () => {
       imgixParams: 'DatoCmsImgixParams',
       forceBlurhash: 'Boolean',
     },
-    resolve: (node, { forceBlurhash, maxWidth, maxHeight, imgixParams = {}, sizes }) => {
+    resolve: (
+      node,
+      { forceBlurhash, maxWidth, maxHeight, imgixParams = {}, sizes },
+    ) => {
       const image = node.entityPayload.attributes;
 
       if (!isImage(image)) {
         return null;
-      }
-
-      if (
-        node.focalPoint &&
-        imgixParams.fit === 'crop' &&
-        (imgixParams.h || imgixParams.height) &&
-        (imgixParams.w || imgixParams.width) &&
-        (!imgixParams.crop || imgixParams.crop === 'focalpoint') &&
-        !imgixParams['fp-x'] &&
-        !imgixParams['fp-y']
-      ) {
-        imgixParams.crop = 'focalpoint';
-        imgixParams['fp-x'] = node.focalPoint.x;
-        imgixParams['fp-y'] = node.focalPoint.y;
       }
 
       const {
@@ -62,7 +52,11 @@ module.exports = () => {
             extraParams.w = finalWidth;
           }
 
-          const url = createUrl(image, imgixParams, extraParams, true);
+          const url = createUrl(
+            image.url,
+            objectAssign({}, imgixParams, extraParams),
+            { autoFormat: true, focalPoint: node.focalPoint },
+          );
 
           return `${url} ${Math.round(screen)}w`;
         })
@@ -70,7 +64,10 @@ module.exports = () => {
 
       return {
         aspectRatio,
-        src: createUrl(image, imgixParams, {}, true),
+        src: createUrl(image.url, imgixParams, {
+          autoFormat: true,
+          focalPoint: node.focalPoint,
+        }),
         width: finalWidth,
         height: finalHeight,
         format: image.format,

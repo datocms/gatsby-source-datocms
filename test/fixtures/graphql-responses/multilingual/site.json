@@ -24,7 +24,7 @@
           "twitterCard": "summary",
           "image": {
             "path": "/34723/1600784341-plant.jpg",
-            "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg"
+            "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format"
           }
         }
       },
@@ -200,7 +200,7 @@
           "twitterCard": "summary_large_image",
           "image": {
             "path": "/34723/1600784341-plant.jpg",
-            "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg"
+            "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format"
           }
         }
       },

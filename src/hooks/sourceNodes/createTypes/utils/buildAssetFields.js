@@ -2,6 +2,7 @@ const queryString = require('query-string');
 const { camelizeKeys } = require('datocms-client');
 const buildFluidFields = require('../utils/buildFluidFields');
 const buildFixedFields = require('../utils/buildFixedFields');
+const createUrl = require('./createUrl');
 
 const resolveUsingEntityPayloadAttribute = (
   key,
@@ -63,28 +64,10 @@ module.exports = function() {
       },
       resolve: (node, args) => {
         let url = `${node.imgixHost}${node.entityPayload.attributes.path}`;
-
-        if (args.imgixParams && Object.keys(args.imgixParams).length > 0) {
-          const query = { ...args.imgixParams };
-
-          if (
-            node.focalPoint &&
-            query.fit === 'crop' &&
-            (query.h || query.height) &&
-            (query.w || query.width) &&
-            (!query.crop || query.crop === 'focalpoint') &&
-            !query['fp-x'] &&
-            !query['fp-y']
-          ) {
-            query.crop = 'focalpoint';
-            query['fp-x'] = node.focalPoint.x;
-            query['fp-y'] = node.focalPoint.y;
-          }
-
-          url += `?${queryString.stringify(query)}`
-        }
-
-        return url;
+        return createUrl(url, args.imgixParams, {
+          autoFormat: true,
+          focalPoint: node.focalPoint,
+        });
       },
     },
     createdAt: resolveUsingEntityPayloadAttribute('created_at', {

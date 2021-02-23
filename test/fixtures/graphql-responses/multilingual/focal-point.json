@@ -6,8 +6,8 @@
           "x": 0.17,
           "y": 0.24
         },
-        "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg",
-        "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=140",
+        "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format",
+        "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=140",
         "fluid": {
           "tracedSVG": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='115'%20viewBox='0%200%20400%20115'%20preserveAspectRatio='none'%3e%3cpath%20d='M0%2023l1%2022c2%200%2011%205%2014%208%204%203%203%206-1%2012l-3%205-1%202-4%204-4%206c-2%200-2%201-2%2017v16h285v-3l3-3c1%200%205%203%205%205l44%201%2043-1%203-3%207-3%207-2%203-1v5a1904%201904%200%2000-2-82c-2%200-3%203-3%208v5l-3%205c-2%205-7%2011-9%2011-1%200-2-2-2-5l-3-4-2-1-2%202c-2%207-6%205-10-7-3-7-3-10-1-10l1-1-2-1c-2%200-4-3-12-12-2-4-5-6-6-6l-2-1c-2-2-5-1-7%203l-3%204c-2%202-13%202-15%201s-4-1-6%203c-1%202-1%203%203%205%204%205%205%2013%201%2015-3%201-3%201-2%204%201%202%205%203%205%201h2l4%202c5%203%209%209%207%2011-1%201-1%201%203%203%203%201%204%202%204%204l1%204c1%202%2012%208%2015%208%205%201%206%204%203%209-2%205-6%207-13%208-6%202-21%202-29%200-4%200-11%202-11%204s-2%203-4%203l-2-2c-2-5-6-6-13-5-7%200-10%202-9%204v3c-2%201-6-1-6-2l-4-3-9-7-8-7c-6-3-5-11%202-18l4-5c0-4-9-10-13-8-4%201-7-1-7-4%200-4%205-16%207-17l3-4%206-5%204-3c0-2%202-3%205-3%205-1%208-3%2010-8l2-5%201-2%201%203c2%203%203%204%203%202l2-2%201-3c0-2-1-2-32-2s-31%200-30%202c2%202%202%204-1%204l-1%201v3c-1%200-3%202-4%205a99%2099%200%2001-10%2013c-1%201-4%200-5-3-2-6-4-8-14-18l-4-5c0-2-4-2-89-2H0v23m145%2034l-5%204-6%204c-2%201%200%205%202%204h3c2-1%204%200%206%202%204%203%206%203%209%200l6-4%206-5c0-2-3-3-8-4l-8-1h-5m145%206c-2%201-1%202%209%208%2010%207%2031%207%2031%200%200-6-5-9-15-7h-10c-11-2-13-2-15-1'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
           "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhUICAgLCgoLDhAVDA0ZDikeDQ4QFx8aGBYVFhUdHysjHR0oHRUWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDsoIhw7Ly8vOzsvLy81Ly8vNTUvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIAAcAGAMBIgACEQEDEQH/xAAYAAEAAwEAAAAAAAAAAAAAAAAAAwQFAf/EAB0QAAIABwEAAAAAAAAAAAAAAAACAwQFERIhMQH/xAAWAQEBAQAAAAAAAAAAAAAAAAADBQL/xAAXEQADAQAAAAAAAAAAAAAAAAAAAQIR/9oADAMBAAIRAxEAPwCpPy900RU6G8NunQSHT0F09NZn9xAAVU9MNs//2Q==",
@@ -24,8 +24,8 @@
       "assetGallery": [
         {
           "focalPoint": null,
-          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
-          "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?fit=crop&h=40&w=140",
+          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?auto=format",
+          "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?auto=format&fit=crop&h=40&w=140",
           "fluid": null,
           "blurhashFluid": null
         },
@@ -34,8 +34,8 @@
             "x": 0.85,
             "y": 0.28
           },
-          "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg",
-          "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=140",
+          "url": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format",
+          "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=140",
           "fluid": {
             "tracedSVG": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='115'%20viewBox='0%200%20400%20115'%20preserveAspectRatio='none'%3e%3cpath%20d='M0%2016v17l4%201%205%202c2%200%209%207%209%2010%200%202-7%2013-9%2014l-3%205c-1%204-2%205-4%205s-2%200-2%2023v22h145c143%200%20145%200%20143-2l-3-7-2-8c0-2%200-2%205-2s5%201%205%203l1%204c3%202%203%205%202%209l-1%203h5l4-1-1-2c-2%200-1-7%201-9%201-2%202-2%205-1h5c2%200%206%203%206%205l-1%205-2%203h18c17%200%2018%200%2020-2l7-4a90%2090%200%200022-11l2-1%2013-4%201%2011a1209%201209%200%2000-2-85l-2%208c1%205-13%2021-18%2021-2%200-2-7-1-11%201-2%200-5-3-5-1%200-2%202-2%206l-2%202h-3c-1%200-3-4-2-6l3-3c2-1%202-2%201-2l-3%201h-1l-2-2c-2%200-3-2-3-4%200-5-2-8-4-8-1%200-7-11-7-14%200-2-1-2-6-2-6%200-7%200-7%202%200%204-5%206-18%207-4%201-6%202-6%204s0%202%202%202c1-1%201%200%202%202l3%204%201%205c0%203%204%208%207%208%202%200%201%202-1%202l-5%201c-3%200-3%200-3%202l1%202h5l4-1c0-2%202-3%203-1l2%201c3-1%204%202%201%202l-2%203v4c0%201%201%202%203%202l5%203%201%202%202%203c0%202%202%203%202%203l4%202%204%202c5%200%207%209%203%2013-8%207-8%206-28%207-22%200-24%200-24%207v4l-3-2c-2-2-2-2-1-3v-3c-2-3-5-4-12-5-8%200-10%201-10%206-1%204-4%204-6%201-1-2-4-4-6-4l-8-7c-3-3-6-6-8-6-6-4-6-11-1-17%207-8%207-9%202-12-3-3-5-4-10-4-7-1-7%200-6-8s19-29%2024-28c2%200%205-2%205-4l-26-1c-17%200-26%200-25%201l-4%207-6%209c-1%206-7%205-5-1l-4-8c-2%200-4-3-4-6V0H0v16m140%2031l-4%204c-2%200-4%203-3%205%200%203%203%203%206%201%203-1%203-1%206%202%204%204%206%204%2010%200l7-4%203-4c0-4-2-5-8-6h-9c-4-1-4-1-8%202m148%203c-2%201-1%202%205%205l6%204c1%203%206%204%2016%204%2012%201%2013%200%2013-6%200-4%200-4-3-5h-7c-4%201-15%200-25-2h-5'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
             "base64": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhUICAgLCgoLDhAVDA0ZDikeDQ4QFx8aGBYVFhUdHysjHR0oHRUWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDsoIhw7Ly8vOzsvLy81Ly8vNTUvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIAAcAGAMBIgACEQEDEQH/xAAYAAEAAwEAAAAAAAAAAAAAAAAAAwQFAf/EAB0QAAIABwEAAAAAAAAAAAAAAAACAwQFERIhMQH/xAAWAQEBAQAAAAAAAAAAAAAAAAADBQL/xAAXEQADAQAAAAAAAAAAAAAAAAAAAQIR/9oADAMBAAIRAxEAPwCpPy900RU6G8NunQSHT0F09NZn9xAAVU9MNs//2Q==",

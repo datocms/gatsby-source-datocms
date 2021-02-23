@@ -41,6 +41,25 @@ GraphQLMultilingual('focalPoints', async () => {
   assertGraphQLResponseEqualToSnapshot('multilingual/focal-point', result);
 });
 
+GraphQLMultilingual('auto=format', async () => {
+  const result = await executeQuery(`
+    {
+      datoCmsArticle(originalId: {eq: "7364344"}) {
+        singleAsset {
+          noFormatUrl: url(imgixParams: { maxW: 200 })
+          noFormatFixed: fixed(width: 300, imgixParams: { maxW: 200 }) { src srcSet }
+          noFormatFluid: fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop", maxW: 200 }) { src srcSet }
+
+          pngFormatUrl: url(imgixParams: { fm: "png", maxW: 200 })
+          pngFormatFixed: fixed(width: 300, imgixParams: { fm: "png", maxW: 200 }) { src srcSet }
+          pngFormatFluid: fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop", fm: "png", maxW: 200 }) { src srcSet }
+        }
+      }
+    }`);
+
+  assertGraphQLResponseEqualToSnapshot('multilingual/auto-format', result);
+});
+
 const assetFields = `
     size width height path format isImage notes author copyright tags
     smartTags filename basename exifInfo mimeType blurhash
@@ -58,8 +77,8 @@ const assetFields = `
       mediumMp4Url: mp4Url(exactRes: medium)
       highMp4Url: mp4Url(exactRes: high)
     }
-    fixed(width: 300, imgixParams: {fm: "auto"}) { base64 aspectRatio width height src srcSet sizes }
-    fluid(maxWidth: 300, imgixParams: {fm: "auto"}) { base64 aspectRatio width height src srcSet sizes }
+    fixed(width: 300) { base64 aspectRatio width height src srcSet sizes }
+    fluid(maxWidth: 300) { base64 aspectRatio width height src srcSet sizes }
   `;
 
 const fileFields = `alt title customData ${assetFields}`;
@@ -548,10 +567,10 @@ GraphQLMultilingual('force blurhash', async () => {
     await executeQuery(
       `{
           datoCmsAsset(originalId: {eq: "2643791"}) {
-            fixed(width: 300, imgixParams: {fm: "auto"}) { base64 }
-            fluid(maxWidth: 300, imgixParams: {fm: "auto"}) { base64 }
-            forceBlurhashFixed: fixed(width: 300, forceBlurhash: true, imgixParams: {fm: "auto"}) { base64 }
-            forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true, imgixParams: {fm: "auto"}) { base64 }
+            fixed(width: 300) { base64 }
+            fluid(maxWidth: 300) { base64 }
+            forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) { base64 }
+            forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) { base64 }
           }
        }`,
     ),
