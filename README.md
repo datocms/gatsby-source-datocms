@@ -132,7 +132,7 @@ if you have a `blog_post` model, you will be able to query it like the following
 
 Fields of type *Multiple-paragraph text* will be available both as simple
 strings (ie. `excerpt`) and nodes (ie. `excerptNode`). You can use the latter
-if you want to apply further transformations, like converting markdown with [`gatsby-transformer-remark`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark)):
+if you want to apply further transformations, like converting markdown with [`gatsby-transformer-remark`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark) (converting markdown only works with `Markdown editor` as name suggests):
 
 ```graphql
 {
