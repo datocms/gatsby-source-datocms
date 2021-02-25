@@ -1,4 +1,3 @@
-const isImage = require('./isImage');
 const getSizeAfterTransformations = require('./getSizeAfterTransformations');
 const createUrl = require('./createUrl');
 const objectAssign = require('object-assign');
@@ -22,7 +21,7 @@ module.exports = () => {
     ) => {
       const image = node.entityPayload.attributes;
 
-      if (!isImage(image)) {
+      if (!image.is_image) {
         return null;
       }
 

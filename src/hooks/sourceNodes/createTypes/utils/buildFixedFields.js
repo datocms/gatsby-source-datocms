@@ -18,7 +18,7 @@ module.exports = () => {
     resolve: (node, { forceBlurhash, width, height, imgixParams = {} }) => {
       const image = node.entityPayload.attributes;
 
-      if (!isImage(image)) {
+      if (!image.is_image) {
         return null;
       }
 

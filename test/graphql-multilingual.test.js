@@ -55,9 +55,37 @@ GraphQLMultilingual('auto=format', async () => {
           pngFormatFluid: fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop", fm: "png", maxW: 200 }) { src srcSet }
         }
       }
+
+      assetWhichIsNotAnImage: datoCmsAsset(originalId: {eq: "2637251"}) {
+        url
+        noFormatFluid: fluid(maxWidth: 140) { src srcSet }
+      }
+
+      assetWhichIsNotAnImageThroughRecord: datoCmsArticle(originalId: {eq: "7364344"}, locale: { eq: "it" }) {
+        assetGallery {
+          url
+          noFormatFluid: fluid(maxWidth: 140) { src srcSet }
+        }
+      }
     }`);
 
   assertGraphQLResponseEqualToSnapshot('multilingual/auto-format', result);
+});
+
+GraphQLMultilingual('force blurhash', async () => {
+  assertGraphQLResponseEqualToSnapshot(
+    'multilingual/blurhash',
+    await executeQuery(
+      `{
+          datoCmsAsset(originalId: {eq: "2643791"}) {
+            fixed(width: 300) { base64 }
+            fluid(maxWidth: 300) { base64 }
+            forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) { base64 }
+            forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) { base64 }
+          }
+       }`,
+    ),
+  );
 });
 
 const assetFields = `
@@ -566,22 +594,6 @@ GraphQLMultilingual('items', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'multilingual/structuredTextRender',
     output,
-  );
-});
-
-GraphQLMultilingual('force blurhash', async () => {
-  assertGraphQLResponseEqualToSnapshot(
-    'multilingual/blurhash',
-    await executeQuery(
-      `{
-          datoCmsAsset(originalId: {eq: "2643791"}) {
-            fixed(width: 300) { base64 }
-            fluid(maxWidth: 300) { base64 }
-            forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) { base64 }
-            forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) { base64 }
-          }
-       }`,
-    ),
   );
 });
 

@@ -24,8 +24,8 @@
       "assetGallery": [
         {
           "focalPoint": null,
-          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?auto=format",
-          "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?auto=format&fit=crop&h=40&w=150",
+          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+          "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?fit=crop&h=40&w=150",
           "fluid": null,
           "blurhashFluid": null
         },

@@ -65,7 +65,7 @@ module.exports = function() {
       resolve: (node, args) => {
         let url = `${node.imgixHost}${node.entityPayload.attributes.path}`;
         return createUrl(url, args.imgixParams, {
-          autoFormat: true,
+          autoFormat: node.entityPayload.attributes.is_image,
           focalPoint: node.focalPoint,
         });
       },

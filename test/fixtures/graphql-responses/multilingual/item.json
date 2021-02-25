@@ -280,7 +280,7 @@
             "mimeType": "video/mp4",
             "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
             "originalId": "2637250",
-            "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?auto=format",
+            "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
             "createdAt": "2020-09-22T14:28:22.847Z",
             "colors": [],
             "video": {
@@ -322,7 +322,7 @@
           "mimeType": "video/mp4",
           "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
           "originalId": "2637250",
-          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?auto=format",
+          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
           "createdAt": "2020-09-22T14:28:22.847Z",
           "colors": [],
           "video": {
@@ -472,7 +472,7 @@
               "mimeType": "video/mp4",
               "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
               "originalId": "2637250",
-              "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?auto=format",
+              "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
               "createdAt": "2020-09-22T14:28:22.847Z",
               "colors": [],
               "video": {
@@ -622,7 +622,7 @@
               "mimeType": "text/csv",
               "blurhash": null,
               "originalId": "2637251",
-              "url": "https://www.datocms-assets.com/34723/1600784903-samplecsvfile2kb.csv?auto=format",
+              "url": "https://www.datocms-assets.com/34723/1600784903-samplecsvfile2kb.csv",
               "createdAt": "2020-09-22T14:28:23.693Z",
               "colors": [],
               "video": null,
@@ -650,7 +650,7 @@
               "mimeType": "video/mp4",
               "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
               "originalId": "2637250",
-              "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?auto=format",
+              "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
               "createdAt": "2020-09-22T14:28:22.847Z",
               "colors": [],
               "video": {
@@ -1184,6 +1184,9 @@
                 ]
               },
               {
+                "type": "thematicBreak"
+              },
+              {
                 "item": "19156539",
                 "type": "block"
               },
@@ -1443,6 +1446,9 @@
                     ]
                   },
                   {
+                    "type": "thematicBreak"
+                  },
+                  {
                     "item": "19156539",
                     "type": "block"
                   },
@@ -1569,10 +1575,10 @@
       ],
       "meta": {
         "createdAt": "2020-09-22T15:46:24.300+01:00",
-        "updatedAt": "2021-02-05T09:59:24.409+00:00",
+        "updatedAt": "2021-02-25T07:05:16.840+00:00",
         "status": "published",
         "isValid": true,
-        "publishedAt": "2021-02-05T09:59:24.468+00:00",
+        "publishedAt": "2021-02-25T07:05:16.905+00:00",
         "__typename": "DatoCmsMetaField"
       },
       "seoMetaTags": {
@@ -1628,7 +1634,7 @@
             "tagName": "meta",
             "attributes": {
               "property": "article:modified_time",
-              "content": "2021-02-05T09:59:24Z"
+              "content": "2021-02-25T07:05:16Z"
             }
           },
           {
