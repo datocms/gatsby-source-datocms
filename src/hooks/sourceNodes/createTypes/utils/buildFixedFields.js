@@ -1,4 +1,3 @@
-const isImage = require('./isImage');
 const getSizeAfterTransformations = require('./getSizeAfterTransformations');
 const createUrl = require('./createUrl');
 const objectAssign = require('object-assign');
