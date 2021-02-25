@@ -5043,20 +5043,20 @@ datocms-client@>=3.3.0:
     updeep "^1.2.0"
     wpapi "^1.2.1"
 
-datocms-structured-text-generic-html-renderer@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/datocms-structured-text-generic-html-renderer/-/datocms-structured-text-generic-html-renderer-1.0.10.tgz#ef8f511b7944319d85aae03531dbf2d0eeef8459"
-  integrity sha512-mX/WOyLxp1kDue0jIr45DsX1y1Mi4WmhxMlkVatfWYXSJL0H6BprDKPqxekrl8XFECNGI0+XieI8OtiuXzDeuw==
+datocms-structured-text-generic-html-renderer@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/datocms-structured-text-generic-html-renderer/-/datocms-structured-text-generic-html-renderer-1.0.12.tgz#df40da697572327fad25f20f5e375d7f40e00731"
+  integrity sha512-Crewr5X0GcZGo2ABz3M7lpqmDMr1HBqdzZF90QtlccX21V4LaH1bjvEjjzM8pwPpeTUVoesLIjrvxxBi68GD9w==
   dependencies:
-    datocms-structured-text-utils "^1.0.10"
+    datocms-structured-text-utils "^1.0.12"
 
-datocms-structured-text-to-html-string@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/datocms-structured-text-to-html-string/-/datocms-structured-text-to-html-string-1.0.10.tgz#e53700ac0d8a39df1c54b6108c5d8df24208e467"
-  integrity sha512-OyAZcAUgMRqgueCyS1y5wPtwi4JELMGl1Kri2v14BXsMvtUr7RK0w/LnbhbFWbMzRiit39900MfZCw5KIYuiMQ==
+datocms-structured-text-to-html-string@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/datocms-structured-text-to-html-string/-/datocms-structured-text-to-html-string-1.0.12.tgz#713fa203064016a48a37b128fc451cf31c36b3b0"
+  integrity sha512-EkSzQ4IuzOTLl9Qg7sMQAzBbLHZxxHFhanbyxVb2qBMIR7TkiH3lN6Qrvl28xdSdYl7CwJJHnsKVHz28CPKGcw==
   dependencies:
-    datocms-structured-text-generic-html-renderer "^1.0.10"
-    datocms-structured-text-utils "^1.0.10"
+    datocms-structured-text-generic-html-renderer "^1.0.12"
+    datocms-structured-text-utils "^1.0.12"
     vhtml "^2.2.0"
 
 datocms-structured-text-utils@^1.0.1:
@@ -5066,10 +5066,10 @@ datocms-structured-text-utils@^1.0.1:
   dependencies:
     lodash.flatten "^4.4.0"
 
-datocms-structured-text-utils@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/datocms-structured-text-utils/-/datocms-structured-text-utils-1.0.10.tgz#f7a79af80d7d1fc92b501573d4502f9f953158a6"
-  integrity sha512-zk1pK92qCvLIUq+R89uLT4lTXnJycVX8ra+CqnYQevEkjDS1Ec2gKXK+lm6KjdWi4/IROimgwFB+2To5k8dWPA==
+datocms-structured-text-utils@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/datocms-structured-text-utils/-/datocms-structured-text-utils-1.0.12.tgz#64798008ea622f4eab577ecbbbb1cb7302f94b64"
+  integrity sha512-gCqEkiRD6GhY7otAjXR17BOPIdvnX8n62GUhW+W4j2uR6afPQlpttBeXMwqnOoVtYVHFxsbwtOhs0Tu3lhPdaQ==
   dependencies:
     lodash.flatten "^4.4.0"
 
@@ -8609,10 +8609,10 @@ imagemin@^7.0.1:
     p-pipe "^3.0.0"
     replace-ext "^1.0.0"
 
-imgix-url-params@>=11.2.0:
-  version "11.8.1"
-  resolved "https://registry.yarnpkg.com/imgix-url-params/-/imgix-url-params-11.8.1.tgz#0d52ebf9fcdd3362557e03444d9e1f87ff48f547"
-  integrity sha512-vqEh5AS4GpRviKA5kNir+3Y+NvfR359zXzsDhIZ/GuSqxiRpyiVth70ZUbbD0l0NJTey2Z/aH9JUXT2/bG4jeQ==
+imgix-url-params@>=11.11.2:
+  version "11.11.2"
+  resolved "https://registry.yarnpkg.com/imgix-url-params/-/imgix-url-params-11.11.2.tgz#451fee60c43bf04313a49b29744b4cd818e90623"
+  integrity sha512-T0XU7g1CyNLwcuKWPpuhItFs7XhzMLKVkH9udmRGxaGXycjL2l93rvXhAEz/Ur5X8Z5Nyzet+FszrXo98xEzhw==
 
 import-cwd@^2.0.0:
   version "2.1.0"
