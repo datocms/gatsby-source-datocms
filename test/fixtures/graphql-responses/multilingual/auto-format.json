@@ -26,6 +26,10 @@
       "url": "https://www.datocms-assets.com/34723/1600784903-samplecsvfile2kb.csv",
       "noFormatFluid": null
     },
+    "assetWhichIsSvg": {
+      "url": "https://www.datocms-assets.com/34723/1615218922-logowhite.svg",
+      "noFormatFluid": null
+    },
     "assetWhichIsNotAnImageThroughRecord": {
       "assetGallery": [
         {

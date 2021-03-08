@@ -61,6 +61,11 @@ GraphQLMultilingual('auto=format', async () => {
         noFormatFluid: fluid(maxWidth: 140) { src srcSet }
       }
 
+      assetWhichIsSvg: datoCmsAsset(originalId: {eq: "10015565"}) {
+        url
+        noFormatFluid: fluid(maxWidth: 140) { src srcSet }
+      }
+
       assetWhichIsNotAnImageThroughRecord: datoCmsArticle(originalId: {eq: "7364344"}, locale: { eq: "it" }) {
         assetGallery {
           url
@@ -82,6 +87,11 @@ GraphQLMultilingual('force blurhash', async () => {
             fluid(maxWidth: 300) { base64 }
             forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) { base64 }
             forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) { base64 }
+          }
+
+          assetWhichIsSvg: datoCmsAsset(originalId: {eq: "10015565"}) {
+            fixed(width: 300) { base64 tracedSVG }
+            fluid(maxWidth: 300) { base64 tracedSVG }
           }
        }`,
     ),

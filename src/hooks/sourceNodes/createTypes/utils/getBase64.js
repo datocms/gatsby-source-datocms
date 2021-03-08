@@ -21,7 +21,6 @@ function download(requestUrl, cacheDir) {
       encoding: 'base64',
       retry: {
         limit: 100,
-        calculateDelay: () => 1000,
       }
     }).then(res => {
       const data =

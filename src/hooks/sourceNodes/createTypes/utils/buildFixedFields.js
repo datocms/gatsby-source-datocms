@@ -17,7 +17,7 @@ module.exports = () => {
     resolve: (node, { forceBlurhash, width, height, imgixParams = {} }) => {
       const image = node.entityPayload.attributes;
 
-      if (!image.is_image) {
+      if (!image.is_image || image.format === 'svg') {
         return null;
       }
 

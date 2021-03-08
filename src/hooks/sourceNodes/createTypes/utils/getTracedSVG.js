@@ -20,7 +20,6 @@ function download(requestUrl, cacheDir) {
       maxRedirects: 10,
       retry: {
         limit: 100,
-        calculateDelay: () => 1000,
       },
     }).then(response => {
       fs.writeFileSync(cacheFile, response.body);
