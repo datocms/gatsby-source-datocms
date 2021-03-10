@@ -767,7 +767,7 @@
         },
         {
           "locale": "it",
-          "value": true
+          "value": false
         }
       ],
       "location": {
@@ -1698,7 +1698,8 @@
       }
     },
     "datoCmsOptionalLocalesModel": {
-      "title": "English title"
+      "title": "",
+      "boolean": false
     }
   }
 }
