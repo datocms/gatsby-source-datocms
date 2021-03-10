@@ -528,7 +528,7 @@ export const query = graphql`
           width: 600m,
           placeholder: BLURRED,
           forceBlurhash: false,
-          imgixParams: { fm: "jpg" }
+          imgixParams: { invert: true }
         )
       }
     }
