@@ -28,7 +28,7 @@ GraphQLMultilingual('focalPoints', async () => {
 
           tracedSvgFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: TRACED_SVG, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
           dominantSvgFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: DOMINANT_COLOR, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
-          blurhashFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: BLURRED, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
+          blurhashFluidGatsbyImage: gatsbyImageData(width: 150, forceBlurhash: true, placeholder: BLURRED, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
         }
         assetGallery {
           focalPoint {
@@ -42,7 +42,7 @@ GraphQLMultilingual('focalPoints', async () => {
 
           tracedSvgFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: TRACED_SVG, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
           dominantSvgFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: DOMINANT_COLOR, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
-          blurhashFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: BLURRED, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
+          blurhashFluidGatsbyImage: gatsbyImageData(width: 150, forceBlurhash: true, placeholder: BLURRED, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
         }
       }
     }`);

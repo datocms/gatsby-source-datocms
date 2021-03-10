@@ -41,7 +41,7 @@ const generateImageSource = (
 module.exports = ({ cacheDir }) => {
   async function resolve(
     node,
-    { imgixParams = {}, placeholder = 'DOMINANT_COLOR', ...props },
+    { imgixParams = {}, placeholder = 'BLURRED', forceBlurhash, ...props },
   ) {
     const image = node?.entityPayload?.attributes;
 
@@ -64,12 +64,12 @@ module.exports = ({ cacheDir }) => {
     const otherProps = {};
 
     const placeholderImageData = {
+      ...sourceMetadata,
+      forceBlurhash,
       src: createUrl(image.url, imgixParams, {
         autoFormat: true,
         focalPoint: node.focalPoint,
       }),
-      width: finalSize.width,
-      height: finalSize.height,
     };
 
     if (placeholder === 'DOMINANT_COLOR') {
@@ -100,6 +100,7 @@ module.exports = ({ cacheDir }) => {
 
   const resolver = getGatsbyImageResolver(resolve, {
     imgixParams: 'DatoCmsImgixParams',
+    forceBlurhash: 'Boolean',
     placeholder: {
       type:
         'enum DatoImagePlaceholder { NONE, DOMINANT_COLOR, TRACED_SVG, BLURRED }',

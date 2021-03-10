@@ -21,9 +21,8 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
    * [Tree-like collections](#tree-like-collections)
    * [Single instance models](#single-instance-models)
    * [Localized fields](#localized-fields)
-* [Integration with gatsby-image](#integration-with-gatsby-image)
-   * [Responsive fluid](#responsive-fluid)
-   * [Responsive fixed](#responsive-fixed)
+* [Integration with Gatsby Image](#integration-with-gatsby-image)
+* [Field customisations](#field-customisations)
 
 ## Install
 
@@ -503,13 +502,51 @@ If you need to get every locale for a specific field, you can use the `_all<FIEL
 }
 ```
 
-## Integration with `gatsby-image`
+## Integration with Gatsby Image
+
+### For Gatsby v3+ (currently in beta)
+
+This plugin is compatible with the new [gatsby-plugin-image](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/) and the `<GatsbyImage />` component released with Gatsby v3:
+
+```jsx
+import React from 'react'
+import { GatsbyImage } from "gatsby-plugin-image";
+
+const About = ({ data }) => (
+  <article>
+    <GatsbyImage image={data.datoCmsAboutPage.photo.gatsbyImageData} />
+  </article>
+)
+
+export default About
+
+export const query = graphql`
+  query AboutQuery {
+    datoCmsAboutPage {
+      photo {
+        gatsbyImageData(
+          width: 600m,
+          placeholder: BLURRED,
+          forceBlurhash: false,
+          imgixParams: { fm: "jpg" }
+        )
+      }
+    }
+  }
+`
+```
+
+When `placeholder` is set to `BLURRED`, the normal behaviour is to use DatoCMS blurhash placeholders, except for PNG files, which might require transparency. If you want to force blurhash placeholders also for PNGs, pass the option `forceBlurhash: true`.
+
+### Compatibility with the deprecated `gatsby-image` component
+
+<details><summary>If you're using the old `gatsby-image` package, read here!</summary>
 
 Images coming from DatoCMS can be queried so that they can be used with [gatsby-image](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-image), a React component specially designed to work seamlessly with Gatsby's GraphQL queries that implements advanced image loading techniques to easily and completely optimize image loading for your sites.
 
 **NOTE:** [gatsby-plugin-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) needs to be listed as a dependancy for the `_tracedSVG` fragments to function.
 
-### Responsive fluid
+#### Responsive fluid
 
 This GraphQL option allows you to generate responsive images that automatically respond to different device screen resolution and widths. E.g. a smartphone browser will download a much smaller image than a desktop device.
 
@@ -550,7 +587,7 @@ The fragments you can use are:
 
 `gatsby-image` will automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, `gatsby-image` will fall back to the default image format.
 
-### Responsive fixed
+#### Responsive fixed
 
 If you make queries with resolutions then Gatsby automatically generates images with 1x, 1.5x, 2x, and 3x versions so your images look great on whatever screen resolution of device they're on. If you're on a retina class screen, notice how much sharper these images are.
 
@@ -588,9 +625,9 @@ The fragments you can use are:
 - `GatsbyDatoCmsFixed_noBase64`: no preview effects.
 
 `gatsby-image` will automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, `gatsby-image` will fall back to the default image format.
+</details>
 
-
-### Field customisations
+## Field customisations
 
 If you need to customize the GraphQL response that you get from DatoCMS (e.g augmenting models, manipulating fields), you should include your logic in the `createResolvers` API.
 
