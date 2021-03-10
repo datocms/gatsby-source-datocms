@@ -5011,10 +5011,10 @@ date-fns@^2.0.1, date-fns@^2.14.0, date-fns@^2.8.1:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
   integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
 
-datocms-client@>=3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-3.4.1.tgz#b5323ddaa983ae71705fecbe5596b177c7127f09"
-  integrity sha512-ZRkphIOa75CyIrezghq8q7/4mTlRT62wG9mGSu/MsNxyWLJqRQtItxfS2jnA1p4+cHYqUsrvD3GwmFy44gmzwg==
+datocms-client@>=3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/datocms-client/-/datocms-client-3.4.2.tgz#a4e9dd6964375ccfc0a8b9f5be8b70ae91eb6f28"
+  integrity sha512-TaAcvow9YIwomF6mfyhSPXBzoKbTTV5rpqof3S7gM/BSanqqywnfsUBKgfU8qjXOSeNGmKfgRdX1GR5DIKSBgg==
   dependencies:
     "@iarna/toml" "^2.2.3"
     arr-diff "^4.0.0"
