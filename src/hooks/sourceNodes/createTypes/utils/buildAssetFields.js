@@ -3,6 +3,7 @@ const { camelizeKeys } = require('datocms-client');
 const buildFluidFields = require('../utils/buildFluidFields');
 const buildFixedFields = require('../utils/buildFixedFields');
 const createUrl = require('./createUrl');
+const buildGatsbyImageDataField = require('./buildGatsbyImageDataField');
 
 const resolveUsingEntityPayloadAttribute = (
   key,
@@ -17,7 +18,7 @@ const resolveUsingEntityPayloadAttribute = (
   },
 });
 
-module.exports = function() {
+module.exports = function({ cacheDir }) {
   return {
     size: resolveUsingEntityPayloadAttribute('size', { type: 'Int' }),
     width: resolveUsingEntityPayloadAttribute('width', { type: 'Int' }),
@@ -88,5 +89,6 @@ module.exports = function() {
     },
     ...buildFluidFields(),
     ...buildFixedFields(),
+    gatsbyImageData: buildGatsbyImageDataField({ cacheDir }),
   };
 };
