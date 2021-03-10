@@ -1698,7 +1698,7 @@
       }
     },
     "datoCmsOptionalLocalesModel": {
-      "title": "",
+      "title": "English title",
       "boolean": false
     }
   }
