@@ -32,7 +32,7 @@ function download(requestUrl, cacheDir) {
 }
 
 module.exports = (
-  { forceBlurhash, format, src, width, height, aspectRatio },
+  { forceBlurhash, format, src, width, height },
   cacheDir,
 ) => {
   const [baseUrl, query] = src.split('?');
@@ -42,7 +42,7 @@ module.exports = (
     (format === 'png' && !forceBlurhash)
   ) {
     return download(
-      resizeUrl({ url: src, aspectRatio, width, height }, 20),
+      resizeUrl({ url: src, width, height }, 20),
       cacheDir,
     );
   }

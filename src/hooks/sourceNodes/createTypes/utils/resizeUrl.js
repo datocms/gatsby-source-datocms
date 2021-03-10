@@ -2,12 +2,12 @@ const queryString = require('query-string');
 const createUrl = require('./createUrl');
 const objectAssign = require('object-assign');
 
-module.exports = ({ url, aspectRatio, width, height }, size) => {
+module.exports = ({ url, width, height }, size) => {
   const [baseUrl, query] = url.split('?');
   const imgixParams = queryString.parse(query);
 
   const dpr =
-    aspectRatio > 1
+    width > height
       ? Math.ceil((size / width) * 100) / 100
       : Math.ceil((size / height) * 100) / 100;
 

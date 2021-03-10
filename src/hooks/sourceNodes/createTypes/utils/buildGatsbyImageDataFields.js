@@ -1,10 +1,10 @@
 const createUrl = require('./createUrl');
+const getSizeAfterTransformations = require('./getSizeAfterTransformations');
 const { getGatsbyImageResolver } = require('gatsby-plugin-image/graphql-utils');
 const { generateImageData } = require('gatsby-plugin-image');
 const getBase64 = require('./getBase64');
 const getTracedSVG = require('./getTracedSVG');
-
-const blurHashCache = new Map();
+const toHex = require('./toHex');
 
 const generateImageSource = (
   baseURL,
@@ -12,11 +12,26 @@ const generateImageSource = (
   height,
   format,
   fit,
-  { focalPoint, ...options },
+  { focalPoint, imgixParams, finalSize },
 ) => {
+  let extraParams = {};
+
+  const scale = Math.max(
+    0.01,
+    Math.ceil((width / finalSize.width) * 100) / 100,
+  );
+
+  if (scale !== 1.0) {
+    extraParams.dpr = scale;
+  }
+
+  if (!imgixParams.w && !imgixParams.h) {
+    extraParams.w = finalSize.width;
+  }
+
   const src = createUrl(
     baseURL,
-    { ...options, w: width, h: height },
+    { ...imgixParams, ...extraParams },
     { autoFormat: true, focalPoint },
   );
 
@@ -34,28 +49,42 @@ module.exports = ({ cacheDir }) => {
       return null;
     }
 
+    const finalSize = getSizeAfterTransformations(
+      image.width,
+      image.height,
+      imgixParams,
+    );
+
     const sourceMetadata = {
-      width: image.width,
-      height: image.height,
+      width: finalSize.width,
+      height: finalSize.height,
       format: image.format,
     };
 
     const otherProps = {};
+
+    const placeholderImageData = {
+      src: createUrl(image.url, imgixParams, {
+        autoFormat: true,
+        focalPoint: node.focalPoint,
+      }),
+      width: finalSize.width,
+      height: finalSize.height,
+    };
+
     if (placeholder === 'DOMINANT_COLOR') {
-      otherProps.backgroundColor = image.colors[0].hex;
+      otherProps.backgroundColor = image.colors[0] && toHex(image.colors[0]);
     } else if (placeholder === 'BLURRED') {
       otherProps.placeholderURL = await getBase64(
-        { ...sourceMetadata, src: image.url },
+        placeholderImageData,
         cacheDir,
       );
     } else if (placeholder === 'TRACED_SVG') {
       otherProps.placeholderURL = await getTracedSVG(
-        { ...sourceMetadata, src: image.url },
+        placeholderImageData,
         cacheDir,
       );
     }
-
-    imgixParams.focalPoint = node.focalPoint;
 
     return generateImageData({
       filename: image.url,
@@ -63,21 +92,26 @@ module.exports = ({ cacheDir }) => {
       generateImageSource,
       sourceMetadata,
       formats: ['auto'],
-      options: imgixParams,
+      options: { imgixParams, focalPoint: node.focalPoint, finalSize },
       ...otherProps,
       ...props,
     });
   }
-  return getGatsbyImageResolver(resolve, {
+
+  const resolver = getGatsbyImageResolver(resolve, {
     imgixParams: 'DatoCmsImgixParams',
     placeholder: {
       type:
         'enum DatoImagePlaceholder { NONE, DOMINANT_COLOR, TRACED_SVG, BLURRED }',
       description: `Format of generated placeholder, displayed while the main image loads.
 DOMINANT_COLOR: a solid color, calculated from the dominant color of the image (default).
-BLURRED: a blurred, low resolution image, encoded as a base64 data URI 
+BLURRED: a blurred, low resolution image, encoded as a base64 data URI
 TRACED_SVG: a low-resolution traced SVG of the image. Note that this will download the image at build time for processing.
 NONE: no placeholder. Set "backgroundColor" to use a fixed background color.`,
     },
   });
+
+  return {
+    gatsbyImageData: { ...resolver, type: 'JSON' },
+  };
 };

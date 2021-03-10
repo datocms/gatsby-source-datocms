@@ -28,11 +28,11 @@ function download(requestUrl, cacheDir) {
   });
 }
 
-module.exports = async ({ src, width, height, aspectRatio }, cacheDir) => {
+module.exports = async ({ src, width, height }, cacheDir) => {
   const { traceSVG } = require(`gatsby-plugin-sharp`);
 
   const absolutePath = await download(
-    resizeUrl({ url: src, aspectRatio, width, height }, 100),
+    resizeUrl({ url: src, width, height }, 100),
     cacheDir,
   );
 
