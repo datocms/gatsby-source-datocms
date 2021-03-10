@@ -1,4 +1,4 @@
-![Node.js CI](https://github.com/datocms/gatsby-source-datocms/workflows/Node.js%20CI/badge.svg)
+[![Node.js CI](https://github.com/datocms/gatsby-source-datocms/actions/workflows/main.yml/badge.svg)](https://github.com/datocms/gatsby-source-datocms/actions/workflows/main.yml)
 
 # gatsby-source-datocms
 
