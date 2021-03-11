@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x, 14.x]
-        gatsby-version: [2, 3]
+        gatsby-version: ["^2.24.63", "^3.0.0"]
 
     steps:
     - uses: actions/checkout@v2
@@ -18,16 +18,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install dependencies (Gatsby v${{ matrix.gatsby-version }})
+    - name: Install dependencies (Gatsby ${{ matrix.gatsby-version }})
       run: |
-        if [ "$GATSBY_VERSION" == "2" ];
-        then
-          rm yarn.lock
-          mv gatsby-2.yarn.lock yarn.lock
-        fi
-        yarn install
+        node -e "const fs = require('fs'); packageJson = JSON.parse(fs.readFileSync('package.json')); packageJson.devDependencies.gatsby = process.env.GATSBY_VERSION; fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));"
+        yarn install --no-lockfile
       env:
         GATSBY_VERSION: ${{ matrix.gatsby-version }}
-    - run: yarn test
+    - name: Run tests
+      run: |
+        cat node_modules/gatsby/package.json | grep "\"version\""
+        yarn test
       env:
         CI: true
