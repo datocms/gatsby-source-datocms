@@ -1,4 +1,7 @@
 const { pascalize } = require('humps');
+const { version: gatsbyVersion } = require(`gatsby/package.json`);
+
+const gatsbyVersion3 = gatsbyVersion.split('.')[0] === '3';
 
 const ENTITY_TO_NODE_IDS = {
   item_type: entity => `DatoCmsModel-${entity.id}`,
@@ -28,7 +31,7 @@ module.exports = (entity, context) => {
   nodeIdsToDelete.map(nodeId => {
     const node = context.getNode(nodeId);
     if (node) {
-      context.actions.deleteNode({ node });
+      context.actions.deleteNode(gatsbyVersion3 ? node : { node });
     }
   });
 };
