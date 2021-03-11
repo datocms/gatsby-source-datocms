@@ -10,6 +10,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x, 14.x]
+        gatsby-version: [2, 3]
 
     steps:
     - uses: actions/checkout@v2
@@ -17,7 +18,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: yarn install
+    - name: Install dependencies (Gatsby v${{ matrix.gatsby-version }})
+      run: |
+        if [ "$GATSBY_VERSION" == "2" ];
+        then
+          rm yarn.lock
+          mv gatsby-2.yarn.lock yarn.lock
+        fi
+        yarn install
+      env:
+        GATSBY_VERSION: ${{ matrix.gatsby-version }}
     - run: yarn test
       env:
         CI: true
