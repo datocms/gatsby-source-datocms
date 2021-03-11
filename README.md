@@ -538,6 +538,8 @@ export const query = graphql`
 
 When `placeholder` is set to `BLURRED`, the normal behaviour is to use DatoCMS blurhash placeholders, except for PNG files, which might require transparency. If you want to force blurhash placeholders also for PNGs, pass the option `forceBlurhash: true`.
 
+**NOTE:** [gatsby-plugin-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) needs to be listed as a dependency if you plan to use `placeholder: TRACED_SVG`.
+
 ### Compatibility with the deprecated `gatsby-image` component
 
 <details><summary>If you're using the old `gatsby-image` package, read here!</summary>
