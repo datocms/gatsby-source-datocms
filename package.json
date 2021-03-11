@@ -58,7 +58,7 @@
   "author": "DatoCMS <support@datocms.com>",
   "license": "ISC",
   "peerDependencies": {
-    "gatsby": "^2.12.1",
+    "gatsby": "^2.12.1 || ^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "react": "*",
     "react-helmet": ">= 5.0.0"
