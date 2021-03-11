@@ -525,7 +525,7 @@ export const query = graphql`
     datoCmsAboutPage {
       photo {
         gatsbyImageData(
-          width: 600m,
+          width: 600,
           placeholder: BLURRED,
           forceBlurhash: false,
           imgixParams: { invert: true }
