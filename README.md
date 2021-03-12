@@ -199,6 +199,8 @@ You can then present your blocks in a similar manner:
 
 [Structured Text fields](https://www.datocms.com/docs/content-modelling/structured-text) can be queried this way:
 
+**IMPORTANT**: make sure you add the `id: originalId` part in both the `blocks` and `links` sub-queries, or the `<StructuredText>` component won't work!
+
 ```graphql
 {
   datoCmsBlogPost {
@@ -227,8 +229,6 @@ You can then present your blocks in a similar manner:
 ```
 
 You can then present your blocks using the [`<StructuredText>`](https://github.com/datocms/react-datocms/tree/structured-text#structured-text) component.
-
-**Important**: make sure you add the `id: originalId` part in both the `blocks` and `links` sub-queries, or the `<StructuredText>` component won't work!
 
 ```jsx
 import { StructuredText } from 'react-datocms';
