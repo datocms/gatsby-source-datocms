@@ -199,7 +199,7 @@ You can then present your blocks in a similar manner:
 
 [Structured Text fields](https://www.datocms.com/docs/content-modelling/structured-text) can be queried this way:
 
-**IMPORTANT**: make sure you add the `id: originalId` part in both the `blocks` and `links` sub-queries, or the `<StructuredText>` component won't work!
+**⚠️ IMPORTANT**: make sure you add the `id: originalId` part in both the `blocks` and `links` sub-queries, or the `<StructuredText>` component won't work!
 
 ```graphql
 {
