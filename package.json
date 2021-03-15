@@ -62,5 +62,10 @@
     "gatsby-plugin-image": "^1.0.0",
     "react": "*",
     "react-helmet": ">= 5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "gatsby-plugin-image": {
+      "optional": true
+    }
   }
 }

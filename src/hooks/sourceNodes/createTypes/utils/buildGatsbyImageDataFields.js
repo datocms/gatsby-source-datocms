@@ -1,7 +1,5 @@
 const createUrl = require('./createUrl');
 const getSizeAfterTransformations = require('./getSizeAfterTransformations');
-const { getGatsbyImageResolver } = require('gatsby-plugin-image/graphql-utils');
-const { generateImageData } = require('gatsby-plugin-image');
 const getBase64 = require('./getBase64');
 const getTracedSVG = require('./getTracedSVG');
 const toHex = require('./toHex');
@@ -39,6 +37,20 @@ const generateImageSource = (
 };
 
 module.exports = ({ cacheDir }) => {
+  let gatsbyPluginImageFound = false;
+
+  try {
+    require('gatsby-plugin-image');
+    gatsbyPluginImageFound = true;
+  } catch(e) {}
+
+  if (!gatsbyPluginImageFound) {
+    return {};
+  }
+
+  const { getGatsbyImageResolver } = require('gatsby-plugin-image/graphql-utils');
+  const { generateImageData } = require('gatsby-plugin-image');
+
   async function resolve(
     node,
     { imgixParams = {}, placeholder = 'BLURRED', forceBlurhash, ...props },
