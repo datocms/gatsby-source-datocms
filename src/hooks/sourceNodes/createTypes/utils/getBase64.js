@@ -21,7 +21,7 @@ function download(requestUrl, cacheDir) {
       encoding: 'base64',
       retry: {
         limit: 100,
-      }
+      },
     }).then(res => {
       const data =
         'data:' + res.headers['content-type'] + ';base64,' + res.body;
@@ -31,24 +31,36 @@ function download(requestUrl, cacheDir) {
   });
 }
 
-module.exports = (
-  { forceBlurhash, format, src, width, height },
-  cacheDir,
-) => {
+module.exports = ({ forceBlurhash, format, src, width, height }, cacheDir) => {
   const [baseUrl, query] = src.split('?');
 
   if (
     !baseUrl.startsWith('https://www.datocms-assets.com/') ||
     (format === 'png' && !forceBlurhash)
   ) {
-    return download(
-      resizeUrl({ url: src, width, height }, 20),
-      cacheDir,
-    );
+    const url = resizeUrl({ url: src, width, height }, 20);
+
+    try {
+      return download(url, cacheDir);
+    } catch (e) {
+      console.log(
+        `Error downloading ${url} to generate blurred placeholder!: ${e.message}`,
+      );
+      return '';
+    }
   }
 
   const imgixParams = queryString.parse(query);
   imgixParams.lqip = 'blurhash';
 
-  return download(`${baseUrl}?${queryString.stringify(imgixParams)}`, cacheDir);
+  const url = `${baseUrl}?${queryString.stringify(imgixParams)}`;
+
+  try {
+    return download(url, cacheDir);
+  } catch (e) {
+    console.log(
+      `Error downloading ${url} to generate Blurhash placeholder!: ${e.message}`,
+    );
+    return '';
+  }
 };

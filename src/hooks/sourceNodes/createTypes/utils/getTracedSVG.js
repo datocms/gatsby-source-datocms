@@ -31,23 +31,35 @@ function download(requestUrl, cacheDir) {
 module.exports = async ({ src, width, height }, cacheDir) => {
   const { traceSVG } = require(`gatsby-plugin-sharp`);
 
-  const absolutePath = await download(
-    resizeUrl({ url: src, width, height }, 100),
-    cacheDir,
-  );
+  let absolutePath;
+  const url = resizeUrl({ url: src, width, height }, 100);
+
+  try {
+    absolutePath = await download(url, cacheDir);
+  } catch (e) {
+    console.log(
+      `Error downloading ${url} to generate traced SVG!: ${e.message}`,
+    );
+    return '';
+  }
 
   const name = path.basename(absolutePath);
 
-  return traceSVG({
-    file: {
-      internal: {
-        contentDigest: md5(absolutePath),
+  try {
+    return traceSVG({
+      file: {
+        internal: {
+          contentDigest: md5(absolutePath),
+        },
+        name,
+        extension: 'jpg',
+        absolutePath,
       },
-      name,
-      extension: 'jpg',
-      absolutePath,
-    },
-    args: { toFormat: '' },
-    fileArgs: {},
-  });
+      args: { toFormat: '' },
+      fileArgs: {},
+    });
+  } catch (e) {
+    console.log(`Error generating traced SVG for ${url}: ${e.message}`);
+    return '';
+  }
 };
