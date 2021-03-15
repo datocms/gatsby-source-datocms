@@ -14,11 +14,8 @@ const attributes = [
   'hasSingletonItem',
 ];
 
-module.exports = function buildItemTypeNode(
-  entity,
-  { entitiesRepo, actions, schema },
-) {
-  return buildNode('DatoCmsModel', entity.id, node => {
+module.exports = function buildItemTypeNode(entity, { generateType }) {
+  return buildNode(generateType('Model'), entity.id, node => {
     attributes.forEach(attribute => {
       node[attribute] = entity[attribute];
     });

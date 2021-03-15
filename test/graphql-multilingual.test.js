@@ -617,4 +617,67 @@ GraphQLMultilingual('items', async () => {
   );
 });
 
+GraphQLMultilingual('multiple instances', async () => {
+  assertGraphQLResponseEqualToSnapshot(
+    'multipleInstances',
+    await executeQuery(
+      `{
+          datoCmsAlternativeSite(locale: {eq: "en"}) {
+            __typename
+            id
+            originalId
+            name
+            locale
+            locales
+            domain
+            internalDomain
+            noIndex
+            globalSeo {
+              siteName
+              titleSuffix
+              twitterAccount
+              facebookPageUrl
+              fallbackSeo {
+                title
+                description
+                twitterCard
+                image {
+                  path
+                  url
+                }
+              }
+            }
+            faviconMetaTags {
+              tags
+            }
+          }
+          allDatoCmsAlternativeModel {
+            nodes {
+              name
+            }
+          }
+          allDatoCmsAlternativeAsset {
+            nodes {
+              url
+            }
+          }
+          allDatoCmsAlternativeArticle {
+            nodes {
+              __typename
+              locale
+              originalId
+              id
+              name
+              seoMetaTags {
+                __typename
+                tags
+                id
+              }
+            }
+          }
+       }`,
+    ),
+  );
+});
+
 GraphQLMultilingual.run();

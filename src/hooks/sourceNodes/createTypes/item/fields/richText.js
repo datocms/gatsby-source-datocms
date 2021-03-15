@@ -7,6 +7,7 @@ module.exports = ({
   schema,
   gqlItemTypeName,
   entitiesRepo,
+  generateType,
 }) => {
   const parentItemTypeName = gqlItemTypeName(parentItemType);
 
@@ -26,7 +27,7 @@ module.exports = ({
       type: `[${gqlItemTypeName(linkedItemType)}]`,
       resolveForSimpleField: (fieldValue, context, node) => {
         const ids = (fieldValue || []).map(id =>
-          itemNodeId(id, node.locale, entitiesRepo),
+          itemNodeId(id, node.locale, entitiesRepo, generateType),
         );
         return context.nodeModel.getNodesByIds({ ids });
       },
@@ -49,7 +50,7 @@ module.exports = ({
     type: `[${unionType}]`,
     resolveForSimpleField: (fieldValue, context, node) => {
       const ids = (fieldValue || []).map(id =>
-        itemNodeId(id, node.locale, entitiesRepo),
+        itemNodeId(id, node.locale, entitiesRepo, generateType),
       );
       return context.nodeModel.getNodesByIds({ ids });
     },

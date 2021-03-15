@@ -634,3 +634,61 @@ The fragments you can use are:
 If you need to customize the GraphQL response that you get from DatoCMS (e.g augmenting models, manipulating fields), you should include your logic in the `createResolvers` API.
 
 Read more about how to customise the GraphQL schema in the [Gatsby documentation](https://www.gatsbyjs.org/docs/schema-customization/#extending-third-party-types)
+
+## Connecting to multiple DatoCMS projects
+
+If you need to connect your website to multiple DatoCMS projects, use the `instancePrefix` option:
+
+```javascript
+// In your gatsby-config.js
+
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: 'XXX',
+        instancePrefix: 'FirstProject',
+      },
+    },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: 'YYY',
+        instancePrefix: 'SecondProject',
+      },
+    }
+  ],
+}
+```
+
+This will allow you to perform all the queries with a specific token and distinguish between the results:
+
+```graphql
+{
+  datoCmsFirstProjectSite {
+    name
+    internalDomain
+    locales
+  }
+  datoCmsSecondProjectSite {
+    name
+    internalDomain
+    locales
+  }
+
+  allDatoCmsFirstProjectBlogPost {
+    nodes {
+      title
+      excerpt
+    }
+  }
+
+  allDatoCmsSecondProjectBlogPost {
+    nodes {
+      title
+      cover { url }
+    }
+  }
+}
+```

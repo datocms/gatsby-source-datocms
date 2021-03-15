@@ -46,6 +46,7 @@ module.exports = ({
   schema,
   gqlItemTypeName,
   entitiesRepo,
+  generateType,
 }) => {
   const parentItemTypeName = gqlItemTypeName(parentItemType);
 
@@ -86,13 +87,13 @@ module.exports = ({
     resolveForSimpleField: (fieldValue, context, gqlNode) => {
       const linkedItemIds = uniq(
         findAll(fieldValue.document, [isInlineItem, isItemLink]).map(node =>
-          itemNodeId(node.item, gqlNode.locale, entitiesRepo),
+          itemNodeId(node.item, gqlNode.locale, entitiesRepo, generateType),
         ),
       );
 
       const blockIds = uniq(
         findAll(fieldValue.document, isBlock).map(node =>
-          itemNodeId(node.item, gqlNode.locale, entitiesRepo),
+          itemNodeId(node.item, gqlNode.locale, entitiesRepo, generateType),
         ),
       );
 

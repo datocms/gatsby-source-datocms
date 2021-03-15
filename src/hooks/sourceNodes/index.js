@@ -3,6 +3,7 @@ const createNodeFromEntity = require('./createNodeFromEntity');
 const destroyEntityNode = require('./destroyEntityNode');
 const { prefixId, CODES } = require('../onPreInit/errorMap')
 const Queue = require('promise-queue');
+const { pascalize } = require('humps');
 
 const { getClient, getLoader } = require('../../utils');
 
@@ -22,6 +23,7 @@ module.exports = async (
     environment,
     disableLiveReload,
     previewMode,
+    instancePrefix,
     apiUrl,
     localeFallbacks: rawLocaleFallbacks,
   },
@@ -58,6 +60,7 @@ module.exports = async (
     schema,
     store,
     cacheDir,
+    generateType: (type) => `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`,
   };
 
   if (webhookBody && Object.keys(webhookBody).length) {

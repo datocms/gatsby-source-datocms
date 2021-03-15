@@ -1,7 +1,7 @@
-module.exports = ({ actions, schema }) => {
+module.exports = ({ actions, schema, generateType }) => {
   actions.createTypes([
     schema.buildObjectType({
-      name: 'DatoCmsModel',
+      name: generateType('Model'),
       extensions: { infer: false },
       fields: {
         name: 'String',

@@ -1,6 +1,5 @@
 const { camelize, pascalize } = require('humps');
 const objectAssign = require('object-assign');
-const gqlItemTypeName = itemType => `DatoCms${pascalize(itemType.apiKey)}`;
 const { camelizeKeys, localizedRead } = require('datocms-client');
 const simpleField = require('./fields/simpleField');
 const simpleFieldReturnCamelizedKeys = require('./fields/simpleFieldReturnCamelizedKeys');
@@ -28,9 +27,12 @@ const fieldResolvers = {
   video: simpleFieldReturnCamelizedKeys('DatoCmsVideoField'),
 };
 
-module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
+module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType }) => {
+  const gqlItemTypeName = itemType => generateType(pascalize(itemType.apiKey));
+
   entitiesRepo.findEntitiesOfType('item_type').forEach(entity => {
     const type = gqlItemTypeName(entity);
+    console.log(type);
 
     const fields = entity.fields.reduce((acc, field) => {
       const resolver = fieldResolvers[field.fieldType];
@@ -49,6 +51,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
           gqlItemTypeName,
           schema,
           entitiesRepo,
+          generateType,
         });
 
         actions.createTypes(additionalTypesToCreate);
@@ -75,7 +78,10 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
             [`${camelize(field.apiKey)}Node`]: {
               type: nodeType,
               resolve: (node, args, context) => {
-                const i18n = { locale: node.locale, fallbacks: localeFallbacks };
+                const i18n = {
+                  locale: node.locale,
+                  fallbacks: localeFallbacks,
+                };
                 const value = localizedRead(
                   node.entityPayload.attributes,
                   field.apiKey,
@@ -103,7 +109,10 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
                 value: {
                   type,
                   resolve: (node, args, context) => {
-                    const i18n = { locale: node.locale, fallbacks: localeFallbacks };
+                    const i18n = {
+                      locale: node.locale,
+                      fallbacks: localeFallbacks,
+                    };
                     const value = localizedRead(
                       node.entityPayload.attributes,
                       field.apiKey,
@@ -118,7 +127,10 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
                       valueNode: {
                         type: nodeType,
                         resolve: (node, args, context) => {
-                          const i18n = { locale: node.locale, fallbacks: localeFallbacks };
+                          const i18n = {
+                            locale: node.locale,
+                            fallbacks: localeFallbacks,
+                          };
                           const value = localizedRead(
                             node.entityPayload.attributes,
                             field.apiKey,
@@ -171,7 +183,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
             const parentId = node.entityPayload.attributes.parent_id;
             if (parentId) {
               return context.nodeModel.getNodeById({
-                id: itemNodeId(parentId, node.locale, entitiesRepo),
+                id: itemNodeId(parentId, node.locale, entitiesRepo, generateType),
               });
             }
           },
@@ -214,18 +226,18 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema }) => {
           },
           locale: 'String',
           seoMetaTags: {
-            type: 'DatoCmsSeoMetaTags',
+            type: generateType('SeoMetaTags'),
             resolve: (node, args, context) => {
               return context.nodeModel.getNodeById({
-                id: `DatoCmsSeoMetaTags-${node.id}`,
+                id: generateType(`SeoMetaTags-${node.id}`),
               });
             },
           },
           model: {
-            type: 'DatoCmsModel',
+            type: generateType('Model'),
             resolve: (node, args, context) => {
               return context.nodeModel.getNodeById({
-                id: `DatoCmsModel-${node.entityPayload.relationships.item_type.data.id}`,
+                id: generateType(`Model-${node.entityPayload.relationships.item_type.data.id}`),
               });
             },
           },
