@@ -1,4 +1,5 @@
 const fs = require('fs-extra');
+const { pascalize } = require('humps');
 const createNodeFromEntity = require('../sourceNodes/createNodeFromEntity');
 const destroyEntityNode = require('../sourceNodes/destroyEntityNode');
 const createTypes = require('../sourceNodes/createTypes');
@@ -13,6 +14,7 @@ module.exports = async (
     previewMode,
     environment,
     apiUrl,
+    instancePrefix,
     localeFallbacks: rawLocaleFallbacks,
   },
 ) => {
@@ -47,6 +49,11 @@ module.exports = async (
     schema,
     store,
     cacheDir,
+    generateType: (type) => {
+      const fullType = `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`;
+      console.log(fullType);
+      return fullType;
+    },
   };
 
   let activity;

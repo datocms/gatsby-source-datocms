@@ -1,0 +1,198 @@
+{
+  "data": {
+    "datoCmsAlternativeSite": {
+      "__typename": "DatoCmsAlternativeSite",
+      "id": "DatoCmsAlternativeSite-34723-en",
+      "originalId": "34723",
+      "name": "Kitchen Sink",
+      "locale": "en",
+      "locales": [
+        "en",
+        "it"
+      ],
+      "domain": null,
+      "internalDomain": "kitchen-sink.admin.datocms.com",
+      "noIndex": false,
+      "globalSeo": null,
+      "faviconMetaTags": null
+    },
+    "allDatoCmsAlternativeModel": {
+      "nodes": [
+        {
+          "name": "Article"
+        }
+      ]
+    },
+    "allDatoCmsAlternativeAsset": {
+      "nodes": [
+        {
+          "url": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?auto=format"
+        }
+      ]
+    },
+    "allDatoCmsAlternativeArticle": {
+      "nodes": [
+        {
+          "__typename": "DatoCmsAlternativeArticle",
+          "locale": "en",
+          "originalId": "24502153",
+          "id": "DatoCmsAlternativeArticle-24502153-en",
+          "name": "Test",
+          "seoMetaTags": {
+            "__typename": "DatoCmsAlternativeSeoMetaTags",
+            "tags": [
+              {
+                "tagName": "title",
+                "content": "Test"
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:title",
+                  "content": "Test"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "twitter:title",
+                  "content": "Test"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "twitter:card",
+                  "content": "summary"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "article:modified_time",
+                  "content": "2021-03-15T10:16:31Z"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "article:published_time",
+                  "content": "2021-03-15T10:16:31Z"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:locale",
+                  "content": "en_EN"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:type",
+                  "content": "article"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:image",
+                  "content": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?w=1000&fit=max&fm=jpg"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "twitter:image",
+                  "content": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?w=1000&fit=max&fm=jpg"
+                }
+              }
+            ],
+            "id": "DatoCmsAlternativeSeoMetaTags-DatoCmsAlternativeArticle-24502153-en"
+          }
+        },
+        {
+          "__typename": "DatoCmsAlternativeArticle",
+          "locale": "it",
+          "originalId": "24502153",
+          "id": "DatoCmsAlternativeArticle-24502153-it",
+          "name": "Test",
+          "seoMetaTags": {
+            "__typename": "DatoCmsAlternativeSeoMetaTags",
+            "tags": [
+              {
+                "tagName": "title",
+                "content": "Test"
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:title",
+                  "content": "Test"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "twitter:title",
+                  "content": "Test"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "twitter:card",
+                  "content": "summary"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "article:modified_time",
+                  "content": "2021-03-15T10:16:31Z"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "article:published_time",
+                  "content": "2021-03-15T10:16:31Z"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:locale",
+                  "content": "it_IT"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:type",
+                  "content": "article"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:image",
+                  "content": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?w=1000&fit=max&fm=jpg"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "twitter:image",
+                  "content": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?w=1000&fit=max&fm=jpg"
+                }
+              }
+            ],
+            "id": "DatoCmsAlternativeSeoMetaTags-DatoCmsAlternativeArticle-24502153-it"
+          }
+        }
+      ]
+    }
+  }
+}

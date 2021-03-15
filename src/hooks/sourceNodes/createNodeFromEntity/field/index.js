@@ -11,8 +11,8 @@ const attributes = [
   'defaultValue',
 ];
 
-module.exports = function buildFieldNode(entity) {
-  return buildNode('DatoCmsField', entity.id, node => {
+module.exports = function buildFieldNode(entity, { generateType }) {
+  return buildNode(generateType('Field'), entity.id, node => {
     attributes.forEach(attribute => {
       node[attribute] = entity[attribute];
     });
