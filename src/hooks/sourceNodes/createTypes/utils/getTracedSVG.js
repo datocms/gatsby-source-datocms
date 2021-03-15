@@ -40,13 +40,13 @@ module.exports = async ({ src, width, height }, cacheDir) => {
     console.log(
       `Error downloading ${url} to generate traced SVG!: ${e.message}`,
     );
-    return '';
+    return null;
   }
 
   const name = path.basename(absolutePath);
 
   try {
-    return traceSVG({
+    const result = await traceSVG({
       file: {
         internal: {
           contentDigest: md5(absolutePath),
@@ -58,8 +58,9 @@ module.exports = async ({ src, width, height }, cacheDir) => {
       args: { toFormat: '' },
       fileArgs: {},
     });
+    return result;
   } catch (e) {
     console.log(`Error generating traced SVG for ${url}: ${e.message}`);
-    return '';
+    return null;
   }
 };

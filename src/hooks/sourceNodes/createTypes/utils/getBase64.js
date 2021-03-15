@@ -31,7 +31,7 @@ function download(requestUrl, cacheDir) {
   });
 }
 
-module.exports = ({ forceBlurhash, format, src, width, height }, cacheDir) => {
+module.exports = async ({ forceBlurhash, format, src, width, height }, cacheDir) => {
   const [baseUrl, query] = src.split('?');
 
   if (
@@ -41,12 +41,13 @@ module.exports = ({ forceBlurhash, format, src, width, height }, cacheDir) => {
     const url = resizeUrl({ url: src, width, height }, 20);
 
     try {
-      return download(url, cacheDir);
+      const result = await download(url, cacheDir);
+      return result;
     } catch (e) {
       console.log(
         `Error downloading ${url} to generate blurred placeholder!: ${e.message}`,
       );
-      return '';
+      return null;
     }
   }
 
@@ -56,11 +57,12 @@ module.exports = ({ forceBlurhash, format, src, width, height }, cacheDir) => {
   const url = `${baseUrl}?${queryString.stringify(imgixParams)}`;
 
   try {
-    return download(url, cacheDir);
+    const result = await download(url, cacheDir);
+    return result;
   } catch (e) {
     console.log(
       `Error downloading ${url} to generate Blurhash placeholder!: ${e.message}`,
     );
-    return '';
+    return null;
   }
 };
