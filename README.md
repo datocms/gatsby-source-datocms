@@ -23,6 +23,7 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
    * [Localized fields](#localized-fields)
 * [Integration with Gatsby Image](#integration-with-gatsby-image)
 * [Field customisations](#field-customisations)
+* [Connecting to multiple DatoCMS projects](#connecting-to-multiple-datocms-projects)
 
 ## Install
 
@@ -671,6 +672,7 @@ This will allow you to perform all the queries with a specific token and disting
     internalDomain
     locales
   }
+
   datoCmsSecondProjectSite {
     name
     internalDomain
