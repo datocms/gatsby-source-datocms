@@ -7,6 +7,7 @@ const resizeUrl = require('./resizeUrl');
 const queryString = require('query-string');
 
 const queue = new Queue(10, Infinity);
+const promises = {};
 
 function download(requestUrl, cacheDir) {
   const cacheFile = path.join(cacheDir, md5(requestUrl));
@@ -16,11 +17,17 @@ function download(requestUrl, cacheDir) {
     return Promise.resolve(body);
   }
 
-  return queue.add(() => {
+  const key = JSON.stringify({ requestUrl, cacheFile });
+
+  if (promises[key]) {
+    return promises[key];
+  }
+
+  promises[key] = queue.add(() => {
     return got(encodeURI(requestUrl), {
       encoding: 'base64',
       retry: {
-        limit: 100,
+        limit: 5,
       },
     }).then(res => {
       const data =
@@ -29,6 +36,8 @@ function download(requestUrl, cacheDir) {
       return data;
     });
   });
+
+  return promises[key];
 }
 
 module.exports = async ({ forceBlurhash, format, src, width, height }, cacheDir) => {

@@ -6,6 +6,7 @@ const resizeUrl = require('./resizeUrl');
 const got = require('got');
 
 const queue = new Queue(10, Infinity);
+const promises = {};
 
 function download(requestUrl, cacheDir) {
   const cacheFile = path.join(cacheDir, md5(requestUrl));
@@ -14,25 +15,33 @@ function download(requestUrl, cacheDir) {
     return Promise.resolve(cacheFile);
   }
 
-  return queue.add(() => {
+  const key = JSON.stringify({ requestUrl, cacheFile });
+
+  if (promises[key]) {
+    return promises[key];
+  }
+
+  promises[key] = queue.add(() => {
     return got(requestUrl, {
       responseType: 'buffer',
       maxRedirects: 10,
       retry: {
-        limit: 100,
+        limit: 5,
       },
     }).then(response => {
       fs.writeFileSync(cacheFile, response.body);
       return cacheFile;
     });
   });
+
+  return promises[key];
 }
 
 module.exports = async ({ src, width, height }, cacheDir) => {
   const { traceSVG } = require(`gatsby-plugin-sharp`);
 
   let absolutePath;
-  const url = resizeUrl({ url: src, width, height }, 100);
+  const url = resizeUrl({ url: src, width, height }, 80);
 
   try {
     absolutePath = await download(url, cacheDir);
@@ -52,7 +61,7 @@ module.exports = async ({ src, width, height }, cacheDir) => {
           contentDigest: md5(absolutePath),
         },
         name,
-        extension: 'jpg',
+        extension: 'png',
         absolutePath,
       },
       args: { toFormat: '' },
@@ -60,7 +69,8 @@ module.exports = async ({ src, width, height }, cacheDir) => {
     });
     return result;
   } catch (e) {
-    console.log(`Error generating traced SVG for ${url}: ${e.message}`);
+    const content = fs.readFileSync(absolutePath, { encoding: 'base64' });
+    console.log(`Error generating traced SVG for "${url}": ${e.message}. Local file: ${absolutePath}, content: "${content}"`);
     return null;
   }
 };

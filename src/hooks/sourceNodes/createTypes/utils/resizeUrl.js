@@ -11,17 +11,20 @@ module.exports = ({ url, width, height }, size) => {
       ? Math.ceil((size / width) * 100) / 100
       : Math.ceil((size / height) * 100) / 100;
 
-  let extraParams = { dpr: Math.max(0.01, dpr) };
+  let extraParams = { dpr: Math.max(0.01, dpr), fm: 'png' };
 
   if (!imgixParams.w && !imgixParams.h) {
     extraParams.w = width;
   }
 
+  const auto = (imgixParams.auto || '').split(',');
+  if (auto.length > 0) {
+    extraParams.auto = auto.filter(a => !!a && a !== 'format').join(',');
+  }
+
   extraParams.q = '30';
 
-  return createUrl(
-    baseUrl,
-    objectAssign({}, imgixParams, extraParams),
-    { autoFormat: false },
-  );
+  return createUrl(baseUrl, objectAssign({}, imgixParams, extraParams), {
+    autoFormat: false,
+  });
 };
