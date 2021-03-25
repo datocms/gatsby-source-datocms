@@ -8,7 +8,13 @@ const {
 const uniq = require('lodash.uniq');
 const itemNodeId = require('../../utils/itemNodeId');
 
-const buildFor = (unionType, itemTypeIds, entitiesRepo, gqlItemTypeName, schema) => {
+const buildFor = (
+  unionType,
+  itemTypeIds,
+  entitiesRepo,
+  gqlItemTypeName,
+  schema,
+) => {
   if (itemTypeIds.length === 0) {
     return ['String', null];
   }
@@ -84,17 +90,21 @@ module.exports = ({
       }),
     ].filter(x => !!x),
     resolveForSimpleField: (fieldValue, context, gqlNode) => {
-      const linkedItemIds = uniq(
-        findAll(fieldValue.document, [isInlineItem, isItemLink]).map(node =>
-          itemNodeId(node.item, gqlNode.locale, entitiesRepo),
-        ),
-      );
+      const linkedItemIds = fieldValue
+        ? uniq(
+            findAll(fieldValue.document, [isInlineItem, isItemLink]).map(node =>
+              itemNodeId(node.item, gqlNode.locale, entitiesRepo),
+            ),
+          )
+        : [];
 
-      const blockIds = uniq(
-        findAll(fieldValue.document, isBlock).map(node =>
-          itemNodeId(node.item, gqlNode.locale, entitiesRepo),
-        ),
-      );
+      const blockIds = fieldValue
+        ? uniq(
+            findAll(fieldValue.document, isBlock).map(node =>
+              itemNodeId(node.item, gqlNode.locale, entitiesRepo),
+            ),
+          )
+        : [];
 
       return {
         value: fieldValue,
