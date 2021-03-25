@@ -26,8 +26,9 @@ module.exports = (imageUrl, imgixParams = {}, options = {}) => {
   if (
     mergedOptions.focalPoint &&
     mergedParams.fit === 'crop' &&
-    (mergedParams.h || mergedParams.height) &&
-    (mergedParams.w || mergedParams.width) &&
+    (((mergedParams.h || mergedParams.height) &&
+      (mergedParams.w || mergedParams.width)) ||
+      mergedParams.ar) &&
     (!mergedParams.crop || mergedParams.crop === 'focalpoint') &&
     !mergedParams['fp-x'] &&
     !mergedParams['fp-y']
