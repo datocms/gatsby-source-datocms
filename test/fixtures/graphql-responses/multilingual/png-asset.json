@@ -101,6 +101,70 @@
         "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format",
         "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.75&w=100 75w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=1&w=100 100w",
         "sizes": "(max-width: 300px) 100vw, 300px"
+      },
+      "newFixed": {
+        "images": {
+          "sources": [],
+          "fallback": {
+            "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fit=crop&h=300&w=300",
+            "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fit=crop&h=300&w=300 300w",
+            "sizes": "300px"
+          }
+        },
+        "layout": "fixed",
+        "placeholder": {
+          "fallback": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoUCBIXFQ0PDg0NDQ4QDhUVFg0NFxMZGBYVFhUaHysjGh0oHRUWJDUlKC0vMjIyGSI4PTcwPC0xMi8BCgsLDg0OHBAQHC8lHSUvLzUvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAaAAADAAMBAAAAAAAAAAAAAAAAAwUCBAYB/8QAHBAAAgIDAQEAAAAAAAAAAAAAAAIBAwQREiEF/8QAGAEAAgMAAAAAAAAAAAAAAAAAAQQAAwX/xAAZEQADAAMAAAAAAAAAAAAAAAAAARECEjH/2gAMAwEAAhEDEQA/AI7tw/pU+ffE6JubQ0t4NwFdZjZlONlbddOkWyOQNNXnkAVIO4pseHkzqxVU9AVybovl0bNeoAADSH//2Q=="
+        },
+        "width": 300,
+        "height": 300
+      },
+      "newFluidW": {
+        "images": {
+          "sources": [],
+          "fallback": {
+            "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&w=150",
+            "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.26&w=150 38w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.5&w=150 75w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&w=150 150w",
+            "sizes": "(min-width: 150px) 150px, 100vw"
+          }
+        },
+        "layout": "constrained",
+        "placeholder": {
+          "fallback": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k="
+        },
+        "width": 150,
+        "height": 113
+      },
+      "newFluidH": {
+        "images": {
+          "sources": [],
+          "fallback": {
+            "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&h=150",
+            "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.25&h=150 50w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.5&h=150 100w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&h=150 200w",
+            "sizes": "(min-width: 200px) 200px, 100vw"
+          }
+        },
+        "layout": "constrained",
+        "placeholder": {
+          "fallback": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k="
+        },
+        "width": 200,
+        "height": 150
+      },
+      "newFluidWH": {
+        "images": {
+          "sources": [],
+          "fallback": {
+            "src": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fit=crop&h=300&w=300",
+            "srcSet": "https://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.25&fit=crop&h=300&w=300 75w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&dpr=0.5&fit=crop&h=300&w=300 150w,\nhttps://www.datocms-assets.com/34723/1600784341-plant.jpg?auto=format&fit=crop&h=300&w=300 300w",
+            "sizes": "(min-width: 300px) 300px, 100vw"
+          }
+        },
+        "layout": "constrained",
+        "placeholder": {
+          "fallback": "data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoUCBIXFQ0PDg0NDQ4QDhUVFg0NFxMZGBYVFhUaHysjGh0oHRUWJDUlKC0vMjIyGSI4PTcwPC0xMi8BCgsLDg0OHBAQHC8lHSUvLzUvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAaAAADAAMBAAAAAAAAAAAAAAAAAwUCBAYB/8QAHBAAAgIDAQEAAAAAAAAAAAAAAAIBAwQREiEF/8QAGAEAAgMAAAAAAAAAAAAAAAAAAQQAAwX/xAAZEQADAAMAAAAAAAAAAAAAAAAAARECEjH/2gAMAwEAAhEDEQA/AI7tw/pU+ffE6JubQ0t4NwFdZjZlONlbddOkWyOQNNXnkAVIO4pseHkzqxVU9AVybovl0bNeoAADSH//2Q=="
+        },
+        "width": 300,
+        "height": 300
       }
     }
   }

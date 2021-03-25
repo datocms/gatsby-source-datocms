@@ -126,6 +126,10 @@ const assetFields = `
     }
     fixed(width: 300) { base64 aspectRatio width height src srcSet sizes }
     fluid(maxWidth: 300) { base64 aspectRatio width height src srcSet sizes }
+    newFixed: gatsbyImageData(width: 300, height: 300, layout: FIXED)
+    newFluidW: gatsbyImageData(width: 150, layout: CONSTRAINED)
+    newFluidH: gatsbyImageData(height: 150, layout: CONSTRAINED)
+    newFluidWH: gatsbyImageData(width: 300, height: 300, layout: CONSTRAINED)
   `;
 
 const fileFields = `alt title customData ${assetFields}`;

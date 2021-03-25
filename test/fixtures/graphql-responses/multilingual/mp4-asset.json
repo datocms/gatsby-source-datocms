@@ -34,7 +34,11 @@
         "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4"
       },
       "fixed": null,
-      "fluid": null
+      "fluid": null,
+      "newFixed": null,
+      "newFluidW": null,
+      "newFluidH": null,
+      "newFluidWH": null
     }
   }
 }

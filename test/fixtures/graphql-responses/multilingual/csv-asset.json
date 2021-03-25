@@ -23,7 +23,11 @@
       "colors": [],
       "video": null,
       "fixed": null,
-      "fluid": null
+      "fluid": null,
+      "newFixed": null,
+      "newFluidW": null,
+      "newFluidH": null,
+      "newFluidWH": null
     }
   }
 }

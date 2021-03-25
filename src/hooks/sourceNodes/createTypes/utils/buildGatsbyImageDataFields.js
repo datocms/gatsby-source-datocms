@@ -61,6 +61,18 @@ module.exports = ({ cacheDir }) => {
       return null;
     }
 
+    if (props.width) {
+      imgixParams.w = props.width;
+    }
+
+    if (props.height) {
+      imgixParams.h = props.height;
+    }
+
+    if (props.width && props.height && !imgixParams.fit) {
+      imgixParams.fit = 'crop';
+    }
+
     const finalSize = getSizeAfterTransformations(
       image.width,
       image.height,
