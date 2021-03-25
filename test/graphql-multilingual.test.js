@@ -130,6 +130,8 @@ const assetFields = `
     newFluidW: gatsbyImageData(width: 150, layout: CONSTRAINED)
     newFluidH: gatsbyImageData(height: 150, layout: CONSTRAINED)
     newFluidWH: gatsbyImageData(width: 300, height: 300, layout: CONSTRAINED)
+    newFixedSmallerThanOriginal: gatsbyImageData(width: 30, height: 30, layout: FIXED)
+    newFluidWSmallerThanOriginal: gatsbyImageData(width: 30, layout: CONSTRAINED)
   `;
 
 const fileFields = `alt title customData ${assetFields}`;

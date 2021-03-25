@@ -38,7 +38,9 @@
       "newFixed": null,
       "newFluidW": null,
       "newFluidH": null,
-      "newFluidWH": null
+      "newFluidWH": null,
+      "newFixedSmallerThanOriginal": null,
+      "newFluidWSmallerThanOriginal": null
     }
   }
 }

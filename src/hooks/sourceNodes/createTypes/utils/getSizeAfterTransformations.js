@@ -16,31 +16,62 @@ module.exports = function getSizeAfterTransformations(
   }
 
   if (
-    ['facearea', 'clamp', 'crop', 'fill', 'fillmax', 'scale'].includes(
-      params.fit,
-    ) &&
+    ['facearea', 'clamp', 'fill', 'fillmax', 'scale'].includes(params.fit) &&
     params.w &&
     params.h
   ) {
     width = parseInt(params.w);
     height = parseInt(params.h);
 
-    if (params.fit === 'crop') {
-      if (params['max-h']) {
-        height = Math.min(height, parseInt(params['max-h']));
-      }
+    return { width, height };
+  }
 
-      if (params['max-w']) {
-        width = Math.min(width, parseInt(params['max-w']));
-      }
+  if (params.fit === 'crop' && ((params.w && params.h) || params.ar)) {
+    let width = null;
+    let height = null;
 
-      if (params['min-h']) {
-        height = Math.max(height, parseInt(params['min-h']));
-      }
+    const w = params.w && parseInt(params.w);
+    const h = params.h && parseInt(params.h);
 
-      if (params['min-w']) {
-        width = Math.max(width, parseInt(params['min-w']));
+    if (params.ar) {
+      const [arW, arH] = params.ar.split(':');
+      const aspectRatio = parseFloat(arW) / (arH ? parseInt(arH) : 1);
+
+      const originalAr = originalWidth / originalHeight;
+
+      const aspectRatioSize =
+        aspectRatio > originalAr
+          ? [originalWidth, originalWidth / aspectRatio]
+          : [originalHeight * aspectRatio, originalHeight];
+
+      if (w) {
+        width = w;
+        height = h / aspectRatio;
+      } else if (h) {
+        height = h;
+        width = h * aspectRatio;
+      } else {
+        [width, height] = aspectRatioSize;
       }
+    } else {
+      width = w;
+      height = h;
+    }
+
+    if (params['max-h']) {
+      height = Math.min(height, parseInt(params['max-h']));
+    }
+
+    if (params['max-w']) {
+      width = Math.min(width, parseInt(params['max-w']));
+    }
+
+    if (params['min-h']) {
+      height = Math.max(height, parseInt(params['min-h']));
+    }
+
+    if (params['min-w']) {
+      width = Math.max(width, parseInt(params['min-w']));
     }
 
     return { width, height };
