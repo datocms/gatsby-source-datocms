@@ -78,7 +78,7 @@ module.exports = async (
           const payload = await client.items.all(
             {
               'filter[ids]': [entity_id].join(','),
-              version: 'published',
+              version: previewMode ? 'draft' : 'published',
             },
             { deserializeResponse: false, allPages: true },
           );
@@ -129,7 +129,7 @@ module.exports = async (
             const linkedEntitiesPayload = await client.items.all(
               {
                 'filter[ids]': Array.from(linkedEntitiesIdsToFetch).join(','),
-                version: 'published',
+                version: previewMode ? 'draft' : 'published',
               },
               {
                 deserializeResponse: false,
@@ -154,7 +154,7 @@ module.exports = async (
           const payload = await client.uploads.all(
             {
               'filter[ids]': [entity_id].join(','),
-              version: 'published',
+              version: previewMode ? 'draft' : 'published',
             },
             { deserializeResponse: false, allPages: true },
           );
