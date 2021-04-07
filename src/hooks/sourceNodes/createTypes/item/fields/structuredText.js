@@ -52,6 +52,7 @@ module.exports = ({
   schema,
   gqlItemTypeName,
   entitiesRepo,
+  generateType,
 }) => {
   const parentItemTypeName = gqlItemTypeName(parentItemType);
 
@@ -93,7 +94,7 @@ module.exports = ({
       const linkedItemIds = fieldValue
         ? uniq(
             findAll(fieldValue.document, [isInlineItem, isItemLink]).map(node =>
-              itemNodeId(node.item, gqlNode.locale, entitiesRepo),
+              itemNodeId(node.item, gqlNode.locale, entitiesRepo, generateType),
             ),
           )
         : [];
@@ -101,7 +102,7 @@ module.exports = ({
       const blockIds = fieldValue
         ? uniq(
             findAll(fieldValue.document, isBlock).map(node =>
-              itemNodeId(node.item, gqlNode.locale, entitiesRepo),
+              itemNodeId(node.item, gqlNode.locale, entitiesRepo, generateType),
             ),
           )
         : [];

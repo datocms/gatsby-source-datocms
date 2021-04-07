@@ -7,6 +7,7 @@ module.exports = ({
   schema,
   gqlItemTypeName,
   entitiesRepo,
+  generateType,
 }) => {
   const parentItemTypeName = gqlItemTypeName(parentItemType);
 
@@ -24,7 +25,7 @@ module.exports = ({
       resolveForSimpleField: (fieldValue, context, node) => {
         if (fieldValue) {
           return context.nodeModel.getNodeById({
-            id: itemNodeId(fieldValue, node.locale, entitiesRepo),
+            id: itemNodeId(fieldValue, node.locale, entitiesRepo, generateType),
           });
         }
       },
@@ -46,7 +47,7 @@ module.exports = ({
     resolveForSimpleField: (fieldValue, context, node) => {
       if (fieldValue) {
         return context.nodeModel.getNodeById({
-          id: itemNodeId(fieldValue, node.locale, entitiesRepo),
+          id: itemNodeId(fieldValue, node.locale, entitiesRepo, generateType),
         });
       }
     },

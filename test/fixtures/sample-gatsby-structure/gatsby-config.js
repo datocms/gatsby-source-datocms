@@ -10,6 +10,14 @@ module.exports = {
       },
     },
     {
+      resolve: `wrapper`,
+      options: {
+        apiToken: process.env.DATOCMS_API_TOKEN,
+        environment: 'alternative-environment',
+        instancePrefix: 'alternative',
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
     },
   ],

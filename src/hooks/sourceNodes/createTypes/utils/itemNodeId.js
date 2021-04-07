@@ -1,6 +1,6 @@
 const { pascalize } = require('humps');
 
-module.exports = function itemNodeId(id, locale, entitiesRepo) {
+module.exports = function itemNodeId(id, locale, entitiesRepo, generateType) {
   if (!id) {
     return null;
   }
@@ -10,7 +10,7 @@ module.exports = function itemNodeId(id, locale, entitiesRepo) {
     return null;
   }
 
-  const type = pascalize(entity.itemType.apiKey);
-
-  return `DatoCms${type}-${entity.id}-${locale}`;
+  return generateType(
+    `${pascalize(entity.itemType.apiKey)}-${entity.id}-${locale}`,
+  );
 };
