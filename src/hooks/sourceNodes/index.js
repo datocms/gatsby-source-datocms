@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const createNodeFromEntity = require('./createNodeFromEntity');
 const destroyEntityNode = require('./destroyEntityNode');
-const { prefixId, CODES } = require('../onPreInit/errorMap')
+const { prefixId, CODES } = require('../onPreInit/errorMap');
 const Queue = require('promise-queue');
 
 const { getClient, getLoader } = require('../../utils');
@@ -29,14 +29,14 @@ module.exports = async (
   const localeFallbacks = rawLocaleFallbacks || {};
 
   if (!apiToken) {
-    const errorText = `API token must be provided!`
+    const errorText = `API token must be provided!`;
     reporter.panic(
       {
         id: prefixId(CODES.MissingAPIToken),
-        context: {sourceMessage: errorText},
+        context: { sourceMessage: errorText },
       },
       new Error(errorText),
-    )
+    );
   }
 
   const client = getClient({ apiToken, previewMode, environment, apiUrl });
@@ -74,11 +74,11 @@ module.exports = async (
     changesActivity.start();
     switch (entity_type) {
       case 'item':
-        if (event_type === 'publish') {
+        if (event_type === 'publish' || event_type === `update`) {
           const payload = await client.items.all(
             {
               'filter[ids]': [entity_id].join(','),
-              version: 'published',
+              version: previewMode ? 'draft' : 'published',
             },
             { deserializeResponse: false, allPages: true },
           );
@@ -129,7 +129,7 @@ module.exports = async (
             const linkedEntitiesPayload = await client.items.all(
               {
                 'filter[ids]': Array.from(linkedEntitiesIdsToFetch).join(','),
-                version: 'published',
+                version: previewMode ? 'draft' : 'published',
               },
               {
                 deserializeResponse: false,
@@ -150,11 +150,11 @@ module.exports = async (
         break;
 
       case 'upload':
-        if (event_type === 'create') {
+        if (event_type === 'create' || event_type === `update`) {
           const payload = await client.uploads.all(
             {
               'filter[ids]': [entity_id].join(','),
-              version: 'published',
+              version: previewMode ? 'draft' : 'published',
             },
             { deserializeResponse: false, allPages: true },
           );
