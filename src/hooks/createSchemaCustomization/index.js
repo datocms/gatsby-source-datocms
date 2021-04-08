@@ -50,9 +50,7 @@ module.exports = async (
     store,
     cacheDir,
     generateType: (type) => {
-      const fullType = `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`;
-      console.log(fullType);
-      return fullType;
+      return `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`;
     },
   };
 

@@ -32,7 +32,6 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
 
   entitiesRepo.findEntitiesOfType('item_type').forEach(entity => {
     const type = gqlItemTypeName(entity);
-    console.log(type);
 
     const fields = entity.fields.reduce((acc, field) => {
       const resolver = fieldResolvers[field.fieldType];
@@ -68,7 +67,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
                 field.localized,
                 i18n,
               );
-              return resolveForSimpleField(value, context, node);
+              return resolveForSimpleField(value, context, node, i18n);
             },
           },
         });
@@ -88,7 +87,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
                   field.localized,
                   i18n,
                 );
-                return resolveForNodeField(value, context, node);
+                return resolveForNodeField(value, context, node, i18n);
               },
             },
           });
@@ -119,7 +118,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
                       field.localized,
                       i18n,
                     );
-                    return resolveForSimpleField(value, context, node);
+                    return resolveForSimpleField(value, context, node, i18n);
                   },
                 },
                 ...(nodeType
@@ -137,7 +136,7 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
                             field.localized,
                             i18n,
                           );
-                          return resolveForNodeField(value, context, node);
+                          return resolveForNodeField(value, context, node, i18n);
                         },
                       },
                     }
