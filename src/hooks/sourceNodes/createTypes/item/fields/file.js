@@ -27,12 +27,13 @@ module.exports = () => ({
     const defaultTitle = localizedDefaultFieldMetadata(upload.entityPayload.attributes.default_field_metadata, 'title', i18n);
     const defaultFocalPoint = localizedDefaultFieldMetadata(upload.entityPayload.attributes.default_field_metadata, 'focal_point', i18n);
     const defaultCustomData = localizedDefaultFieldMetadata(upload.entityPayload.attributes.default_field_metadata, 'custom_data', i18n);
+    const fallbackFocalPoint = upload.entityPayload.attributes.is_image && upload.entityPayload.attributes.format !== 'svg' ? { x: 0.5, y: 0.5 } : null;
 
     return {
       ...upload,
       alt: fieldValue.alt || defaultAlt,
       title: fieldValue.title || defaultTitle,
-      focalPoint: fieldValue.focal_point || defaultFocalPoint,
+      focalPoint: fieldValue.focal_point || defaultFocalPoint || fallbackFocalPoint,
       customData: {
         ...camelizeKeys(defaultCustomData),
         ...fieldValue.custom_data,

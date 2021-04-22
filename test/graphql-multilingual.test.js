@@ -45,6 +45,14 @@ GraphQLMultilingual('focalPoints', async () => {
           blurhashFluidGatsbyImage: gatsbyImageData(width: 150, forceBlurhash: true, placeholder: BLURRED, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
         }
       }
+      noFocalPoint: datoCmsArticle(originalId: {eq: "7364346"}) {
+        singleAsset {
+          focalPoint {
+            x
+            y
+          }
+        }
+      }
     }`);
 
   assertGraphQLResponseEqualToSnapshot('multilingual/focal-point', result);

@@ -145,6 +145,14 @@
           }
         }
       ]
+    },
+    "noFocalPoint": {
+      "singleAsset": {
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
     }
   }
 }
