@@ -4,7 +4,7 @@ function localizedDefaultFieldMetadata(metadata, attribute, i18n) {
   const fallbacks = i18n.fallbacks || {};
   const locales = [i18n.locale].concat(fallbacks[i18n.locale] || []);
   const localeWithValue = locales.find(locale => {
-    const localeValue = metadata[locale][attribute];
+    const localeValue = metadata[locale] && metadata[locale][attribute];
     return (
       localeValue && localeValue !== null && localeValue !== undefined && localeValue !== ''
     );
