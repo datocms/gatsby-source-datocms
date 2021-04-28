@@ -31,6 +31,10 @@ module.exports = async (
     )
   }
 
+  if (process.env.GATSBY_IS_PREVIEW) {
+    previewMode = process.env.GATSBY_IS_PREVIEW === `true`
+  }
+
   const loader = getLoader({ apiToken, previewMode, environment, apiUrl });
 
   const program = store.getState().program;
