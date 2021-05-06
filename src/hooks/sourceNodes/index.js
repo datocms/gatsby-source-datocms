@@ -75,9 +75,10 @@ module.exports = async (
       },
     );
     changesActivity.start();
+    
     switch (entity_type) {
       case 'item':
-        if (event_type === 'publish' || event_type === `update`) {
+        if (event_type === 'publish' || event_type === `update` || event_type === 'create') {
           const payload = await client.items.all(
             {
               'filter[ids]': [entity_id].join(','),
@@ -145,7 +146,7 @@ module.exports = async (
 
             loader.entitiesRepo.upsertEntities(payload);
           }
-        } else if (event_type === 'unpublish') {
+        } else if (event_type === 'unpublish' || event_type === 'delete') {
           loader.entitiesRepo.destroyEntities('item', [entity_id]);
         } else {
           reporter.warn(`Invalid event type ${event_type}`);
