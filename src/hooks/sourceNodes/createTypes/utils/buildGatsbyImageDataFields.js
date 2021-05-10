@@ -96,7 +96,7 @@ module.exports = ({ cacheDir }) => {
     const sourceMetadata = {
       width: finalSize.width,
       height: finalSize.height,
-      format: image.format,
+      format: image.format === 'jpeg' ? 'jpg' : image.format,
     };
 
     const otherProps = {};

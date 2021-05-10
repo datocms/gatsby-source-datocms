@@ -3,15 +3,15 @@ const { render } = require('datocms-structured-text-to-html-string');
 const buildQueryExecutor = require('./support/buildQueryExecutor');
 const assertGraphQLResponseEqualToSnapshot = require('./support/assertGraphQLResponseEqualToSnapshot');
 
-const GraphQLMultilingual = suite('GraphQL (Multilingual project)');
+const Suite = suite('GraphQL');
 
 let executeQuery;
 
-GraphQLMultilingual.before(async () => {
+Suite.before(async () => {
   executeQuery = await buildQueryExecutor('bb260a9bf12cccf24392dc68209a42');
 });
 
-GraphQLMultilingual('focalPoints', async () => {
+Suite('focalPoints', async () => {
   const result = await executeQuery(`
     {
       datoCmsArticle(originalId: {eq: "7364344"}) {
@@ -55,10 +55,10 @@ GraphQLMultilingual('focalPoints', async () => {
       }
     }`);
 
-  assertGraphQLResponseEqualToSnapshot('multilingual/focal-point', result);
+  assertGraphQLResponseEqualToSnapshot('focal-point', result);
 });
 
-GraphQLMultilingual('auto=format', async () => {
+Suite('auto=format', async () => {
   const result = await executeQuery(`
     {
       datoCmsArticle(originalId: {eq: "7364344"}) {
@@ -91,12 +91,12 @@ GraphQLMultilingual('auto=format', async () => {
       }
     }`);
 
-  assertGraphQLResponseEqualToSnapshot('multilingual/auto-format', result);
+  assertGraphQLResponseEqualToSnapshot('auto-format', result);
 });
 
-GraphQLMultilingual('force blurhash', async () => {
+Suite('force blurhash', async () => {
   assertGraphQLResponseEqualToSnapshot(
-    'multilingual/blurhash',
+    'blurhash',
     await executeQuery(
       `{
           datoCmsAsset(originalId: {eq: "2643791"}) {
@@ -144,30 +144,30 @@ const assetFields = `
 
 const fileFields = `alt title customData ${assetFields}`;
 
-GraphQLMultilingual('assets', async () => {
+Suite('assets', async () => {
   assertGraphQLResponseEqualToSnapshot(
-    'multilingual/png-asset',
+    'png-asset',
     await executeQuery(
       `{ datoCmsAsset(originalId: {eq: "2637142"}) { ${assetFields} } }`,
     ),
   );
   assertGraphQLResponseEqualToSnapshot(
-    'multilingual/mp4-asset',
+    'mp4-asset',
     await executeQuery(
       `{ datoCmsAsset(originalId: {eq: "2637250"}) { ${assetFields} } }`,
     ),
   );
   assertGraphQLResponseEqualToSnapshot(
-    'multilingual/csv-asset',
+    'csv-asset',
     await executeQuery(
       `{ datoCmsAsset(originalId: {eq: "2637251"}) { ${assetFields} } }`,
     ),
   );
 });
 
-GraphQLMultilingual('sortable collection', async () => {
+Suite('sortable collection', async () => {
   assertGraphQLResponseEqualToSnapshot(
-    'multilingual/sortable-position',
+    'sortable-position',
     await executeQuery(`
     {
       datoCmsSecondaryModel(originalId: {eq: "7364459"}) {
@@ -178,9 +178,9 @@ GraphQLMultilingual('sortable collection', async () => {
   );
 });
 
-GraphQLMultilingual('site', async () => {
+Suite('site', async () => {
   assertGraphQLResponseEqualToSnapshot(
-    'multilingual/site',
+    'site',
     await executeQuery(`
     {
       enSite: datoCmsSite(locale: {eq: "en"}) {
@@ -246,9 +246,9 @@ GraphQLMultilingual('site', async () => {
   );
 });
 
-GraphQLMultilingual('tree collections', async () => {
+Suite('tree collections', async () => {
   assertGraphQLResponseEqualToSnapshot(
-    'multilingual/tree',
+    'tree',
     await executeQuery(`
       {
         allDatoCmsHierarchical(filter: {root: {eq: true}, locale: {eq: "en"}}) {
@@ -282,7 +282,7 @@ GraphQLMultilingual('tree collections', async () => {
   );
 });
 
-GraphQLMultilingual('items', async () => {
+Suite('items', async () => {
   const query = `
     {
       enArticle: datoCmsArticle(originalId: {eq: "7364344"}, locale: {eq: "en"}) {
@@ -588,7 +588,7 @@ GraphQLMultilingual('items', async () => {
 
   const result = await executeQuery(query);
 
-  assertGraphQLResponseEqualToSnapshot('multilingual/item', result);
+  assertGraphQLResponseEqualToSnapshot('item', result);
 
   const output = render(result.data.enArticle.structuredText, {
     renderInlineRecord: ({ adapter, record }) => {
@@ -626,12 +626,12 @@ GraphQLMultilingual('items', async () => {
   });
 
   assertGraphQLResponseEqualToSnapshot(
-    'multilingual/structuredTextRender',
+    'structuredTextRender',
     output,
   );
 });
 
-GraphQLMultilingual('multiple instances', async () => {
+Suite('multiple instances', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'multipleInstances',
     await executeQuery(
@@ -694,4 +694,4 @@ GraphQLMultilingual('multiple instances', async () => {
   );
 });
 
-GraphQLMultilingual.run();
+Suite.run();
