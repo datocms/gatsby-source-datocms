@@ -41,8 +41,8 @@ module.exports = async (
     );
   }
 
-  if (process.env.GATSBY_IS_PREVIEW) {
-    previewMode = process.env.GATSBY_IS_PREVIEW === `true`
+  if (process.env.GATSBY_IS_PREVIEW === `true`) {
+    previewMode = true;
   }
 
   const client = getClient({ apiToken, previewMode, environment, apiUrl });
