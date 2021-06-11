@@ -6,6 +6,14 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 
 **IMPORTANT**: If you use this plugin, you will not be able to write queries as described in the [DatoCMS Content Delivery API documentation](https://www.datocms.com/docs/content-delivery-api/). Content will be exposed using [Gatsby's schema-generation](https://www.gatsbyjs.org/docs/schema-generation/). If you want to directly use our GraphQL API in Gatsby, consider using the [gatsby-source-graphql](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-graphql) plugin instead.
 
+
+<br /><br />
+<a href="https://www.datocms.com/">
+  <img src="https://www.datocms.com/images/full_logo.svg" height="60">
+</a>
+<br /><br />
+
+
 ## Table of Contents
 
 * [Install](#install)
