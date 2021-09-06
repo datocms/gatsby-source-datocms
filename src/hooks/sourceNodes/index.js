@@ -4,8 +4,25 @@ const destroyEntityNode = require('./destroyEntityNode');
 const { prefixId, CODES } = require('../onPreInit/errorMap');
 const Queue = require('promise-queue');
 const { pascalize } = require('humps');
+const uniq = require('lodash.uniq');
+const visit = require('unist-util-visit');
+const {
+  isInlineItem,
+  isItemLink,
+  isBlock,
+} = require('datocms-structured-text-utils');
 
 const { getClient, getLoader } = require('../../utils');
+
+const findAll = (document, predicate) => {
+  const result = [];
+
+  visit(document, predicate, node => {
+    result.push(node);
+  });
+
+  return result;
+};
 
 module.exports = async (
   {
@@ -64,7 +81,8 @@ module.exports = async (
     schema,
     store,
     cacheDir,
-    generateType: (type) => `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`,
+    generateType: type =>
+      `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`,
   };
 
   if (webhookBody && Object.keys(webhookBody).length) {
@@ -79,10 +97,14 @@ module.exports = async (
       },
     );
     changesActivity.start();
-    
+
     switch (entity_type) {
       case 'item':
-        if (event_type === 'publish' || event_type === `update` || event_type === 'create') {
+        if (
+          event_type === 'publish' ||
+          event_type === `update` ||
+          event_type === 'create'
+        ) {
           const payload = await client.items.all(
             {
               'filter[ids]': [entity_id].join(','),
@@ -102,14 +124,30 @@ module.exports = async (
                 );
                 const fieldsToResolve = itemTypeForThis.fields.filter(
                   fieldDef =>
-                    [`rich_text`, `links`, `link`].includes(fieldDef.fieldType),
+                    [`rich_text`, `links`, `link`, `structured_text`].includes(
+                      fieldDef.fieldType,
+                    ),
                 );
 
-                function addRawValueToCollectedIds(fieldRawValue) {
-                  if (Array.isArray(fieldRawValue)) {
+                function addRawValueToCollectedIds(fieldInfo, fieldRawValue) {
+                  if (
+                    ['links', 'rich_text'].includes(fieldInfo.fieldType) &&
+                    Array.isArray(fieldRawValue)
+                  ) {
                     fieldRawValue.forEach(collectedIds.add.bind(collectedIds));
-                  } else if (fieldRawValue) {
+                  } else if (fieldInfo.fieldType === 'link' && fieldRawValue) {
                     collectedIds.add(fieldRawValue);
+                  } else if (
+                    fieldInfo.fieldType === 'structured_text' &&
+                    fieldRawValue
+                  ) {
+                    uniq(
+                      findAll(fieldRawValue.document, [
+                        isInlineItem,
+                        isItemLink,
+                        isBlock,
+                      ]).map(node => node.item),
+                    ).forEach(collectedIds.add.bind(collectedIds));
                   }
                 }
 
@@ -121,11 +159,14 @@ module.exports = async (
                     // collect ids from all languages
                     Object.values(fieldRawValue).forEach(
                       fieldTranslationRawValue => {
-                        addRawValueToCollectedIds(fieldTranslationRawValue);
+                        addRawValueToCollectedIds(
+                          fieldInfo,
+                          fieldTranslationRawValue,
+                        );
                       },
                     );
                   } else {
-                    addRawValueToCollectedIds(fieldRawValue);
+                    addRawValueToCollectedIds(fieldInfo, fieldRawValue);
                   }
                 });
 
