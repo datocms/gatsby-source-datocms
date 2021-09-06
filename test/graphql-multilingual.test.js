@@ -8,7 +8,12 @@ const Suite = suite('GraphQL');
 let executeQuery;
 
 Suite.before(async () => {
-  executeQuery = await buildQueryExecutor('bb260a9bf12cccf24392dc68209a42');
+  try {
+    executeQuery = await buildQueryExecutor('bb260a9bf12cccf24392dc68209a42');
+  } catch(e) {
+    console.log("ERROR", e);
+    throw e;
+  }
 });
 
 Suite('focalPoints', async () => {

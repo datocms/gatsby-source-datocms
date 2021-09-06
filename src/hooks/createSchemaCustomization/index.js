@@ -66,20 +66,7 @@ module.exports = async (
 
   activity.start();
 
-  const removeUpsertListener = loader.entitiesRepo.addUpsertListener(entity => {
-    createNodeFromEntity(entity, context);
-  });
-
-  const removeDestroyListener = loader.entitiesRepo.addDestroyListener(
-    entity => {
-      destroyEntityNode(entity, context);
-    },
-  );
-
   await loader.loadSchemaWithinEnvironment();
-
-  removeUpsertListener();
-  removeDestroyListener();
 
   activity.end();
 
