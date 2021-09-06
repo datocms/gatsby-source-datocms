@@ -20,15 +20,35 @@
       "_allMultipleParagraphTextLocales": [
         {
           "locale": "en",
-          "value": "Multiple paragraph text\n\n![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)\n\n\nFoo\n\n![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)\n"
+          "value": "Multiple paragraph text\n\n![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)\n\n\nFoo\n\n![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)\n",
+          "valueNode": {
+            "id": "DatoCmsTextNode-7364344-en-multipleParagraphText",
+            "internal": {
+              "content": "Multiple paragraph text\n\n![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)\n\n\nFoo\n\n![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)\n"
+            },
+            "childMarkdownRemark": {
+              "html": "<p>Multiple paragraph text</p>\n<p><img src=\"https://www.datocms-assets.com/34723/1620629638-plant.jpeg\"></p>\n<p>Foo</p>\n<p><img src=\"https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg\"></p>",
+              "timeToRead": 1
+            }
+          }
         },
         {
           "locale": "it",
-          "value": "Paragrafi multipli"
+          "value": "Paragrafi multipli",
+          "valueNode": {
+            "id": "DatoCmsTextNode-7364344-it-multipleParagraphText",
+            "internal": {
+              "content": "Paragrafi multipli"
+            },
+            "childMarkdownRemark": {
+              "html": "<p>Paragrafi multipli</p>",
+              "timeToRead": 1
+            }
+          }
         }
       ],
       "multipleParagraphTextNode": {
-        "id": "DatoCmsTextNode-DatoCmsArticle-7364344-en-multipleParagraphText",
+        "id": "DatoCmsTextNode-7364344-en-multipleParagraphText",
         "internal": {
           "content": "Multiple paragraph text\n\n![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)\n\n\nFoo\n\n![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)\n"
         },

@@ -43,7 +43,7 @@ module.exports = function buildItemNode(
 
             const textNode = buildNode(
               'DatoCmsTextNode',
-              `${node.id}-${camelizedApiKey}`,
+              `${entity.id}-${locale}-${camelizedApiKey}`,
               node => {
                 node.internal.mediaType = mediaType;
                 node.internal.content = value || '';

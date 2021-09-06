@@ -299,6 +299,16 @@ Suite('items', async () => {
         _allMultipleParagraphTextLocales {
           locale
           value
+          valueNode {
+            id
+            internal {
+              content
+            }
+            childMarkdownRemark {
+              html
+              timeToRead
+            }
+          }
         }
         multipleParagraphTextNode {
           id

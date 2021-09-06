@@ -9,7 +9,7 @@ module.exports = ({ field }) => {
     resolveForSimpleField: fieldValue => fieldValue,
     resolveForNodeField: (fieldValue, context, node) => {
       return context.nodeModel.getNodeById({
-        id: `DatoCmsTextNode-${node.id}-${fieldKey}`,
+        id: `DatoCmsTextNode-${node.entityPayload.id}-${node.locale}-${fieldKey}`,
       });
     },
   };
