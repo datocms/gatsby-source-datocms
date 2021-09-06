@@ -9,8 +9,10 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
-        gatsby-version: ["^2.24.63", "^3.0.0"]
+        node-version: ["12.x", "14.x"]
+        gatsby-version: ["^2.24.63", "^3.0.0", "4.0.0-alpha-9689ff.5"]
+        exclude:
+          - { node-version: "12.x", gatsby-version: "4.0.0-alpha-9689ff.5" }
 
     steps:
     - uses: actions/checkout@v2
