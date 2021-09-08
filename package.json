@@ -37,6 +37,7 @@
     "datocms-client": ">=3.4.2",
     "datocms-structured-text-utils": "^1.0.13",
     "fs-extra": ">=8.1.0",
+    "gatsby-plugin-utils": "^1.13.0",
     "got": "^11.8.2",
     "humps": ">=2.0.1",
     "imgix-url-params": ">=11.11.2",
