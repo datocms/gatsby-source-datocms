@@ -21,7 +21,7 @@
     "@babel/preset-env": "^7.6.2",
     "cross-env": "^6.0.3",
     "datocms-structured-text-to-html-string": "^1.0.13",
-    "gatsby": "4.0.0-alpha-9689ff.5",
+    "gatsby": "^2.24.63 || ^3.0.0 || ^4.0.0-next.0",
     "gatsby-plugin-image": "^1.1.0-next.2",
     "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-transformer-remark": "^2.8.38",
