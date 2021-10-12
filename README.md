@@ -6,31 +6,30 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 
 **IMPORTANT**: If you use this plugin, you will not be able to write queries as described in the [DatoCMS Content Delivery API documentation](https://www.datocms.com/docs/content-delivery-api/). Content will be exposed using [Gatsby's schema-generation](https://www.gatsbyjs.org/docs/schema-generation/). If you want to directly use our GraphQL API in Gatsby, consider using the [gatsby-source-graphql](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-graphql) plugin instead.
 
-
 <br /><br />
 <a href="https://www.datocms.com/">
-  <img src="https://www.datocms.com/images/full_logo.svg" height="60">
+<img src="https://www.datocms.com/images/full_logo.svg" height="60">
 </a>
 <br /><br />
 
 ## Table of Contents
 
-* [Install](#install)
-* [Sample project](#sample-project)
-* [How to use](#how-to-use)
-* [How to query](#how-to-query)
-   * [Accessing records](#accessing-records)
-   * [Multiple-paragraph text fields](#multiple-paragraph-text-fields)
-   * [Modular content fields](#modular-content-fields)
-   * [Structured text fields](#structured-text-fields)
-   * [Favicon meta tags](#favicon-meta-tags)
-   * [SEO meta tags](#seo-meta-tags)
-   * [Tree-like collections](#tree-like-collections)
-   * [Single instance models](#single-instance-models)
-   * [Localized fields](#localized-fields)
-* [Integration with Gatsby Image](#integration-with-gatsby-image)
-* [Field customisations](#field-customisations)
-* [Connecting to multiple DatoCMS projects](#connecting-to-multiple-datocms-projects)
+- [Install](#install)
+- [Sample project](#sample-project)
+- [How to use](#how-to-use)
+- [How to query](#how-to-query)
+  - [Accessing records](#accessing-records)
+  - [Multiple-paragraph text fields](#multiple-paragraph-text-fields)
+  - [Modular content fields](#modular-content-fields)
+  - [Structured text fields](#structured-text-fields)
+  - [Favicon meta tags](#favicon-meta-tags)
+  - [SEO meta tags](#seo-meta-tags)
+  - [Tree-like collections](#tree-like-collections)
+  - [Single instance models](#single-instance-models)
+  - [Localized fields](#localized-fields)
+- [Integration with Gatsby Image](#integration-with-gatsby-image)
+- [Field customisations](#field-customisations)
+- [Connecting to multiple DatoCMS projects](#connecting-to-multiple-datocms-projects)
 
 ## Install
 
@@ -74,7 +73,7 @@ plugins: [
       },
     },
   },
-]
+];
 ```
 
 ## How to query
@@ -119,7 +118,10 @@ if you have a `blog_post` model, you will be able to query it like the following
 
 ```graphql
 {
-  allDatoCmsBlogPost(sort: { fields: [publicationDate], order: DESC }, limit: 5) {
+  allDatoCmsBlogPost(
+    sort: { fields: [publicationDate], order: DESC }
+    limit: 5
+  ) {
     edges {
       node {
         title
@@ -139,7 +141,7 @@ if you have a `blog_post` model, you will be able to query it like the following
 
 ### Multiple-paragraph text fields
 
-Fields of type *Multiple-paragraph text* will be available both as simple
+Fields of type _Multiple-paragraph text_ will be available both as simple
 strings (ie. `excerpt`) and nodes (ie. `excerptNode`). You can use the latter
 if you want to apply further transformations, like converting markdown with [`gatsby-transformer-remark`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark) (converting markdown only works with `Markdown editor` as name suggests):
 
@@ -170,11 +172,15 @@ if you want to apply further transformations, like converting markdown with [`ga
     title
     content {
       ... on DatoCmsText {
-        model { apiKey }
+        model {
+          apiKey
+        }
         text
       }
       ... on DatoCmsImage {
-        model { apiKey }
+        model {
+          apiKey
+        }
         image {
           url
         }
@@ -188,20 +194,12 @@ You can then present your blocks in a similar manner:
 
 ```jsx
 <div>
-  {
-    data.datoCmsBlogPost.content.map((block) => (
-      <div key={block.id}>
-        {
-          block.model.apiKey === 'text' &&
-            <div>{block.text}</div>
-        }
-        {
-          block.model.apiKey === 'image' &&
-            <img src={block.image.url} />
-        }
-      </div>
-    ))
-  }
+  {data.datoCmsBlogPost.content.map(block => (
+    <div key={block.id}>
+      {block.model.apiKey === 'text' && <div>{block.text}</div>}
+      {block.model.apiKey === 'image' && <img src={block.image.url} />}
+    </div>
+  ))}
 </div>
 ```
 
@@ -249,7 +247,7 @@ import { StructuredText } from 'react-datocms';
       structuredText={data.blogPost.content}
       renderInlineRecord={({ record }) => {
         switch (record.__typename) {
-          case "DatoCmsArticle":
+          case 'DatoCmsArticle':
             return <a href={`/articles/${record.slug}`}>{record.title}</a>;
           default:
             return null;
@@ -257,7 +255,7 @@ import { StructuredText } from 'react-datocms';
       }}
       renderLinkToRecord={({ record, children }) => {
         switch (record.__typename) {
-          case "DatoCmsArticle":
+          case 'DatoCmsArticle':
             return <a href={`/articles/${record.slug}`}>{children}</a>;
           default:
             return null;
@@ -265,7 +263,7 @@ import { StructuredText } from 'react-datocms';
       }}
       renderBlock={({ record }) => {
         switch (record.__typename) {
-          case "DatoCmsImage":
+          case 'DatoCmsImage':
             return <img src={record.image.url} alt={record.image.alt} />;
           default:
             return null;
@@ -273,7 +271,7 @@ import { StructuredText } from 'react-datocms';
       }}
     />
   }
-</div>
+</div>;
 ```
 
 If you need to generate an excerpt you can use the [`datocms-structured-text-to-plain-text`](https://github.com/stefanoverna/structured-text/blob/main/packages/to-plain-text/README.md) package to convert the document into plain text:
@@ -282,10 +280,7 @@ If you need to generate an excerpt you can use the [`datocms-structured-text-to-
 import { render as toPlainText } from 'datocms-structured-text-to-plain-text';
 import ellipsize from 'ellipsize';
 
-ellipsize(
-  toPlainText(data.blogPost.content),
-  100
-)
+ellipsize(toPlainText(data.blogPost.content), 100);
 ```
 
 ### SEO meta tags
@@ -472,7 +467,6 @@ If your site is multi-lingual, records will be duplicated for every locale
 available, so you can query them like this. The same applies for the `DatoCmsSite`
 node:
 
-
 ```graphql
 {
   allDatoCmsBlogPost(filter: { locale: { eq: "it" } }) {
@@ -519,31 +513,31 @@ If you need to get every locale for a specific field, you can use the `_all<FIEL
 This plugin is compatible with the new [gatsby-plugin-image](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/) and the `<GatsbyImage />` component released with Gatsby v3:
 
 ```jsx
-import React from 'react'
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const About = ({ data }) => (
   <article>
     <GatsbyImage image={data.datoCmsAboutPage.photo.gatsbyImageData} />
   </article>
-)
+);
 
-export default About
+export default About;
 
 export const query = graphql`
   query AboutQuery {
     datoCmsAboutPage {
       photo {
         gatsbyImageData(
-          width: 600,
-          placeholder: BLURRED,
-          forceBlurhash: false,
+          width: 600
+          placeholder: BLURRED
+          forceBlurhash: false
           imgixParams: { invert: true }
         )
       }
     }
   }
-`
+`;
 ```
 
 When `placeholder` is set to `BLURRED`, the normal behaviour is to use DatoCMS blurhash placeholders, except for PNG files, which might require transparency. If you want to force blurhash placeholders also for PNGs, pass the option `forceBlurhash: true`.
@@ -565,28 +559,32 @@ This GraphQL option allows you to generate responsive images that automatically 
 Instead of specifying a width and height, with `fluid` you specify a `maxWidth`, the max width the container of the images reaches.
 
 ```jsx
-import React from 'react'
-import Img from 'gatsby-image'
+import React from 'react';
+import Img from 'gatsby-image';
 
 const About = ({ data }) => (
   <article>
     <Img fluid={data.datoCmsAboutPage.photo.fluid} />
   </article>
-)
+);
 
-export default About
+export default About;
 
 export const query = graphql`
   query AboutQuery {
     datoCmsAboutPage {
       photo {
-        fluid(maxWidth: 600, forceBlurhash: false, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(
+          maxWidth: 600
+          forceBlurhash: false
+          imgixParams: { fm: "jpg", auto: "compress" }
+        ) {
           ...GatsbyDatoCmsFluid
         }
       }
     }
   }
-`
+`;
 ```
 
 The normal behaviour is to use DatoCMS blurhash placeholders, except for PNG files, which might require transparency. If you want to force blurhash placeholders also for PNGs, pass the option `forceBlurhash: true`.
@@ -604,28 +602,32 @@ The fragments you can use are:
 If you make queries with resolutions then Gatsby automatically generates images with 1x, 1.5x, 2x, and 3x versions so your images look great on whatever screen resolution of device they're on. If you're on a retina class screen, notice how much sharper these images are.
 
 ```jsx
-import React from 'react'
-import Img from 'gatsby-image'
+import React from 'react';
+import Img from 'gatsby-image';
 
 const About = ({ data }) => (
   <article>
     <Img fixed={data.datoCmsAboutPage.photo.fixed} />
   </article>
-)
+);
 
-export default About
+export default About;
 
 export const query = graphql`
   query AboutQuery {
     datoCmsAboutPage {
       photo {
-        fixed(width: 200, forceBlurhash: false, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fixed(
+          width: 200
+          forceBlurhash: false
+          imgixParams: { fm: "jpg", auto: "compress" }
+        ) {
           ...GatsbyDatoCmsFixed
         }
       }
     }
   }
-`
+`;
 ```
 
 The normal behaviour is to use DatoCMS blurhash placeholders, except for PNG files, which might require transparency. If you want to force blurhash placeholders also for PNGs, pass the option `forceBlurhash: true`.
@@ -637,6 +639,7 @@ The fragments you can use are:
 - `GatsbyDatoCmsFixed_noBase64`: no preview effects.
 
 `gatsby-image` will automatically use WebP images when the browser supports the file format. If the browser doesn’t support WebP, `gatsby-image` will fall back to the default image format.
+
 </details>
 
 ## Field customisations
@@ -667,9 +670,9 @@ module.exports = {
         apiToken: 'YYY',
         instancePrefix: 'SecondProject',
       },
-    }
+    },
   ],
-}
+};
 ```
 
 This will allow you to perform all the queries with a specific token and distinguish between the results:
@@ -698,7 +701,9 @@ This will allow you to perform all the queries with a specific token and disting
   allDatoCmsSecondProjectBlogPost {
     nodes {
       title
-      cover { url }
+      cover {
+        url
+      }
     }
   }
 }

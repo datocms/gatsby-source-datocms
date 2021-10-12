@@ -1,7 +1,5 @@
 const fs = require('fs-extra');
 const { pascalize } = require('humps');
-const createNodeFromEntity = require('../sourceNodes/createNodeFromEntity');
-const destroyEntityNode = require('../sourceNodes/destroyEntityNode');
 const createTypes = require('../sourceNodes/createTypes');
 const { prefixId, CODES } = require('../../errorMap');
 
