@@ -33,7 +33,9 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 
 ## Install
 
-`npm install --save gatsby-source-datocms gatsby-plugin-image`
+```bash
+npm install --save gatsby-source-datocms gatsby-plugin-image
+```
 
 PS. If you're on a Gatsby v2 project, please use version "^2.6.17" of this package.
 
@@ -71,6 +73,10 @@ plugins: [
       localeFallbacks: {
         it: ['en'],
       },
+
+      // Limits page size and can be used to avoid build timeouts.
+      // Default is 500
+      pageSize: 10,
     },
   },
 ];
