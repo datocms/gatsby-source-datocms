@@ -29,7 +29,7 @@ function getClient(options) {
 }
 
 function getLoader(options) {
-  const { apiToken, apiUrl, previewMode, environment } = options;
+  const { apiToken, apiUrl, previewMode, environment, pageSize } = options;
   const key = JSON.stringify({ apiToken, apiUrl, previewMode, environment });
 
   if (loaders[key]) {
@@ -40,6 +40,7 @@ function getLoader(options) {
     getClient({ apiToken, apiUrl, environment }),
     (GATSBY_CLOUD && GATSBY_EXECUTING_COMMAND === 'develop') || previewMode,
     environment,
+    { pageSize: pageSize || 500 },
   );
 
   loaders[key] = loader;
