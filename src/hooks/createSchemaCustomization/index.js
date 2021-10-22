@@ -3,7 +3,7 @@ const { pascalize } = require('humps');
 const createNodeFromEntity = require('../sourceNodes/createNodeFromEntity');
 const destroyEntityNode = require('../sourceNodes/destroyEntityNode');
 const createTypes = require('../sourceNodes/createTypes');
-const { prefixId, CODES } = require('../onPreInit/errorMap')
+const { prefixId, CODES } = require('../../errorMap')
 
 const { getLoader } = require('../../utils');
 
@@ -66,20 +66,7 @@ module.exports = async (
 
   activity.start();
 
-  const removeUpsertListener = loader.entitiesRepo.addUpsertListener(entity => {
-    createNodeFromEntity(entity, context);
-  });
-
-  const removeDestroyListener = loader.entitiesRepo.addDestroyListener(
-    entity => {
-      destroyEntityNode(entity, context);
-    },
-  );
-
   await loader.loadSchemaWithinEnvironment();
-
-  removeUpsertListener();
-  removeDestroyListener();
 
   activity.end();
 

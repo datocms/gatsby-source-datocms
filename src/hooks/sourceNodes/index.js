@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const createNodeFromEntity = require('./createNodeFromEntity');
 const destroyEntityNode = require('./destroyEntityNode');
-const { prefixId, CODES } = require('../onPreInit/errorMap');
+const { prefixId, CODES } = require('../../errorMap');
 const Queue = require('promise-queue');
 const { pascalize } = require('humps');
 const uniq = require('lodash.uniq');

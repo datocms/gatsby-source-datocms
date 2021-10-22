@@ -42,13 +42,15 @@ module.exports = ({ cacheDir }) => {
   try {
     require('gatsby-plugin-image');
     gatsbyPluginImageFound = true;
-  } catch(e) {}
+  } catch (e) {}
 
   if (!gatsbyPluginImageFound) {
     return {};
   }
 
-  const { getGatsbyImageResolver } = require('gatsby-plugin-image/graphql-utils');
+  const {
+    getGatsbyImageResolver,
+  } = require('gatsby-plugin-image/graphql-utils');
   const { generateImageData } = require('gatsby-plugin-image');
 
   async function resolve(
@@ -61,7 +63,11 @@ module.exports = ({ cacheDir }) => {
       return null;
     }
 
-    let finalSize = getSizeAfterTransformations(image.width, image.height, imgixParams);
+    let finalSize = getSizeAfterTransformations(
+      image.width,
+      image.height,
+      imgixParams,
+    );
 
     // props.width and props.height
     // * For a fixed layout, these define the size of the image displayed on screen.
@@ -75,12 +81,20 @@ module.exports = ({ cacheDir }) => {
     // be presented to the final user
 
     if (finalSize.height === image.height && finalSize.width == image.width) {
-      if (props.layout === 'FIXED' && props.width && props.height) {
+      if (['FIXED', 'fixed'].includes(props.layout) && props.width && props.height) {
         // we give the source image the requested aspect ratio
         imgixParams.ar = `${props.width}:${props.height}`;
         imgixParams.fit = 'crop';
-        finalSize = getSizeAfterTransformations(image.width, image.height, imgixParams)
-      } else if (props.layout === 'CONSTRAINED' && (props.width || props.height)) {
+        finalSize = getSizeAfterTransformations(
+          image.width,
+          image.height,
+          imgixParams,
+        );
+      } else if (
+        // different gatsby-plugin-image return different values for the GatsbyImageLayout type
+        ['CONSTRAINED', 'constrained'].includes(props.layout) &&
+        (props.width || props.height)
+      ) {
         // we give the source image the requested width/height as their maximum value
         if (props.w) {
           imgixParams.w = props.width;
@@ -89,7 +103,11 @@ module.exports = ({ cacheDir }) => {
           imgixParams.h = props.height;
         }
         imgixParams.fit = 'max';
-        finalSize = getSizeAfterTransformations(image.width, image.height, imgixParams)
+        finalSize = getSizeAfterTransformations(
+          image.width,
+          image.height,
+          imgixParams,
+        );
       }
     }
 

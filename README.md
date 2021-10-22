@@ -13,7 +13,6 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 </a>
 <br /><br />
 
-
 ## Table of Contents
 
 * [Install](#install)
@@ -36,6 +35,8 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 ## Install
 
 `npm install --save gatsby-source-datocms gatsby-plugin-image`
+
+PS. If you're on a Gatsby v2 project, please use version "^2.6.17" of this package.
 
 ## Sample project
 
