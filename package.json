@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "prettier": "prettier --write \"src/**/*.{js,jsx}\"",
+    "prettier": "prettier --write README.md \"src/**/*.{js,jsx}\"",
     "build": "babel src --out-dir . --ignore __tests__",
     "watch": "babel -w src --out-dir . --ignore __tests__",
     "prepublish": "cross-env NODE_ENV=production yarn build",
