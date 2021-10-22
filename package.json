@@ -8,6 +8,7 @@
     "url": "git://github.com/datocms/gatsby-source-datocms.git"
   },
   "scripts": {
+    "prepare": "husky install",
     "prettier": "prettier --write \"src/**/*.{js,jsx}\"",
     "build": "babel src --out-dir . --ignore __tests__",
     "watch": "babel -w src --out-dir . --ignore __tests__",
@@ -25,8 +26,10 @@
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-sharp": "^4.0.0",
     "gatsby-transformer-remark": "^5.0.0",
+    "husky": "^7.0.4",
     "np": "^7.4.0",
     "prettier": "^1.18.2",
+    "pretty-quick": "^3.1.1",
     "react": "^16.10.2",
     "react-helmet": "^5.2.0",
     "rimraf": "^3.0.2",
@@ -68,5 +71,13 @@
     "gatsby-plugin-image": {
       "optional": true
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "engines": {
+    "node": ">=14.x"
   }
 }
