@@ -15,6 +15,7 @@ module.exports = async (
     instancePrefix,
     localeFallbacks: rawLocaleFallbacks,
     pageSize,
+    logApiCalls,
   },
 ) => {
   const localeFallbacks = rawLocaleFallbacks || {};
@@ -40,6 +41,7 @@ module.exports = async (
     environment,
     apiUrl,
     pageSize,
+    logApiCalls,
   });
 
   const program = store.getState().program;

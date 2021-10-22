@@ -12,16 +12,30 @@ const clients = {};
 const loaders = {};
 
 function getClient(options) {
-  const { apiToken, apiUrl, environment } = options;
-  const key = JSON.stringify({ apiToken, apiUrl, environment });
+  const { apiToken, apiUrl, environment, logApiCalls } = options;
+  const key = JSON.stringify({ apiToken, apiUrl, environment, logApiCalls });
 
   if (clients[key]) {
     return clients[key];
   }
 
-  const client = apiUrl
-    ? new SiteClient(apiToken, { ...CLIENT_HEADERS, environment }, apiUrl)
-    : new SiteClient(apiToken, { ...CLIENT_HEADERS, environment });
+  const clientOptions = {
+    headers: CLIENT_HEADERS,
+  };
+
+  if (options.environment) {
+    clientOptions.environment = environment;
+  }
+
+  if (options.baseUrl) {
+    clientOptions.baseUrl = apiUrl;
+  }
+
+  if (options.logApiCalls) {
+    clientOptions.logApiCalls = logApiCalls;
+  }
+
+  const client = new SiteClient(apiToken, clientOptions);
 
   clients[key] = client;
 
@@ -29,15 +43,29 @@ function getClient(options) {
 }
 
 function getLoader(options) {
-  const { apiToken, apiUrl, previewMode, environment, pageSize } = options;
-  const key = JSON.stringify({ apiToken, apiUrl, previewMode, environment });
+  const {
+    apiToken,
+    apiUrl,
+    previewMode,
+    environment,
+    pageSize,
+    logApiCalls,
+  } = options;
+  const key = JSON.stringify({
+    apiToken,
+    apiUrl,
+    previewMode,
+    environment,
+    pageSize,
+    logApiCalls,
+  });
 
   if (loaders[key]) {
     return loaders[key];
   }
 
   const loader = new Loader(
-    getClient({ apiToken, apiUrl, environment }),
+    getClient({ apiToken, apiUrl, environment, logApiCalls }),
     (GATSBY_CLOUD && GATSBY_EXECUTING_COMMAND === 'develop') || previewMode,
     environment,
     { pageSize },

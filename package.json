@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "core-js": "^3.2.1",
-    "datocms-client": ">=3.4.2",
+    "datocms-client": ">=3.4.22",
     "datocms-structured-text-utils": "^1.0.13",
     "fs-extra": ">=8.1.0",
     "gatsby-plugin-utils": "^2.0.0",

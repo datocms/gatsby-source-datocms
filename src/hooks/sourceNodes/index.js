@@ -44,6 +44,7 @@ module.exports = async (
     apiUrl,
     localeFallbacks: rawLocaleFallbacks,
     pageSize,
+    logApiCalls,
   },
 ) => {
   const localeFallbacks = rawLocaleFallbacks || {};
@@ -63,13 +64,21 @@ module.exports = async (
     previewMode = true;
   }
 
-  const client = getClient({ apiToken, previewMode, environment, apiUrl });
+  const client = getClient({
+    apiToken,
+    previewMode,
+    environment,
+    apiUrl,
+    logApiCalls,
+  });
+
   const loader = getLoader({
     apiToken,
     previewMode,
     environment,
     apiUrl,
     pageSize,
+    logApiCalls,
   });
 
   const program = store.getState().program;
