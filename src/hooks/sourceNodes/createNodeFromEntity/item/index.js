@@ -54,11 +54,15 @@ module.exports = function buildItemNode(
             additionalNodesToCreate.push(textNode);
           });
 
-        const seoNode = buildNode(generateType('SeoMetaTags'), node.id, node => {
-          node.digest = entity.meta.updatedAt;
-          node.itemNodeId = `${type}-${entity.id}-${locale}`;
-          node.locale = locale;
-        });
+        const seoNode = buildNode(
+          generateType('SeoMetaTags'),
+          node.id,
+          node => {
+            node.digest = entity.meta.updatedAt;
+            node.itemNodeId = `${type}-${entity.id}-${locale}`;
+            node.locale = locale;
+          },
+        );
 
         additionalNodesToCreate.push(seoNode);
         node.seoMetaTags___NODE = seoNode.id;

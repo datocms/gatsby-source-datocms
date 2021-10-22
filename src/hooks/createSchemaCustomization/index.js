@@ -3,7 +3,7 @@ const { pascalize } = require('humps');
 const createNodeFromEntity = require('../sourceNodes/createNodeFromEntity');
 const destroyEntityNode = require('../sourceNodes/destroyEntityNode');
 const createTypes = require('../sourceNodes/createTypes');
-const { prefixId, CODES } = require('../../errorMap')
+const { prefixId, CODES } = require('../../errorMap');
 
 const { getLoader } = require('../../utils');
 
@@ -21,14 +21,14 @@ module.exports = async (
   const localeFallbacks = rawLocaleFallbacks || {};
 
   if (!apiToken) {
-    const errorText = `API token must be provided!`
+    const errorText = `API token must be provided!`;
     reporter.panic(
       {
         id: prefixId(CODES.MissingAPIToken),
-        context: {sourceMessage: errorText},
+        context: { sourceMessage: errorText },
       },
       new Error(errorText),
-    )
+    );
   }
 
   if (process.env.GATSBY_IS_PREVIEW === `true`) {
@@ -53,7 +53,7 @@ module.exports = async (
     schema,
     store,
     cacheDir,
-    generateType: (type) => {
+    generateType: type => {
       return `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`;
     },
   };

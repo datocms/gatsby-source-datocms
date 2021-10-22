@@ -81,7 +81,11 @@ module.exports = ({ cacheDir }) => {
     // be presented to the final user
 
     if (finalSize.height === image.height && finalSize.width == image.width) {
-      if (['FIXED', 'fixed'].includes(props.layout) && props.width && props.height) {
+      if (
+        ['FIXED', 'fixed'].includes(props.layout) &&
+        props.width &&
+        props.height
+      ) {
         // we give the source image the requested aspect ratio
         imgixParams.ar = `${props.width}:${props.height}`;
         imgixParams.fit = 'crop';

@@ -1,13 +1,12 @@
-
-const pluginPrefix = 'gatsby-source-datocms'
+const pluginPrefix = 'gatsby-source-datocms';
 
 function prefixId(id) {
-  return `${pluginPrefix}_${id}`
+  return `${pluginPrefix}_${id}`;
 }
 
 const ReporterLevel = {
   Error: 'ERROR',
-}
+};
 
 const ReporterCategory = {
   // Error caused by user (typically, site misconfiguration)
@@ -16,23 +15,23 @@ const ReporterCategory = {
   ThirdParty: 'THIRD_PARTY',
   // Error caused by Gatsby process
   System: 'SYSTEM',
-}
+};
 
 const CODES = {
   MissingAPIToken: '10000',
-}
+};
 
 const ERROR_MAP = {
-    [CODES.MissingAPIToken]: {
-      text: (context) => context.sourceMessage,
-      level: ReporterLevel.Error,
-      category: ReporterCategory.User,
-    },
-  }
+  [CODES.MissingAPIToken]: {
+    text: context => context.sourceMessage,
+    level: ReporterLevel.Error,
+    category: ReporterCategory.User,
+  },
+};
 
 module.exports = {
-    pluginPrefix,
-    CODES,
-    prefixId,
-    ERROR_MAP,
-}
+  pluginPrefix,
+  CODES,
+  prefixId,
+  ERROR_MAP,
+};

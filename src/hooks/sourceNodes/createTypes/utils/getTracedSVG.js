@@ -70,7 +70,9 @@ module.exports = async ({ src, width, height }, cacheDir) => {
     return result;
   } catch (e) {
     const content = fs.readFileSync(absolutePath, { encoding: 'base64' });
-    console.log(`Error generating traced SVG for "${url}": ${e.message}. Local file: ${absolutePath}, content: "${content}"`);
+    console.log(
+      `Error generating traced SVG for "${url}": ${e.message}. Local file: ${absolutePath}, content: "${content}"`,
+    );
     return null;
   }
 };

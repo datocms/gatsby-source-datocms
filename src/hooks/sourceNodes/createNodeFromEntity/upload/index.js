@@ -1,6 +1,9 @@
 const buildNode = require('../utils/buildNode');
 
-module.exports = function buildUploadNode(entity, { entitiesRepo, generateType }) {
+module.exports = function buildUploadNode(
+  entity,
+  { entitiesRepo, generateType },
+) {
   const siteEntity = entitiesRepo.findEntitiesOfType('site')[0];
   const imgixHost = `https://${siteEntity.imgixHost}`;
 

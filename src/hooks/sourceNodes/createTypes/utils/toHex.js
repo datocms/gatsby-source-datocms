@@ -7,4 +7,4 @@ module.exports = function toHex(parent) {
   return rgba[3] === 'ff'
     ? `#${rgba.slice(0, 3).join('')}`
     : `#${rgba.join('')}`;
-}
+};

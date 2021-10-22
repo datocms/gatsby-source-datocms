@@ -19,7 +19,8 @@ module.exports = () => ({
         ...upload,
         alt: fileField.alt || uploadDefaultFieldMetadata.alt,
         title: fileField.title || uploadDefaultFieldMetadata.title,
-        focalPoint: fileField.focal_point || uploadDefaultFieldMetadata.focal_point,
+        focalPoint:
+          fileField.focal_point || uploadDefaultFieldMetadata.focal_point,
         customData: {
           ...camelizeKeys(uploadDefaultFieldMetadata.custom_data),
           ...fileField.custom_data,

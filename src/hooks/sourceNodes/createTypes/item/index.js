@@ -27,7 +27,13 @@ const fieldResolvers = {
   video: simpleFieldReturnCamelizedKeys('DatoCmsVideoField'),
 };
 
-module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType }) => {
+module.exports = ({
+  entitiesRepo,
+  localeFallbacks,
+  actions,
+  schema,
+  generateType,
+}) => {
   const gqlItemTypeName = itemType => generateType(pascalize(itemType.apiKey));
 
   entitiesRepo.findEntitiesOfType('item_type').forEach(entity => {
@@ -136,7 +142,12 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
                             field.localized,
                             i18n,
                           );
-                          return resolveForNodeField(value, context, node, i18n);
+                          return resolveForNodeField(
+                            value,
+                            context,
+                            node,
+                            i18n,
+                          );
                         },
                       },
                     }
@@ -182,7 +193,12 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
             const parentId = node.entityPayload.attributes.parent_id;
             if (parentId) {
               return context.nodeModel.getNodeById({
-                id: itemNodeId(parentId, node.locale, entitiesRepo, generateType),
+                id: itemNodeId(
+                  parentId,
+                  node.locale,
+                  entitiesRepo,
+                  generateType,
+                ),
               });
             }
           },
@@ -190,7 +206,10 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
         treeChildren: {
           type: `[${type}]`,
           resolve: async (node, args, context) => {
-            const { entries: allItems } = await context.nodeModel.findAll({ type: type, query: {} });
+            const { entries: allItems } = await context.nodeModel.findAll({
+              type: type,
+              query: {},
+            });
 
             const children = allItems.filter(
               otherNode =>
@@ -236,7 +255,9 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
             type: generateType('Model'),
             resolve: (node, args, context) => {
               return context.nodeModel.getNodeById({
-                id: generateType(`Model-${node.entityPayload.relationships.item_type.data.id}`),
+                id: generateType(
+                  `Model-${node.entityPayload.relationships.item_type.data.id}`,
+                ),
               });
             },
           },

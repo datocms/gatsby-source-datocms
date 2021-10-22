@@ -1,6 +1,12 @@
 const { seoTagsBuilder, JsonApiEntity } = require('datocms-client');
 
-module.exports = ({ entitiesRepo, actions, schema, localeFallbacks, generateType }) => {
+module.exports = ({
+  entitiesRepo,
+  actions,
+  schema,
+  localeFallbacks,
+  generateType,
+}) => {
   actions.createTypes([
     schema.buildObjectType({
       name: generateType('SeoMetaTags'),

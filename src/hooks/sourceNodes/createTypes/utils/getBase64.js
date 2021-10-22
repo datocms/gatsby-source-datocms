@@ -40,7 +40,10 @@ function download(requestUrl, cacheDir) {
   return promises[key];
 }
 
-module.exports = async ({ forceBlurhash, format, src, width, height }, cacheDir) => {
+module.exports = async (
+  { forceBlurhash, format, src, width, height },
+  cacheDir,
+) => {
   const [baseUrl, query] = src.split('?');
 
   if (
