@@ -189,9 +189,8 @@ module.exports = ({ entitiesRepo, localeFallbacks, actions, schema, generateType
         },
         treeChildren: {
           type: `[${type}]`,
-          resolve: (node, args, context) => {
-            const allItems = context.nodeModel.getAllNodes({ type: type });
-
+          resolve: async (node, args, context) => {
+            const { entries: allItems } = await context.nodeModel.findAll({ type: type });
             const children = allItems.filter(
               otherNode =>
                 otherNode.entityPayload.attributes.parent_id ===
