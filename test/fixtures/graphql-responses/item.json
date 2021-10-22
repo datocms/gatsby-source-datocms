@@ -27,7 +27,7 @@
               "content": "Multiple paragraph text\n\n![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)\n\n\nFoo\n\n![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)\n"
             },
             "childMarkdownRemark": {
-              "html": "<p>Multiple paragraph text</p>\n<p><img src=\"https://www.datocms-assets.com/34723/1620629638-plant.jpeg\"></p>\n<p>Foo</p>\n<p><img src=\"https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg\"></p>",
+              "html": "<p>Multiple paragraph text</p>\n<p><img src=\"https://www.datocms-assets.com/34723/1620629638-plant.jpeg\" alt=\"\"></p>\n<p>Foo</p>\n<p><img src=\"https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg\" alt=\"\"></p>",
               "timeToRead": 1
             }
           }
@@ -53,7 +53,7 @@
           "content": "Multiple paragraph text\n\n![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)\n\n\nFoo\n\n![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)\n"
         },
         "childMarkdownRemark": {
-          "html": "<p>Multiple paragraph text</p>\n<p><img src=\"https://www.datocms-assets.com/34723/1620629638-plant.jpeg\"></p>\n<p>Foo</p>\n<p><img src=\"https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg\"></p>",
+          "html": "<p>Multiple paragraph text</p>\n<p><img src=\"https://www.datocms-assets.com/34723/1620629638-plant.jpeg\" alt=\"\"></p>\n<p>Foo</p>\n<p><img src=\"https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg\" alt=\"\"></p>",
           "timeToRead": 1
         }
       },
