@@ -2828,9 +2828,9 @@
   integrity sha512-p68+a+KoxpoB47015IeYZYRrdqMUcpbK8re/zpFB8Ld46LHC1lPEbp3EXgkEhAYEcPvjJF6ZO+869SQ0aH1dcA==
 
 "@types/node@>=10.0.0":
-  version "16.11.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.2.tgz#31c249c136c3f9b35d4b60fb8e50e01a1f0cc9a5"
-  integrity sha512-w34LtBB0OkDTs19FQHXy4Ig/TOXI4zqvXS2Kk1PAsRKZ0I+nik7LlMYxckW0tSNGtvWmzB+mrCTbuEjuB9DVsw==
+  version "16.11.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.3.tgz#fad0b069ec205b0e81429c805d306d2c12e26be1"
+  integrity sha512-aIYL9Eemcecs1y77XzFGiSc+FdfN58k4J23UEe6+hynf4Wd9g4DzQPwIKL080vSMuubFqy2hWwOzCtJdc6vFKw==
 
 "@types/node@^8.5.7":
   version "8.10.66"
@@ -6091,11 +6091,6 @@ eslint@^7.32.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-esm@^3.2.25:
-  version "3.2.25"
-  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
-  integrity sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
-
 espree@^7.3.0, espree@^7.3.1:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/espree/-/espree-7.3.1.tgz#f2df330b752c6f55019f8bd89b7660039c1bbbb6"
@@ -7069,7 +7064,7 @@ gatsby-worker@^1.0.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-"gatsby@^3.0.0 || ^4.0.0":
+gatsby@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.0.0.tgz#48dcff2986a109ef34feee4d2873f95c6580eb5b"
   integrity sha512-tLQ+8ppmRswnuSCMCElJYNTDKiwY89RQE/O85ETfeYVfFmGOKdgY1u/q85QFbGrY2+pkf5ZVaWd206u0jEMOhw==
@@ -10265,9 +10260,9 @@ node-fetch@^2.6.5:
     whatwg-url "^5.0.0"
 
 node-gyp-build@^4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.2.3.tgz#ce6277f853835f718829efb47db20f3e4d9c4739"
-  integrity sha512-MN6ZpzmfNCRM+3t57PTJHgHyw/h4OWnZ6mR8P5j/uZtqQr46RRuDE/P+g3n0YR/AiYXeWixZZzaip77gdICfRg==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.3.0.tgz#9f256b03e5826150be39c764bf51e993946d71a3"
+  integrity sha512-iWjXZvmboq0ja1pUGULQBexmxq8CV4xBhX7VDOTbL7ZR4FOowwY/VOtRxBN/yKxmdGoIp4j5ysNT4u3S2pDQ3Q==
 
 node-object-hash@^2.3.9:
   version "2.3.10"
@@ -10684,11 +10679,9 @@ ora@4.0.3:
     wcwidth "^1.0.1"
 
 ordered-binary@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ordered-binary/-/ordered-binary-1.1.0.tgz#3ee17fc612f32df72c0db70048f463650cf2ec75"
-  integrity sha512-ZCES27KVhWfm/k/R6sXcC0zRyNl/XHOWSPDMPxkImeUGZ2JAlc2uTWMi9RsmTD8TNbVQJbttzrta1oXPS+Nu4A==
-  dependencies:
-    esm "^3.2.25"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/ordered-binary/-/ordered-binary-1.1.3.tgz#11dbc0a4cb7f8248183b9845e031b443be82571e"
+  integrity sha512-tDTls+KllrZKJrqRXUYJtIcWIyoQycP7cVN7kzNNnhHKF2bMKHflcAQK+pF2Eb1iVaQodHxqZQr0yv4HWLGBhQ==
 
 org-regex@^1.0.0:
   version "1.0.0"
@@ -14264,11 +14257,9 @@ wcwidth@^1.0.1:
     defaults "^1.0.3"
 
 weak-lru-cache@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/weak-lru-cache/-/weak-lru-cache-1.1.0.tgz#4d707a1d7575f48149e5387d7a89e0565320c32e"
-  integrity sha512-Z7oN8OXQRYVB+ElsIQLw4ntkMnwxpYefO3umpbtOKp841s9De0F4UFIh9bDK6rgcPz7KAJ2p4mraE9nvWBA73g==
-  dependencies:
-    esm "^3.2.25"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/weak-lru-cache/-/weak-lru-cache-1.1.3.tgz#8a691884501b611d2b5aeac1ee5a011b2a97d9a8"
+  integrity sha512-5LDIv+sr6uzT94Hhcq7Qv7gt3jxol4iMWUqOgJSLYbB5oO7bTSMqIBtKsytm8N2BufYOdJw86/qu+SDfbo/wKQ==
 
 web-namespaces@^1.0.0:
   version "1.1.4"
