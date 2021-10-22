@@ -40,7 +40,7 @@ function getLoader(options) {
     getClient({ apiToken, apiUrl, environment }),
     (GATSBY_CLOUD && GATSBY_EXECUTING_COMMAND === 'develop') || previewMode,
     environment,
-    { pageSize: pageSize || 500 },
+    { pageSize },
   );
 
   loaders[key] = loader;
