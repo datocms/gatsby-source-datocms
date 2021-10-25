@@ -40,8 +40,6 @@ module.exports = async (
     );
   }
 
-  console.log('====== CREO TIPI =======');
-
   const loader = getLoader({
     cache,
     apiToken,

@@ -54,7 +54,7 @@ function getLoader({ cache, loadStateFromCache, ...options }) {
   const loader = new Loader(...loaderArgs);
 
   if (loadStateFromCache) {
-    hit = loader.loadStateFromCache(cache);
+    loader.loadStateFromCache(cache);
   }
 
   loaders[key] = loader;

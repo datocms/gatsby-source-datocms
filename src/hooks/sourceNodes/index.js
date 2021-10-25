@@ -61,8 +61,6 @@ module.exports = async (
     );
   }
 
-  console.log('====== CREO NODI =======');
-
   const loader = getLoader({
     cache,
     apiToken,
