@@ -10,7 +10,7 @@ const GATSBY_EXECUTING_COMMAND = process.env.gatsby_executing_command;
 
 const loaders = {};
 
-function getLoader({ cache, loadStateFromCache, ...options }) {
+async function getLoader({ cache, loadStateFromCache, ...options }) {
   const {
     apiToken,
     apiUrl,
@@ -54,7 +54,7 @@ function getLoader({ cache, loadStateFromCache, ...options }) {
   const loader = new Loader(...loaderArgs);
 
   if (loadStateFromCache) {
-    loader.loadStateFromCache(cache);
+    await loader.loadStateFromCache(cache);
   }
 
   loaders[key] = loader;

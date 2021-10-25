@@ -61,7 +61,7 @@ module.exports = async (
     );
   }
 
-  const loader = getLoader({
+  const loader = await getLoader({
     cache,
     apiToken,
     previewMode,
@@ -246,6 +246,7 @@ module.exports = async (
 
   if (!process.env.GATSBY_WORKER_ID) {
     await loader.load();
+    await loader.saveStateToCache(cache);
   }
 
   activity.end();
