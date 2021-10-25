@@ -12,7 +12,7 @@ const {
   isBlock,
 } = require('datocms-structured-text-utils');
 
-const { getClient, getLoader } = require('../../utils');
+const { getLoader } = require('../../utils');
 
 const findAll = (document, predicate) => {
   const result = [];
@@ -34,6 +34,7 @@ module.exports = async (
     schema,
     store,
     webhookBody,
+    cache,
   },
   {
     apiToken,
@@ -60,25 +61,17 @@ module.exports = async (
     );
   }
 
-  if (process.env.GATSBY_IS_PREVIEW === `true`) {
-    previewMode = true;
-  }
-
-  const client = getClient({
-    apiToken,
-    previewMode,
-    environment,
-    apiUrl,
-    logApiCalls,
-  });
+  console.log('====== CREO NODI =======');
 
   const loader = getLoader({
+    cache,
     apiToken,
     previewMode,
     environment,
     apiUrl,
     pageSize,
     logApiCalls,
+    loadStateFromCache: !!process.env.GATSBY_WORKER_ID,
   });
 
   const program = store.getState().program;
@@ -121,7 +114,7 @@ module.exports = async (
           event_type === `update` ||
           event_type === 'create'
         ) {
-          const payload = await client.items.all(
+          const payload = await loader.client.items.all(
             {
               'filter[ids]': [entity_id].join(','),
               version: previewMode ? 'draft' : 'published',
@@ -191,7 +184,7 @@ module.exports = async (
               new Set(),
             );
 
-            const linkedEntitiesPayload = await client.items.all(
+            const linkedEntitiesPayload = await loader.client.items.all(
               {
                 'filter[ids]': Array.from(linkedEntitiesIdsToFetch).join(','),
                 version: previewMode ? 'draft' : 'published',
@@ -216,7 +209,7 @@ module.exports = async (
 
       case 'upload':
         if (event_type === 'create' || event_type === `update`) {
-          const payload = await client.uploads.all(
+          const payload = await loader.client.uploads.all(
             {
               'filter[ids]': [entity_id].join(','),
               version: previewMode ? 'draft' : 'published',
@@ -253,7 +246,9 @@ module.exports = async (
     destroyEntityNode(entity, context);
   });
 
-  await loader.load();
+  if (!process.env.GATSBY_WORKER_ID) {
+    await loader.load();
+  }
 
   activity.end();
 

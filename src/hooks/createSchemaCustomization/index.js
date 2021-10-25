@@ -6,7 +6,16 @@ const { prefixId, CODES } = require('../../errorMap');
 const { getLoader } = require('../../utils');
 
 module.exports = async (
-  { actions, getNode, getNodesByType, reporter, parentSpan, schema, store },
+  {
+    actions,
+    getNode,
+    getNodesByType,
+    reporter,
+    parentSpan,
+    schema,
+    store,
+    cache,
+  },
   {
     apiToken,
     previewMode,
@@ -31,17 +40,17 @@ module.exports = async (
     );
   }
 
-  if (process.env.GATSBY_IS_PREVIEW === `true`) {
-    previewMode = true;
-  }
+  console.log('====== CREO TIPI =======');
 
   const loader = getLoader({
+    cache,
     apiToken,
     previewMode,
     environment,
     apiUrl,
     pageSize,
     logApiCalls,
+    loadStateFromCache: !!process.env.GATSBY_WORKER_ID,
   });
 
   const program = store.getState().program;
@@ -73,7 +82,9 @@ module.exports = async (
 
   activity.start();
 
-  await loader.loadSchemaWithinEnvironment();
+  if (!process.env.GATSBY_WORKER_ID) {
+    await loader.loadSchema();
+  }
 
   activity.end();
 

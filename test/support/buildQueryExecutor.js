@@ -10,7 +10,6 @@ module.exports = async function buildQueryExecutor(apiToken) {
     path.join(__dirname, '../fixtures/sample-gatsby-structure'),
   );
   rimraf.sync(path.join(gatsbyProjectPath, './.cache'));
-  console.log(path.join(gatsbyProjectPath, './.cache'));
 
   process.chdir(gatsbyProjectPath);
 

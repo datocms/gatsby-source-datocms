@@ -8,16 +8,17 @@ const CLIENT_HEADERS = {
 const GATSBY_CLOUD = process.env.GATSBY_CLOUD;
 const GATSBY_EXECUTING_COMMAND = process.env.gatsby_executing_command;
 
-const clients = {};
 const loaders = {};
 
-function getClient(options) {
-  const { apiToken, apiUrl, environment, logApiCalls } = options;
-  const key = JSON.stringify({ apiToken, apiUrl, environment, logApiCalls });
-
-  if (clients[key]) {
-    return clients[key];
-  }
+function getLoader({ cache, loadStateFromCache, ...options }) {
+  const {
+    apiToken,
+    apiUrl,
+    environment,
+    logApiCalls,
+    pageSize,
+    previewMode: rawPreviewMode,
+  } = options;
 
   const clientOptions = {
     headers: CLIENT_HEADERS,
@@ -35,41 +36,26 @@ function getClient(options) {
     clientOptions.logApiCalls = logApiCalls;
   }
 
-  const client = new SiteClient(apiToken, clientOptions);
-
-  clients[key] = client;
-
-  return client;
-}
-
-function getLoader(options) {
-  const {
-    apiToken,
-    apiUrl,
-    previewMode,
+  const loaderArgs = [
+    [apiToken, clientOptions],
+    (GATSBY_CLOUD && GATSBY_EXECUTING_COMMAND === 'develop') ||
+      process.env.GATSBY_IS_PREVIEW === `true` ||
+      rawPreviewMode,
     environment,
-    pageSize,
-    logApiCalls,
-  } = options;
-  const key = JSON.stringify({
-    apiToken,
-    apiUrl,
-    previewMode,
-    environment,
-    pageSize,
-    logApiCalls,
-  });
+    { pageSize },
+  ];
+
+  const key = JSON.stringify(loaderArgs);
 
   if (loaders[key]) {
     return loaders[key];
   }
 
-  const loader = new Loader(
-    getClient({ apiToken, apiUrl, environment, logApiCalls }),
-    (GATSBY_CLOUD && GATSBY_EXECUTING_COMMAND === 'develop') || previewMode,
-    environment,
-    { pageSize },
-  );
+  const loader = new Loader(...loaderArgs);
+
+  if (loadStateFromCache) {
+    hit = loader.loadStateFromCache(cache);
+  }
 
   loaders[key] = loader;
 
@@ -77,6 +63,5 @@ function getLoader(options) {
 }
 
 module.exports = {
-  getClient,
   getLoader,
 };
