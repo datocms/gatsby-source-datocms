@@ -5,9 +5,6 @@ const CLIENT_HEADERS = {
   'X-SSG': 'gatsby',
 };
 
-const GATSBY_CLOUD = process.env.GATSBY_CLOUD;
-const GATSBY_EXECUTING_COMMAND = process.env.gatsby_executing_command;
-
 const loaders = {};
 
 async function getLoader({ cache, loadStateFromCache, ...options }) {
@@ -17,7 +14,7 @@ async function getLoader({ cache, loadStateFromCache, ...options }) {
     environment,
     logApiCalls,
     pageSize,
-    previewMode: rawPreviewMode,
+    previewMode,
   } = options;
 
   const clientOptions = {
@@ -38,9 +35,7 @@ async function getLoader({ cache, loadStateFromCache, ...options }) {
 
   const loaderArgs = [
     [apiToken, clientOptions],
-    (GATSBY_CLOUD && GATSBY_EXECUTING_COMMAND === 'develop') ||
-      process.env.GATSBY_IS_PREVIEW === `true` ||
-      rawPreviewMode,
+    previewMode,
     environment,
     { pageSize },
   ];

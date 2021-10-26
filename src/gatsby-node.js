@@ -2,11 +2,26 @@ require('core-js/stable');
 require('regenerator-runtime/runtime');
 const { ERROR_MAP } = require('./errorMap');
 
+const withForcedPreviewMode = hook => {
+  return (context, options) => {
+    return hook(context, {
+      ...options,
+      previewMode:
+        (process.env.GATSBY_CLOUD &&
+          process.env.gatsby_executing_command === 'develop') ||
+        process.env.GATSBY_IS_PREVIEW === `true` ||
+        options.previewMode,
+    });
+  };
+};
+
 const createSchemaCustomization = require('./hooks/createSchemaCustomization');
-exports.createSchemaCustomization = createSchemaCustomization;
+exports.createSchemaCustomization = withForcedPreviewMode(
+  createSchemaCustomization,
+);
 
 const sourceNodes = require('./hooks/sourceNodes');
-exports.sourceNodes = sourceNodes;
+exports.sourceNodes = withForcedPreviewMode(sourceNodes);
 
 let onPluginInitSupported = false;
 
@@ -34,7 +49,7 @@ if (onPluginInitSupported === 'stable') {
   exports.unstable_onPluginInit = onPluginInit;
 }
 
-exports.onPreInit = async ({ reporter }, {}) => {
+exports.onPreInit = async ({ reporter }) => {
   // onPluginInit replaces onPreInit in Gatsby V4
   // old versions of Gatsby does not have the method setErrorMap
   if (!onPluginInitSupported && reporter.setErrorMap) {
