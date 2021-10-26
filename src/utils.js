@@ -84,7 +84,7 @@ const datocmsCreateNodeManifest = ({ node, context }) => {
       // manifests than we actually need
       if (!nodeWasRecentlyUpdated) return;
 
-      const manifestId = `${node?.entityPayload?.id}-${node.entityPayload.meta.updated_at}`;
+      const manifestId = `${node.entityPayload.id}-${node.entityPayload.meta.updated_at}`;
 
       console.info(`DatoCMS: Creating node manifest with id ${manifestId}`);
 
