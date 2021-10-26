@@ -4,6 +4,8 @@ const buildUploadNode = require('./upload');
 const buildItemNode = require('./item');
 const buildSiteNode = require('./site');
 
+const { datocmsCreateNodeManifest } = require('../../../utils');
+
 const BUILDERS = {
   item_type: buildItemTypeNode,
   field: buildFieldNode,
@@ -23,5 +25,11 @@ module.exports = (entity, context) => {
 
   nodesToCreate.map(node => {
     context.actions.createNode(node);
+    if (context.previewMode) {
+      datocmsCreateNodeManifest({
+        node,
+        context,
+      });
+    }
   });
 };

@@ -80,6 +80,7 @@ module.exports = async (
     schema,
     store,
     cache,
+    previewMode,
     generateType: type =>
       `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`,
   };
