@@ -58,6 +58,7 @@ async function getLoader({ cache, loadStateFromCache, ...options }) {
 }
 
 const FORTY_EIGHT_HOURS = 1000 * 60 * 60 * 48; // ms * sec * min * hr
+let onlyLogWarningOnce;
 
 const datocmsCreateNodeManifest = ({ node, context }) => {
   try {
@@ -91,10 +92,11 @@ const datocmsCreateNodeManifest = ({ node, context }) => {
         manifestId,
         node,
       });
-    } else if (!createNodeManifestIsSupported) {
+    } else if (!createNodeManifestIsSupported && !onlyLogWarningOnce) {
       console.warn(
         `DatoCMS: Your version of Gatsby core doesn't support Content Sync (via the unstable_createNodeManifest action). Please upgrade to the latest version to use Content Sync in your site.`,
       );
+      onlyLogWarningOnce = true;
     }
   } catch (e) {
     console.info(`Cannot create node manifest`, e.message);
