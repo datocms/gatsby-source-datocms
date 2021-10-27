@@ -694,6 +694,11 @@ Suite('multiple instances', async () => {
               originalId
               id
               name
+              seo {
+                image {
+                  path
+                }
+              }
               seoMetaTags {
                 __typename
                 tags

@@ -2,14 +2,14 @@ const { camelizeKeys } = require('humps');
 
 module.exports = () => ({
   type: '[DatoCmsFileField]',
-  resolveForSimpleField: (fieldValue, context, node) => {
+  resolveForSimpleField: (fieldValue, context, node, i18n, generateType) => {
     if (!fieldValue) {
       return null;
     }
 
     return fieldValue.map(fileField => {
       const upload = context.nodeModel.getNodeById({
-        id: `DatoCmsAsset-${fileField.upload_id}`,
+        id: `${generateType('Asset')}-${fileField.upload_id}`,
       });
 
       const uploadDefaultFieldMetadata =

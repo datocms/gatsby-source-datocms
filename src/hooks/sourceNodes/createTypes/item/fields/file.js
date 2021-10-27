@@ -17,13 +17,13 @@ function localizedDefaultFieldMetadata(metadata, attribute, i18n) {
 
 module.exports = () => ({
   type: 'DatoCmsFileField',
-  resolveForSimpleField: (fieldValue, context, node, i18n) => {
+  resolveForSimpleField: (fieldValue, context, node, i18n, generateType) => {
     if (!fieldValue) {
       return null;
     }
 
     const upload = context.nodeModel.getNodeById({
-      id: `DatoCmsAsset-${fieldValue.upload_id}`,
+      id: `${generateType('Asset')}-${fieldValue.upload_id}`,
     });
 
     const defaultAlt = localizedDefaultFieldMetadata(
