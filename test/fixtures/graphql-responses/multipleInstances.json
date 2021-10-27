@@ -6,7 +6,10 @@
       "originalId": "34723",
       "name": "Kitchen Sink",
       "locale": "en",
-      "locales": ["en", "it"],
+      "locales": [
+        "en",
+        "it"
+      ],
       "domain": null,
       "internalDomain": "kitchen-sink.admin.datocms.com",
       "noIndex": false,
