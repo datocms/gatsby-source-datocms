@@ -10,8 +10,8 @@ let executeQuery;
 Suite.before(async () => {
   try {
     executeQuery = await buildQueryExecutor('bb260a9bf12cccf24392dc68209a42');
-  } catch(e) {
-    console.log("ERROR", e);
+  } catch (e) {
+    console.log('ERROR', e);
     throw e;
   }
 });
@@ -640,10 +640,7 @@ Suite('items', async () => {
     },
   });
 
-  assertGraphQLResponseEqualToSnapshot(
-    'structuredTextRender',
-    output,
-  );
+  assertGraphQLResponseEqualToSnapshot('structuredTextRender', output);
 });
 
 Suite('multiple instances', async () => {
