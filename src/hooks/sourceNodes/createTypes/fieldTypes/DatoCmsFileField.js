@@ -1,12 +1,12 @@
 const buildAssetFields = require('../utils/buildAssetFields');
 
-module.exports = ({ actions, schema, cacheDir }) => {
+module.exports = ({ actions, schema, cache }) => {
   actions.createTypes([
     schema.buildObjectType({
       name: 'DatoCmsFileField',
       extensions: { infer: false },
       fields: {
-        ...buildAssetFields({ cacheDir }),
+        ...buildAssetFields({ cache }),
         alt: 'String',
         title: 'String',
         customData: 'JSON',

@@ -1,4 +1,3 @@
-const fs = require('fs-extra');
 const createNodeFromEntity = require('./createNodeFromEntity');
 const destroyEntityNode = require('./destroyEntityNode');
 const { prefixId, CODES } = require('../../errorMap');
@@ -72,13 +71,6 @@ module.exports = async (
     loadStateFromCache: !!process.env.GATSBY_WORKER_ID,
   });
 
-  const program = store.getState().program;
-  const cacheDir = `${program.directory}/.cache/datocms-assets`;
-
-  if (!fs.existsSync(cacheDir)) {
-    fs.mkdirSync(cacheDir);
-  }
-
   const context = {
     entitiesRepo: loader.entitiesRepo,
     actions,
@@ -87,7 +79,7 @@ module.exports = async (
     localeFallbacks,
     schema,
     store,
-    cacheDir,
+    cache,
     generateType: type =>
       `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`,
   };

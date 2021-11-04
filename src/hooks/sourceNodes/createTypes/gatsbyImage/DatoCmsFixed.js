@@ -1,7 +1,7 @@
 const getBase64 = require('../utils/getBase64');
 const getTracedSVG = require('../utils/getTracedSVG');
 
-module.exports = ({ actions, schema, store, cacheDir }) => {
+module.exports = ({ actions, schema, store, cache }) => {
   actions.createTypes([
     schema.buildObjectType({
       name: 'DatoCmsFixed',
@@ -9,11 +9,11 @@ module.exports = ({ actions, schema, store, cacheDir }) => {
       fields: {
         base64: {
           type: 'String',
-          resolve: image => getBase64(image, cacheDir),
+          resolve: image => getBase64(image, cache),
         },
         tracedSVG: {
           type: 'String',
-          resolve: image => getTracedSVG(image, cacheDir),
+          resolve: image => getTracedSVG(image, cache),
         },
         aspectRatio: 'Float',
         width: 'Int!',

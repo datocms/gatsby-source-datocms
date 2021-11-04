@@ -36,7 +36,7 @@ const generateImageSource = (
   return { src, width, height, format };
 };
 
-module.exports = ({ cacheDir }) => {
+module.exports = ({ cache }) => {
   let gatsbyPluginImageFound = false;
 
   try {
@@ -135,14 +135,11 @@ module.exports = ({ cacheDir }) => {
     if (placeholder === 'DOMINANT_COLOR') {
       otherProps.backgroundColor = image.colors[0] && toHex(image.colors[0]);
     } else if (placeholder === 'BLURRED') {
-      otherProps.placeholderURL = await getBase64(
-        placeholderImageData,
-        cacheDir,
-      );
+      otherProps.placeholderURL = await getBase64(placeholderImageData, cache);
     } else if (placeholder === 'TRACED_SVG') {
       otherProps.placeholderURL = await getTracedSVG(
         placeholderImageData,
-        cacheDir,
+        cache,
       );
     }
 
