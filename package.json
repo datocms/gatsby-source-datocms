@@ -45,6 +45,7 @@
     "imgix-url-params": ">=11.11.2",
     "json-stringify-safe": ">=5.0.1",
     "lodash.uniq": "^4.5.0",
+    "md5": "^2.3.0",
     "object-assign": "^4.1.1",
     "object.entries": "^1.1.3",
     "promise-queue": "2.2.5",

@@ -1,5 +1,5 @@
-const fs = require('fs/promises');
 const path = require('path');
+const md5 = require('md5');
 const resizeUrl = require('./resizeUrl');
 const { fetchRemoteFile } = require('gatsby-core-utils');
 
@@ -28,7 +28,7 @@ module.exports = async ({ src, width, height }, cache) => {
     const result = await traceSVG({
       file: {
         internal: {
-          contentDigest: absolutePath,
+          contentDigest: md5(url),
         },
         name,
         extension,
@@ -37,9 +37,9 @@ module.exports = async ({ src, width, height }, cache) => {
       args: { toFormat: '' },
       fileArgs: {},
     });
+
     return result;
   } catch (e) {
-    const content = fs.readFileSync(absolutePath, { encoding: 'base64' });
     console.log(
       `Error generating traced SVG for "${url}": ${e.message}. Local file: ${absolutePath}, content: "${content}"`,
     );
