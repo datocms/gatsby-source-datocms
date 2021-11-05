@@ -5,28 +5,6 @@ const simpleField = require('./fields/simpleField');
 const simpleFieldReturnCamelizedKeys = require('./fields/simpleFieldReturnCamelizedKeys');
 const itemNodeId = require('../utils/itemNodeId');
 
-const fieldResolvers = {
-  boolean: simpleField('Boolean'),
-  color: simpleField('DatoCmsColorField'),
-  date: require('./fields/date'),
-  date_time: require('./fields/date'),
-  file: require('./fields/file'),
-  float: simpleField('Float'),
-  gallery: require('./fields/gallery'),
-  integer: simpleField('Int'),
-  json: simpleField('JSON'),
-  lat_lon: simpleField('DatoCmsLatLonField'),
-  link: require('./fields/link'),
-  links: require('./fields/richText'),
-  rich_text: require('./fields/richText'),
-  structured_text: require('./fields/structuredText'),
-  seo: simpleFieldReturnCamelizedKeys('DatoCmsSeoField'),
-  slug: simpleField('String'),
-  string: simpleField('String'),
-  text: require('./fields/text'),
-  video: simpleFieldReturnCamelizedKeys('DatoCmsVideoField'),
-};
-
 module.exports = ({
   entitiesRepo,
   localeFallbacks,
@@ -34,6 +12,28 @@ module.exports = ({
   schema,
   generateType,
 }) => {
+  const fieldResolvers = {
+    boolean: simpleField('Boolean'),
+    color: simpleField('DatoCmsColorField'),
+    date: require('./fields/date'),
+    date_time: require('./fields/date'),
+    file: require('./fields/file'),
+    float: simpleField('Float'),
+    gallery: require('./fields/gallery'),
+    integer: simpleField('Int'),
+    json: simpleField('JSON'),
+    lat_lon: simpleField('DatoCmsLatLonField'),
+    link: require('./fields/link'),
+    links: require('./fields/richText'),
+    rich_text: require('./fields/richText'),
+    structured_text: require('./fields/structuredText'),
+    seo: simpleFieldReturnCamelizedKeys(generateType('SeoField')),
+    slug: simpleField('String'),
+    string: simpleField('String'),
+    text: require('./fields/text'),
+    video: simpleFieldReturnCamelizedKeys('DatoCmsVideoField'),
+  };
+
   const gqlItemTypeName = itemType => generateType(pascalize(itemType.apiKey));
 
   entitiesRepo.findEntitiesOfType('item_type').forEach(entity => {
@@ -73,7 +73,13 @@ module.exports = ({
                 field.localized,
                 i18n,
               );
-              return resolveForSimpleField(value, context, node, i18n);
+              return resolveForSimpleField(
+                value,
+                context,
+                node,
+                i18n,
+                generateType,
+              );
             },
           },
         });
@@ -93,7 +99,13 @@ module.exports = ({
                   field.localized,
                   i18n,
                 );
-                return resolveForNodeField(value, context, node, i18n);
+                return resolveForNodeField(
+                  value,
+                  context,
+                  node,
+                  i18n,
+                  generateType,
+                );
               },
             },
           });
@@ -124,7 +136,13 @@ module.exports = ({
                       field.localized,
                       i18n,
                     );
-                    return resolveForSimpleField(value, context, node, i18n);
+                    return resolveForSimpleField(
+                      value,
+                      context,
+                      node,
+                      i18n,
+                      generateType,
+                    );
                   },
                 },
                 ...(nodeType
@@ -147,6 +165,7 @@ module.exports = ({
                             context,
                             node,
                             i18n,
+                            generateType,
                           );
                         },
                       },

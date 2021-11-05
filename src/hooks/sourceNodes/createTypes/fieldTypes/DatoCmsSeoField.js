@@ -1,18 +1,18 @@
-module.exports = ({ actions, schema }) => {
+module.exports = ({ actions, schema, generateType }) => {
   actions.createTypes([
     schema.buildObjectType({
-      name: 'DatoCmsSeoField',
+      name: generateType('SeoField'),
       extensions: { infer: false },
       fields: {
         title: 'String',
         description: 'String',
         twitterCard: 'String',
         image: {
-          type: 'DatoCmsAsset',
+          type: generateType('Asset'),
           resolve: (fieldValue, args, context) => {
             if (fieldValue && fieldValue.image) {
               return context.nodeModel.getNodeById({
-                id: `DatoCmsAsset-${fieldValue.image}`,
+                id: `${generateType('Asset')}-${fieldValue.image}`,
               });
             }
           },

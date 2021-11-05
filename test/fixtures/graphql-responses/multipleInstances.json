@@ -38,25 +38,51 @@
           "originalId": "24502153",
           "id": "DatoCmsAlternativeArticle-24502153-en",
           "name": "Test",
+          "seo": {
+            "image": {
+              "path": "/34723/1615803363-structured-text.png"
+            }
+          },
           "seoMetaTags": {
             "__typename": "DatoCmsAlternativeSeoMetaTags",
             "tags": [
               {
                 "tagName": "title",
-                "content": "Test"
+                "content": "Alternate title"
               },
               {
                 "tagName": "meta",
                 "attributes": {
                   "property": "og:title",
-                  "content": "Test"
+                  "content": "Alternate title"
                 }
               },
               {
                 "tagName": "meta",
                 "attributes": {
                   "name": "twitter:title",
-                  "content": "Test"
+                  "content": "Alternate title"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "description",
+                  "content": "Alt description"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:description",
+                  "content": "Alt description"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "twitter:description",
+                  "content": "Alt description"
                 }
               },
               {
@@ -70,7 +96,7 @@
                 "tagName": "meta",
                 "attributes": {
                   "property": "article:modified_time",
-                  "content": "2021-03-15T10:16:31Z"
+                  "content": "2021-10-27T07:21:34Z"
                 }
               },
               {
@@ -118,25 +144,51 @@
           "originalId": "24502153",
           "id": "DatoCmsAlternativeArticle-24502153-it",
           "name": "Test",
+          "seo": {
+            "image": {
+              "path": "/34723/1615803363-structured-text.png"
+            }
+          },
           "seoMetaTags": {
             "__typename": "DatoCmsAlternativeSeoMetaTags",
             "tags": [
               {
                 "tagName": "title",
-                "content": "Test"
+                "content": "Alternate title"
               },
               {
                 "tagName": "meta",
                 "attributes": {
                   "property": "og:title",
-                  "content": "Test"
+                  "content": "Alternate title"
                 }
               },
               {
                 "tagName": "meta",
                 "attributes": {
                   "name": "twitter:title",
-                  "content": "Test"
+                  "content": "Alternate title"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "description",
+                  "content": "Alt description"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:description",
+                  "content": "Alt description"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "name": "twitter:description",
+                  "content": "Alt description"
                 }
               },
               {
@@ -150,7 +202,7 @@
                 "tagName": "meta",
                 "attributes": {
                   "property": "article:modified_time",
-                  "content": "2021-03-15T10:16:31Z"
+                  "content": "2021-10-27T07:21:34Z"
                 }
               },
               {
