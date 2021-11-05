@@ -1,5 +1,5 @@
 module.exports = () => ({
   type: 'Date',
-  extensions: { dateformat: {}, proxy: {} },
+  extensions: { dateformat: {} },
   resolveForSimpleField: value => value,
 });

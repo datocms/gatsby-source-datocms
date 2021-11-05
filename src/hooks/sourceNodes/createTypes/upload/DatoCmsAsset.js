@@ -1,12 +1,12 @@
 const buildAssetFields = require('../utils/buildAssetFields');
 
-module.exports = ({ actions, schema, store, cacheDir, generateType }) => {
+module.exports = ({ actions, schema, store, cache, generateType }) => {
   actions.createTypes([
     schema.buildObjectType({
       name: generateType('Asset'),
       extensions: { infer: false },
       fields: {
-        ...buildAssetFields({ cacheDir }),
+        ...buildAssetFields({ cache }),
       },
       interfaces: ['Node'],
     }),

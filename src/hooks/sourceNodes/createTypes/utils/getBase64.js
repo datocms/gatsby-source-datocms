@@ -1,48 +1,22 @@
-const Queue = require('promise-queue');
-const fs = require('fs-extra');
+const fs = require('fs/promises');
 const path = require('path');
-const md5 = require('md5');
-const got = require('got');
 const resizeUrl = require('./resizeUrl');
 const queryString = require('query-string');
+const { fetchRemoteFile } = require('gatsby-core-utils');
 
-const queue = new Queue(10, Infinity);
-const promises = {};
-
-function download(requestUrl, cacheDir) {
-  const cacheFile = path.join(cacheDir, md5(requestUrl));
-
-  if (fs.existsSync(cacheFile)) {
-    const body = fs.readFileSync(cacheFile, 'utf8');
-    return Promise.resolve(body);
-  }
-
-  const key = JSON.stringify({ requestUrl, cacheFile });
-
-  if (promises[key]) {
-    return promises[key];
-  }
-
-  promises[key] = queue.add(() => {
-    return got(encodeURI(requestUrl), {
-      encoding: 'base64',
-      retry: {
-        limit: 5,
-      },
-    }).then(res => {
-      const data =
-        'data:' + res.headers['content-type'] + ';base64,' + res.body;
-      fs.writeFileSync(cacheFile, data, 'utf8');
-      return data;
-    });
-  });
-
-  return promises[key];
+async function download(url, cache) {
+  const absolutePath = await fetchRemoteFile({ url, cache });
+  const base64 = (await fs.readFile(absolutePath)).toString(`base64`);
+  const extension = path
+    .extname(absolutePath)
+    .split('.')
+    .pop();
+  return `data:image/${extension};base64,${base64}`;
 }
 
 module.exports = async (
   { forceBlurhash, format, src, width, height },
-  cacheDir,
+  cache,
 ) => {
   const [baseUrl, query] = src.split('?');
 
@@ -53,7 +27,7 @@ module.exports = async (
     const url = resizeUrl({ url: src, width, height }, 20);
 
     try {
-      const result = await download(url, cacheDir);
+      const result = await download(url, cache);
       return result;
     } catch (e) {
       console.log(
@@ -69,7 +43,7 @@ module.exports = async (
   const url = `${baseUrl}?${queryString.stringify(imgixParams)}`;
 
   try {
-    const result = await download(url, cacheDir);
+    const result = await download(url, cache);
     return result;
   } catch (e) {
     console.log(

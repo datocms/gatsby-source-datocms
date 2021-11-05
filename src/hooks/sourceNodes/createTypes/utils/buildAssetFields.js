@@ -18,7 +18,7 @@ const resolveUsingEntityPayloadAttribute = (
   },
 });
 
-module.exports = function({ cacheDir }) {
+module.exports = function({ cache }) {
   return {
     size: resolveUsingEntityPayloadAttribute('size', { type: 'Int' }),
     width: resolveUsingEntityPayloadAttribute('width', { type: 'Int' }),
@@ -75,7 +75,7 @@ module.exports = function({ cacheDir }) {
     },
     createdAt: resolveUsingEntityPayloadAttribute('created_at', {
       type: 'Date',
-      extensions: { dateformat: {}, proxy: {} },
+      extensions: { dateformat: {} },
     }),
     video: {
       type: 'DatoCmsAssetVideo',
@@ -89,6 +89,6 @@ module.exports = function({ cacheDir }) {
     },
     ...buildFluidFields(),
     ...buildFixedFields(),
-    ...buildGatsbyImageDataFields({ cacheDir }),
+    ...buildGatsbyImageDataFields({ cache }),
   };
 };
