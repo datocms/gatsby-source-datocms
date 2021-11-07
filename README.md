@@ -39,9 +39,9 @@ npm install --save gatsby-source-datocms gatsby-plugin-image
 
 PS. If you're on a Gatsby v2 project, please use version "^2.6.17" of this package.
 
-## Sample project
+## Sample projects
 
-We've prepared a [sample Gatsby project](https://github.com/datocms/gatsby-portfolio) for you!
+We've prepared several projects for you: [portfolio](https://github.com/datocms/gatsby-portfolio), [blog](https://github.com/datocms/gatsby-blog-demo), [snipcart](https://github.com/datocms/snipcart-gatsby-demo)
 
 ## How to use
 
