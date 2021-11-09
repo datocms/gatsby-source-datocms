@@ -86,8 +86,6 @@ const datocmsCreateNodeManifest = ({ node, context }) => {
       // Example manifestId: "34324203-2021-07-08T21:52:28.791+01:00"
       const manifestId = `${node.entityPayload.id}-${node.entityPayload.meta.updated_at}`;
 
-      console.info(`DatoCMS: Creating node manifest with id ${manifestId}`);
-
       unstable_createNodeManifest({
         manifestId,
         node,
