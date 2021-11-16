@@ -57,7 +57,7 @@ async function getLoader({ cache, loadStateFromCache, ...options }) {
   return loader;
 }
 
-const ONE_HOUR = 1000 * 60 * 60; // ms * sec * min
+const ONE_DAY = 1000 * 60 * 60 * 24; // ms * sec * min * hour
 let nodeManifestWarningWasLogged;
 
 const datocmsCreateNodeManifest = ({ node, context }) => {
@@ -76,8 +76,8 @@ const datocmsCreateNodeManifest = ({ node, context }) => {
       const nodeWasRecentlyUpdated =
         Date.now() - new Date(node.entityPayload.meta.updated_at).getTime() <=
         // Default to only create manifests for items updated in last 48 hours
-        ((process.env.CONTENT_SYNC_DATOCMS_HOURS_SINCE_ENTRY_UPDATE ||
-          48) * ONE_HOUR);
+        ((process.env.CONTENT_SYNC_DATOCMS_DAYS_SINCE_ENTRY_UPDATE ||
+          7) * ONE_DAY);
           
       // We need to create manifests on cold builds, this prevents from creating many more
       // manifests than we actually need
