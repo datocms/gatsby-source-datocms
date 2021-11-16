@@ -717,4 +717,4 @@ This will allow you to perform all the queries with a specific token and disting
 ```
 ## Configuring Content Previews 
 
-Gatsby Cloud DatoCMS Quick Connect will handle configuration for you. However, if you'd prefer not to use Quick Connect and manually setup the integration, instructions can be found [here](https://support.gatsbyjs.com/hc/en-us/articles/360052324454-Connecting-to-DatoCMS). 
+Configuration will be handled for you when using DatoCMS Quick Connect on Gatsby Cloud. However, if you'd prefer not to use Quick Connect and manually setup the integration, instructions can be found [here](https://support.gatsbyjs.com/hc/en-us/articles/360052324454-Connecting-to-DatoCMS). 
