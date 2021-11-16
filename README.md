@@ -30,6 +30,7 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 - [Integration with Gatsby Image](#integration-with-gatsby-image)
 - [Field customisations](#field-customisations)
 - [Connecting to multiple DatoCMS projects](#connecting-to-multiple-datocms-projects)
+- [Configuring Content Previews] (#configuring-content-previews)
 
 ## Install
 
@@ -714,3 +715,6 @@ This will allow you to perform all the queries with a specific token and disting
   }
 }
 ```
+# Configuring Content Previews 
+
+Gatsby Cloud DatoCMS Quick Connect will handle configuration for you. However, if you'd prefer not to use Quick Connect and manually setup the integration, instructions can be found [here](https://support.gatsbyjs.com/hc/en-us/articles/360052324454-Connecting-to-DatoCMS). 
