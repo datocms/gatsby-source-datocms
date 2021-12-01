@@ -1,4 +1,6 @@
 const { SiteClient, Loader } = require('datocms-client');
+const { getGatsbyVersion } = require("gatsby-core-utils"); 
+const { lt, prerelease } = require("semver"); 
 
 const CLIENT_HEADERS = {
   'X-Reason': 'dump',
@@ -57,7 +59,15 @@ async function getLoader({ cache, loadStateFromCache, ...options }) {
   return loader;
 }
 
-let nodeManifestWarningWasLogged;
+let warnOnceForNoSupport = false;
+let warnOnceToUpgradeGatsby = false; 
+
+const GATSBY_VERSION_MANIFEST_V2 = `4.3.0`
+const gatsbyVersion = getGatsbyVersion()
+const gatsbyVersionIsPrerelease = prerelease(gatsbyVersion)
+const shouldUpgradeGatsbyVersion =
+  lt(gatsbyVersion, GATSBY_VERSION_MANIFEST_V2) && !gatsbyVersionIsPrerelease
+
 
 const datocmsCreateNodeManifest = ({ node, context }) => {
   try {
@@ -69,7 +79,12 @@ const datocmsCreateNodeManifest = ({ node, context }) => {
     const shouldCreateNodeManifest = createNodeManifestIsSupported && nodeNeedsManifestCreated;
 
     if (shouldCreateNodeManifest) {
-        
+      if (shouldUpgradeGatsbyVersion && !warnOnceToUpgradeGatsby) {
+        console.warn(
+          `Your site is doing more work than it needs to for Preview, upgrade to Gatsby ^${GATSBY_VERSION_MANIFEST_V2} for better performance`
+        )
+        warnOnceToUpgradeGatsby = true
+      }
       // Example manifestId: "34324203-2021-07-08T21:52:28.791+01:00"
       const manifestId = `${node.entityPayload.id}-${updatedAt}`;
      
@@ -78,11 +93,11 @@ const datocmsCreateNodeManifest = ({ node, context }) => {
         node,
         updatedAt
       });
-    } else if (!createNodeManifestIsSupported && !nodeManifestWarningWasLogged) {
+    } else if (!createNodeManifestIsSupported && !warnOnceForNoSupport) {
       console.warn(
         `DatoCMS: Your version of Gatsby core doesn't support Content Sync (via the unstable_createNodeManifest action). Please upgrade to the latest version to use Content Sync in your site.`,
       );
-      nodeManifestWarningWasLogged = true;
+      warnOnceForNoSupport = true;
     }
   } catch (e) {
     console.info(`Cannot create node manifest`, e.message);

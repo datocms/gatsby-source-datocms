@@ -51,6 +51,7 @@
     "promise-queue": "2.2.5",
     "query-string": "6.14.1",
     "regenerator-runtime": "^0.13.3",
+    "semver": "^7.3.5",
     "unist-util-visit": "^2.0.3"
   },
   "keywords": [
