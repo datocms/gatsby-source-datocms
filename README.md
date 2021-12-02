@@ -30,7 +30,7 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 - [Integration with Gatsby Image](#integration-with-gatsby-image)
 - [Field customisations](#field-customisations)
 - [Connecting to multiple DatoCMS projects](#connecting-to-multiple-datocms-projects)
-- [Configuring Content Previews] (#configuring-content-previews)
+- [Configuring Content Previews](#configuring-content-previews)
 
 ## Install
 
