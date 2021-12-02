@@ -91,7 +91,7 @@ const datocmsCreateNodeManifest = ({ node, context }) => {
       unstable_createNodeManifest({
         manifestId,
         node,
-        updatedAt
+        updatedAtUTC: updatedAt
       });
     } else if (!createNodeManifestIsSupported && !warnOnceForNoSupport) {
       console.warn(
