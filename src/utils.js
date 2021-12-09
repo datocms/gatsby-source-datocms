@@ -1,5 +1,5 @@
 const { SiteClient, Loader } = require('datocms-client');
-const { getGatsbyVersion } = require("gatsby-core-utils"); 
+const gatsbyVersion = require('gatsby/package.json').version
 const { lt, prerelease } = require("semver"); 
 
 const CLIENT_HEADERS = {
@@ -63,7 +63,6 @@ let warnOnceForNoSupport = false;
 let warnOnceToUpgradeGatsby = false; 
 
 const GATSBY_VERSION_MANIFEST_V2 = `4.3.0`
-const gatsbyVersion = getGatsbyVersion()
 const gatsbyVersionIsPrerelease = prerelease(gatsbyVersion)
 const shouldUpgradeGatsbyVersion =
   lt(gatsbyVersion, GATSBY_VERSION_MANIFEST_V2) && !gatsbyVersionIsPrerelease
