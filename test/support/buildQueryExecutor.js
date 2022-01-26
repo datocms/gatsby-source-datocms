@@ -1,4 +1,3 @@
-const recipes = require('gatsby-recipes');
 const { bootstrap } = require('gatsby/dist/bootstrap');
 const reporter = require('gatsby-cli/lib/reporter');
 const { setStore } = require('gatsby-cli/lib/reporter/redux');
