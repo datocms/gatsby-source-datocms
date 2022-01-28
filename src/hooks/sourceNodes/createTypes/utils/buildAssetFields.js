@@ -75,7 +75,7 @@ module.exports = function({ cache }) {
     },
     createdAt: resolveUsingEntityPayloadAttribute('created_at', {
       type: 'Date',
-      extensions: { dateformat: {}, proxy: {} },
+      extensions: { dateformat: {}, proxy: { from: 'foo' } },
     }),
     video: {
       type: 'DatoCmsAssetVideo',
