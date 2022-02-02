@@ -66,8 +66,13 @@ plugins: [
       // Disable automatic reloading of content when some change occurs on DatoCMS:
       disableLiveReload: false,
 
-      // Custom API base URL (most don't need this)
+      // Custom API base URL (you probably don't need this!)
       // apiUrl: 'https://site-api.datocms.com',
+
+      // Only source nodes for a specific set of locales. This can limit the memory usage by
+      // reducing the amount of nodes created. Useful if you have a large project in DatoCMS
+      // and only want to get the data from one selected locale
+      // localesToGenerate: ['it', 'en'],
 
       // Setup locale fallbacks
       // In this example, if some field value is missing in Italian, fall back to English
@@ -715,6 +720,7 @@ This will allow you to perform all the queries with a specific token and disting
   }
 }
 ```
-## Configuring Content Previews 
 
-Configuration will be handled for you when using DatoCMS Quick Connect on Gatsby Cloud. However, if you'd prefer not to use Quick Connect and manually setup the integration, instructions can be found [here](https://support.gatsbyjs.com/hc/en-us/articles/360052324454-Connecting-to-DatoCMS). 
+## Configuring Content Previews
+
+Configuration will be handled for you when using DatoCMS Quick Connect on Gatsby Cloud. However, if you'd prefer not to use Quick Connect and manually setup the integration, instructions can be found [here](https://support.gatsbyjs.com/hc/en-us/articles/360052324454-Connecting-to-DatoCMS).

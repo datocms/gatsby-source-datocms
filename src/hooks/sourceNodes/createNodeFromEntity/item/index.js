@@ -6,13 +6,21 @@ const buildNode = require('../utils/buildNode');
 
 module.exports = function buildItemNode(
   entity,
-  { entitiesRepo, localeFallbacks, generateType },
+  {
+    entitiesRepo,
+    localesToGenerate: rawLocalesToGenerate,
+    localeFallbacks,
+    generateType,
+  },
 ) {
   const siteEntity = entitiesRepo.site;
   const type = generateType(`${pascalize(entity.itemType.apiKey)}`);
+  const localesToGenerate = Array.isArray(rawLocalesToGenerate)
+    ? rawLocalesToGenerate
+    : siteEntity.locales;
 
   return [].concat(
-    ...siteEntity.locales.map(locale => {
+    ...localesToGenerate.map(locale => {
       const additionalNodesToCreate = [];
       const i18n = { locale, fallbacks: localeFallbacks };
 

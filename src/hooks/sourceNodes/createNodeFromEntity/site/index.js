@@ -5,10 +5,19 @@ const { localizedRead } = require('datocms-client');
 
 module.exports = function buildSiteNode(
   entity,
-  { entitiesRepo, localeFallbacks, generateType },
+  {
+    entitiesRepo,
+    localesToGenerate: rawLocalesToGenerate,
+    localeFallbacks,
+    generateType,
+  },
 ) {
+  const localesToGenerate = Array.isArray(rawLocalesToGenerate)
+    ? rawLocalesToGenerate
+    : entity.locales;
+
   return [].concat(
-    ...entity.locales.map(locale => {
+    ...localesToGenerate.map(locale => {
       const additionalNodesToCreate = [];
       const i18n = { locale, fallbacks: localeFallbacks };
 
