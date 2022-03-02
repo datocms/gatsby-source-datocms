@@ -1,6 +1,6 @@
 const { SiteClient, Loader } = require('datocms-client');
-const gatsbyVersion = require('gatsby/package.json').version
-const { lt, prerelease } = require("semver"); 
+const gatsbyVersion = require('gatsby/package.json').version;
+const { lt, prerelease } = require('semver');
 
 const CLIENT_HEADERS = {
   'X-Reason': 'dump',
@@ -27,7 +27,7 @@ async function getLoader({ cache, loadStateFromCache, ...options }) {
     clientOptions.environment = environment;
   }
 
-  if (options.baseUrl) {
+  if (options.apiUrl) {
     clientOptions.baseUrl = apiUrl;
   }
 
@@ -60,37 +60,38 @@ async function getLoader({ cache, loadStateFromCache, ...options }) {
 }
 
 let warnOnceForNoSupport = false;
-let warnOnceToUpgradeGatsby = false; 
+let warnOnceToUpgradeGatsby = false;
 
-const GATSBY_VERSION_MANIFEST_V2 = `4.3.0`
-const gatsbyVersionIsPrerelease = prerelease(gatsbyVersion)
+const GATSBY_VERSION_MANIFEST_V2 = `4.3.0`;
+const gatsbyVersionIsPrerelease = prerelease(gatsbyVersion);
 const shouldUpgradeGatsbyVersion =
-  lt(gatsbyVersion, GATSBY_VERSION_MANIFEST_V2) && !gatsbyVersionIsPrerelease
-
+  lt(gatsbyVersion, GATSBY_VERSION_MANIFEST_V2) && !gatsbyVersionIsPrerelease;
 
 const datocmsCreateNodeManifest = ({ node, context }) => {
   try {
     const { unstable_createNodeManifest } = context.actions;
-    const createNodeManifestIsSupported = typeof unstable_createNodeManifest === `function`;
+    const createNodeManifestIsSupported =
+      typeof unstable_createNodeManifest === `function`;
     const updatedAt = node?.entityPayload?.meta?.updated_at;
     const nodeNeedsManifestCreated = updatedAt && node?.locale;
 
-    const shouldCreateNodeManifest = createNodeManifestIsSupported && nodeNeedsManifestCreated;
+    const shouldCreateNodeManifest =
+      createNodeManifestIsSupported && nodeNeedsManifestCreated;
 
     if (shouldCreateNodeManifest) {
       if (shouldUpgradeGatsbyVersion && !warnOnceToUpgradeGatsby) {
         console.warn(
-          `Your site is doing more work than it needs to for Preview, upgrade to Gatsby ^${GATSBY_VERSION_MANIFEST_V2} for better performance`
-        )
-        warnOnceToUpgradeGatsby = true
+          `Your site is doing more work than it needs to for Preview, upgrade to Gatsby ^${GATSBY_VERSION_MANIFEST_V2} for better performance`,
+        );
+        warnOnceToUpgradeGatsby = true;
       }
       // Example manifestId: "34324203-2021-07-08T21:52:28.791+01:00"
       const manifestId = `${node.entityPayload.id}-${updatedAt}`;
-     
+
       unstable_createNodeManifest({
         manifestId,
         node,
-        updatedAtUTC: updatedAt
+        updatedAtUTC: updatedAt,
       });
     } else if (!createNodeManifestIsSupported && !warnOnceForNoSupport) {
       console.warn(
