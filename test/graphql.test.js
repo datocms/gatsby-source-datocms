@@ -272,7 +272,7 @@ const assetFields = /* GraphQL */ `
     newFluidWSmallerThanOriginal: gatsbyImageData(width: 30, layout: CONSTRAINED)
   `;
 
-const fileFields = `alt title customData ${assetFields}`;
+const fileFields = /* GraphQL */ `alt title customData ${assetFields}`;
 
 Suite('assets', async () => {
   assertGraphQLResponseEqualToSnapshot(
