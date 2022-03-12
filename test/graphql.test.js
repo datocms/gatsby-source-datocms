@@ -270,6 +270,7 @@ const assetFields = /* GraphQL */ `
     newFluidWH: gatsbyImageData(width: 300, height: 300, layout: CONSTRAINED)
     newFixedSmallerThanOriginal: gatsbyImageData(width: 30, height: 30, layout: FIXED)
     newFluidWSmallerThanOriginal: gatsbyImageData(width: 30, layout: CONSTRAINED)
+    imageCDN: gatsbyImage(width: 100)
   `;
 
 const fileFields = /* GraphQL */ `alt title customData ${assetFields}`;

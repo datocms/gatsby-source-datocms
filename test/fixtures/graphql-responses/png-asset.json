@@ -197,6 +197,31 @@
         },
         "width": 30,
         "height": 23
+      },
+      "imageCDN": {
+        "images": {
+          "sources": [
+            {
+              "srcSet": "/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz0yNSZoPTE5JmZtPWF2aWYmcT03NQ==/plant.avif 25w,/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz01MCZoPTM4JmZtPWF2aWYmcT03NQ==/plant.avif 50w,/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz0xMDAmaD03NSZmbT1hdmlmJnE9NzU=/plant.avif 100w",
+              "type": "image/avif",
+              "sizes": "(min-width: 100px) 100px, 100vw"
+            },
+            {
+              "srcSet": "/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz0yNSZoPTE5JmZtPXdlYnAmcT03NQ==/plant.webp 25w,/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz01MCZoPTM4JmZtPXdlYnAmcT03NQ==/plant.webp 50w,/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz0xMDAmaD03NSZmbT13ZWJwJnE9NzU=/plant.webp 100w",
+              "type": "image/webp",
+              "sizes": "(min-width: 100px) 100px, 100vw"
+            }
+          ],
+          "fallback": {
+            "src": "/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz0yNSZoPTE5JmZtPWpwZyZxPTc1/plant.jpg",
+            "srcSet": "/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz0yNSZoPTE5JmZtPWpwZyZxPTc1/plant.jpg 25w,/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz01MCZoPTM4JmZtPWpwZyZxPTc1/plant.jpg 50w,/_gatsby/image/aHR0cHM6Ly93d3cuZGF0b2Ntcy1hc3NldHMuY29tLzM0NzIzLzE2MjA2Mjk2MzgtcGxhbnQuanBlZw==/dz0xMDAmaD03NSZmbT1qcGcmcT03NQ==/plant.jpg 100w",
+            "sizes": "(min-width: 100px) 100px, 100vw"
+          }
+        },
+        "layout": "constrained",
+        "width": 100,
+        "height": 75,
+        "backgroundColor": "rgb(120,168,72)"
       }
     }
   }

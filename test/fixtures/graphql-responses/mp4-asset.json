@@ -40,7 +40,8 @@
       "newFluidH": null,
       "newFluidWH": null,
       "newFixedSmallerThanOriginal": null,
-      "newFluidWSmallerThanOriginal": null
+      "newFluidWSmallerThanOriginal": null,
+      "imageCDN": null
     }
   }
 }
