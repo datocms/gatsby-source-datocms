@@ -18,6 +18,5 @@ module.exports = function buildUploadNode(
     node.url = node.entityPayload.attributes.url;
     node.width = node.entityPayload.attributes.width;
     node.height = node.entityPayload.attributes.height;
-    console.log(JSON.stringify(node, null, 2));
   });
 };
