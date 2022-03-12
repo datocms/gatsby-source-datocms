@@ -278,19 +278,19 @@ Suite('assets', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'png-asset',
     await executeQuery(
-      `{ datoCmsAsset(originalId: {eq: "2637142"}) { ${assetFields} } }`,
+      /* GraphQL */ `{ datoCmsAsset(originalId: {eq: "2637142"}) { ${assetFields} } }`,
     ),
   );
   assertGraphQLResponseEqualToSnapshot(
     'mp4-asset',
     await executeQuery(
-      `{ datoCmsAsset(originalId: {eq: "2637250"}) { ${assetFields} } }`,
+      /* GraphQL */ `{ datoCmsAsset(originalId: {eq: "2637250"}) { ${assetFields} } }`,
     ),
   );
   assertGraphQLResponseEqualToSnapshot(
     'csv-asset',
     await executeQuery(
-      `{ datoCmsAsset(originalId: {eq: "2637251"}) { ${assetFields} } }`,
+      /* GraphQL */ `{ datoCmsAsset(originalId: {eq: "2637251"}) { ${assetFields} } }`,
     ),
   );
 });
