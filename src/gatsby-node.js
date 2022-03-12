@@ -2,6 +2,10 @@ require('core-js/stable');
 require('regenerator-runtime/runtime');
 const { ERROR_MAP } = require('./errorMap');
 
+const {
+  polyfillImageServiceDevRoutes,
+} = require('gatsby-plugin-utils/polyfill-remote-file');
+
 const withForcedPreviewMode = hook => {
   return (context, options) => {
     return hook(context, {
@@ -55,4 +59,8 @@ exports.onPreInit = async ({ reporter }) => {
   if (!onPluginInitSupported && reporter.setErrorMap) {
     reporter.setErrorMap(ERROR_MAP);
   }
+};
+
+exports.onCreateDevServer = ({ app }) => {
+  polyfillImageServiceDevRoutes(app);
 };

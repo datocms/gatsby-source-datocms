@@ -1,15 +1,25 @@
+const {
+  addRemoteFilePolyfillInterface,
+} = require('gatsby-plugin-utils/polyfill-remote-file');
+
 const buildAssetFields = require('../utils/buildAssetFields');
 
 module.exports = ({ actions, schema, store, cache, generateType }) => {
   actions.createTypes([
-    schema.buildObjectType({
-      name: generateType('Asset'),
-      extensions: { infer: false },
-      fields: {
-        ...buildAssetFields({ cache }),
+    addRemoteFilePolyfillInterface(
+      schema.buildObjectType({
+        name: generateType('Asset'),
+        extensions: { infer: false },
+        fields: {
+          ...buildAssetFields({ cache }),
+        },
+        interfaces: ['Node', 'RemoteFile'],
+      }),
+      {
+        schema,
+        actions,
       },
-      interfaces: ['Node'],
-    }),
+    ),
     schema.buildEnumType({
       name: 'DatoCmsAssetVideoThumbnailFormat',
       values: {

@@ -21,8 +21,6 @@ const resolveUsingEntityPayloadAttribute = (
 module.exports = function({ cache }) {
   return {
     size: resolveUsingEntityPayloadAttribute('size', { type: 'Int' }),
-    width: resolveUsingEntityPayloadAttribute('width', { type: 'Int' }),
-    height: resolveUsingEntityPayloadAttribute('height', { type: 'Int' }),
     path: resolveUsingEntityPayloadAttribute('path', { type: 'String' }),
     format: resolveUsingEntityPayloadAttribute('format', { type: 'String' }),
     isImage: resolveUsingEntityPayloadAttribute('is_image', {
@@ -37,9 +35,6 @@ module.exports = function({ cache }) {
     smartTags: resolveUsingEntityPayloadAttribute('smart_tags', {
       type: '[String]',
     }),
-    filename: resolveUsingEntityPayloadAttribute('filename', {
-      type: 'String',
-    }),
     basename: resolveUsingEntityPayloadAttribute('basename', {
       type: 'String',
     }),
@@ -48,9 +43,6 @@ module.exports = function({ cache }) {
       { type: 'JSON' },
       true,
     ),
-    mimeType: resolveUsingEntityPayloadAttribute('mime_type', {
-      type: 'String',
-    }),
     colors: resolveUsingEntityPayloadAttribute('colors', {
       type: '[DatoCmsColorField]',
     }),
