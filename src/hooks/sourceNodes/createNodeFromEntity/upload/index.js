@@ -18,6 +18,6 @@ module.exports = function buildUploadNode(
     node.width = node.entityPayload.attributes.width;
     node.height = node.entityPayload.attributes.height;
     node.url = node.entityPayload.attributes.url;
-    node.placeholderUrl = node.url + `?w=20`; // tiny image transformed by imgix
+    node.placeholderUrl = node.url + `?w=%width%&h=%height%`;
   });
 };
