@@ -6913,10 +6913,10 @@ gatsby-core-utils@^3.1.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^3.10.0-next.3:
-  version "3.10.0-next.3"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.10.0-next.3.tgz#284b59b93543d71256afdfaaa4c47c982419d554"
-  integrity sha512-2bKijDz2c7Eigd8rB5/5l7n8psWvPjggVBK1TtrjciRR8a9BQbz+nHBHgr+GsC5ZBEjp1J6VKFOKO4EAmCUx+w==
+gatsby-core-utils@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.10.0.tgz#52be8a9a891d95686a7ee0c1cfef44f8e362232b"
+  integrity sha512-yaRI/uUsbIggPRfh0y6CH+fy2AqbFFLxCYndw5nrVByEY40+KaKs0wOF4yIgPRBZZUHOyfBJ+1AGo2JLHdY5lA==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
@@ -7053,14 +7053,14 @@ gatsby-plugin-utils@^2.0.0:
     "@babel/runtime" "^7.15.4"
     joi "^17.4.2"
 
-gatsby-plugin-utils@^3.4.0-next.3:
-  version "3.4.0-next.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.4.0-next.3.tgz#4fe80e308db7dcc489512a35ede2730a1f55dadc"
-  integrity sha512-iq5wGIfCI/IlAZiFh2Novj+Zjh47Mo/Zms+G6zQ0X5aBMoanaMq6VBRRDcSriOvvnb8equYbXpDB9izK4g8GSQ==
+gatsby-plugin-utils@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.4.0.tgz#210fc7f51247388c1bc0a966a05acda79eab27ea"
+  integrity sha512-ACMIJZ/yaGDgNfw3cIGytbrIMK88rvv/r/Art6gPgu7g664uAh4FDnVqJQyFbJ3G+3gCRKtNs4sRxEx2fJib9A==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    gatsby-core-utils "^3.10.0-next.3"
-    gatsby-sharp "^0.4.0-next.2"
+    gatsby-core-utils "^3.10.0"
+    gatsby-sharp "^0.4.0"
     graphql-compose "^9.0.7"
     import-from "^4.0.0"
     joi "^17.4.2"
@@ -7138,10 +7138,10 @@ gatsby-recipes@^1.0.0:
     xstate "^4.9.1"
     yoga-layout-prebuilt "^1.9.6"
 
-gatsby-sharp@^0.4.0-next.2:
-  version "0.4.0-next.2"
-  resolved "https://registry.yarnpkg.com/gatsby-sharp/-/gatsby-sharp-0.4.0-next.2.tgz#d448a20897ca9702adc248ff79c4347fb57fb8d1"
-  integrity sha512-crTj4QAmsFPmcsMC/nmsih6l0ppAvK9gTT/2/Hjlna7SnsgOmMt7jUUx0DVuowghkTc0eurzkxEPNnOWPbvTNw==
+gatsby-sharp@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-sharp/-/gatsby-sharp-0.4.0.tgz#9e26c004935750bd334fb041da1b0ad5a5a6955c"
+  integrity sha512-Q2iP6HEs1MRdcMRj7NwZ4l6/1U61vx2DrWNgGwqEEhIFAAgUMlWscaeCpEgahC3t4D66LmuDQkbzBvBcH0Dwxw==
   dependencies:
     "@types/sharp" "^0.29.5"
     sharp "^0.30.1"
