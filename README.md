@@ -520,9 +520,14 @@ If you need to get every locale for a specific field, you can use the `_all<FIEL
 
 ## Integration with Gatsby Image
 
-### For Gatsby v3+ (currently in beta)
+### For Gatsby v4.10.0+
 
-This plugin is compatible with the new [gatsby-plugin-image](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/) and the `<GatsbyImage />` component released with Gatsby v3:
+This plugin is compatible with [Gatsby's Image CDN](https://gatsby.dev/img).
+To use this new feature follow the [docs below](#for-gatsby-v3) but instead of querying the `gatsbyImageData` field, query the `gatsbyImage` field.
+
+### For Gatsby v3+
+
+This plugin is compatible with [gatsby-plugin-image](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/) and the `<GatsbyImage />` component released with Gatsby v3:
 
 ```jsx
 import React from 'react';
