@@ -17,9 +17,9 @@ Suite.before(async () => {
 });
 
 Suite('focalPoints', async () => {
-  const result = await executeQuery(`
+  const result = await executeQuery(/* GraphQL */ `
     {
-      datoCmsArticle(originalId: {eq: "7364344"}) {
+      datoCmsArticle(originalId: { eq: "7364344" }) {
         singleAsset {
           focalPoint {
             x
@@ -27,13 +27,48 @@ Suite('focalPoints', async () => {
           }
           url
 
-          urlWithFocalPoint: url(imgixParams: { w: "150", h: "40", fit: "crop" })
-          fluid(maxWidth: 150, imgixParams: { w: "150", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
-          blurhashFluid: fluid(maxWidth: 150, forceBlurhash: true, imgixParams: { w: "150", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
+          urlWithFocalPoint: url(
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
+          fluid(
+            maxWidth: 150
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          ) {
+            tracedSVG
+            base64
+            src
+            srcSet
+          }
+          blurhashFluid: fluid(
+            maxWidth: 150
+            forceBlurhash: true
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          ) {
+            tracedSVG
+            base64
+            src
+            srcSet
+          }
 
-          tracedSvgFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: TRACED_SVG, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
-          dominantSvgFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: DOMINANT_COLOR, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
-          blurhashFluidGatsbyImage: gatsbyImageData(width: 150, forceBlurhash: true, placeholder: BLURRED, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
+          tracedSvgFluidGatsbyImage: gatsbyImageData(
+            width: 150
+            placeholder: TRACED_SVG
+            layout: CONSTRAINED
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
+          dominantSvgFluidGatsbyImage: gatsbyImageData(
+            width: 150
+            placeholder: DOMINANT_COLOR
+            layout: CONSTRAINED
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
+          blurhashFluidGatsbyImage: gatsbyImageData(
+            width: 150
+            forceBlurhash: true
+            placeholder: BLURRED
+            layout: CONSTRAINED
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
         }
         assetGallery {
           focalPoint {
@@ -41,16 +76,51 @@ Suite('focalPoints', async () => {
             y
           }
           url
-          urlWithFocalPoint: url(imgixParams: { w: "150", h: "40", fit: "crop" })
-          fluid(maxWidth: 150, imgixParams: { w: "150", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
-          blurhashFluid: fluid(maxWidth: 150, forceBlurhash: true, imgixParams: { w: "150", h: "40", fit: "crop" }) { tracedSVG base64 src srcSet }
+          urlWithFocalPoint: url(
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
+          fluid(
+            maxWidth: 150
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          ) {
+            tracedSVG
+            base64
+            src
+            srcSet
+          }
+          blurhashFluid: fluid(
+            maxWidth: 150
+            forceBlurhash: true
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          ) {
+            tracedSVG
+            base64
+            src
+            srcSet
+          }
 
-          tracedSvgFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: TRACED_SVG, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
-          dominantSvgFluidGatsbyImage: gatsbyImageData(width: 150, placeholder: DOMINANT_COLOR, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
-          blurhashFluidGatsbyImage: gatsbyImageData(width: 150, forceBlurhash: true, placeholder: BLURRED, layout: CONSTRAINED, imgixParams: { w: "150", h: "40", fit: "crop" })
+          tracedSvgFluidGatsbyImage: gatsbyImageData(
+            width: 150
+            placeholder: TRACED_SVG
+            layout: CONSTRAINED
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
+          dominantSvgFluidGatsbyImage: gatsbyImageData(
+            width: 150
+            placeholder: DOMINANT_COLOR
+            layout: CONSTRAINED
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
+          blurhashFluidGatsbyImage: gatsbyImageData(
+            width: 150
+            forceBlurhash: true
+            placeholder: BLURRED
+            layout: CONSTRAINED
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
         }
       }
-      noFocalPoint: datoCmsArticle(originalId: {eq: "7364346"}) {
+      noFocalPoint: datoCmsArticle(originalId: { eq: "7364346" }) {
         singleAsset {
           focalPoint {
             x
@@ -58,43 +128,84 @@ Suite('focalPoints', async () => {
           }
         }
       }
-    }`);
+    }
+  `);
 
   assertGraphQLResponseEqualToSnapshot('focal-point', result);
 });
 
 Suite('auto=format', async () => {
-  const result = await executeQuery(`
+  const result = await executeQuery(/* GraphQL */ `
     {
-      datoCmsArticle(originalId: {eq: "7364344"}) {
+      datoCmsArticle(originalId: { eq: "7364344" }) {
         singleAsset {
           noFormatUrl: url(imgixParams: { maxW: 200 })
-          noFormatFixed: fixed(width: 300, imgixParams: { maxW: 200 }) { src srcSet }
-          noFormatFluid: fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop", maxW: 200 }) { src srcSet }
+          noFormatFixed: fixed(width: 300, imgixParams: { maxW: 200 }) {
+            src
+            srcSet
+          }
+          noFormatFluid: fluid(
+            maxWidth: 140
+            imgixParams: { w: "140", h: "40", fit: "crop", maxW: 200 }
+          ) {
+            src
+            srcSet
+          }
 
           pngFormatUrl: url(imgixParams: { fm: "png", maxW: 200 })
-          pngFormatFixed: fixed(width: 300, imgixParams: { fm: "png", maxW: 200 }) { src srcSet }
-          pngFormatFluid: fluid(maxWidth: 140, imgixParams: { w: "140", h: "40", fit: "crop", fm: "png", maxW: 200 }) { src srcSet }
+          pngFormatFixed: fixed(
+            width: 300
+            imgixParams: { fm: "png", maxW: 200 }
+          ) {
+            src
+            srcSet
+          }
+          pngFormatFluid: fluid(
+            maxWidth: 140
+            imgixParams: {
+              w: "140"
+              h: "40"
+              fit: "crop"
+              fm: "png"
+              maxW: 200
+            }
+          ) {
+            src
+            srcSet
+          }
         }
       }
 
-      assetWhichIsNotAnImage: datoCmsAsset(originalId: {eq: "2637251"}) {
+      assetWhichIsNotAnImage: datoCmsAsset(originalId: { eq: "2637251" }) {
         url
-        noFormatFluid: fluid(maxWidth: 140) { src srcSet }
+        noFormatFluid: fluid(maxWidth: 140) {
+          src
+          srcSet
+        }
       }
 
-      assetWhichIsSvg: datoCmsAsset(originalId: {eq: "10015565"}) {
+      assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
         url
-        noFormatFluid: fluid(maxWidth: 140) { src srcSet }
+        noFormatFluid: fluid(maxWidth: 140) {
+          src
+          srcSet
+        }
       }
 
-      assetWhichIsNotAnImageThroughRecord: datoCmsArticle(originalId: {eq: "7364344"}, locale: { eq: "it" }) {
+      assetWhichIsNotAnImageThroughRecord: datoCmsArticle(
+        originalId: { eq: "7364344" }
+        locale: { eq: "it" }
+      ) {
         assetGallery {
           url
-          noFormatFluid: fluid(maxWidth: 140) { src srcSet }
+          noFormatFluid: fluid(maxWidth: 140) {
+            src
+            srcSet
+          }
         }
       }
-    }`);
+    }
+  `);
 
   assertGraphQLResponseEqualToSnapshot('auto-format', result);
 });
@@ -103,19 +214,36 @@ Suite('force blurhash', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'blurhash',
     await executeQuery(
-      `{
-          datoCmsAsset(originalId: {eq: "2643791"}) {
-            fixed(width: 300) { base64 }
-            fluid(maxWidth: 300) { base64 }
-            forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) { base64 }
-            forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) { base64 }
+      /* GraphQL */
+      `
+        {
+          datoCmsAsset(originalId: { eq: "2643791" }) {
+            fixed(width: 300) {
+              base64
+            }
+            fluid(maxWidth: 300) {
+              base64
+            }
+            forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) {
+              base64
+            }
+            forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) {
+              base64
+            }
           }
 
-          assetWhichIsSvg: datoCmsAsset(originalId: {eq: "10015565"}) {
-            fixed(width: 300) { base64 tracedSVG }
-            fluid(maxWidth: 300) { base64 tracedSVG }
+          assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
+            fixed(width: 300) {
+              base64
+              tracedSVG
+            }
+            fluid(maxWidth: 300) {
+              base64
+              tracedSVG
+            }
           }
-       }`,
+        }
+      `,
     ),
   );
 });
@@ -153,18 +281,21 @@ Suite('assets', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'png-asset',
     await executeQuery(
+      /* GraphQL */
       `{ datoCmsAsset(originalId: {eq: "2637142"}) { ${assetFields} } }`,
     ),
   );
   assertGraphQLResponseEqualToSnapshot(
     'mp4-asset',
     await executeQuery(
+      /* GraphQL */
       `{ datoCmsAsset(originalId: {eq: "2637250"}) { ${assetFields} } }`,
     ),
   );
   assertGraphQLResponseEqualToSnapshot(
     'csv-asset',
     await executeQuery(
+      /* GraphQL */
       `{ datoCmsAsset(originalId: {eq: "2637251"}) { ${assetFields} } }`,
     ),
   );
@@ -173,90 +304,92 @@ Suite('assets', async () => {
 Suite('sortable collection', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'sortable-position',
-    await executeQuery(`
-    {
-      datoCmsSecondaryModel(originalId: {eq: "7364459"}) {
-        position
+    await executeQuery(/* GraphQL */ `
+      {
+        datoCmsSecondaryModel(originalId: { eq: "7364459" }) {
+          position
+        }
       }
-    }
-  `),
+    `),
   );
 });
 
 Suite('site', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'site',
-    await executeQuery(`
-    {
-      enSite: datoCmsSite(locale: {eq: "en"}) {
-        __typename
-        id
-        originalId
-        name
-        locale
-        locales
-        domain
-        internalDomain
-        noIndex
-        globalSeo {
-          siteName
-          titleSuffix
-          twitterAccount
-          facebookPageUrl
-          fallbackSeo {
-            title
-            description
-            twitterCard
-            image {
-              path
-              url
+    await executeQuery(/* GraphQL */ `
+      {
+        enSite: datoCmsSite(locale: { eq: "en" }) {
+          __typename
+          id
+          originalId
+          name
+          locale
+          locales
+          domain
+          internalDomain
+          noIndex
+          globalSeo {
+            siteName
+            titleSuffix
+            twitterAccount
+            facebookPageUrl
+            fallbackSeo {
+              title
+              description
+              twitterCard
+              image {
+                path
+                url
+              }
             }
           }
-        }
-        faviconMetaTags {
-          tags
-        }
-      }
-      itSite: datoCmsSite(locale: {eq: "it"}) {
-        __typename
-        id
-        originalId
-        name
-        locale
-        locales
-        domain
-        internalDomain
-        noIndex
-        globalSeo {
-          siteName
-          titleSuffix
-          twitterAccount
-          facebookPageUrl
-          fallbackSeo {
-            title
-            description
-            twitterCard
-            image {
-              path
-              url
-            }
+          faviconMetaTags {
+            tags
           }
         }
-        faviconMetaTags {
-          tags
+        itSite: datoCmsSite(locale: { eq: "it" }) {
+          __typename
+          id
+          originalId
+          name
+          locale
+          locales
+          domain
+          internalDomain
+          noIndex
+          globalSeo {
+            siteName
+            titleSuffix
+            twitterAccount
+            facebookPageUrl
+            fallbackSeo {
+              title
+              description
+              twitterCard
+              image {
+                path
+                url
+              }
+            }
+          }
+          faviconMetaTags {
+            tags
+          }
         }
       }
-    }
-  `),
+    `),
   );
 });
 
 Suite('tree collections', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'tree',
-    await executeQuery(`
+    await executeQuery(/* GraphQL */ `
       {
-        allDatoCmsHierarchical(filter: {root: {eq: true}, locale: {eq: "en"}}) {
+        allDatoCmsHierarchical(
+          filter: { root: { eq: true }, locale: { eq: "en" } }
+        ) {
           nodes {
             id
             title
@@ -647,8 +780,10 @@ Suite('multiple instances', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'multipleInstances',
     await executeQuery(
-      `{
-          datoCmsAlternativeSite(locale: {eq: "en"}) {
+      /* GraphQL */
+      `
+        {
+          datoCmsAlternativeSite(locale: { eq: "en" }) {
             __typename
             id
             originalId
@@ -706,7 +841,8 @@ Suite('multiple instances', async () => {
               }
             }
           }
-       }`,
+        }
+      `,
     ),
   );
 });
