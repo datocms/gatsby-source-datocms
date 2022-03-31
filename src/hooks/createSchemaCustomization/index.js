@@ -75,7 +75,7 @@ module.exports = async (
   activity.start();
 
   if (!process.env.GATSBY_WORKER_ID) {
-    await loader.loadSchema();
+    await loader.load();
     await loader.saveStateToCache(cache);
   }
 

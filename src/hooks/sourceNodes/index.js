@@ -69,7 +69,9 @@ module.exports = async (
     apiUrl,
     pageSize,
     logApiCalls,
-    loadStateFromCache: !!process.env.GATSBY_WORKER_ID,
+    // we assume that whenever `sourceNodes` is called, `createSchemaCustomization` has
+    // already been called, so we can simply load from cache
+    loadStateFromCache: true,
   });
 
   const context = {
@@ -226,29 +228,23 @@ module.exports = async (
     return;
   }
 
-  let activity = reporter.activityTimer(`loading DatoCMS content`, {
-    parentSpan,
+  Object.keys(loader.entitiesRepo.entities).forEach(entityType => {
+    loader.entitiesRepo.findEntitiesOfType(entityType).forEach(entity => {
+      createNodeFromEntity(entity, context);
+    });
   });
-  activity.start();
-
-  loader.entitiesRepo.addUpsertListener(entity => {
-    createNodeFromEntity(entity, context);
-  });
-
-  loader.entitiesRepo.addDestroyListener(entity => {
-    destroyEntityNode(entity, context);
-  });
-
-  if (!process.env.GATSBY_WORKER_ID) {
-    await loader.load();
-    await loader.saveStateToCache(cache);
-  }
-
-  activity.end();
 
   const queue = new Queue(1, Infinity);
 
   if (process.env.NODE_ENV !== `production` && !disableLiveReload) {
+    loader.entitiesRepo.addUpsertListener(entity => {
+      createNodeFromEntity(entity, context);
+    });
+
+    loader.entitiesRepo.addDestroyListener(entity => {
+      destroyEntityNode(entity, context);
+    });
+
     loader.watch(loadPromise => {
       queue.add(async () => {
         const activity = reporter.activityTimer(
