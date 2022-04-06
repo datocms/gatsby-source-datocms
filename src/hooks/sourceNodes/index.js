@@ -90,138 +90,64 @@ module.exports = async (
   };
 
   if (webhookBody && Object.keys(webhookBody).length) {
-    const { entity_id, entity_type, event_type } = webhookBody;
+    const {
+      entity_id: entityId,
+      entity_type: entityType,
+      event_type: eventType,
+    } = webhookBody;
+
     reporter.info(
-      `Received ${event_type} event for ${entity_type} ${entity_id} from DatoCMS`,
+      `Received ${eventType} event for ${entityType} ${entityId} from DatoCMS`,
     );
+
     const changesActivity = reporter.activityTimer(
       `loading DatoCMS content changes`,
       {
         parentSpan,
       },
     );
+
     changesActivity.start();
 
-    switch (entity_type) {
+    switch (entityType) {
       case 'item':
         if (
-          event_type === 'publish' ||
-          event_type === `update` ||
-          event_type === 'create'
+          eventType === 'publish' ||
+          eventType === `update` ||
+          eventType === 'create'
         ) {
-          const payload = await loader.client.items.all(
+          const payload = await loader.client.items.find(
+            entityId,
             {
-              'filter[ids]': [entity_id].join(','),
-              version: previewMode ? 'draft' : 'published',
+              version: previewMode ? 'current' : 'published',
+              include: 'nested_items',
             },
-            { deserializeResponse: false, allPages: true },
+            { deserializeResponse: false },
           );
-          if (payload) {
-            // `rich_text`, `links`, `link` fields link to other entities and we need to
-            // fetch them separately to make sure we have all the data
-            const linkedEntitiesIdsToFetch = payload.data.reduce(
-              (collectedIds, payload) => {
-                const item_type_rel = payload.relationships.item_type.data;
-                const itemTypeForThis = loader.entitiesRepo.findEntity(
-                  item_type_rel.type,
-                  item_type_rel.id,
-                );
-                const fieldsToResolve = itemTypeForThis.fields.filter(
-                  fieldDef =>
-                    [`rich_text`, `links`, `link`, `structured_text`].includes(
-                      fieldDef.fieldType,
-                    ),
-                );
-
-                function addRawValueToCollectedIds(fieldInfo, fieldRawValue) {
-                  if (
-                    ['links', 'rich_text'].includes(fieldInfo.fieldType) &&
-                    Array.isArray(fieldRawValue)
-                  ) {
-                    fieldRawValue.forEach(collectedIds.add.bind(collectedIds));
-                  } else if (fieldInfo.fieldType === 'link' && fieldRawValue) {
-                    collectedIds.add(fieldRawValue);
-                  } else if (
-                    fieldInfo.fieldType === 'structured_text' &&
-                    fieldRawValue
-                  ) {
-                    uniq(
-                      findAll(fieldRawValue.document, [
-                        isInlineItem,
-                        isItemLink,
-                        isBlock,
-                      ]).map(node => node.item),
-                    ).forEach(collectedIds.add.bind(collectedIds));
-                  }
-                }
-
-                fieldsToResolve.forEach(fieldInfo => {
-                  const fieldRawValue = payload.attributes[fieldInfo.apiKey];
-                  if (fieldInfo.localized) {
-                    // Localized fields raw values are object with lang codes
-                    // as keys. We need to iterate over properties to
-                    // collect ids from all languages
-                    Object.values(fieldRawValue).forEach(
-                      fieldTranslationRawValue => {
-                        addRawValueToCollectedIds(
-                          fieldInfo,
-                          fieldTranslationRawValue,
-                        );
-                      },
-                    );
-                  } else {
-                    addRawValueToCollectedIds(fieldInfo, fieldRawValue);
-                  }
-                });
-
-                return collectedIds;
-              },
-              new Set(),
-            );
-
-            const linkedEntitiesPayload = await loader.client.items.all(
-              {
-                'filter[ids]': Array.from(linkedEntitiesIdsToFetch).join(','),
-                version: previewMode ? 'draft' : 'published',
-              },
-              {
-                deserializeResponse: false,
-                allPages: true,
-              },
-            );
-
-            // attach included portion of payload
-            payload.included = linkedEntitiesPayload.data;
-
-            loader.entitiesRepo.upsertEntities(payload);
-          }
-        } else if (event_type === 'unpublish' || event_type === 'delete') {
-          loader.entitiesRepo.destroyEntities('item', [entity_id]);
+          loader.entitiesRepo.upsertEntities(payload);
+        } else if (eventType === 'unpublish' || eventType === 'delete') {
+          loader.entitiesRepo.destroyEntities('item', [entityId]);
         } else {
-          reporter.warn(`Invalid event type ${event_type}`);
+          reporter.warn(`Invalid event type ${eventType}`);
         }
         break;
 
       case 'upload':
-        if (event_type === 'create' || event_type === `update`) {
-          const payload = await loader.client.uploads.all(
-            {
-              'filter[ids]': [entity_id].join(','),
-              version: previewMode ? 'draft' : 'published',
-            },
-            { deserializeResponse: false, allPages: true },
+        if (eventType === 'create' || eventType === `update`) {
+          const payload = await loader.client.uploads.find(
+            entityId,
+            {},
+            { deserializeResponse: false },
           );
-          if (payload) {
-            loader.entitiesRepo.upsertEntities(payload);
-          }
-        } else if (event_type === 'delete') {
-          loader.entitiesRepo.destroyEntities('upload', [entity_id]);
+          loader.entitiesRepo.upsertEntities(payload);
+        } else if (eventType === 'delete') {
+          loader.entitiesRepo.destroyEntities('upload', [entityId]);
         } else {
-          reporter.warn(`Invalid event type ${event_type}`);
+          reporter.warn(`Invalid event type ${eventType}`);
         }
         break;
       default:
-        reporter.warn(`Invalid entity type ${entity_type}`);
+        reporter.warn(`Invalid entity type ${entityType}`);
         break;
     }
     changesActivity.end();
