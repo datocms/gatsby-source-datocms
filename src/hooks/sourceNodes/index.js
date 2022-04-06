@@ -94,11 +94,7 @@ module.exports = async (
 
     switch (entityType) {
       case 'item':
-        if (
-          eventType === 'publish' ||
-          eventType === `update` ||
-          eventType === 'create'
-        ) {
+        if (['publish', 'update', 'create'].includes(eventType)) {
           const payload = await loader.client.items.find(
             entityId,
             {
@@ -108,7 +104,7 @@ module.exports = async (
             { deserializeResponse: false },
           );
           loader.entitiesRepo.upsertEntities(payload);
-        } else if (eventType === 'unpublish' || eventType === 'delete') {
+        } else if (['unpublish', 'delete'].includes(eventType)) {
           loader.entitiesRepo.destroyEntities('item', [entityId]);
         } else {
           reporter.warn(`Invalid event type ${eventType}`);
@@ -116,14 +112,14 @@ module.exports = async (
         break;
 
       case 'upload':
-        if (eventType === 'create' || eventType === `update`) {
+        if (['create', 'update'].includes(eventType)) {
           const payload = await loader.client.uploads.find(
             entityId,
             {},
             { deserializeResponse: false },
           );
           loader.entitiesRepo.upsertEntities(payload);
-        } else if (eventType === 'delete') {
+        } else if (['delete'].includes(eventType)) {
           loader.entitiesRepo.destroyEntities('upload', [entityId]);
         } else {
           reporter.warn(`Invalid event type ${eventType}`);
