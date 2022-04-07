@@ -66,20 +66,20 @@ module.exports = async (
     },
   };
 
-  let activity;
-
-  activity = reporter.activityTimer(`loading DatoCMS schema`, {
-    parentSpan,
-  });
-
-  activity.start();
-
   if (!process.env.GATSBY_WORKER_ID) {
+    let activity;
+
+    activity = reporter.activityTimer(`loading DatoCMS schema`, {
+      parentSpan,
+    });
+
+    activity.start();
+
     await loader.load();
     await loader.saveStateToCache(cache);
-  }
 
-  activity.end();
+    activity.end();
+  }
 
   createTypes(context);
 };

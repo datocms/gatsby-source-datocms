@@ -72,7 +72,19 @@ module.exports = async (
       `DatoCms${instancePrefix ? pascalize(instancePrefix) : ''}${type}`,
   };
 
-  if (webhookBody && Object.keys(webhookBody).length) {
+  // we need this both for Gatsby CMS Preview and live reload on local development
+
+  loader.entitiesRepo.addUpsertListener(entity => {
+    createNodeFromEntity(entity, context);
+  });
+
+  loader.entitiesRepo.addDestroyListener(entity => {
+    destroyEntityNode(entity, context);
+  });
+
+  const isWebhook = webhookBody && Object.keys(webhookBody).length > 0;
+
+  if (isWebhook) {
     const {
       entity_id: entityId,
       entity_type: entityType,
@@ -139,16 +151,8 @@ module.exports = async (
     });
   });
 
-  const queue = new Queue(1, Infinity);
-
   if (process.env.NODE_ENV !== `production` && !disableLiveReload) {
-    loader.entitiesRepo.addUpsertListener(entity => {
-      createNodeFromEntity(entity, context);
-    });
-
-    loader.entitiesRepo.addDestroyListener(entity => {
-      destroyEntityNode(entity, context);
-    });
+    const queue = new Queue(1, Infinity);
 
     loader.watch(loadPromise => {
       queue.add(async () => {
