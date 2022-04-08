@@ -1,6 +1,6 @@
 # Parallel Query Running
 
-With [PQR](#https://www.gatsbyjs.com/docs/reference/release-notes/v3.10/#experimental-parallel-query-running), multiple processes run queries.
+With [PQR](#https://www.gatsbyjs.com/docs/reference/release-notes/v3.10/#experimental-parallel-query-running), multiple processes run GraphQL queries, speeding things up.
 
 How to test this scenario locally: just run `gatsby build`.
 
