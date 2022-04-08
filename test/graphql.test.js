@@ -387,9 +387,7 @@ Suite('tree collections', async () => {
     'tree',
     await executeQuery(/* GraphQL */ `
       {
-        allDatoCmsHierarchical(
-          filter: { root: { eq: true }, locale: { eq: "en" } }
-        ) {
+        allDatoCmsHierarchical(filter: { root: { eq: true } }) {
           nodes {
             id
             title
