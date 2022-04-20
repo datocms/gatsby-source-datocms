@@ -133,6 +133,20 @@
                   "name": "twitter:image",
                   "content": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?w=1000&fit=max&fm=jpg"
                 }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:image:width",
+                  "content": 1137
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:image:height",
+                  "content": 709
+                }
               }
             ],
             "id": "DatoCmsAlternativeSeoMetaTags-DatoCmsAlternativeArticle-24502153-en"
@@ -238,6 +252,20 @@
                 "attributes": {
                   "name": "twitter:image",
                   "content": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?w=1000&fit=max&fm=jpg"
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:image:width",
+                  "content": 1137
+                }
+              },
+              {
+                "tagName": "meta",
+                "attributes": {
+                  "property": "og:image:height",
+                  "content": 709
                 }
               }
             ],

@@ -214,34 +214,38 @@ Suite('force blurhash', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'blurhash',
     await executeQuery(/* GraphQL */ `
-      {
-        datoCmsAsset(originalId: { eq: "2643791" }) {
-          fixed(width: 300) {
-            base64
-          }
-          fluid(maxWidth: 300) {
-            base64
-          }
-          forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) {
-            base64
+        {
+          datoCmsAsset(originalId: { eq: "2643791" }) {
+            fixed(width: 300) {
+              base64
+            }
+            fluid(maxWidth: 300) {
+              base64
+            }
+            forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) {
+              base64
+            }
+            forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) {
+              base64
+            }
           }
           forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) {
             base64
           }
         }
 
-        assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
-          fixed(width: 300) {
-            base64
-            tracedSVG
-          }
-          fluid(maxWidth: 300) {
-            base64
-            tracedSVG
+          assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
+            fixed(width: 300) {
+              base64
+              tracedSVG
+            }
+            fluid(maxWidth: 300) {
+              base64
+              tracedSVG
+            }
           }
         }
-      }
-    `),
+      `),
   );
 });
 
@@ -775,29 +779,30 @@ Suite('multiple instances', async () => {
   assertGraphQLResponseEqualToSnapshot(
     'multipleInstances',
     await executeQuery(/* GraphQL */ `
-      {
-        datoCmsAlternativeSite(locale: { eq: "en" }) {
-          __typename
-          id
-          originalId
-          name
-          locale
-          locales
-          domain
-          internalDomain
-          noIndex
-          globalSeo {
-            siteName
-            titleSuffix
-            twitterAccount
-            facebookPageUrl
-            fallbackSeo {
-              title
-              description
-              twitterCard
-              image {
-                path
-                url
+        {
+          datoCmsAlternativeSite(locale: { eq: "en" }) {
+            __typename
+            id
+            originalId
+            name
+            locale
+            locales
+            domain
+            internalDomain
+            noIndex
+            globalSeo {
+              siteName
+              titleSuffix
+              twitterAccount
+              facebookPageUrl
+              fallbackSeo {
+                title
+                description
+                twitterCard
+                image {
+                  path
+                  url
+                }
               }
             }
           }
@@ -834,8 +839,7 @@ Suite('multiple instances', async () => {
             }
           }
         }
-      }
-    `),
+      `),
   );
 });
 
