@@ -23,7 +23,7 @@ module.exports = function buildItemNode(
     ? [siteEntity.locales[0]]
     : entity.itemType.allLocalesRequired
     ? allLocales
-    : Object.keys(entity[camelize(field.apiKey)]);
+    : Object.keys(entity[camelize(firstLocalizedField.apiKey)]);
 
   return [].concat(
     ...localesToGenerate.map(locale => {

@@ -21,17 +21,11 @@ module.exports = ({
               id: node.itemNodeId,
             });
 
-            try {
-              return seoTagsBuilder(
-                new JsonApiEntity(item.entityPayload, entitiesRepo),
-                entitiesRepo,
-                i18n,
-              );
-            } catch (e) {
-              console.log(e);
-              console.log(e.stack);
-              throw e;
-            }
+            return seoTagsBuilder(
+              new JsonApiEntity(item.entityPayload, entitiesRepo),
+              entitiesRepo,
+              i18n,
+            );
           },
         },
       },
