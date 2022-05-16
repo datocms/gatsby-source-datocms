@@ -649,12 +649,24 @@ Suite('items', async () => {
         modularContent {
           title
           originalId
+          singleLink {
+            singleLineString
+          }
+          multipleLinks {
+            singleLineString
+          }
         }
         _allModularContentLocales {
           locale
           value {
             title
             originalId
+            singleLink {
+              singleLineString
+            }
+            multipleLinks {
+              singleLineString
+            }
           }
         }
         structuredText {
@@ -664,6 +676,12 @@ Suite('items', async () => {
             ... on DatoCmsModularBlock {
               id: originalId
               title
+              singleLink {
+                singleLineString
+              }
+              multipleLinks {
+                singleLineString
+              }
             }
           }
           links {
@@ -684,6 +702,12 @@ Suite('items', async () => {
               ... on DatoCmsModularBlock {
                 id: originalId
                 title
+                singleLink {
+                  singleLineString
+                }
+                multipleLinks {
+                  singleLineString
+                }
               }
             }
             links {

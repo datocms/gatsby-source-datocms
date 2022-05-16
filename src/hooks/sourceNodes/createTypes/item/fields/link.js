@@ -23,9 +23,18 @@ module.exports = ({
     return {
       type: gqlItemTypeName(linkedItemType),
       resolveForSimpleField: (fieldValue, context, node) => {
+        if (node.forcedLocale) {
+          console.log('ECCOLO', node.forcedLocale);
+        }
+
         if (fieldValue) {
           return context.nodeModel.getNodeById({
-            id: itemNodeId(fieldValue, node.locale, entitiesRepo, generateType),
+            id: itemNodeId(
+              fieldValue,
+              node.forcedLocale || node.locale,
+              entitiesRepo,
+              generateType,
+            ),
           });
         }
       },
@@ -47,7 +56,12 @@ module.exports = ({
     resolveForSimpleField: (fieldValue, context, node) => {
       if (fieldValue) {
         return context.nodeModel.getNodeById({
-          id: itemNodeId(fieldValue, node.locale, entitiesRepo, generateType),
+          id: itemNodeId(
+            fieldValue,
+            node.forcedLocale || node.locale,
+            entitiesRepo,
+            generateType,
+          ),
         });
       }
     },

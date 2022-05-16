@@ -1431,11 +1431,27 @@
       "modularContent": [
         {
           "title": "Block 1",
-          "originalId": "7364340"
+          "originalId": "7364340",
+          "singleLink": {
+            "singleLineString": "Single line string"
+          },
+          "multipleLinks": [
+            {
+              "singleLineString": "Single line string"
+            }
+          ]
         },
         {
           "title": "Block 2",
-          "originalId": "7364341"
+          "originalId": "7364341",
+          "singleLink": {
+            "singleLineString": "Single line string"
+          },
+          "multipleLinks": [
+            {
+              "singleLineString": "Single line string"
+            }
+          ]
         }
       ],
       "_allModularContentLocales": [
@@ -1444,11 +1460,27 @@
           "value": [
             {
               "title": "Block 1",
-              "originalId": "7364340"
+              "originalId": "7364340",
+              "singleLink": {
+                "singleLineString": "Single line string"
+              },
+              "multipleLinks": [
+                {
+                  "singleLineString": "Single line string"
+                }
+              ]
             },
             {
               "title": "Block 2",
-              "originalId": "7364341"
+              "originalId": "7364341",
+              "singleLink": {
+                "singleLineString": "Single line string"
+              },
+              "multipleLinks": [
+                {
+                  "singleLineString": "Single line string"
+                }
+              ]
             }
           ]
         },
@@ -1457,11 +1489,27 @@
           "value": [
             {
               "title": "Blocco 1",
-              "originalId": "7364342"
+              "originalId": "7364342",
+              "singleLink": {
+                "singleLineString": "Stringa semplice"
+              },
+              "multipleLinks": [
+                {
+                  "singleLineString": "Stringa semplice"
+                }
+              ]
             },
             {
               "title": "Blocco 2",
-              "originalId": "7364343"
+              "originalId": "7364343",
+              "singleLink": {
+                "singleLineString": "Stringa semplice"
+              },
+              "multipleLinks": [
+                {
+                  "singleLineString": "Stringa semplice"
+                }
+              ]
             }
           ]
         }
@@ -1713,7 +1761,15 @@
           {
             "__typename": "DatoCmsModularBlock",
             "id": "19156539",
-            "title": "Foobar"
+            "title": "Foobar",
+            "singleLink": {
+              "singleLineString": "Single line string"
+            },
+            "multipleLinks": [
+              {
+                "singleLineString": "Single line string"
+              }
+            ]
           }
         ],
         "links": [
@@ -1975,7 +2031,15 @@
               {
                 "__typename": "DatoCmsModularBlock",
                 "id": "19156539",
-                "title": "Foobar"
+                "title": "Foobar",
+                "singleLink": {
+                  "singleLineString": "Single line string"
+                },
+                "multipleLinks": [
+                  {
+                    "singleLineString": "Single line string"
+                  }
+                ]
               }
             ],
             "links": [
@@ -2004,21 +2068,39 @@
                         "value": "Another document for Italian!"
                       }
                     ]
+                  },
+                  {
+                    "item": "121666515",
+                    "type": "block"
                   }
                 ]
               }
             },
-            "blocks": [],
+            "blocks": [
+              {
+                "__typename": "DatoCmsModularBlock",
+                "id": "121666515",
+                "title": "Italian block",
+                "singleLink": {
+                  "singleLineString": "Stringa semplice"
+                },
+                "multipleLinks": [
+                  {
+                    "singleLineString": "Stringa semplice"
+                  }
+                ]
+              }
+            ],
             "links": []
           }
         }
       ],
       "meta": {
         "createdAt": "2020-09-22T15:46:24.300+01:00",
-        "updatedAt": "2021-02-26T13:34:27.561+00:00",
+        "updatedAt": "2022-05-16T16:48:11.526+01:00",
         "status": "published",
         "isValid": true,
-        "publishedAt": "2021-02-26T13:34:27.616+00:00",
+        "publishedAt": "2022-05-16T16:48:11.574+01:00",
         "__typename": "DatoCmsMetaField"
       },
       "seoMetaTags": {
@@ -2074,7 +2156,7 @@
             "tagName": "meta",
             "attributes": {
               "property": "article:modified_time",
-              "content": "2021-02-26T13:34:27Z"
+              "content": "2022-05-16T15:48:11Z"
             }
           },
           {
