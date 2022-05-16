@@ -23,10 +23,6 @@ module.exports = ({
     return {
       type: gqlItemTypeName(linkedItemType),
       resolveForSimpleField: (fieldValue, context, node) => {
-        if (node.forcedLocale) {
-          console.log('ECCOLO', node.forcedLocale);
-        }
-
         if (fieldValue) {
           return context.nodeModel.getNodeById({
             id: itemNodeId(
