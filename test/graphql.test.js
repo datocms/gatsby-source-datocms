@@ -655,6 +655,16 @@ Suite('items', async () => {
           multipleLinks {
             singleLineString
           }
+          innerModularContent {
+            title
+            originalId
+            singleLink {
+              singleLineString
+            }
+            multipleLinks {
+              singleLineString
+            }
+          }
         }
         _allModularContentLocales {
           locale
@@ -666,6 +676,16 @@ Suite('items', async () => {
             }
             multipleLinks {
               singleLineString
+            }
+            innerModularContent {
+              title
+              originalId
+              singleLink {
+                singleLineString
+              }
+              multipleLinks {
+                singleLineString
+              }
             }
           }
         }
@@ -681,6 +701,16 @@ Suite('items', async () => {
               }
               multipleLinks {
                 singleLineString
+              }
+              innerModularContent {
+                title
+                originalId
+                singleLink {
+                  singleLineString
+                }
+                multipleLinks {
+                  singleLineString
+                }
               }
             }
           }
@@ -707,6 +737,16 @@ Suite('items', async () => {
                 }
                 multipleLinks {
                   singleLineString
+                }
+                innerModularContent {
+                  title
+                  originalId
+                  singleLink {
+                    singleLineString
+                  }
+                  multipleLinks {
+                    singleLineString
+                  }
                 }
               }
             }

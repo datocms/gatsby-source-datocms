@@ -36,7 +36,7 @@ module.exports = ({
         );
         return context.nodeModel
           .getNodesByIds({ ids })
-          .map(n => ({ ...n, forcedLocale: node.locale }));
+          .map(n => ({ ...n, forcedLocale: node.forcedLocale || node.locale }));
       },
     };
   }
@@ -66,7 +66,7 @@ module.exports = ({
       );
       return context.nodeModel
         .getNodesByIds({ ids })
-        .map(n => ({ ...n, forcedLocale: node.locale }));
+        .map(n => ({ ...n, forcedLocale: node.forcedLocale || node.locale }));
     },
   };
 };

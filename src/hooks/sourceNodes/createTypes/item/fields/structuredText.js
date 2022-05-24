@@ -119,9 +119,10 @@ module.exports = ({
 
       return {
         value: fieldValue,
-        blocks: context.nodeModel
-          .getNodesByIds({ ids: blockIds })
-          .map(n => ({ ...n, forcedLocale: gqlNode.locale })),
+        blocks: context.nodeModel.getNodesByIds({ ids: blockIds }).map(n => ({
+          ...n,
+          forcedLocale: gqlNode.forcedLocale || gqlNode.locale,
+        })),
         links: context.nodeModel.getNodesByIds({ ids: linkedItemIds }),
       };
     },
