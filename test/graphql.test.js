@@ -789,9 +789,11 @@ Suite('items', async () => {
           originalId
         }
       }
-      datoCmsOptionalLocalesModel(originalId: {eq: "14830204"}, locale: {eq: "it"}) {
-        title
-        boolean
+      allDatoCmsOptionalLocalesModel(filter: { locale: {eq: "it"} }) {
+        nodes {
+          title
+          boolean
+        }
       }
     }
   `;

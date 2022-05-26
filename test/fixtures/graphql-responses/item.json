@@ -2328,6 +2328,13 @@
         "originalId": "313513"
       }
     },
-    "datoCmsOptionalLocalesModel": null
+    "allDatoCmsOptionalLocalesModel": {
+      "nodes": [
+        {
+          "title": "English title",
+          "boolean": false
+        }
+      ]
+    }
   }
 }
