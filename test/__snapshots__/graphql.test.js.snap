@@ -1,0 +1,3578 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`assets 1`] = `
+Object {
+  "data": Object {
+    "one": Object {
+      "author": "Mark",
+      "basename": "plant",
+      "blurhash": "LBDwZP8#$+?Gu^4pt7%0.4RjQuRP",
+      "colors": Array [
+        Object {
+          "alpha": 255,
+          "blue": 73,
+          "green": 181,
+          "hex": "#85b549",
+          "red": 133,
+          "rgb": "rgb(133, 181, 73)",
+        },
+        Object {
+          "alpha": 255,
+          "blue": 143,
+          "green": 192,
+          "hex": "#c5c08f",
+          "red": 197,
+          "rgb": "rgb(197, 192, 143)",
+        },
+        Object {
+          "alpha": 255,
+          "blue": 80,
+          "green": 176,
+          "hex": "#8eb050",
+          "red": 142,
+          "rgb": "rgb(142, 176, 80)",
+        },
+        Object {
+          "alpha": 255,
+          "blue": 5,
+          "green": 88,
+          "hex": "#475805",
+          "red": 71,
+          "rgb": "rgb(71, 88, 5)",
+        },
+        Object {
+          "alpha": 255,
+          "blue": 174,
+          "green": 250,
+          "hex": "#effaae",
+          "red": 239,
+          "rgb": "rgb(239, 250, 174)",
+        },
+        Object {
+          "alpha": 255,
+          "blue": 42,
+          "green": 84,
+          "hex": "#4e542a",
+          "red": 78,
+          "rgb": "rgb(78, 84, 42)",
+        },
+      ],
+      "copyright": "Smith",
+      "createdAt": "2020-09-22T14:19:04.256Z",
+      "exifInfo": Object {
+        "fNumber": 4,
+        "flashMode": 0,
+        "focalLength": 21.8,
+        "iso": 100,
+        "model": "FinePix6900ZOOM",
+      },
+      "filename": "plant.jpeg",
+      "fixed": Object {
+        "aspectRatio": 1.3333333333333333,
+        "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+        "height": 225,
+        "sizes": null,
+        "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&w=300",
+        "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=300 1x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1.5&w=300 1.5x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=2&w=300 2x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=3&w=300 3x",
+        "width": 300,
+      },
+      "fluid": Object {
+        "aspectRatio": 1.3333333333333333,
+        "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+        "height": 75,
+        "sizes": "(max-width: 300px) 100vw, 300px",
+        "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+        "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.75&w=100 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=100 100w",
+        "width": 100,
+      },
+      "format": "jpeg",
+      "height": 75,
+      "isImage": true,
+      "mimeType": "image/jpeg",
+      "newFixed": Object {
+        "backgroundColor": undefined,
+        "height": 300,
+        "images": Object {
+          "fallback": Object {
+            "sizes": "300px",
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&fit=crop&w=75",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&fit=crop&w=75 75w",
+          },
+          "sources": Array [],
+        },
+        "layout": "fixed",
+        "placeholder": Object {
+          "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoUCBIXFQ0PDg0NDQ4QDhUVFg0NFxMZGBYVFhUaHysjGh0oHRUWJDUlKC0vMjIyGSI4PTcwPC0xMi8BCgsLDg0OHBAQHC8lHSUvLzUvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAaAAADAAMBAAAAAAAAAAAAAAAAAwUCBAYB/8QAHBAAAgIDAQEAAAAAAAAAAAAAAAIBAwQREiEF/8QAGAEAAgMAAAAAAAAAAAAAAAAAAQQAAwX/xAAZEQADAAMAAAAAAAAAAAAAAAAAARECEjH/2gAMAwEAAhEDEQA/AI7tw/pU+ffE6JubQ0t4NwFdZjZlONlbddOkWyOQNNXnkAVIO4pseHkzqxVU9AVybovl0bNeoAADSH//2Q==",
+        },
+        "width": 300,
+      },
+      "newFixedSmallerThanOriginal": Object {
+        "backgroundColor": undefined,
+        "height": 30,
+        "images": Object {
+          "fallback": Object {
+            "sizes": "30px",
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&dpr=0.4&fit=crop&w=75",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&dpr=0.4&fit=crop&w=75 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&dpr=0.8&fit=crop&w=75 60w",
+          },
+          "sources": Array [],
+        },
+        "layout": "fixed",
+        "placeholder": Object {
+          "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoUCBIXFQ0PDg0NDQ4QDhUVFg0NFxMZGBYVFhUaHysjGh0oHRUWJDUlKC0vMjIyGSI4PTcwPC0xMi8BCgsLDg0OHBAQHC8lHSUvLzUvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAaAAADAAMBAAAAAAAAAAAAAAAAAwUCBAYB/8QAHBAAAgIDAQEAAAAAAAAAAAAAAAIBAwQREiEF/8QAGAEAAgMAAAAAAAAAAAAAAAAAAQQAAwX/xAAZEQADAAMAAAAAAAAAAAAAAAAAARECEjH/2gAMAwEAAhEDEQA/AI7tw/pU+ffE6JubQ0t4NwFdZjZlONlbddOkWyOQNNXnkAVIO4pseHkzqxVU9AVybovl0bNeoAADSH//2Q==",
+        },
+        "width": 30,
+      },
+      "newFluidH": Object {
+        "backgroundColor": undefined,
+        "height": 150,
+        "images": Object {
+          "fallback": Object {
+            "sizes": "(min-width: 100px) 100px, 100vw",
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+          },
+          "sources": Array [],
+        },
+        "layout": "constrained",
+        "placeholder": Object {
+          "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+        },
+        "width": 200,
+      },
+      "newFluidW": Object {
+        "backgroundColor": undefined,
+        "height": 113,
+        "images": Object {
+          "fallback": Object {
+            "sizes": "(min-width: 100px) 100px, 100vw",
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+          },
+          "sources": Array [],
+        },
+        "layout": "constrained",
+        "placeholder": Object {
+          "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+        },
+        "width": 150,
+      },
+      "newFluidWH": Object {
+        "backgroundColor": undefined,
+        "height": 300,
+        "images": Object {
+          "fallback": Object {
+            "sizes": "(min-width: 100px) 100px, 100vw",
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+          },
+          "sources": Array [],
+        },
+        "layout": "constrained",
+        "placeholder": Object {
+          "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+        },
+        "width": 300,
+      },
+      "newFluidWSmallerThanOriginal": Object {
+        "backgroundColor": undefined,
+        "height": 23,
+        "images": Object {
+          "fallback": Object {
+            "sizes": "(min-width: 30px) 30px, 100vw",
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.08&fit=max&w=100 8w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.15&fit=max&w=100 15w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&fit=max&w=100 60w",
+          },
+          "sources": Array [],
+        },
+        "layout": "constrained",
+        "placeholder": Object {
+          "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+        },
+        "width": 30,
+      },
+      "notes": "Notes",
+      "originalId": "2637142",
+      "path": "/34723/1620629638-plant.jpeg",
+      "size": 4278,
+      "smartTags": Array [
+        "green",
+        "plant",
+        "fruit",
+        "food",
+      ],
+      "tags": Array [
+        "vapor",
+      ],
+      "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+      "video": null,
+      "width": 100,
+    },
+    "three": Object {
+      "author": null,
+      "basename": "samplecsvfile2kb",
+      "blurhash": null,
+      "colors": Array [],
+      "copyright": null,
+      "createdAt": "2020-09-22T14:28:23.693Z",
+      "exifInfo": Object {},
+      "filename": "samplecsvfile2kb.csv",
+      "fixed": null,
+      "fluid": null,
+      "format": "csv",
+      "height": null,
+      "isImage": false,
+      "mimeType": "text/csv",
+      "newFixed": null,
+      "newFixedSmallerThanOriginal": null,
+      "newFluidH": null,
+      "newFluidW": null,
+      "newFluidWH": null,
+      "newFluidWSmallerThanOriginal": null,
+      "notes": null,
+      "originalId": "2637251",
+      "path": "/34723/1600784903-samplecsvfile2kb.csv",
+      "size": 1098,
+      "smartTags": Array [],
+      "tags": Array [],
+      "url": "https://www.datocms-assets.com/34723/1600784903-samplecsvfile2kb.csv",
+      "video": null,
+      "width": null,
+    },
+    "two": Object {
+      "author": null,
+      "basename": "samplevideo1280x7201mb",
+      "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+      "colors": Array [],
+      "copyright": null,
+      "createdAt": "2020-09-22T14:28:22.847Z",
+      "exifInfo": Object {},
+      "filename": "samplevideo1280x7201mb.mp4",
+      "fixed": null,
+      "fluid": null,
+      "format": "mp4",
+      "height": 720,
+      "isImage": false,
+      "mimeType": "video/mp4",
+      "newFixed": null,
+      "newFixedSmallerThanOriginal": null,
+      "newFluidH": null,
+      "newFluidW": null,
+      "newFluidWH": null,
+      "newFluidWSmallerThanOriginal": null,
+      "notes": null,
+      "originalId": "2637250",
+      "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+      "size": 1055736,
+      "smartTags": Array [],
+      "tags": Array [],
+      "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+      "video": Object {
+        "duration": 5,
+        "frameRate": 25,
+        "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+        "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4",
+        "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+        "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+        "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+        "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+        "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+        "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+      },
+      "width": 1280,
+    },
+  },
+}
+`;
+
+exports[`auto=format 1`] = `
+Object {
+  "data": Object {
+    "assetWhichIsNotAnImage": Object {
+      "noFormatFluid": null,
+      "url": "https://www.datocms-assets.com/34723/1600784903-samplecsvfile2kb.csv",
+    },
+    "assetWhichIsNotAnImageThroughRecord": Object {
+      "assetGallery": Array [
+        Object {
+          "noFormatFluid": null,
+          "url": "https://www.datocms-assets.com/34723/1600784903-samplecsvfile2kb.csv",
+        },
+        Object {
+          "noFormatFluid": null,
+          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+        },
+      ],
+    },
+    "assetWhichIsSvg": Object {
+      "noFormatFluid": null,
+      "url": "https://www.datocms-assets.com/34723/1615218922-logowhite.svg",
+    },
+    "datoCmsArticle": Object {
+      "singleAsset": Object {
+        "noFormatFixed": Object {
+          "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&max-w=200&w=300",
+          "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&max-w=200&w=300 1x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1.5&max-w=200&w=300 1.5x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=2&max-w=200&w=300 2x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=3&max-w=200&w=300 3x",
+        },
+        "noFormatFluid": Object {
+          "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&max-w=200&w=140",
+          "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.25&fit=crop&fp-x=0.17&fp-y=0.24&h=40&max-w=200&w=140 35w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.17&fp-y=0.24&h=40&max-w=200&w=140 70w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=1&fit=crop&fp-x=0.17&fp-y=0.24&h=40&max-w=200&w=140 140w",
+        },
+        "noFormatUrl": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&max-w=200",
+        "pngFormatFixed": Object {
+          "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?fm=png&max-w=200&w=300",
+          "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?dpr=1&fm=png&max-w=200&w=300 1x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?dpr=1.5&fm=png&max-w=200&w=300 1.5x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?dpr=2&fm=png&max-w=200&w=300 2x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?dpr=3&fm=png&max-w=200&w=300 3x",
+        },
+        "pngFormatFluid": Object {
+          "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?crop=focalpoint&fit=crop&fm=png&fp-x=0.17&fp-y=0.24&h=40&max-w=200&w=140",
+          "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?crop=focalpoint&dpr=0.25&fit=crop&fm=png&fp-x=0.17&fp-y=0.24&h=40&max-w=200&w=140 35w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?crop=focalpoint&dpr=0.5&fit=crop&fm=png&fp-x=0.17&fp-y=0.24&h=40&max-w=200&w=140 70w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?crop=focalpoint&dpr=1&fit=crop&fm=png&fp-x=0.17&fp-y=0.24&h=40&max-w=200&w=140 140w",
+        },
+        "pngFormatUrl": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?fm=png&max-w=200",
+      },
+    },
+  },
+}
+`;
+
+exports[`focalPoints 1`] = `
+Object {
+  "data": Object {
+    "datoCmsArticle": Object {
+      "assetGallery": Array [
+        Object {
+          "blurhashFluid": null,
+          "blurhashFluidGatsbyImage": null,
+          "dominantSvgFluidGatsbyImage": null,
+          "fluid": null,
+          "focalPoint": null,
+          "tracedSvgFluidGatsbyImage": null,
+          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+          "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4?fit=crop&h=40&w=150",
+        },
+        Object {
+          "blurhashFluid": Object {
+            "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFgoLDh0cFg0NGhodFhUdJR0dGCIVIhUaJSsjGh0oHR0WJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDsoIh47OzsvOzs1Ly8vLzUvLzUvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIAAcAGAMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAABQL/xAAbEAACAgMBAAAAAAAAAAAAAAAAAQIDBRESBP/EABYBAQEBAAAAAAAAAAAAAAAAAAMFAv/EABcRAQEBAQAAAAAAAAAAAAAAAAEAAiH/2gAMAwEAAhEDEQA/AJ3urcI7RrF3ST0wCW9Y1VrUrnyAAnSNl03/2Q==",
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=1&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 150w",
+            "tracedSVG": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='109'%20viewBox='0%200%20400%20109'%20preserveAspectRatio='none'%3e%3cpath%20d='M0%2014c0%2011%200%2013%202%2013%203%200%2012%205%2014%208%203%204%203%206-1%2010l-2%204-3%204-5%207c0%202-2%203-3%203-2%200-2%200-2%2023v23h145l145-1-2-2c-6-7-5-14%201-14l4%202%203%205c2%202%202%203%201%205-2%204-1%205%203%205%203%200%203%200%203-2-3-8-3-8%205-10%205-2%206-2%209%200%205%203%205%203%203%206-6%205-5%206%2014%206%2017%200%2017%200%2019-2l4-3%2016-7a415%20415%200%200125-11%20964%20964%200%20001-75c-3%200-4%200-4%202l4%201%201%201-2%201-1%201c1%201-3%2010-5%2013l-2%204-5%204c-6%203-6%203-6-1%201-3%201-4-1-7-3-3-7-2-6%201s0%205-2%205-5-7-5-10l-1-2c-2%200-5-6-4-9%200-2-1-4-4-7l-4-6c0-2-1-2-20-2h-20v2l2%205%203%205%202%204%201%204c1%203%201%204%203%204l3%202c0%202%202%204%204%205%203%201%203%202%203%206%200%205%200%205%203%206s4%203%204%206%206%209%2011%2010c11%204%2012%206%204%2014-8%206-12%207-29%206-11-1-14-1-17%201-8%202-9%202-14%200-7-4-15-3-17%201-2%202-2%202-1%203v2c-1%201-5%200-7-3l-4-3-6-4-7-8c-6-4-6-4-8-8-1-3%201-8%208-14%203-3%204-6%202-6l-6-3c-4-3-5-3-9-2l-5-1-1-3c0-5%209-21%2016-26%206-5%205-5-20-5-21%200-23%200-23%202%201%201-2%208-6%2012l-3%204c0%202-3%204-5%203s-1-3%202-6c4-4%204-8%201-10l-2-4-97-1H0v14m142%2025c-7%204-10%2010-8%2013%201%202%202%202%203%200%203-3%206-3%208%201%202%203%205%203%209%200%201-2%204-4%207-5%208-4%206-8-5-9h-14m148%206c-2%201-1%202%202%203l7%205%207%203%208%201c12%201%2012%201%2014-2v-6c-2-4-3-5-9-4-5%201-13%201-24-1l-5%201'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+          },
+          "blurhashFluidGatsbyImage": Object {
+            "backgroundColor": undefined,
+            "height": 40,
+            "images": Object {
+              "fallback": Object {
+                "sizes": "(min-width: 150px) 150px, 100vw",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 150w",
+              },
+              "sources": Array [],
+            },
+            "layout": "constrained",
+            "placeholder": Object {
+              "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFgoLDh0cFg0NGhodFhUdJR0dGCIVIhUaJSsjGh0oHR0WJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDsoIh47OzsvOzs1Ly8vLzUvLzUvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIAAcAGAMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAABQL/xAAbEAACAgMBAAAAAAAAAAAAAAAAAQIDBRESBP/EABYBAQEBAAAAAAAAAAAAAAAAAAMFAv/EABcRAQEBAQAAAAAAAAAAAAAAAAEAAiH/2gAMAwEAAhEDEQA/AJ3urcI7RrF3ST0wCW9Y1VrUrnyAAnSNl03/2Q==",
+            },
+            "width": 150,
+          },
+          "dominantSvgFluidGatsbyImage": Object {
+            "backgroundColor": "#85b549",
+            "height": 40,
+            "images": Object {
+              "fallback": Object {
+                "sizes": "(min-width: 150px) 150px, 100vw",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 150w",
+              },
+              "sources": Array [],
+            },
+            "layout": "constrained",
+            "width": 150,
+          },
+          "fluid": Object {
+            "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFgoLDh0cFg0NGhodFhUdJR0dGCIVIhUaJSsjGh0oHR0WJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDsoIh47OzsvOzs1Ly8vLzUvLzUvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIAAcAGAMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAABQL/xAAbEAACAgMBAAAAAAAAAAAAAAAAAQIDBRESBP/EABYBAQEBAAAAAAAAAAAAAAAAAAMFAv/EABcRAQEBAQAAAAAAAAAAAAAAAAEAAiH/2gAMAwEAAhEDEQA/AJ3urcI7RrF3ST0wCW9Y1VrUrnyAAnSNl03/2Q==",
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=1&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 150w",
+            "tracedSVG": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='109'%20viewBox='0%200%20400%20109'%20preserveAspectRatio='none'%3e%3cpath%20d='M0%2014c0%2011%200%2013%202%2013%203%200%2012%205%2014%208%203%204%203%206-1%2010l-2%204-3%204-5%207c0%202-2%203-3%203-2%200-2%200-2%2023v23h145l145-1-2-2c-6-7-5-14%201-14l4%202%203%205c2%202%202%203%201%205-2%204-1%205%203%205%203%200%203%200%203-2-3-8-3-8%205-10%205-2%206-2%209%200%205%203%205%203%203%206-6%205-5%206%2014%206%2017%200%2017%200%2019-2l4-3%2016-7a415%20415%200%200125-11%20964%20964%200%20001-75c-3%200-4%200-4%202l4%201%201%201-2%201-1%201c1%201-3%2010-5%2013l-2%204-5%204c-6%203-6%203-6-1%201-3%201-4-1-7-3-3-7-2-6%201s0%205-2%205-5-7-5-10l-1-2c-2%200-5-6-4-9%200-2-1-4-4-7l-4-6c0-2-1-2-20-2h-20v2l2%205%203%205%202%204%201%204c1%203%201%204%203%204l3%202c0%202%202%204%204%205%203%201%203%202%203%206%200%205%200%205%203%206s4%203%204%206%206%209%2011%2010c11%204%2012%206%204%2014-8%206-12%207-29%206-11-1-14-1-17%201-8%202-9%202-14%200-7-4-15-3-17%201-2%202-2%202-1%203v2c-1%201-5%200-7-3l-4-3-6-4-7-8c-6-4-6-4-8-8-1-3%201-8%208-14%203-3%204-6%202-6l-6-3c-4-3-5-3-9-2l-5-1-1-3c0-5%209-21%2016-26%206-5%205-5-20-5-21%200-23%200-23%202%201%201-2%208-6%2012l-3%204c0%202-3%204-5%203s-1-3%202-6c4-4%204-8%201-10l-2-4-97-1H0v14m142%2025c-7%204-10%2010-8%2013%201%202%202%202%203%200%203-3%206-3%208%201%202%203%205%203%209%200%201-2%204-4%207-5%208-4%206-8-5-9h-14m148%206c-2%201-1%202%202%203l7%205%207%203%208%201c12%201%2012%201%2014-2v-6c-2-4-3-5-9-4-5%201-13%201-24-1l-5%201'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+          },
+          "focalPoint": Object {
+            "x": 0.85,
+            "y": 0.28,
+          },
+          "tracedSvgFluidGatsbyImage": Object {
+            "backgroundColor": undefined,
+            "height": 40,
+            "images": Object {
+              "fallback": Object {
+                "sizes": "(min-width: 150px) 150px, 100vw",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150 150w",
+              },
+              "sources": Array [],
+            },
+            "layout": "constrained",
+            "placeholder": Object {
+              "fallback": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='109'%20viewBox='0%200%20400%20109'%20preserveAspectRatio='none'%3e%3cpath%20d='M0%2014c0%2011%200%2013%202%2013%203%200%2012%205%2014%208%203%204%203%206-1%2010l-2%204-3%204-5%207c0%202-2%203-3%203-2%200-2%200-2%2023v23h145l145-1-2-2c-6-7-5-14%201-14l4%202%203%205c2%202%202%203%201%205-2%204-1%205%203%205%203%200%203%200%203-2-3-8-3-8%205-10%205-2%206-2%209%200%205%203%205%203%203%206-6%205-5%206%2014%206%2017%200%2017%200%2019-2l4-3%2016-7a415%20415%200%200125-11%20964%20964%200%20001-75c-3%200-4%200-4%202l4%201%201%201-2%201-1%201c1%201-3%2010-5%2013l-2%204-5%204c-6%203-6%203-6-1%201-3%201-4-1-7-3-3-7-2-6%201s0%205-2%205-5-7-5-10l-1-2c-2%200-5-6-4-9%200-2-1-4-4-7l-4-6c0-2-1-2-20-2h-20v2l2%205%203%205%202%204%201%204c1%203%201%204%203%204l3%202c0%202%202%204%204%205%203%201%203%202%203%206%200%205%200%205%203%206s4%203%204%206%206%209%2011%2010c11%204%2012%206%204%2014-8%206-12%207-29%206-11-1-14-1-17%201-8%202-9%202-14%200-7-4-15-3-17%201-2%202-2%202-1%203v2c-1%201-5%200-7-3l-4-3-6-4-7-8c-6-4-6-4-8-8-1-3%201-8%208-14%203-3%204-6%202-6l-6-3c-4-3-5-3-9-2l-5-1-1-3c0-5%209-21%2016-26%206-5%205-5-20-5-21%200-23%200-23%202%201%201-2%208-6%2012l-3%204c0%202-3%204-5%203s-1-3%202-6c4-4%204-8%201-10l-2-4-97-1H0v14m142%2025c-7%204-10%2010-8%2013%201%202%202%202%203%200%203-3%206-3%208%201%202%203%205%203%209%200%201-2%204-4%207-5%208-4%206-8-5-9h-14m148%206c-2%201-1%202%202%203l7%205%207%203%208%201c12%201%2012%201%2014-2v-6c-2-4-3-5-9-4-5%201-13%201-24-1l-5%201'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+            },
+            "width": 150,
+          },
+          "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+          "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&h=40&w=150",
+        },
+      ],
+      "singleAsset": Object {
+        "blurhashFluid": Object {
+          "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICBAXFgoLDh4QDhUNGhUVDhUOFxUaGCITFhUaHysjGh0oHSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDsoIiU7OzsvOy8vLy8vLzsvNS8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIAAcAGAMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAABQP/xAAcEAABAwUAAAAAAAAAAAAAAAAAAQIRAwQFEhP/xAAWAQADAAAAAAAAAAAAAAAAAAACAwX/xAAXEQEBAQEAAAAAAAAAAAAAAAABAAIh/9oADAMBAAIRAxEAPwCbfU+bZQ0xVw6YUAlvWBVa06suoAFukgdN/9k=",
+          "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150",
+          "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=1&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 150w",
+          "tracedSVG": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='109'%20viewBox='0%200%20400%20109'%20preserveAspectRatio='none'%3e%3cpath%20d='M0%2021c0%2020%200%2021%202%2021l6%202c10%205%2012%2010%208%2015l-2%203-3%205-5%206-4%205c-2%200-2%201-2%2016v15h191l193-1c1-2%2013-7%2015-7l1%204a1822%201822%200%2000-2-81c-3-2-6%203-3%206%202%204%201%208-3%2014l-3%205c0%201-6%204-7%203l-2-3-3-5-1-2-4-4v6c0%205%200%205-2%205s-3-2-4-4c0-3-1-5-2-5l-1-2-1-3c-2-1-2-5-1-5%201-1%200-3-6-9l-4-7c-2-4-9-9-13-7l-2%203c0%203-5%205-18%207-5%200-11%203-7%203l2%202%201%202c2%200%205%209%204%2012l-2%203c-2%200-3%203-1%203l1-1%202-1%202-2%206%205c6%205%206%206%205%209%200%203%201%207%204%207%202%200%205%204%205%206%200%203%207%208%2012%209%204%201%208%205%208%207s-7%209-12%2011c-3%202-6%202-21%202l-21%201c-3%202-7%201-12-2-4-2-5-2-10-1-7%202-8%203-8%206%201%204%200%204-5%200l-6-4-5-4-8-7c-5-3-7-6-7-10%200-2%209-14%2010-14%203%200%200-4-4-7-5-3-6-3-10-3-8%201-9-1-4-11%203-7%206-12%2015-20%207-7%207-7%2010-6%204%200%205-1%207-8V0h-52v3l-1%202-2%201-6%2010-2%204-4%207c-7%209-7%209-8%207-1-1%200-2%202-4%204-3%204-7%200-11l-3-4-5-7c-4-3-6-6-6-7L91%200H0v21m142%2033c-4%203-9%208-9%2010%200%203%203%204%205%202l3-2%205%205c0%202%206%201%208-1%200-2%202-3%203-3%203-1%209-6%209-7%200-3-19-6-24-4m148%206c-1%202%200%203%204%205l4%202c0%201%208%204%2013%204l10%201c6%201%209-1%208-7-2-6-5-7-13-5-4%201-7%201-23-2-2%200-3%200-3%202'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+        },
+        "blurhashFluidGatsbyImage": Object {
+          "backgroundColor": undefined,
+          "height": 40,
+          "images": Object {
+            "fallback": Object {
+              "sizes": "(min-width: 150px) 150px, 100vw",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 150w",
+            },
+            "sources": Array [],
+          },
+          "layout": "constrained",
+          "placeholder": Object {
+            "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICBAXFgoLDh4QDhUNGhUVDhUOFxUaGCITFhUaHysjGh0oHSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDsoIiU7OzsvOy8vLy8vLzsvNS8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIAAcAGAMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAABQP/xAAcEAABAwUAAAAAAAAAAAAAAAAAAQIRAwQFEhP/xAAWAQADAAAAAAAAAAAAAAAAAAACAwX/xAAXEQEBAQEAAAAAAAAAAAAAAAABAAIh/9oADAMBAAIRAxEAPwCbfU+bZQ0xVw6YUAlvWBVa06suoAFukgdN/9k=",
+          },
+          "width": 150,
+        },
+        "dominantSvgFluidGatsbyImage": Object {
+          "backgroundColor": "#85b549",
+          "height": 40,
+          "images": Object {
+            "fallback": Object {
+              "sizes": "(min-width: 150px) 150px, 100vw",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 150w",
+            },
+            "sources": Array [],
+          },
+          "layout": "constrained",
+          "width": 150,
+        },
+        "fluid": Object {
+          "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICBAXFgoLDh4QDhUNGhUVDhUOFxUaGCITFhUaHysjGh0oHSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDsoIiU7OzsvOy8vLy8vLzsvNS8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIAAcAGAMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAABQP/xAAcEAABAwUAAAAAAAAAAAAAAAAAAQIRAwQFEhP/xAAWAQADAAAAAAAAAAAAAAAAAAACAwX/xAAXEQEBAQEAAAAAAAAAAAAAAAABAAIh/9oADAMBAAIRAxEAPwCbfU+bZQ0xVw6YUAlvWBVa06suoAFukgdN/9k=",
+          "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150",
+          "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=1&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 150w",
+          "tracedSVG": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='109'%20viewBox='0%200%20400%20109'%20preserveAspectRatio='none'%3e%3cpath%20d='M0%2021c0%2020%200%2021%202%2021l6%202c10%205%2012%2010%208%2015l-2%203-3%205-5%206-4%205c-2%200-2%201-2%2016v15h191l193-1c1-2%2013-7%2015-7l1%204a1822%201822%200%2000-2-81c-3-2-6%203-3%206%202%204%201%208-3%2014l-3%205c0%201-6%204-7%203l-2-3-3-5-1-2-4-4v6c0%205%200%205-2%205s-3-2-4-4c0-3-1-5-2-5l-1-2-1-3c-2-1-2-5-1-5%201-1%200-3-6-9l-4-7c-2-4-9-9-13-7l-2%203c0%203-5%205-18%207-5%200-11%203-7%203l2%202%201%202c2%200%205%209%204%2012l-2%203c-2%200-3%203-1%203l1-1%202-1%202-2%206%205c6%205%206%206%205%209%200%203%201%207%204%207%202%200%205%204%205%206%200%203%207%208%2012%209%204%201%208%205%208%207s-7%209-12%2011c-3%202-6%202-21%202l-21%201c-3%202-7%201-12-2-4-2-5-2-10-1-7%202-8%203-8%206%201%204%200%204-5%200l-6-4-5-4-8-7c-5-3-7-6-7-10%200-2%209-14%2010-14%203%200%200-4-4-7-5-3-6-3-10-3-8%201-9-1-4-11%203-7%206-12%2015-20%207-7%207-7%2010-6%204%200%205-1%207-8V0h-52v3l-1%202-2%201-6%2010-2%204-4%207c-7%209-7%209-8%207-1-1%200-2%202-4%204-3%204-7%200-11l-3-4-5-7c-4-3-6-6-6-7L91%200H0v21m142%2033c-4%203-9%208-9%2010%200%203%203%204%205%202l3-2%205%205c0%202%206%201%208-1%200-2%202-3%203-3%203-1%209-6%209-7%200-3-19-6-24-4m148%206c-1%202%200%203%204%205l4%202c0%201%208%204%2013%204l10%201c6%201%209-1%208-7-2-6-5-7-13-5-4%201-7%201-23-2-2%200-3%200-3%202'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+        },
+        "focalPoint": Object {
+          "x": 0.17,
+          "y": 0.24,
+        },
+        "tracedSvgFluidGatsbyImage": Object {
+          "backgroundColor": undefined,
+          "height": 40,
+          "images": Object {
+            "fallback": Object {
+              "sizes": "(min-width: 150px) 150px, 100vw",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.26&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 38w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&dpr=0.5&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150 150w",
+            },
+            "sources": Array [],
+          },
+          "layout": "constrained",
+          "placeholder": Object {
+            "fallback": "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='109'%20viewBox='0%200%20400%20109'%20preserveAspectRatio='none'%3e%3cpath%20d='M0%2021c0%2020%200%2021%202%2021l6%202c10%205%2012%2010%208%2015l-2%203-3%205-5%206-4%205c-2%200-2%201-2%2016v15h191l193-1c1-2%2013-7%2015-7l1%204a1822%201822%200%2000-2-81c-3-2-6%203-3%206%202%204%201%208-3%2014l-3%205c0%201-6%204-7%203l-2-3-3-5-1-2-4-4v6c0%205%200%205-2%205s-3-2-4-4c0-3-1-5-2-5l-1-2-1-3c-2-1-2-5-1-5%201-1%200-3-6-9l-4-7c-2-4-9-9-13-7l-2%203c0%203-5%205-18%207-5%200-11%203-7%203l2%202%201%202c2%200%205%209%204%2012l-2%203c-2%200-3%203-1%203l1-1%202-1%202-2%206%205c6%205%206%206%205%209%200%203%201%207%204%207%202%200%205%204%205%206%200%203%207%208%2012%209%204%201%208%205%208%207s-7%209-12%2011c-3%202-6%202-21%202l-21%201c-3%202-7%201-12-2-4-2-5-2-10-1-7%202-8%203-8%206%201%204%200%204-5%200l-6-4-5-4-8-7c-5-3-7-6-7-10%200-2%209-14%2010-14%203%200%200-4-4-7-5-3-6-3-10-3-8%201-9-1-4-11%203-7%206-12%2015-20%207-7%207-7%2010-6%204%200%205-1%207-8V0h-52v3l-1%202-2%201-6%2010-2%204-4%207c-7%209-7%209-8%207-1-1%200-2%202-4%204-3%204-7%200-11l-3-4-5-7c-4-3-6-6-6-7L91%200H0v21m142%2033c-4%203-9%208-9%2010%200%203%203%204%205%202l3-2%205%205c0%202%206%201%208-1%200-2%202-3%203-3%203-1%209-6%209-7%200-3-19-6-24-4m148%206c-1%202%200%203%204%205l4%202c0%201%208%204%2013%204l10%201c6%201%209-1%208-7-2-6-5-7-13-5-4%201-7%201-23-2-2%200-3%200-3%202'%20fill='%23d3d3d3'%20fill-rule='evenodd'/%3e%3c/svg%3e",
+          },
+          "width": 150,
+        },
+        "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+        "urlWithFocalPoint": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&h=40&w=150",
+      },
+    },
+    "noFocalPoint": Object {
+      "singleAsset": Object {
+        "focalPoint": Object {
+          "x": 0.5,
+          "y": 0.5,
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`force blurhash 1`] = `
+Object {
+  "data": Object {
+    "assetWhichIsSvg": Object {
+      "fixed": null,
+      "fluid": null,
+    },
+    "datoCmsAsset": Object {
+      "fixed": Object {
+        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAQCAYAAAD52jQlAAAAAXNSR0IArs4c6QAAA/lJREFUOE99lF1MHFUUx/937szOfgy7QJdv6UqBTYFaLWqghQf0odbqg9GwPpj62WiaaC0F0pIYM22NLzVprTHVplGTouCuYqopWpuw29ImtMDSrXxIWxbRZQWWAlt2YT9m5voAVUKJv7d77zm/e5KTcwhWIUPmZMhat75ug16j21QjP6AkYhP+hfEpB1zq6vi14FZflGKAAICnyCDF1unP8DHFyygdLjauH7tqaTgNAAyMMDCyOvce90kdcKluyHxj/4c3ulKVI5pJAJJJIUU05o2so8uiQ4SAsB68KciQ73OsyVIlSx86Cw54R8SD7Gx+w1/YftQEALeK3hFXx6888/89yBxQSggcGgFhABgAOLIMz/9A4qNTBnoAvzZGAeCn27ypK6XBbdRwlknSl2SSTDEwspy3hBvyv3IA8G1uMI3q6jcGUb+RoS6vubDpFQACAPRhXyqcjLYXNl4LmN5jXuN+9aKw/+WVHo5B5p6ArFxPabL3mRuPA8DXN25ylzP4vX15wlC/JTVgZtpzv33Qkh08fc6GzcY9QX/LVrUqu3UyOo+ZTB03+GR6FABCtaUMAAgADNLGnTFe+S5HkQyhnORbls+ecQW9Abv/z1BFeDxSbiuztm8pzgmGJ2ZN8yd9h9P2lL2vmKW71z/tbSOPZnz14huVn5Dt1UEGEAIwnkHmWh6MNyRFXvERJSxJ4lNVgRlvpgnSpp0PdYgJdnFqZtaQSCZJjKl0yG4eq7RaZlJ0oFaH/d0yW1pwtH/sAQBBstwH4qx1UodrkHwk21O3CeRhEKZkWXiVKcLivHu4mq/I8+kpZVRHmZiVPh9PEDXSem2HUJI2aNmUGYzMxCRChWQijN4y2ZEAAN7hcqgAUF/KZsf8rYu8pGdxXoxEjl86GqGwZr7wiIeoCq9G4uxOa0+N1n1nNx9USpO5+pdicW6KJFQiUF4PXdQCIASA3Os6cTkc2HJqV3hxImJePHX1hDXA10zvEE5IPOUWW7xVkb7ZXcLf2mORDAqWa4A5qqhUFKZjqkrnJTJXvvf1EAAwyEtSBpkQyOqwuyIt0THRrJ9UbEFxAbr8oqHg4LhxsnvuY3tcQFIfhUq0b9oy9D1lvrmB3a3P+peLwgjqXovxuE0UuZMDgEPL09N9JVQyIom2SZsRd9OE5LjK/fj4kVevfL7BuPWXfJyPZVuhW1CFY77DxwqHdL8DwAXbvpJztoM9avH6L/w59GkAoADggUcDgLbw5b5vy7tOpoP0ThvopbfPN3UAwM1xT+DnUGezpaB6dMEkaO3Tne6CmhrO84dHy8+tFG4Zjb7vpcSZAVF3oX/CM4f/g7GlmXbWOilbsThWzPoam4qRfwBJSbVMmVCusAAAAABJRU5ErkJggg==",
+      },
+      "fluid": Object {
+        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAASCAYAAACw50UTAAAAAXNSR0IArs4c6QAABIBJREFUOE+dU2lslFUUPe9920xn6UynQwdoaVlKK2hLWCr4A9oEg5iUuKQswaD+qWAoEWilQMi8RkQMJpIAAUmMCRKjSEQjGFliq1XTpDRthWGZFrpAaDvtdBk6ne373vNHOxG1YOL58/LOu/fm3vPOBR4PIlAmPeH9P0EmIwXOSARrjVp35X5nGKsFRQMR6CaEtGujoi0P1usEjE+W+yjoZGRN8Q0CAL95tFbisC606NLbmqQcTOXa2T43fiBl8wgAnPm/kyUlOZ63+0SLc5e4ato22Jy2SxzN3/0+ANSCyeNxjF5FuSIg/qXCpJ0DwNcT55YC9/Y2h+hycYvzjl34t67X9gFAf5lPdFiqPASML8bJBAEReIzMEACpBZMn62Bz4d6ic7P3isOFe1YBgG8+UwGgzln1RbOlsrHJVvly25wKLVknmUfHCUYBoARMJyCCMUZ9OVWeYVTNDmJH1ket8e4g4ZveaT1wEQACvoAKAF2z1F9TtZTFFk6/Cd1Xbl8w7cwmgEjWowKMEjBOANFkf5c1uKtyGWO8sVMvuDydnruZbuq+a9N6psTF862HTk3p+64hw7o4bZ3/zY835Gxa0nLXGu7Vw3H4Z2opjaUZMQCoYROdEzAuUGH3kR1ns+Mmr23E8AohaO57hXdipVneP4osp39+Rq431sy4ZJfN88IP+rOVvsi6KE+kFS2d2ROZnlJ/LVOF5ZW8Ld7XngsDgJd5BQDIAHB+RsrpDM1ZWh8fghRVNkbeOno2pzAr8FS6M2BZXXAoNBRSiJ6QQmO6phgGuWVRp0yTlDANjpjVpZkXtEXGTyvmuu7dvN3lAfAQE19LGBjtKjCWUIvqXJ7nyIsLri/ITvO7M0zhGGjC6Bx0K1NTw5zDoFyXZLNCfHFOpoa5bh8bM5tmukYU6AhHE1aZSD3Z29beEEIQQsjfnSE+/3FOKBJ3DkSiGp3uHhiuuVIddciJnC0rDo/d6/NIntRBRA2S+MW/4OGVnmqRpV5K37H8eKy71yXJKleoGs3a/moTIUQAE25hxeML4evotzwYjaYQQUOhfZe9tmv89VGP+Q5VuWRYTcHQ976i4f31xyJf9n7q7lNyFQ2ykRASNYjE4zASsShp33ZEBcYtSQAgOUbHsQse0j84a+jEtf3WACnpdUWjtLxwvYsLEfvMv4f0xp5VVAl9aTzQadUcnhScWtX6wVZ/5UnbA9vc4RJWogMAA6MMjMsAgJoaAkAMXbxO9abgV46AyAyLMITV1OXITm9vr7s9dVDF/LmZZtiDUdgHErfeyE/dWBEw3C8QEgMQEygzt2HnSxFF7OYiVMl01MrAX75s/j2IqFvuNFm5KV/3pA/wkYbl5Wt8AHxYeTDT2x+uftpkrnaFkIs6dv8IcL+2mMkldUz/dkZOha7IH9oUK/rjwx7cfWRVJzQSAIBlLG1zjK+wcdpxqIW1sGImszqmA0DxMpa/cjSxYWEkdODF9iNxAEIApLRw77TzqaDgCoGMQdSxUfwDJLm6STA2fmdg9JNF5cqjsXgyyJ/4m/Pdiy8hqQAAAABJRU5ErkJggg==",
+      },
+      "forceBlurhashFixed": Object {
+        "base64": "data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoPEBMLEBANExEODQ0NFh0NDg0NFxgdGBYVIhUmHysjJh0oHRUWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBEQHC8gIikvLy8wLy8vLy8vLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABMAGAMBIgACEQEDEQH/xAAZAAEBAAMBAAAAAAAAAAAAAAAABQQGBwP/xAAcEAACAwEAAwAAAAAAAAAAAAAAAgEDBBIFEyP/xAAXAQEBAQEAAAAAAAAAAAAAAAABAwQC/8QAGREAAgMBAAAAAAAAAAAAAAAAAAIBETED/9oADAMBAAIRAxEAPwDsGmyEpkl59Srae2/uEIydNaJp5rFGzroRlBLql1UARZYszPJx8SPkiPaAJ0mFF4jgAASnT//Z",
+      },
+      "forceBlurhashFluid": Object {
+        "base64": "data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoPEBMLEBANExEODQ0NFh0NDg0NFxgdGBYVIhUmHysjJh0oHRUWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBEQHC8gIikvLy8wLy8vLy8vLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABMAGAMBIgACEQEDEQH/xAAZAAEBAAMBAAAAAAAAAAAAAAAABQQGBwP/xAAcEAACAwEAAwAAAAAAAAAAAAAAAgEDBBIFEyP/xAAXAQEBAQEAAAAAAAAAAAAAAAABAwQC/8QAGREAAgMBAAAAAAAAAAAAAAAAAAIBETED/9oADAMBAAIRAxEAPwDsGmyEpkl59Srae2/uEIydNaJp5rFGzroRlBLql1UARZYszPJx8SPkiPaAJ0mFF4jgAASnT//Z",
+      },
+    },
+  },
+}
+`;
+
+exports[`items 1`] = `
+Object {
+  "data": Object {
+    "allDatoCmsOptionalLocalesModel": Object {
+      "nodes": Array [
+        Object {
+          "boolean": true,
+          "originalId": "14830204",
+          "title": "English title",
+        },
+        Object {
+          "boolean": false,
+          "originalId": "121852567",
+          "title": "English title",
+        },
+      ],
+    },
+    "enArticle": Object {
+      "__typename": "DatoCmsArticle",
+      "_allAdvancedMultipleLinksLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Array [
+            Object {
+              "__typename": "DatoCmsArticle",
+              "singleLineString": "Secondary article",
+            },
+            Object {
+              "__typename": "DatoCmsSecondaryModel",
+              "title": "First",
+            },
+          ],
+        },
+        Object {
+          "locale": "it",
+          "value": Array [
+            Object {
+              "__typename": "DatoCmsArticle",
+              "singleLineString": "Stringa semplice",
+            },
+            Object {
+              "__typename": "DatoCmsSecondaryModel",
+              "title": "Second",
+            },
+          ],
+        },
+      ],
+      "_allAdvancedSingleLinkLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Object {
+            "__typename": "DatoCmsArticle",
+            "singleLineString": "Secondary article",
+          },
+        },
+        Object {
+          "locale": "it",
+          "value": Object {
+            "__typename": "DatoCmsArticle",
+            "singleLineString": "Stringa semplice",
+          },
+        },
+      ],
+      "_allAssetGalleryLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Array [
+            Object {
+              "alt": null,
+              "author": null,
+              "basename": "samplevideo1280x7201mb",
+              "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+              "colors": Array [],
+              "copyright": null,
+              "createdAt": "2020-09-22T14:28:22.847Z",
+              "customData": Object {},
+              "exifInfo": Object {},
+              "filename": "samplevideo1280x7201mb.mp4",
+              "fixed": null,
+              "fluid": null,
+              "format": "mp4",
+              "height": 720,
+              "isImage": false,
+              "mimeType": "video/mp4",
+              "newFixed": null,
+              "newFixedSmallerThanOriginal": null,
+              "newFluidH": null,
+              "newFluidW": null,
+              "newFluidWH": null,
+              "newFluidWSmallerThanOriginal": null,
+              "notes": null,
+              "originalId": "2637250",
+              "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+              "size": 1055736,
+              "smartTags": Array [],
+              "tags": Array [],
+              "title": null,
+              "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+              "video": Object {
+                "duration": 5,
+                "frameRate": 25,
+                "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+                "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4",
+                "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+                "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+                "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+                "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+                "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+                "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+              },
+              "width": 1280,
+            },
+            Object {
+              "alt": "English alt caption",
+              "author": "Mark",
+              "basename": "plant",
+              "blurhash": "LBDwZP8#$+?Gu^4pt7%0.4RjQuRP",
+              "colors": Array [
+                Object {
+                  "alpha": 255,
+                  "blue": 73,
+                  "green": 181,
+                  "hex": "#85b549",
+                  "red": 133,
+                  "rgb": "rgb(133, 181, 73)",
+                },
+                Object {
+                  "alpha": 255,
+                  "blue": 143,
+                  "green": 192,
+                  "hex": "#c5c08f",
+                  "red": 197,
+                  "rgb": "rgb(197, 192, 143)",
+                },
+                Object {
+                  "alpha": 255,
+                  "blue": 80,
+                  "green": 176,
+                  "hex": "#8eb050",
+                  "red": 142,
+                  "rgb": "rgb(142, 176, 80)",
+                },
+                Object {
+                  "alpha": 255,
+                  "blue": 5,
+                  "green": 88,
+                  "hex": "#475805",
+                  "red": 71,
+                  "rgb": "rgb(71, 88, 5)",
+                },
+                Object {
+                  "alpha": 255,
+                  "blue": 174,
+                  "green": 250,
+                  "hex": "#effaae",
+                  "red": 239,
+                  "rgb": "rgb(239, 250, 174)",
+                },
+                Object {
+                  "alpha": 255,
+                  "blue": 42,
+                  "green": 84,
+                  "hex": "#4e542a",
+                  "red": 78,
+                  "rgb": "rgb(78, 84, 42)",
+                },
+              ],
+              "copyright": "Smith",
+              "createdAt": "2020-09-22T14:19:04.256Z",
+              "customData": Object {
+                "foo": "english",
+              },
+              "exifInfo": Object {
+                "fNumber": 4,
+                "flashMode": 0,
+                "focalLength": 21.8,
+                "iso": 100,
+                "model": "FinePix6900ZOOM",
+              },
+              "filename": "plant.jpeg",
+              "fixed": Object {
+                "aspectRatio": 1.3333333333333333,
+                "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+                "height": 225,
+                "sizes": null,
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&w=300",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=300 1x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1.5&w=300 1.5x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=2&w=300 2x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=3&w=300 3x",
+                "width": 300,
+              },
+              "fluid": Object {
+                "aspectRatio": 1.3333333333333333,
+                "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+                "height": 75,
+                "sizes": "(max-width: 300px) 100vw, 300px",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.75&w=100 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=100 100w",
+                "width": 100,
+              },
+              "format": "jpeg",
+              "height": 75,
+              "isImage": true,
+              "mimeType": "image/jpeg",
+              "newFixed": Object {
+                "backgroundColor": undefined,
+                "height": 300,
+                "images": Object {
+                  "fallback": Object {
+                    "sizes": "300px",
+                    "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&w=75",
+                    "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&w=75 75w",
+                  },
+                  "sources": Array [],
+                },
+                "layout": "fixed",
+                "placeholder": Object {
+                  "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhERFAgXDxEVDg0NDQ0WDhUNFg0NFxMZGBYfFiEdHyslHR0oHSEiJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDUhHyg1Ly81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAZAAEBAAMBAAAAAAAAAAAAAAAABQMEBgH/xAAcEAADAQACAwAAAAAAAAAAAAAAAQIDBBESFDH/xAAYAQACAwAAAAAAAAAAAAAAAAABBAADBf/EABkRAQEAAwEAAAAAAAAAAAAAAAEAAhEhEv/aAAwDAQACEQMRAD8AkY7KdC/wtk5ObvC1sV+F5TJk8asTdYrRdA06t9AHsOUc7D6kt/DYzwUoAWcncuvZcHoAY3//2Q==",
+                },
+                "width": 300,
+              },
+              "newFixedSmallerThanOriginal": Object {
+                "backgroundColor": undefined,
+                "height": 30,
+                "images": Object {
+                  "fallback": Object {
+                    "sizes": "30px",
+                    "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.4&fit=crop&fp-x=0.85&fp-y=0.28&w=75",
+                    "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.4&fit=crop&fp-x=0.85&fp-y=0.28&w=75 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.8&fit=crop&fp-x=0.85&fp-y=0.28&w=75 60w",
+                  },
+                  "sources": Array [],
+                },
+                "layout": "fixed",
+                "placeholder": Object {
+                  "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhERFAgXDxEVDg0NDQ0WDhUNFg0NFxMZGBYfFiEdHyslHR0oHSEiJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDUhHyg1Ly81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAZAAEBAAMBAAAAAAAAAAAAAAAABQMEBgH/xAAcEAADAQACAwAAAAAAAAAAAAAAAQIDBBESFDH/xAAYAQACAwAAAAAAAAAAAAAAAAABBAADBf/EABkRAQEAAwEAAAAAAAAAAAAAAAEAAhEhEv/aAAwDAQACEQMRAD8AkY7KdC/wtk5ObvC1sV+F5TJk8asTdYrRdA06t9AHsOUc7D6kt/DYzwUoAWcncuvZcHoAY3//2Q==",
+                },
+                "width": 30,
+              },
+              "newFluidH": Object {
+                "backgroundColor": undefined,
+                "height": 150,
+                "images": Object {
+                  "fallback": Object {
+                    "sizes": "(min-width: 100px) 100px, 100vw",
+                    "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+                    "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+                  },
+                  "sources": Array [],
+                },
+                "layout": "constrained",
+                "placeholder": Object {
+                  "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+                },
+                "width": 200,
+              },
+              "newFluidW": Object {
+                "backgroundColor": undefined,
+                "height": 113,
+                "images": Object {
+                  "fallback": Object {
+                    "sizes": "(min-width: 100px) 100px, 100vw",
+                    "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+                    "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+                  },
+                  "sources": Array [],
+                },
+                "layout": "constrained",
+                "placeholder": Object {
+                  "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+                },
+                "width": 150,
+              },
+              "newFluidWH": Object {
+                "backgroundColor": undefined,
+                "height": 300,
+                "images": Object {
+                  "fallback": Object {
+                    "sizes": "(min-width: 100px) 100px, 100vw",
+                    "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+                    "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+                  },
+                  "sources": Array [],
+                },
+                "layout": "constrained",
+                "placeholder": Object {
+                  "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+                },
+                "width": 300,
+              },
+              "newFluidWSmallerThanOriginal": Object {
+                "backgroundColor": undefined,
+                "height": 23,
+                "images": Object {
+                  "fallback": Object {
+                    "sizes": "(min-width: 30px) 30px, 100vw",
+                    "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100",
+                    "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.08&fit=max&w=100 8w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.15&fit=max&w=100 15w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&fit=max&w=100 60w",
+                  },
+                  "sources": Array [],
+                },
+                "layout": "constrained",
+                "placeholder": Object {
+                  "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+                },
+                "width": 30,
+              },
+              "notes": "Notes",
+              "originalId": "2637142",
+              "path": "/34723/1620629638-plant.jpeg",
+              "size": 4278,
+              "smartTags": Array [
+                "green",
+                "plant",
+                "fruit",
+                "food",
+              ],
+              "tags": Array [
+                "vapor",
+              ],
+              "title": "Title",
+              "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+              "video": null,
+              "width": 100,
+            },
+          ],
+        },
+        Object {
+          "locale": "it",
+          "value": Array [
+            Object {
+              "alt": null,
+              "author": null,
+              "basename": "samplecsvfile2kb",
+              "blurhash": null,
+              "colors": Array [],
+              "copyright": null,
+              "createdAt": "2020-09-22T14:28:23.693Z",
+              "customData": Object {},
+              "exifInfo": Object {},
+              "filename": "samplecsvfile2kb.csv",
+              "fixed": null,
+              "fluid": null,
+              "format": "csv",
+              "height": null,
+              "isImage": false,
+              "mimeType": "text/csv",
+              "newFixed": null,
+              "newFixedSmallerThanOriginal": null,
+              "newFluidH": null,
+              "newFluidW": null,
+              "newFluidWH": null,
+              "newFluidWSmallerThanOriginal": null,
+              "notes": null,
+              "originalId": "2637251",
+              "path": "/34723/1600784903-samplecsvfile2kb.csv",
+              "size": 1098,
+              "smartTags": Array [],
+              "tags": Array [],
+              "title": null,
+              "url": "https://www.datocms-assets.com/34723/1600784903-samplecsvfile2kb.csv",
+              "video": null,
+              "width": null,
+            },
+            Object {
+              "alt": null,
+              "author": null,
+              "basename": "samplevideo1280x7201mb",
+              "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+              "colors": Array [],
+              "copyright": null,
+              "createdAt": "2020-09-22T14:28:22.847Z",
+              "customData": Object {},
+              "exifInfo": Object {},
+              "filename": "samplevideo1280x7201mb.mp4",
+              "fixed": null,
+              "fluid": null,
+              "format": "mp4",
+              "height": 720,
+              "isImage": false,
+              "mimeType": "video/mp4",
+              "newFixed": null,
+              "newFixedSmallerThanOriginal": null,
+              "newFluidH": null,
+              "newFluidW": null,
+              "newFluidWH": null,
+              "newFluidWSmallerThanOriginal": null,
+              "notes": null,
+              "originalId": "2637250",
+              "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+              "size": 1055736,
+              "smartTags": Array [],
+              "tags": Array [],
+              "title": null,
+              "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+              "video": Object {
+                "duration": 5,
+                "frameRate": 25,
+                "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+                "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4",
+                "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+                "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+                "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+                "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+                "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+                "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+              },
+              "width": 1280,
+            },
+          ],
+        },
+      ],
+      "_allBooleanLocales": Array [
+        Object {
+          "locale": "en",
+          "value": true,
+        },
+        Object {
+          "locale": "it",
+          "value": false,
+        },
+      ],
+      "_allColorLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Object {
+            "alpha": 255,
+            "blue": 97,
+            "green": 11,
+            "hex": "#e20b61",
+            "red": 226,
+            "rgb": "rgb(226, 11, 97)",
+          },
+        },
+        Object {
+          "locale": "it",
+          "value": Object {
+            "alpha": 255,
+            "blue": 7,
+            "green": 166,
+            "hex": "#00a607",
+            "red": 0,
+            "rgb": "rgb(0, 166, 7)",
+          },
+        },
+      ],
+      "_allDateLocales": Array [
+        Object {
+          "locale": "en",
+          "value": "2020-09-22",
+        },
+        Object {
+          "locale": "it",
+          "value": "2020-08-31",
+        },
+      ],
+      "_allDateTimeLocales": Array [
+        Object {
+          "locale": "en",
+          "value": "2020-09-22T16:00:00+01:00",
+        },
+        Object {
+          "locale": "it",
+          "value": "2020-08-31T16:15:00+01:00",
+        },
+      ],
+      "_allExternalVideoLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Object {
+            "__typename": "DatoCmsVideoField",
+            "height": 270,
+            "provider": "youtube",
+            "providerUid": "_WYSFUU8uD0",
+            "thumbnailUrl": "https://i.ytimg.com/vi/_WYSFUU8uD0/hqdefault.jpg",
+            "title": "RUBYDAY 2013 - Ju Liu & Stefano Verna - Fat models must die",
+            "url": "https://www.youtube.com/watch?v=_WYSFUU8uD0",
+            "width": 480,
+          },
+        },
+        Object {
+          "locale": "it",
+          "value": Object {
+            "__typename": "DatoCmsVideoField",
+            "height": 270,
+            "provider": "youtube",
+            "providerUid": "fUJOJY_yVXg",
+            "thumbnailUrl": "https://i.ytimg.com/vi/fUJOJY_yVXg/hqdefault.jpg",
+            "title": "Frontend: riorganizzare (di nuovo) il caos by Matteo Papadopoulos and Stefano Verna",
+            "url": "https://www.youtube.com/watch?v=fUJOJY_yVXg",
+            "width": 480,
+          },
+        },
+      ],
+      "_allFloatingPointNumberLocales": Array [
+        Object {
+          "locale": "en",
+          "value": 3.14,
+        },
+        Object {
+          "locale": "it",
+          "value": 1.23,
+        },
+      ],
+      "_allIntegerNumberLocales": Array [
+        Object {
+          "locale": "en",
+          "value": 42,
+        },
+        Object {
+          "locale": "it",
+          "value": 666,
+        },
+      ],
+      "_allJsonLocales": Array [
+        Object {
+          "locale": "en",
+          "value": "{
+  \\"foo\\": \\"english\\"
+}",
+        },
+        Object {
+          "locale": "it",
+          "value": "{
+  \\"foo\\": \\"italiano\\"
+}",
+        },
+      ],
+      "_allLocationLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Object {
+            "__typename": "DatoCmsLatLonField",
+            "latitude": 43.78527709999999,
+            "longitude": 11.2342448,
+          },
+        },
+        Object {
+          "locale": "it",
+          "value": Object {
+            "__typename": "DatoCmsLatLonField",
+            "latitude": 43.7695923,
+            "longitude": 11.2152132,
+          },
+        },
+      ],
+      "_allModularContentLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Array [
+            Object {
+              "innerModularContent": Array [
+                Object {
+                  "multipleLinks": Array [
+                    Object {
+                      "singleLineString": "Single line string",
+                    },
+                  ],
+                  "originalId": "121812374",
+                  "singleLink": Object {
+                    "singleLineString": "Single line string",
+                  },
+                  "title": "Inner block 1",
+                },
+              ],
+              "multipleLinks": Array [
+                Object {
+                  "singleLineString": "Single line string",
+                },
+              ],
+              "originalId": "7364340",
+              "singleLink": Object {
+                "singleLineString": "Single line string",
+              },
+              "title": "Block 1",
+            },
+            Object {
+              "innerModularContent": Array [],
+              "multipleLinks": Array [
+                Object {
+                  "singleLineString": "Single line string",
+                },
+              ],
+              "originalId": "7364341",
+              "singleLink": Object {
+                "singleLineString": "Single line string",
+              },
+              "title": "Block 2",
+            },
+          ],
+        },
+        Object {
+          "locale": "it",
+          "value": Array [
+            Object {
+              "innerModularContent": Array [
+                Object {
+                  "multipleLinks": Array [
+                    Object {
+                      "singleLineString": "Stringa semplice",
+                    },
+                  ],
+                  "originalId": "121812470",
+                  "singleLink": Object {
+                    "singleLineString": "Stringa semplice",
+                  },
+                  "title": "Blocco interno 1",
+                },
+              ],
+              "multipleLinks": Array [
+                Object {
+                  "singleLineString": "Stringa semplice",
+                },
+              ],
+              "originalId": "7364342",
+              "singleLink": Object {
+                "singleLineString": "Stringa semplice",
+              },
+              "title": "Blocco 1",
+            },
+            Object {
+              "innerModularContent": Array [],
+              "multipleLinks": Array [
+                Object {
+                  "singleLineString": "Stringa semplice",
+                },
+              ],
+              "originalId": "7364343",
+              "singleLink": Object {
+                "singleLineString": "Stringa semplice",
+              },
+              "title": "Blocco 2",
+            },
+          ],
+        },
+      ],
+      "_allMultipleLinksLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Array [
+            Object {
+              "id": "DatoCmsArticle-7364346",
+              "singleLineString": "Secondary article",
+            },
+            Object {
+              "id": "DatoCmsArticle-7364344",
+              "singleLineString": "Single line string",
+            },
+          ],
+        },
+        Object {
+          "locale": "it",
+          "value": Array [
+            Object {
+              "id": "DatoCmsArticle-7364344",
+              "singleLineString": "Stringa semplice",
+            },
+            Object {
+              "id": "DatoCmsArticle-7364346",
+              "singleLineString": "Articolo secondario",
+            },
+          ],
+        },
+      ],
+      "_allMultipleParagraphTextLocales": Array [
+        Object {
+          "locale": "en",
+          "value": "Multiple paragraph text
+
+![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)
+
+
+Foo
+
+![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)
+",
+        },
+        Object {
+          "locale": "it",
+          "value": "Paragrafi multipli",
+        },
+      ],
+      "_allSeoLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Object {
+            "description": "English SEO Description",
+            "image": Object {
+              "path": "/34723/1620629638-plant.jpeg",
+            },
+            "title": "English SEO Title",
+            "twitterCard": "summary_large_image",
+          },
+        },
+        Object {
+          "locale": "it",
+          "value": Object {
+            "description": "Descrizione italiano",
+            "image": Object {
+              "path": "/34723/1620629638-plant.jpeg",
+            },
+            "title": "Titolo italiano",
+            "twitterCard": "summary",
+          },
+        },
+      ],
+      "_allSingleAssetLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Object {
+            "alt": "English alt caption",
+            "author": "Mark",
+            "basename": "plant",
+            "blurhash": "LBDwZP8#$+?Gu^4pt7%0.4RjQuRP",
+            "colors": Array [
+              Object {
+                "alpha": 255,
+                "blue": 73,
+                "green": 181,
+                "hex": "#85b549",
+                "red": 133,
+                "rgb": "rgb(133, 181, 73)",
+              },
+              Object {
+                "alpha": 255,
+                "blue": 143,
+                "green": 192,
+                "hex": "#c5c08f",
+                "red": 197,
+                "rgb": "rgb(197, 192, 143)",
+              },
+              Object {
+                "alpha": 255,
+                "blue": 80,
+                "green": 176,
+                "hex": "#8eb050",
+                "red": 142,
+                "rgb": "rgb(142, 176, 80)",
+              },
+              Object {
+                "alpha": 255,
+                "blue": 5,
+                "green": 88,
+                "hex": "#475805",
+                "red": 71,
+                "rgb": "rgb(71, 88, 5)",
+              },
+              Object {
+                "alpha": 255,
+                "blue": 174,
+                "green": 250,
+                "hex": "#effaae",
+                "red": 239,
+                "rgb": "rgb(239, 250, 174)",
+              },
+              Object {
+                "alpha": 255,
+                "blue": 42,
+                "green": 84,
+                "hex": "#4e542a",
+                "red": 78,
+                "rgb": "rgb(78, 84, 42)",
+              },
+            ],
+            "copyright": "Smith",
+            "createdAt": "2020-09-22T14:19:04.256Z",
+            "customData": Object {
+              "bar": "englishtoo",
+              "foo": "english",
+            },
+            "exifInfo": Object {
+              "fNumber": 4,
+              "flashMode": 0,
+              "focalLength": 21.8,
+              "iso": 100,
+              "model": "FinePix6900ZOOM",
+            },
+            "filename": "plant.jpeg",
+            "fixed": Object {
+              "aspectRatio": 1.3333333333333333,
+              "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+              "height": 225,
+              "sizes": null,
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&w=300",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=300 1x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1.5&w=300 1.5x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=2&w=300 2x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=3&w=300 3x",
+              "width": 300,
+            },
+            "fluid": Object {
+              "aspectRatio": 1.3333333333333333,
+              "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+              "height": 75,
+              "sizes": "(max-width: 300px) 100vw, 300px",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.75&w=100 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=100 100w",
+              "width": 100,
+            },
+            "format": "jpeg",
+            "height": 75,
+            "isImage": true,
+            "mimeType": "image/jpeg",
+            "newFixed": Object {
+              "backgroundColor": undefined,
+              "height": 300,
+              "images": Object {
+                "fallback": Object {
+                  "sizes": "300px",
+                  "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&w=75",
+                  "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&w=75 75w",
+                },
+                "sources": Array [],
+              },
+              "layout": "fixed",
+              "placeholder": Object {
+                "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhYMExAUEA0PGhYLDQ0NEBEODQ0YFxMZGBYVFhUaHysjGh0oHRUWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHC8lHSkvLzUvNS8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAaAAACAgMAAAAAAAAAAAAAAAAABAEDAgUG/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAECAwQSEf/EABgBAAIDAAAAAAAAAAAAAAAAAAECAwQF/8QAGREAAwADAAAAAAAAAAAAAAAAAAECERIh/9oADAMBAAIRAxEAPwDVXLgtxXros20+xEc1U42mVTT4JVZZ1NFqcAE88moADCQdkTOpTMYY4pgBWtsgsZVXKIAAbMU//9k=",
+              },
+              "width": 300,
+            },
+            "newFixedSmallerThanOriginal": Object {
+              "backgroundColor": undefined,
+              "height": 30,
+              "images": Object {
+                "fallback": Object {
+                  "sizes": "30px",
+                  "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.4&fit=crop&fp-x=0.17&fp-y=0.24&w=75",
+                  "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.4&fit=crop&fp-x=0.17&fp-y=0.24&w=75 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.8&fit=crop&fp-x=0.17&fp-y=0.24&w=75 60w",
+                },
+                "sources": Array [],
+              },
+              "layout": "fixed",
+              "placeholder": Object {
+                "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhYMExAUEA0PGhYLDQ0NEBEODQ0YFxMZGBYVFhUaHysjGh0oHRUWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHC8lHSkvLzUvNS8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAaAAACAgMAAAAAAAAAAAAAAAAABAEDAgUG/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAECAwQSEf/EABgBAAIDAAAAAAAAAAAAAAAAAAECAwQF/8QAGREAAwADAAAAAAAAAAAAAAAAAAECERIh/9oADAMBAAIRAxEAPwDVXLgtxXros20+xEc1U42mVTT4JVZZ1NFqcAE88moADCQdkTOpTMYY4pgBWtsgsZVXKIAAbMU//9k=",
+              },
+              "width": 30,
+            },
+            "newFluidH": Object {
+              "backgroundColor": undefined,
+              "height": 150,
+              "images": Object {
+                "fallback": Object {
+                  "sizes": "(min-width: 100px) 100px, 100vw",
+                  "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+                  "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+                },
+                "sources": Array [],
+              },
+              "layout": "constrained",
+              "placeholder": Object {
+                "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+              },
+              "width": 200,
+            },
+            "newFluidW": Object {
+              "backgroundColor": undefined,
+              "height": 113,
+              "images": Object {
+                "fallback": Object {
+                  "sizes": "(min-width: 100px) 100px, 100vw",
+                  "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+                  "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+                },
+                "sources": Array [],
+              },
+              "layout": "constrained",
+              "placeholder": Object {
+                "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+              },
+              "width": 150,
+            },
+            "newFluidWH": Object {
+              "backgroundColor": undefined,
+              "height": 300,
+              "images": Object {
+                "fallback": Object {
+                  "sizes": "(min-width: 100px) 100px, 100vw",
+                  "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+                  "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+                },
+                "sources": Array [],
+              },
+              "layout": "constrained",
+              "placeholder": Object {
+                "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+              },
+              "width": 300,
+            },
+            "newFluidWSmallerThanOriginal": Object {
+              "backgroundColor": undefined,
+              "height": 23,
+              "images": Object {
+                "fallback": Object {
+                  "sizes": "(min-width: 30px) 30px, 100vw",
+                  "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100",
+                  "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.08&fit=max&w=100 8w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.15&fit=max&w=100 15w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&fit=max&w=100 60w",
+                },
+                "sources": Array [],
+              },
+              "layout": "constrained",
+              "placeholder": Object {
+                "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+              },
+              "width": 30,
+            },
+            "notes": "Notes",
+            "originalId": "2637142",
+            "path": "/34723/1620629638-plant.jpeg",
+            "size": 4278,
+            "smartTags": Array [
+              "green",
+              "plant",
+              "fruit",
+              "food",
+            ],
+            "tags": Array [
+              "vapor",
+            ],
+            "title": "Title",
+            "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+            "video": null,
+            "width": 100,
+          },
+        },
+        Object {
+          "locale": "it",
+          "value": Object {
+            "alt": null,
+            "author": null,
+            "basename": "samplevideo1280x7201mb",
+            "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+            "colors": Array [],
+            "copyright": null,
+            "createdAt": "2020-09-22T14:28:22.847Z",
+            "customData": Object {},
+            "exifInfo": Object {},
+            "filename": "samplevideo1280x7201mb.mp4",
+            "fixed": null,
+            "fluid": null,
+            "format": "mp4",
+            "height": 720,
+            "isImage": false,
+            "mimeType": "video/mp4",
+            "newFixed": null,
+            "newFixedSmallerThanOriginal": null,
+            "newFluidH": null,
+            "newFluidW": null,
+            "newFluidWH": null,
+            "newFluidWSmallerThanOriginal": null,
+            "notes": null,
+            "originalId": "2637250",
+            "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+            "size": 1055736,
+            "smartTags": Array [],
+            "tags": Array [],
+            "title": null,
+            "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+            "video": Object {
+              "duration": 5,
+              "frameRate": 25,
+              "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+              "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4",
+              "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+              "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+              "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+              "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+              "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+              "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+            },
+            "width": 1280,
+          },
+        },
+      ],
+      "_allSingleLineStringLocales": Array [
+        Object {
+          "locale": "en",
+          "value": "Single line string",
+        },
+        Object {
+          "locale": "it",
+          "value": "Stringa semplice",
+        },
+      ],
+      "_allSingleLinkLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Object {
+            "id": "DatoCmsArticle-7364346",
+            "singleLineString": "Secondary article",
+          },
+        },
+        Object {
+          "locale": "it",
+          "value": Object {
+            "id": "DatoCmsArticle-121852582",
+            "singleLineString": "Only English",
+          },
+        },
+      ],
+      "_allSlugLocales": Array [
+        Object {
+          "locale": "en",
+          "value": "single-line-string",
+        },
+        Object {
+          "locale": "it",
+          "value": "stringa-semplice",
+        },
+      ],
+      "_allStructuredTextLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Object {
+            "blocks": Array [
+              Object {
+                "__typename": "DatoCmsModularBlock",
+                "id": "19156539",
+                "innerModularContent": Array [
+                  Object {
+                    "multipleLinks": Array [
+                      Object {
+                        "singleLineString": "Single line string",
+                      },
+                    ],
+                    "originalId": "121812400",
+                    "singleLink": Object {
+                      "singleLineString": "Single line string",
+                    },
+                    "title": "Inner Foobar",
+                  },
+                ],
+                "multipleLinks": Array [
+                  Object {
+                    "singleLineString": "Single line string",
+                  },
+                ],
+                "singleLink": Object {
+                  "singleLineString": "Single line string",
+                },
+                "title": "Foobar",
+              },
+            ],
+            "links": Array [
+              Object {
+                "__typename": "DatoCmsArticle",
+                "id": "7364346",
+                "singleLineString": "Secondary article",
+                "slug": "secondary-article",
+              },
+            ],
+            "value": Object {
+              "document": Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "type": "span",
+                        "value": "Heading",
+                      },
+                    ],
+                    "level": 1,
+                    "type": "heading",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "type": "span",
+                        "value": "This is ",
+                      },
+                      Object {
+                        "marks": Array [
+                          "strong",
+                        ],
+                        "type": "span",
+                        "value": "just",
+                      },
+                      Object {
+                        "type": "span",
+                        "value": " ",
+                      },
+                      Object {
+                        "marks": Array [
+                          "emphasis",
+                        ],
+                        "type": "span",
+                        "value": "some",
+                      },
+                      Object {
+                        "type": "span",
+                        "value": " ",
+                      },
+                      Object {
+                        "marks": Array [
+                          "underline",
+                        ],
+                        "type": "span",
+                        "value": "random",
+                      },
+                      Object {
+                        "type": "span",
+                        "value": " ",
+                      },
+                      Object {
+                        "marks": Array [
+                          "code",
+                        ],
+                        "type": "span",
+                        "value": "formatted",
+                      },
+                      Object {
+                        "type": "span",
+                        "value": " ",
+                      },
+                      Object {
+                        "marks": Array [
+                          "highlight",
+                        ],
+                        "type": "span",
+                        "value": "text",
+                      },
+                      Object {
+                        "type": "span",
+                        "value": " with a ",
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "type": "span",
+                            "value": "regular link",
+                          },
+                        ],
+                        "type": "link",
+                        "url": "http://www.datocms.com/",
+                      },
+                      Object {
+                        "type": "span",
+                        "value": " and a ",
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "type": "span",
+                            "value": "record link",
+                          },
+                        ],
+                        "item": "7364346",
+                        "type": "itemLink",
+                      },
+                      Object {
+                        "type": "span",
+                        "value": ".",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "children": Array [
+                              Object {
+                                "type": "span",
+                                "value": "List",
+                              },
+                            ],
+                            "type": "paragraph",
+                          },
+                          Object {
+                            "children": Array [
+                              Object {
+                                "children": Array [
+                                  Object {
+                                    "children": Array [
+                                      Object {
+                                        "type": "span",
+                                        "value": "Inner",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                  Object {
+                                    "children": Array [
+                                      Object {
+                                        "type": "span",
+                                        "value": "Paragraph",
+                                      },
+                                    ],
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "type": "listItem",
+                              },
+                            ],
+                            "style": "bulleted",
+                            "type": "list",
+                          },
+                        ],
+                        "type": "listItem",
+                      },
+                    ],
+                    "style": "bulleted",
+                    "type": "list",
+                  },
+                  Object {
+                    "type": "thematicBreak",
+                  },
+                  Object {
+                    "item": "19156539",
+                    "type": "block",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "children": Array [
+                              Object {
+                                "type": "span",
+                                "value": "One",
+                              },
+                            ],
+                            "type": "paragraph",
+                          },
+                        ],
+                        "type": "listItem",
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "children": Array [
+                              Object {
+                                "type": "span",
+                                "value": "Two",
+                              },
+                            ],
+                            "type": "paragraph",
+                          },
+                        ],
+                        "type": "listItem",
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "children": Array [
+                              Object {
+                                "item": "7364346",
+                                "type": "inlineItem",
+                              },
+                            ],
+                            "type": "paragraph",
+                          },
+                        ],
+                        "type": "listItem",
+                      },
+                    ],
+                    "style": "numbered",
+                    "type": "list",
+                  },
+                  Object {
+                    "code": "function foobar() {
+  alert('1');
+}",
+                    "language": "javascript",
+                    "type": "code",
+                  },
+                  Object {
+                    "attribution": "Me",
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "type": "span",
+                            "value": "This is ",
+                          },
+                          Object {
+                            "marks": Array [
+                              "strong",
+                              "emphasis",
+                            ],
+                            "type": "span",
+                            "value": "a quote",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "blockquote",
+                  },
+                ],
+                "type": "root",
+              },
+              "schema": "dast",
+            },
+          },
+        },
+        Object {
+          "locale": "it",
+          "value": Object {
+            "blocks": Array [
+              Object {
+                "__typename": "DatoCmsModularBlock",
+                "id": "121666515",
+                "innerModularContent": Array [
+                  Object {
+                    "multipleLinks": Array [
+                      Object {
+                        "singleLineString": "Stringa semplice",
+                      },
+                    ],
+                    "originalId": "121812469",
+                    "singleLink": Object {
+                      "singleLineString": "Stringa semplice",
+                    },
+                    "title": "Italian inner block",
+                  },
+                ],
+                "multipleLinks": Array [
+                  Object {
+                    "singleLineString": "Stringa semplice",
+                  },
+                ],
+                "singleLink": Object {
+                  "singleLineString": "Stringa semplice",
+                },
+                "title": "Italian block",
+              },
+            ],
+            "links": Array [],
+            "value": Object {
+              "document": Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "type": "span",
+                        "value": "Another document for Italian!",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                  Object {
+                    "item": "121666515",
+                    "type": "block",
+                  },
+                ],
+                "type": "root",
+              },
+              "schema": "dast",
+            },
+          },
+        },
+      ],
+      "advancedMultipleLinks": Array [
+        Object {
+          "__typename": "DatoCmsArticle",
+          "singleLineString": "Secondary article",
+        },
+        Object {
+          "__typename": "DatoCmsSecondaryModel",
+          "title": "First",
+        },
+      ],
+      "advancedSingleLink": Object {
+        "__typename": "DatoCmsArticle",
+        "singleLineString": "Secondary article",
+      },
+      "assetGallery": Array [
+        Object {
+          "alt": null,
+          "author": null,
+          "basename": "samplevideo1280x7201mb",
+          "blurhash": "LOFsC[4n%gM]sKRMxcIUtLoaxtRo",
+          "colors": Array [],
+          "copyright": null,
+          "createdAt": "2020-09-22T14:28:22.847Z",
+          "customData": Object {},
+          "exifInfo": Object {},
+          "filename": "samplevideo1280x7201mb.mp4",
+          "fixed": null,
+          "fluid": null,
+          "format": "mp4",
+          "height": 720,
+          "isImage": false,
+          "mimeType": "video/mp4",
+          "newFixed": null,
+          "newFixedSmallerThanOriginal": null,
+          "newFluidH": null,
+          "newFluidW": null,
+          "newFluidWH": null,
+          "newFluidWSmallerThanOriginal": null,
+          "notes": null,
+          "originalId": "2637250",
+          "path": "/34723/1600784895-samplevideo1280x7201mb.mp4",
+          "size": 1055736,
+          "smartTags": Array [],
+          "tags": Array [],
+          "title": null,
+          "url": "https://www.datocms-assets.com/34723/1600784895-samplevideo1280x7201mb.mp4",
+          "video": Object {
+            "duration": 5,
+            "frameRate": 25,
+            "gifThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/animated.gif",
+            "highMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/high.mp4",
+            "jpgThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg",
+            "lowMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/low.mp4",
+            "mediumMp4Url": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/medium.mp4",
+            "muxPlaybackId": "4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi",
+            "pngThumbnailUrl": "https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.png",
+            "streamingUrl": "https://stream.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi.m3u8",
+          },
+          "width": 1280,
+        },
+        Object {
+          "alt": "English alt caption",
+          "author": "Mark",
+          "basename": "plant",
+          "blurhash": "LBDwZP8#$+?Gu^4pt7%0.4RjQuRP",
+          "colors": Array [
+            Object {
+              "alpha": 255,
+              "blue": 73,
+              "green": 181,
+              "hex": "#85b549",
+              "red": 133,
+              "rgb": "rgb(133, 181, 73)",
+            },
+            Object {
+              "alpha": 255,
+              "blue": 143,
+              "green": 192,
+              "hex": "#c5c08f",
+              "red": 197,
+              "rgb": "rgb(197, 192, 143)",
+            },
+            Object {
+              "alpha": 255,
+              "blue": 80,
+              "green": 176,
+              "hex": "#8eb050",
+              "red": 142,
+              "rgb": "rgb(142, 176, 80)",
+            },
+            Object {
+              "alpha": 255,
+              "blue": 5,
+              "green": 88,
+              "hex": "#475805",
+              "red": 71,
+              "rgb": "rgb(71, 88, 5)",
+            },
+            Object {
+              "alpha": 255,
+              "blue": 174,
+              "green": 250,
+              "hex": "#effaae",
+              "red": 239,
+              "rgb": "rgb(239, 250, 174)",
+            },
+            Object {
+              "alpha": 255,
+              "blue": 42,
+              "green": 84,
+              "hex": "#4e542a",
+              "red": 78,
+              "rgb": "rgb(78, 84, 42)",
+            },
+          ],
+          "copyright": "Smith",
+          "createdAt": "2020-09-22T14:19:04.256Z",
+          "customData": Object {
+            "foo": "english",
+          },
+          "exifInfo": Object {
+            "fNumber": 4,
+            "flashMode": 0,
+            "focalLength": 21.8,
+            "iso": 100,
+            "model": "FinePix6900ZOOM",
+          },
+          "filename": "plant.jpeg",
+          "fixed": Object {
+            "aspectRatio": 1.3333333333333333,
+            "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+            "height": 225,
+            "sizes": null,
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&w=300",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=300 1x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1.5&w=300 1.5x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=2&w=300 2x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=3&w=300 3x",
+            "width": 300,
+          },
+          "fluid": Object {
+            "aspectRatio": 1.3333333333333333,
+            "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+            "height": 75,
+            "sizes": "(max-width: 300px) 100vw, 300px",
+            "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+            "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.75&w=100 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=100 100w",
+            "width": 100,
+          },
+          "format": "jpeg",
+          "height": 75,
+          "isImage": true,
+          "mimeType": "image/jpeg",
+          "newFixed": Object {
+            "backgroundColor": undefined,
+            "height": 300,
+            "images": Object {
+              "fallback": Object {
+                "sizes": "300px",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&w=75",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&crop=focalpoint&fit=crop&fp-x=0.85&fp-y=0.28&w=75 75w",
+              },
+              "sources": Array [],
+            },
+            "layout": "fixed",
+            "placeholder": Object {
+              "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhERFAgXDxEVDg0NDQ0WDhUNFg0NFxMZGBYfFiEdHyslHR0oHSEiJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDUhHyg1Ly81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAZAAEBAAMBAAAAAAAAAAAAAAAABQMEBgH/xAAcEAADAQACAwAAAAAAAAAAAAAAAQIDBBESFDH/xAAYAQACAwAAAAAAAAAAAAAAAAABBAADBf/EABkRAQEAAwEAAAAAAAAAAAAAAAEAAhEhEv/aAAwDAQACEQMRAD8AkY7KdC/wtk5ObvC1sV+F5TJk8asTdYrRdA06t9AHsOUc7D6kt/DYzwUoAWcncuvZcHoAY3//2Q==",
+            },
+            "width": 300,
+          },
+          "newFixedSmallerThanOriginal": Object {
+            "backgroundColor": undefined,
+            "height": 30,
+            "images": Object {
+              "fallback": Object {
+                "sizes": "30px",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.4&fit=crop&fp-x=0.85&fp-y=0.28&w=75",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.4&fit=crop&fp-x=0.85&fp-y=0.28&w=75 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.8&fit=crop&fp-x=0.85&fp-y=0.28&w=75 60w",
+              },
+              "sources": Array [],
+            },
+            "layout": "fixed",
+            "placeholder": Object {
+              "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhERFAgXDxEVDg0NDQ0WDhUNFg0NFxMZGBYfFiEdHyslHR0oHSEiJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHDUhHyg1Ly81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAZAAEBAAMBAAAAAAAAAAAAAAAABQMEBgH/xAAcEAADAQACAwAAAAAAAAAAAAAAAQIDBBESFDH/xAAYAQACAwAAAAAAAAAAAAAAAAABBAADBf/EABkRAQEAAwEAAAAAAAAAAAAAAAEAAhEhEv/aAAwDAQACEQMRAD8AkY7KdC/wtk5ObvC1sV+F5TJk8asTdYrRdA06t9AHsOUc7D6kt/DYzwUoAWcncuvZcHoAY3//2Q==",
+            },
+            "width": 30,
+          },
+          "newFluidH": Object {
+            "backgroundColor": undefined,
+            "height": 150,
+            "images": Object {
+              "fallback": Object {
+                "sizes": "(min-width: 100px) 100px, 100vw",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+              },
+              "sources": Array [],
+            },
+            "layout": "constrained",
+            "placeholder": Object {
+              "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+            },
+            "width": 200,
+          },
+          "newFluidW": Object {
+            "backgroundColor": undefined,
+            "height": 113,
+            "images": Object {
+              "fallback": Object {
+                "sizes": "(min-width: 100px) 100px, 100vw",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+              },
+              "sources": Array [],
+            },
+            "layout": "constrained",
+            "placeholder": Object {
+              "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+            },
+            "width": 150,
+          },
+          "newFluidWH": Object {
+            "backgroundColor": undefined,
+            "height": 300,
+            "images": Object {
+              "fallback": Object {
+                "sizes": "(min-width: 100px) 100px, 100vw",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+              },
+              "sources": Array [],
+            },
+            "layout": "constrained",
+            "placeholder": Object {
+              "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+            },
+            "width": 300,
+          },
+          "newFluidWSmallerThanOriginal": Object {
+            "backgroundColor": undefined,
+            "height": 23,
+            "images": Object {
+              "fallback": Object {
+                "sizes": "(min-width: 30px) 30px, 100vw",
+                "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100",
+                "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.08&fit=max&w=100 8w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.15&fit=max&w=100 15w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&fit=max&w=100 60w",
+              },
+              "sources": Array [],
+            },
+            "layout": "constrained",
+            "placeholder": Object {
+              "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+            },
+            "width": 30,
+          },
+          "notes": "Notes",
+          "originalId": "2637142",
+          "path": "/34723/1620629638-plant.jpeg",
+          "size": 4278,
+          "smartTags": Array [
+            "green",
+            "plant",
+            "fruit",
+            "food",
+          ],
+          "tags": Array [
+            "vapor",
+          ],
+          "title": "Title",
+          "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+          "video": null,
+          "width": 100,
+        },
+      ],
+      "boolean": true,
+      "color": Object {
+        "alpha": 255,
+        "blue": 97,
+        "green": 11,
+        "hex": "#e20b61",
+        "red": 226,
+        "rgb": "rgb(226, 11, 97)",
+      },
+      "date": "2020 September 22",
+      "dateTime": "2020 September 22 @ 15:00",
+      "externalVideo": Object {
+        "__typename": "DatoCmsVideoField",
+        "height": 270,
+        "provider": "youtube",
+        "providerUid": "_WYSFUU8uD0",
+        "thumbnailUrl": "https://i.ytimg.com/vi/_WYSFUU8uD0/hqdefault.jpg",
+        "title": "RUBYDAY 2013 - Ju Liu & Stefano Verna - Fat models must die",
+        "url": "https://www.youtube.com/watch?v=_WYSFUU8uD0",
+        "width": 480,
+      },
+      "floatingPointNumber": 3.14,
+      "id": "DatoCmsArticle-7364344",
+      "integerNumber": 42,
+      "json": "{
+  \\"foo\\": \\"english\\"
+}",
+      "locales": Array [
+        "en",
+        "it",
+      ],
+      "location": Object {
+        "latitude": 43.78527709999999,
+        "longitude": 11.2342448,
+      },
+      "meta": Object {
+        "__typename": "DatoCmsMetaField",
+        "createdAt": "2020-09-22T15:46:24.300+01:00",
+        "isValid": true,
+        "publishedAt": "2022-05-26T09:20:19.798+01:00",
+        "status": "published",
+        "updatedAt": "2022-05-26T09:20:19.717+01:00",
+      },
+      "model": Object {
+        "allLocalesRequired": false,
+        "apiKey": "article",
+        "collectionAppeareance": "table",
+        "draftModeActive": false,
+        "hasSingletonItem": false,
+        "id": "DatoCmsModel-313513",
+        "modularBlock": false,
+        "name": "Article",
+        "orderingDirection": null,
+        "originalId": "313513",
+        "singleton": false,
+        "sortable": false,
+        "tree": false,
+      },
+      "modularContent": Array [
+        Object {
+          "innerModularContent": Array [
+            Object {
+              "multipleLinks": Array [
+                Object {
+                  "singleLineString": "Single line string",
+                },
+              ],
+              "originalId": "121812374",
+              "singleLink": Object {
+                "singleLineString": "Single line string",
+              },
+              "title": "Inner block 1",
+            },
+          ],
+          "multipleLinks": Array [
+            Object {
+              "singleLineString": "Single line string",
+            },
+          ],
+          "originalId": "7364340",
+          "singleLink": Object {
+            "singleLineString": "Single line string",
+          },
+          "title": "Block 1",
+        },
+        Object {
+          "innerModularContent": Array [],
+          "multipleLinks": Array [
+            Object {
+              "singleLineString": "Single line string",
+            },
+          ],
+          "originalId": "7364341",
+          "singleLink": Object {
+            "singleLineString": "Single line string",
+          },
+          "title": "Block 2",
+        },
+      ],
+      "multipleLinks": Array [
+        Object {
+          "id": "DatoCmsArticle-7364346",
+          "singleLineString": "Secondary article",
+        },
+        Object {
+          "id": "DatoCmsArticle-7364344",
+          "singleLineString": "Single line string",
+        },
+      ],
+      "multipleParagraphText": "Multiple paragraph text
+
+![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)
+
+
+Foo
+
+![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)
+",
+      "originalId": "7364344",
+      "seo": Object {
+        "description": "English SEO Description",
+        "image": Object {
+          "path": "/34723/1620629638-plant.jpeg",
+        },
+        "title": "English SEO Title",
+        "twitterCard": "summary_large_image",
+      },
+      "seoMetaTags": Object {
+        "__typename": "DatoCmsSeoMetaTags",
+        "tags": Array [
+          Object {
+            "content": "English SEO Title- English title suffix",
+            "tagName": "title",
+          },
+          Object {
+            "attributes": Object {
+              "content": "English SEO Title",
+              "property": "og:title",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "English SEO Title",
+              "name": "twitter:title",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "English SEO Description",
+              "name": "description",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "English SEO Description",
+              "property": "og:description",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "English SEO Description",
+              "name": "twitter:description",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "summary_large_image",
+              "name": "twitter:card",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "2022-05-26T08:20:19Z",
+              "property": "article:modified_time",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "2020-09-22T14:46:24Z",
+              "property": "article:published_time",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "en_EN",
+              "property": "og:locale",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "article",
+              "property": "og:type",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=1000&fit=max&fm=jpg",
+              "property": "og:image",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=1000&fit=max&fm=jpg",
+              "name": "twitter:image",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": 100,
+              "property": "og:image:width",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": 75,
+              "property": "og:image:height",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "English alt caption",
+              "property": "og:image:alt",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "English alt caption",
+              "property": "twitter:image:alt",
+            },
+            "tagName": "meta",
+          },
+        ],
+      },
+      "singleAsset": Object {
+        "alt": "English alt caption",
+        "author": "Mark",
+        "basename": "plant",
+        "blurhash": "LBDwZP8#$+?Gu^4pt7%0.4RjQuRP",
+        "colors": Array [
+          Object {
+            "alpha": 255,
+            "blue": 73,
+            "green": 181,
+            "hex": "#85b549",
+            "red": 133,
+            "rgb": "rgb(133, 181, 73)",
+          },
+          Object {
+            "alpha": 255,
+            "blue": 143,
+            "green": 192,
+            "hex": "#c5c08f",
+            "red": 197,
+            "rgb": "rgb(197, 192, 143)",
+          },
+          Object {
+            "alpha": 255,
+            "blue": 80,
+            "green": 176,
+            "hex": "#8eb050",
+            "red": 142,
+            "rgb": "rgb(142, 176, 80)",
+          },
+          Object {
+            "alpha": 255,
+            "blue": 5,
+            "green": 88,
+            "hex": "#475805",
+            "red": 71,
+            "rgb": "rgb(71, 88, 5)",
+          },
+          Object {
+            "alpha": 255,
+            "blue": 174,
+            "green": 250,
+            "hex": "#effaae",
+            "red": 239,
+            "rgb": "rgb(239, 250, 174)",
+          },
+          Object {
+            "alpha": 255,
+            "blue": 42,
+            "green": 84,
+            "hex": "#4e542a",
+            "red": 78,
+            "rgb": "rgb(78, 84, 42)",
+          },
+        ],
+        "copyright": "Smith",
+        "createdAt": "2020-09-22T14:19:04.256Z",
+        "customData": Object {
+          "bar": "englishtoo",
+          "foo": "english",
+        },
+        "exifInfo": Object {
+          "fNumber": 4,
+          "flashMode": 0,
+          "focalLength": 21.8,
+          "iso": 100,
+          "model": "FinePix6900ZOOM",
+        },
+        "filename": "plant.jpeg",
+        "fixed": Object {
+          "aspectRatio": 1.3333333333333333,
+          "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+          "height": 225,
+          "sizes": null,
+          "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&w=300",
+          "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=300 1x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1.5&w=300 1.5x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=2&w=300 2x,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=3&w=300 3x",
+          "width": 300,
+        },
+        "fluid": Object {
+          "aspectRatio": 1.3333333333333333,
+          "base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+          "height": 75,
+          "sizes": "(max-width: 300px) 100vw, 300px",
+          "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+          "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.75&w=100 75w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=1&w=100 100w",
+          "width": 100,
+        },
+        "format": "jpeg",
+        "height": 75,
+        "isImage": true,
+        "mimeType": "image/jpeg",
+        "newFixed": Object {
+          "backgroundColor": undefined,
+          "height": 300,
+          "images": Object {
+            "fallback": Object {
+              "sizes": "300px",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&w=75",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=300%3A300&auto=format&crop=focalpoint&fit=crop&fp-x=0.17&fp-y=0.24&w=75 75w",
+            },
+            "sources": Array [],
+          },
+          "layout": "fixed",
+          "placeholder": Object {
+            "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhYMExAUEA0PGhYLDQ0NEBEODQ0YFxMZGBYVFhUaHysjGh0oHRUWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHC8lHSkvLzUvNS8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAaAAACAgMAAAAAAAAAAAAAAAAABAEDAgUG/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAECAwQSEf/EABgBAAIDAAAAAAAAAAAAAAAAAAECAwQF/8QAGREAAwADAAAAAAAAAAAAAAAAAAECERIh/9oADAMBAAIRAxEAPwDVXLgtxXros20+xEc1U42mVTT4JVZZ1NFqcAE88moADCQdkTOpTMYY4pgBWtsgsZVXKIAAbMU//9k=",
+          },
+          "width": 300,
+        },
+        "newFixedSmallerThanOriginal": Object {
+          "backgroundColor": undefined,
+          "height": 30,
+          "images": Object {
+            "fallback": Object {
+              "sizes": "30px",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.4&fit=crop&fp-x=0.17&fp-y=0.24&w=75",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.4&fit=crop&fp-x=0.17&fp-y=0.24&w=75 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?ar=30%3A30&auto=format&crop=focalpoint&dpr=0.8&fit=crop&fp-x=0.17&fp-y=0.24&w=75 60w",
+            },
+            "sources": Array [],
+          },
+          "layout": "fixed",
+          "placeholder": Object {
+            "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBhYMExAUEA0PGhYLDQ0NEBEODQ0YFxMZGBYVFhUaHysjGh0oHRUWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHC8lHSkvLzUvNS8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABgAGAMBIgACEQEDEQH/xAAaAAACAgMAAAAAAAAAAAAAAAAABAEDAgUG/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAECAwQSEf/EABgBAAIDAAAAAAAAAAAAAAAAAAECAwQF/8QAGREAAwADAAAAAAAAAAAAAAAAAAECERIh/9oADAMBAAIRAxEAPwDVXLgtxXros20+xEc1U42mVTT4JVZZ1NFqcAE88moADCQdkTOpTMYY4pgBWtsgsZVXKIAAbMU//9k=",
+          },
+          "width": 30,
+        },
+        "newFluidH": Object {
+          "backgroundColor": undefined,
+          "height": 150,
+          "images": Object {
+            "fallback": Object {
+              "sizes": "(min-width: 100px) 100px, 100vw",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+            },
+            "sources": Array [],
+          },
+          "layout": "constrained",
+          "placeholder": Object {
+            "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+          },
+          "width": 200,
+        },
+        "newFluidW": Object {
+          "backgroundColor": undefined,
+          "height": 113,
+          "images": Object {
+            "fallback": Object {
+              "sizes": "(min-width: 100px) 100px, 100vw",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+            },
+            "sources": Array [],
+          },
+          "layout": "constrained",
+          "placeholder": Object {
+            "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+          },
+          "width": 150,
+        },
+        "newFluidWH": Object {
+          "backgroundColor": undefined,
+          "height": 300,
+          "images": Object {
+            "fallback": Object {
+              "sizes": "(min-width: 100px) 100px, 100vw",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.25&fit=max&w=100 25w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.5&fit=max&w=100 50w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&fit=max&w=100 100w",
+            },
+            "sources": Array [],
+          },
+          "layout": "constrained",
+          "placeholder": Object {
+            "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+          },
+          "width": 300,
+        },
+        "newFluidWSmallerThanOriginal": Object {
+          "backgroundColor": undefined,
+          "height": 23,
+          "images": Object {
+            "fallback": Object {
+              "sizes": "(min-width: 30px) 30px, 100vw",
+              "src": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100",
+              "srcSet": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.08&fit=max&w=100 8w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.15&fit=max&w=100 15w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.3&fit=max&w=100 30w,
+https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&fit=max&w=100 60w",
+            },
+            "sources": Array [],
+          },
+          "layout": "constrained",
+          "placeholder": Object {
+            "fallback": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBg8IEhAXExYVFQ0SDg0NDhINDQ0NFxUZGBYVFhUmHysjHR0oKSEWJDUlKC0vMjIyGSI4PTcwPCsxMi8BCgsLDg0OHBAQHTUoIiQ7Ly81Ly8vLy8vLy8vLzUvLy8vLy8vLy8vLy81Ly8vLy8vLy8vLy8vLy8vLy8vLy8vL//AABEIABIAGAMBIgACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAAAAwIEBQH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAgEEAxESEyEF/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EABsRAAICAwEAAAAAAAAAAAAAAAABAhETITED/9oADAMBAAIRAxEAPwDLsrOKNlz5dqJ8GW6vauhdOjOJtmTKSb2TlO3bNls8cQKrrMKcEyVpCv0JDUOgQn0nPpFwAAoB/9k=",
+          },
+          "width": 30,
+        },
+        "notes": "Notes",
+        "originalId": "2637142",
+        "path": "/34723/1620629638-plant.jpeg",
+        "size": 4278,
+        "smartTags": Array [
+          "green",
+          "plant",
+          "fruit",
+          "food",
+        ],
+        "tags": Array [
+          "vapor",
+        ],
+        "title": "Title",
+        "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+        "video": null,
+        "width": 100,
+      },
+      "singleLineString": "Single line string",
+      "singleLink": Object {
+        "id": "DatoCmsArticle-7364346",
+        "singleLineString": "Secondary article",
+      },
+      "slug": "single-line-string",
+      "structuredText": Object {
+        "blocks": Array [
+          Object {
+            "__typename": "DatoCmsModularBlock",
+            "id": "19156539",
+            "innerModularContent": Array [
+              Object {
+                "multipleLinks": Array [
+                  Object {
+                    "singleLineString": "Single line string",
+                  },
+                ],
+                "originalId": "121812400",
+                "singleLink": Object {
+                  "singleLineString": "Single line string",
+                },
+                "title": "Inner Foobar",
+              },
+            ],
+            "multipleLinks": Array [
+              Object {
+                "singleLineString": "Single line string",
+              },
+            ],
+            "singleLink": Object {
+              "singleLineString": "Single line string",
+            },
+            "title": "Foobar",
+          },
+        ],
+        "links": Array [
+          Object {
+            "__typename": "DatoCmsArticle",
+            "id": "7364346",
+            "singleLineString": "Secondary article",
+            "slug": "secondary-article",
+          },
+        ],
+        "value": Object {
+          "document": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "type": "span",
+                    "value": "Heading",
+                  },
+                ],
+                "level": 1,
+                "type": "heading",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "type": "span",
+                    "value": "This is ",
+                  },
+                  Object {
+                    "marks": Array [
+                      "strong",
+                    ],
+                    "type": "span",
+                    "value": "just",
+                  },
+                  Object {
+                    "type": "span",
+                    "value": " ",
+                  },
+                  Object {
+                    "marks": Array [
+                      "emphasis",
+                    ],
+                    "type": "span",
+                    "value": "some",
+                  },
+                  Object {
+                    "type": "span",
+                    "value": " ",
+                  },
+                  Object {
+                    "marks": Array [
+                      "underline",
+                    ],
+                    "type": "span",
+                    "value": "random",
+                  },
+                  Object {
+                    "type": "span",
+                    "value": " ",
+                  },
+                  Object {
+                    "marks": Array [
+                      "code",
+                    ],
+                    "type": "span",
+                    "value": "formatted",
+                  },
+                  Object {
+                    "type": "span",
+                    "value": " ",
+                  },
+                  Object {
+                    "marks": Array [
+                      "highlight",
+                    ],
+                    "type": "span",
+                    "value": "text",
+                  },
+                  Object {
+                    "type": "span",
+                    "value": " with a ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "type": "span",
+                        "value": "regular link",
+                      },
+                    ],
+                    "type": "link",
+                    "url": "http://www.datocms.com/",
+                  },
+                  Object {
+                    "type": "span",
+                    "value": " and a ",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "type": "span",
+                        "value": "record link",
+                      },
+                    ],
+                    "item": "7364346",
+                    "type": "itemLink",
+                  },
+                  Object {
+                    "type": "span",
+                    "value": ".",
+                  },
+                ],
+                "type": "paragraph",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "type": "span",
+                            "value": "List",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                      Object {
+                        "children": Array [
+                          Object {
+                            "children": Array [
+                              Object {
+                                "children": Array [
+                                  Object {
+                                    "type": "span",
+                                    "value": "Inner",
+                                  },
+                                ],
+                                "type": "paragraph",
+                              },
+                              Object {
+                                "children": Array [
+                                  Object {
+                                    "type": "span",
+                                    "value": "Paragraph",
+                                  },
+                                ],
+                                "type": "paragraph",
+                              },
+                            ],
+                            "type": "listItem",
+                          },
+                        ],
+                        "style": "bulleted",
+                        "type": "list",
+                      },
+                    ],
+                    "type": "listItem",
+                  },
+                ],
+                "style": "bulleted",
+                "type": "list",
+              },
+              Object {
+                "type": "thematicBreak",
+              },
+              Object {
+                "item": "19156539",
+                "type": "block",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "type": "span",
+                            "value": "One",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "listItem",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "type": "span",
+                            "value": "Two",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "listItem",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "item": "7364346",
+                            "type": "inlineItem",
+                          },
+                        ],
+                        "type": "paragraph",
+                      },
+                    ],
+                    "type": "listItem",
+                  },
+                ],
+                "style": "numbered",
+                "type": "list",
+              },
+              Object {
+                "code": "function foobar() {
+  alert('1');
+}",
+                "language": "javascript",
+                "type": "code",
+              },
+              Object {
+                "attribution": "Me",
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "type": "span",
+                        "value": "This is ",
+                      },
+                      Object {
+                        "marks": Array [
+                          "strong",
+                          "emphasis",
+                        ],
+                        "type": "span",
+                        "value": "a quote",
+                      },
+                    ],
+                    "type": "paragraph",
+                  },
+                ],
+                "type": "blockquote",
+              },
+            ],
+            "type": "root",
+          },
+          "schema": "dast",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`multiple instances 1`] = `
+Object {
+  "data": Object {
+    "allDatoCmsAlternativeArticle": Object {
+      "nodes": Array [
+        Object {
+          "__typename": "DatoCmsAlternativeArticle",
+          "id": "DatoCmsAlternativeArticle-24502153",
+          "name": "Test",
+          "originalId": "24502153",
+          "seo": Object {
+            "image": Object {
+              "path": "/34723/1615803363-structured-text.png",
+            },
+          },
+          "seoMetaTags": Object {
+            "__typename": "DatoCmsAlternativeSeoMetaTags",
+            "tags": Array [
+              Object {
+                "content": "Alternate title",
+                "tagName": "title",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "Alternate title",
+                  "property": "og:title",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "Alternate title",
+                  "name": "twitter:title",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "Alt description",
+                  "name": "description",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "Alt description",
+                  "property": "og:description",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "Alt description",
+                  "name": "twitter:description",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "summary",
+                  "name": "twitter:card",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "2021-10-27T07:21:34Z",
+                  "property": "article:modified_time",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "2021-03-15T10:16:31Z",
+                  "property": "article:published_time",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "en_EN",
+                  "property": "og:locale",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "article",
+                  "property": "og:type",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?w=1000&fit=max&fm=jpg",
+                  "property": "og:image",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?w=1000&fit=max&fm=jpg",
+                  "name": "twitter:image",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": 1137,
+                  "property": "og:image:width",
+                },
+                "tagName": "meta",
+              },
+              Object {
+                "attributes": Object {
+                  "content": 709,
+                  "property": "og:image:height",
+                },
+                "tagName": "meta",
+              },
+            ],
+          },
+        },
+      ],
+    },
+    "allDatoCmsAlternativeAsset": Object {
+      "nodes": Array [
+        Object {
+          "url": "https://www.datocms-assets.com/34723/1615803363-structured-text.png?auto=format",
+        },
+      ],
+    },
+    "allDatoCmsAlternativeModel": Object {
+      "nodes": Array [
+        Object {
+          "name": "Article",
+        },
+      ],
+    },
+    "datoCmsAlternativeSite": Object {
+      "__typename": "DatoCmsAlternativeSite",
+      "domain": null,
+      "faviconMetaTags": Object {
+        "tags": Array [
+          Object {
+            "attributes": Object {
+              "content": "Kitchen Sink",
+              "name": "application-name",
+            },
+            "tagName": "meta",
+          },
+        ],
+      },
+      "globalSeo": null,
+      "id": "DatoCmsAlternativeSite-34723",
+      "internalDomain": "kitchen-sink.admin.datocms.com",
+      "locales": Array [
+        "en",
+        "it",
+      ],
+      "name": "Kitchen Sink",
+      "noIndex": false,
+      "originalId": "34723",
+    },
+  },
+}
+`;
+
+exports[`site 1`] = `
+Object {
+  "data": Object {
+    "enSite": Object {
+      "__typename": "DatoCmsSite",
+      "domain": null,
+      "faviconMetaTags": Object {
+        "tags": Array [
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=57&h=57",
+              "rel": "apple-touch-icon",
+              "sizes": "57x57",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=60&h=60",
+              "rel": "apple-touch-icon",
+              "sizes": "60x60",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=72&h=72",
+              "rel": "apple-touch-icon",
+              "sizes": "72x72",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=76&h=76",
+              "rel": "apple-touch-icon",
+              "sizes": "76x76",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=114&h=114",
+              "rel": "apple-touch-icon",
+              "sizes": "114x114",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=120&h=120",
+              "rel": "apple-touch-icon",
+              "sizes": "120x120",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=144&h=144",
+              "rel": "apple-touch-icon",
+              "sizes": "144x144",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=152&h=152",
+              "rel": "apple-touch-icon",
+              "sizes": "152x152",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=180&h=180",
+              "rel": "apple-touch-icon",
+              "sizes": "180x180",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=70&h=70",
+              "name": "msapplication-square70x70",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=150&h=150",
+              "name": "msapplication-square150x150",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=310&h=310",
+              "name": "msapplication-square310x310",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=310&h=150",
+              "name": "msapplication-square310x150",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=16&h=16",
+              "rel": "icon",
+              "sizes": "16x16",
+              "type": "image/jpeg",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=32&h=32",
+              "rel": "icon",
+              "sizes": "32x32",
+              "type": "image/jpeg",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=96&h=96",
+              "rel": "icon",
+              "sizes": "96x96",
+              "type": "image/jpeg",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=192&h=192",
+              "rel": "icon",
+              "sizes": "192x192",
+              "type": "image/jpeg",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "content": "Kitchen Sink",
+              "name": "application-name",
+            },
+            "tagName": "meta",
+          },
+        ],
+      },
+      "globalSeo": Object {
+        "facebookPageUrl": "http://facebook.com/english",
+        "fallbackSeo": Object {
+          "description": "English fallback description",
+          "image": Object {
+            "path": "/34723/1620629638-plant.jpeg",
+            "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+          },
+          "title": "English fallback title",
+          "twitterCard": "summary",
+        },
+        "siteName": "English website name",
+        "titleSuffix": "- English title suffix",
+        "twitterAccount": "@english",
+      },
+      "id": "DatoCmsSite-34723",
+      "internalDomain": "kitchen-sink.admin.datocms.com",
+      "locales": Array [
+        "en",
+        "it",
+      ],
+      "name": "Kitchen Sink",
+      "noIndex": false,
+      "originalId": "34723",
+    },
+    "itSite": Object {
+      "__typename": "DatoCmsSite",
+      "domain": null,
+      "faviconMetaTags": Object {
+        "tags": Array [
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=57&h=57",
+              "rel": "apple-touch-icon",
+              "sizes": "57x57",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=60&h=60",
+              "rel": "apple-touch-icon",
+              "sizes": "60x60",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=72&h=72",
+              "rel": "apple-touch-icon",
+              "sizes": "72x72",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=76&h=76",
+              "rel": "apple-touch-icon",
+              "sizes": "76x76",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=114&h=114",
+              "rel": "apple-touch-icon",
+              "sizes": "114x114",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=120&h=120",
+              "rel": "apple-touch-icon",
+              "sizes": "120x120",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=144&h=144",
+              "rel": "apple-touch-icon",
+              "sizes": "144x144",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=152&h=152",
+              "rel": "apple-touch-icon",
+              "sizes": "152x152",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=180&h=180",
+              "rel": "apple-touch-icon",
+              "sizes": "180x180",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=70&h=70",
+              "name": "msapplication-square70x70",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=150&h=150",
+              "name": "msapplication-square150x150",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=310&h=310",
+              "name": "msapplication-square310x310",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "content": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=310&h=150",
+              "name": "msapplication-square310x150",
+            },
+            "tagName": "meta",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=16&h=16",
+              "rel": "icon",
+              "sizes": "16x16",
+              "type": "image/jpeg",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=32&h=32",
+              "rel": "icon",
+              "sizes": "32x32",
+              "type": "image/jpeg",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=96&h=96",
+              "rel": "icon",
+              "sizes": "96x96",
+              "type": "image/jpeg",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "href": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?w=192&h=192",
+              "rel": "icon",
+              "sizes": "192x192",
+              "type": "image/jpeg",
+            },
+            "tagName": "link",
+          },
+          Object {
+            "attributes": Object {
+              "content": "Kitchen Sink",
+              "name": "application-name",
+            },
+            "tagName": "meta",
+          },
+        ],
+      },
+      "globalSeo": Object {
+        "facebookPageUrl": "http://facebook.com/italian",
+        "fallbackSeo": Object {
+          "description": "Italian fallback description",
+          "image": Object {
+            "path": "/34723/1620629638-plant.jpeg",
+            "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
+          },
+          "title": "Italian fallback title",
+          "twitterCard": "summary_large_image",
+        },
+        "siteName": "Italian website name",
+        "titleSuffix": "- Italian",
+        "twitterAccount": "@italian",
+      },
+      "id": "DatoCmsSite-34723",
+      "internalDomain": "kitchen-sink.admin.datocms.com",
+      "locales": Array [
+        "en",
+        "it",
+      ],
+      "name": "Kitchen Sink",
+      "noIndex": false,
+      "originalId": "34723",
+    },
+  },
+}
+`;
+
+exports[`sortable collection 1`] = `
+Object {
+  "data": Object {
+    "datoCmsSecondaryModel": Object {
+      "position": 4,
+    },
+  },
+}
+`;
+
+exports[`structured text 1`] = `
+"<h1>Heading</h1><p>This is <strong>just</strong> <em>some</em> <u>random</u> <code>formatted</code> <mark>text</mark> with a <a href=\\"http://www.datocms.com/\\">regular link</a> and a <a href=\\"/docs/secondary-article\\">record link</a>.</p><ul><li><p>List</p><ul><li><p>Inner</p><p>Paragraph</p></li></ul></li></ul><hr><figure>Foobar</figure><ol><li><p>One</p></li><li><p>Two</p></li><li><p><a href=\\"/docs/secondary-article\\">Secondary article</a></p></li></ol><pre data-language=\\"javascript\\"><code>function foobar() {
+  alert(&apos;1&apos;);
+}</code></pre><blockquote><p>This is <em><strong>a quote</strong></em></p><footer>Me</footer></blockquote>"
+`;
+
+exports[`tree collections 1`] = `
+Object {
+  "data": Object {
+    "allDatoCmsHierarchical": Object {
+      "nodes": Array [
+        Object {
+          "id": "DatoCmsHierarchical-7378631",
+          "position": 1,
+          "title": "Parent",
+          "treeChildren": Array [
+            Object {
+              "id": "DatoCmsHierarchical-7378632",
+              "position": 0,
+              "title": "Children",
+              "treeChildren": Array [
+                Object {
+                  "id": "DatoCmsHierarchical-7378634",
+                  "position": 0,
+                  "title": "Grandchildren 1",
+                  "treeChildren": Array [],
+                },
+                Object {
+                  "id": "DatoCmsHierarchical-7378650",
+                  "position": 1,
+                  "title": "Grandchildren 2",
+                  "treeChildren": Array [],
+                },
+              ],
+              "treeParent": Object {
+                "id": "DatoCmsHierarchical-7378631",
+                "title": "Parent",
+              },
+            },
+          ],
+        },
+      ],
+    },
+  },
+}
+`;

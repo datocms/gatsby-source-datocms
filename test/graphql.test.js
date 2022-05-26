@@ -1,22 +1,21 @@
-const { suite } = require('uvu');
 const { render } = require('datocms-structured-text-to-html-string');
 const buildQueryExecutor = require('./support/buildQueryExecutor');
-const assertGraphQLResponseEqualToSnapshot = require('./support/assertGraphQLResponseEqualToSnapshot');
 
-const Suite = suite('GraphQL');
+jest.setTimeout(60000);
 
 let executeQuery;
+let quit;
 
-Suite.before(async () => {
+beforeAll(async () => {
   try {
-    executeQuery = await buildQueryExecutor('bb260a9bf12cccf24392dc68209a42');
+    [executeQuery] = await buildQueryExecutor('bb260a9bf12cccf24392dc68209a42');
   } catch (e) {
     console.log('ERROR', e);
     throw e;
   }
 });
 
-Suite('focalPoints', async () => {
+test('focalPoints', async () => {
   const result = await executeQuery(/* GraphQL */ `
     {
       datoCmsArticle(originalId: { eq: "7364344" }) {
@@ -131,10 +130,10 @@ Suite('focalPoints', async () => {
     }
   `);
 
-  assertGraphQLResponseEqualToSnapshot('focal-point', result);
+  expect(result).toMatchSnapshot();
 });
 
-Suite('auto=format', async () => {
+test('auto=format', async () => {
   const result = await executeQuery(/* GraphQL */ `
     {
       datoCmsArticle(originalId: { eq: "7364344" }) {
@@ -194,7 +193,7 @@ Suite('auto=format', async () => {
 
       assetWhichIsNotAnImageThroughRecord: datoCmsArticle(
         originalId: { eq: "7364344" }
-        locale: { eq: "it" }
+        locale: "it"
       ) {
         assetGallery {
           url
@@ -207,45 +206,43 @@ Suite('auto=format', async () => {
     }
   `);
 
-  assertGraphQLResponseEqualToSnapshot('auto-format', result);
+  expect(result).toMatchSnapshot();
 });
 
-Suite('force blurhash', async () => {
-  assertGraphQLResponseEqualToSnapshot(
-    'blurhash',
-    await executeQuery(
-      /* GraphQL */
-      `
-        {
-          datoCmsAsset(originalId: { eq: "2643791" }) {
-            fixed(width: 300) {
-              base64
-            }
-            fluid(maxWidth: 300) {
-              base64
-            }
-            forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) {
-              base64
-            }
-            forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) {
-              base64
-            }
+test('force blurhash', async () => {
+  const result = await executeQuery(
+    /* GraphQL */
+    `
+      {
+        datoCmsAsset(originalId: { eq: "2643791" }) {
+          fixed(width: 300) {
+            base64
           }
-
-          assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
-            fixed(width: 300) {
-              base64
-              tracedSVG
-            }
-            fluid(maxWidth: 300) {
-              base64
-              tracedSVG
-            }
+          fluid(maxWidth: 300) {
+            base64
+          }
+          forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) {
+            base64
+          }
+          forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) {
+            base64
           }
         }
-      `,
-    ),
+
+        assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
+          fixed(width: 300) {
+            base64
+            tracedSVG
+          }
+          fluid(maxWidth: 300) {
+            base64
+            tracedSVG
+          }
+        }
+      }
+    `,
   );
+  expect(result).toMatchSnapshot();
 });
 
 const assetFields = `
@@ -277,33 +274,18 @@ const assetFields = `
 
 const fileFields = `alt title customData ${assetFields}`;
 
-Suite('assets', async () => {
-  assertGraphQLResponseEqualToSnapshot(
-    'png-asset',
-    await executeQuery(
-      /* GraphQL */
-      `{ datoCmsAsset(originalId: {eq: "2637142"}) { ${assetFields} } }`,
-    ),
-  );
-  assertGraphQLResponseEqualToSnapshot(
-    'mp4-asset',
-    await executeQuery(
-      /* GraphQL */
-      `{ datoCmsAsset(originalId: {eq: "2637250"}) { ${assetFields} } }`,
-    ),
-  );
-  assertGraphQLResponseEqualToSnapshot(
-    'csv-asset',
-    await executeQuery(
-      /* GraphQL */
-      `{ datoCmsAsset(originalId: {eq: "2637251"}) { ${assetFields} } }`,
-    ),
-  );
+test('assets', async () => {
+  expect(
+    await executeQuery(/* GraphQL */ `{
+        one: datoCmsAsset(originalId: {eq: "2637142"}) { ${assetFields} }
+        two: datoCmsAsset(originalId: {eq: "2637250"}) { ${assetFields} }
+        three: datoCmsAsset(originalId: {eq: "2637251"}) { ${assetFields} }
+      }`),
+  ).toMatchSnapshot();
 });
 
-Suite('sortable collection', async () => {
-  assertGraphQLResponseEqualToSnapshot(
-    'sortable-position',
+test('sortable collection', async () => {
+  expect(
     await executeQuery(/* GraphQL */ `
       {
         datoCmsSecondaryModel(originalId: { eq: "7364459" }) {
@@ -311,20 +293,18 @@ Suite('sortable collection', async () => {
         }
       }
     `),
-  );
+  ).toMatchSnapshot();
 });
 
-Suite('site', async () => {
-  assertGraphQLResponseEqualToSnapshot(
-    'site',
+test('site', async () => {
+  expect(
     await executeQuery(/* GraphQL */ `
       {
-        enSite: datoCmsSite(locale: { eq: "en" }) {
+        enSite: datoCmsSite(locale: "en") {
           __typename
           id
           originalId
           name
-          locale
           locales
           domain
           internalDomain
@@ -348,12 +328,11 @@ Suite('site', async () => {
             tags
           }
         }
-        itSite: datoCmsSite(locale: { eq: "it" }) {
+        itSite: datoCmsSite(locale: "it") {
           __typename
           id
           originalId
           name
-          locale
           locales
           domain
           internalDomain
@@ -379,12 +358,11 @@ Suite('site', async () => {
         }
       }
     `),
-  );
+  ).toMatchSnapshot();
 });
 
-Suite('tree collections', async () => {
-  assertGraphQLResponseEqualToSnapshot(
-    'tree',
+test('tree collections', async () => {
+  expect(
     await executeQuery(/* GraphQL */ `
       {
         allDatoCmsHierarchical(filter: { root: { eq: true } }) {
@@ -415,17 +393,17 @@ Suite('tree collections', async () => {
         }
       }
     `),
-  );
+  ).toMatchSnapshot();
 });
 
-Suite('items', async () => {
-  const query = `
+test('items', async () => {
+  const query = /* GraphQL */ `
     {
-      enArticle: datoCmsArticle(originalId: {eq: "7364344"}, locale: {eq: "en"}) {
+      enArticle: datoCmsArticle(originalId: {eq: "7364344"}, locale: "en") {
         __typename
-        locale
         originalId
         id
+        locales
         singleLineString
         _allSingleLineStringLocales {
           locale
@@ -435,26 +413,6 @@ Suite('items', async () => {
         _allMultipleParagraphTextLocales {
           locale
           value
-          valueNode {
-            id
-            internal {
-              content
-            }
-            childMarkdownRemark {
-              html
-              timeToRead
-            }
-          }
-        }
-        multipleParagraphTextNode {
-          id
-          internal {
-            content
-          }
-          childMarkdownRemark {
-            html
-            timeToRead
-          }
         }
         singleAsset {
           ${fileFields}
@@ -585,7 +543,7 @@ Suite('items', async () => {
           locale
           value {
             id
-            singleLineString
+            singleLineString(fallbackLocales: ["en"])
           }
         }
         advancedSingleLink {
@@ -771,7 +729,6 @@ Suite('items', async () => {
         seoMetaTags {
           __typename
           tags
-          id
         }
         model {
           id
@@ -789,8 +746,9 @@ Suite('items', async () => {
           originalId
         }
       }
-      allDatoCmsOptionalLocalesModel(filter: { locale: {eq: "it"} }) {
+      allDatoCmsOptionalLocalesModel(locale: "it", fallbackLocales: ["en"]) {
         nodes {
+          originalId
           title
           boolean
         }
@@ -800,7 +758,52 @@ Suite('items', async () => {
 
   const result = await executeQuery(query);
 
-  assertGraphQLResponseEqualToSnapshot('item', result);
+  expect(result).toMatchSnapshot();
+});
+
+test('structured text', async () => {
+  const query = /* GraphQL */ `
+    {
+      enArticle: datoCmsArticle(originalId: { eq: "7364344" }, locale: "en") {
+        structuredText {
+          value
+          blocks {
+            __typename
+            ... on DatoCmsModularBlock {
+              id: originalId
+              title
+              singleLink {
+                singleLineString
+              }
+              multipleLinks {
+                singleLineString
+              }
+              innerModularContent {
+                title
+                originalId
+                singleLink {
+                  singleLineString
+                }
+                multipleLinks {
+                  singleLineString
+                }
+              }
+            }
+          }
+          links {
+            __typename
+            ... on DatoCmsArticle {
+              id: originalId
+              singleLineString
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await executeQuery(query);
 
   const output = render(result.data.enArticle.structuredText, {
     renderInlineRecord: ({ adapter, record }) => {
@@ -837,78 +840,71 @@ Suite('items', async () => {
     },
   });
 
-  assertGraphQLResponseEqualToSnapshot('structuredTextRender', output);
+  expect(output).toMatchSnapshot();
 });
 
-Suite('multiple instances', async () => {
-  assertGraphQLResponseEqualToSnapshot(
-    'multipleInstances',
-    await executeQuery(
-      /* GraphQL */
-      `
-        {
-          datoCmsAlternativeSite(locale: { eq: "en" }) {
-            __typename
-            id
-            originalId
-            name
-            locale
-            locales
-            domain
-            internalDomain
-            noIndex
-            globalSeo {
-              siteName
-              titleSuffix
-              twitterAccount
-              facebookPageUrl
-              fallbackSeo {
-                title
-                description
-                twitterCard
-                image {
-                  path
-                  url
-                }
+test('multiple instances', async () => {
+  const result = await executeQuery(
+    /* GraphQL */
+    `
+      {
+        datoCmsAlternativeSite(locale: "en") {
+          __typename
+          id
+          originalId
+          name
+          locales
+          domain
+          internalDomain
+          noIndex
+          globalSeo {
+            siteName
+            titleSuffix
+            twitterAccount
+            facebookPageUrl
+            fallbackSeo {
+              title
+              description
+              twitterCard
+              image {
+                path
+                url
               }
             }
-            faviconMetaTags {
+          }
+          faviconMetaTags {
+            tags
+          }
+        }
+        allDatoCmsAlternativeModel {
+          nodes {
+            name
+          }
+        }
+        allDatoCmsAlternativeAsset {
+          nodes {
+            url
+          }
+        }
+        allDatoCmsAlternativeArticle {
+          nodes {
+            __typename
+            originalId
+            id
+            name
+            seo {
+              image {
+                path
+              }
+            }
+            seoMetaTags {
+              __typename
               tags
             }
           }
-          allDatoCmsAlternativeModel {
-            nodes {
-              name
-            }
-          }
-          allDatoCmsAlternativeAsset {
-            nodes {
-              url
-            }
-          }
-          allDatoCmsAlternativeArticle {
-            nodes {
-              __typename
-              locale
-              originalId
-              id
-              name
-              seo {
-                image {
-                  path
-                }
-              }
-              seoMetaTags {
-                __typename
-                tags
-                id
-              }
-            }
-          }
         }
-      `,
-    ),
+      }
+    `,
   );
+  expect(result).toMatchSnapshot();
 });
-
-Suite.run();

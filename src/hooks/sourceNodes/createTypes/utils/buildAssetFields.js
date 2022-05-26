@@ -57,7 +57,7 @@ module.exports = function({ cache }) {
     blurhash: resolveUsingEntityPayloadAttribute('blurhash', {
       type: 'String',
     }),
-    originalId: { type: 'String', resolve: node => node.entityPayload.id },
+    originalId: { type: 'String!', resolve: node => node.entityPayload.id },
     url: {
       type: 'String',
       args: {

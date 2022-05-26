@@ -38,7 +38,8 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 npm install --save gatsby-source-datocms gatsby-plugin-image
 ```
 
-PS. If you're on a Gatsby v2 project, please use version "^2.6.17" of this package.
+PS. If you're on a Gatsby 2 project, please use version "^2.6.17" of this package.
+PS. If you're on a Gatsby 3 project, or Gatsby 4 lower than 4.24.0, please use version "^4.0.4" of this package.
 
 ## Sample projects
 
@@ -69,20 +70,9 @@ plugins: [
       // Custom API base URL (you probably don't need this!)
       // apiUrl: 'https://site-api.datocms.com',
 
-      // Only source nodes for a specific set of locales. This can limit the memory usage by
-      // reducing the amount of nodes created. Useful if you have a large project in DatoCMS
-      // and only want to get the data from one selected locale
-      // localesToGenerate: ['it', 'en'],
-
-      // Setup locale fallbacks
-      // In this example, if some field value is missing in Italian, fall back to English
-      localeFallbacks: {
-        it: ['en'],
-      },
-
       // Limits page size and can be used to avoid build timeouts.
-      // Default is 500
-      pageSize: 10,
+      // Default is 500 (also the maximum)
+      pageSize: 500,
     },
   },
 ];
@@ -143,29 +133,6 @@ if you have a `blog_post` model, you will be able to query it like the following
           name
           avatar {
             url
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-### Multiple-paragraph text fields
-
-Fields of type _Multiple-paragraph text_ will be available both as simple
-strings (ie. `excerpt`) and nodes (ie. `excerptNode`). You can use the latter
-if you want to apply further transformations, like converting markdown with [`gatsby-transformer-remark`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark) (converting markdown only works with `Markdown editor` as name suggests):
-
-```graphql
-{
-  allDatoCmsBlogPost {
-    edges {
-      node {
-        excerptNode {
-          childMarkdownRemark {
-            html
-            timeToRead
           }
         }
       }
@@ -475,45 +442,60 @@ You can access to single instance models like this:
 
 ### Localized fields
 
-If your site is multi-lingual, records will be duplicated for every locale
-available, so you can query them like this. The same applies for the `DatoCmsSite`
-node:
+When you're fetching the value of a localized field, by default it will be returned to the project default locale — that is, the first locale in your project settings:
 
 ```graphql
-{
-  allDatoCmsBlogPost(filter: { locale: { eq: "it" } }) {
-    edges {
-      node {
-        title
-        excerpt
-      }
-    }
+query {
+  datoCmsSite {
+    locales # -> ["en", "it"]
   }
-
-  datoCmsHomepage(locale: { eq: "it" }) {
-    title
-    content
+  allDatoCmsBlogPost {
+    title # -> will return the title value in "en" locale
   }
 }
 ```
 
-If you need to get every locale for a specific field, you can use the `_all<FIELD>Locales` query:
+To change that, you can add a locale argument to queries to specify another locale:
 
 ```graphql
-{
-  allDatoCmsBlogPost(filter: { locale: { eq: "en" } }) {
-    edges {
-      node {
-        _allTitleLocales {
-          locale
-          value
-        }
-        _allExcerptLocales {
-          locale
-          value
-        }
-      }
-    }
+query {
+  allDatoCmsBlogPost(locale: "it") {
+    title # -> will return the title value in "it" locale
+  }
+}
+```
+
+You can also specify a different locale on a per-field basis:
+
+```graphql
+query {
+  allDatoCmsBlogPost(locale: "it") {
+    title # -> will return the title value in "it" locale
+    enTitle: title(locale: "en") # -> will return the title value in "en" locale
+  }
+}
+```
+
+#### Locale fallbacks
+
+You can also specify a list of fallback locales together with the locale argument:
+
+```graphql
+query {
+  allDatoCmsBlogPost(locale: "it", fallbackLocales: ["en"]) {
+    title
+  }
+}
+```
+
+If the field value for the specified locale is null-ish (null, empty string or empty array), the system will try to find a non null-ish value in each of the localizations specified in the fallbackLocales argument. The order of the elements in the fallbackLocales argument is important, as the system will start from the first element in the array, and go on from there.
+
+Just like the locale argument, you can specify different fallback locales on a per-field basis:
+
+```graphql
+query {
+  allDatoCmsBlogPost {
+    title(locale: "it", fallbackLocales: ["en"])
   }
 }
 ```

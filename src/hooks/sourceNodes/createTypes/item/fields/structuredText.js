@@ -94,12 +94,7 @@ module.exports = ({
       const linkedItemIds = fieldValue
         ? uniq(
             findAll(fieldValue.document, [isInlineItem, isItemLink]).map(node =>
-              itemNodeId(
-                node.item,
-                gqlNode.forcedLocale || gqlNode.locale,
-                entitiesRepo,
-                generateType,
-              ),
+              itemNodeId(node.item, entitiesRepo, generateType),
             ),
           )
         : [];
@@ -107,22 +102,14 @@ module.exports = ({
       const blockIds = fieldValue
         ? uniq(
             findAll(fieldValue.document, isBlock).map(node =>
-              itemNodeId(
-                node.item,
-                gqlNode.forcedLocale || gqlNode.locale,
-                entitiesRepo,
-                generateType,
-              ),
+              itemNodeId(node.item, entitiesRepo, generateType),
             ),
           )
         : [];
 
       return {
         value: fieldValue,
-        blocks: context.nodeModel.getNodesByIds({ ids: blockIds }).map(n => ({
-          ...n,
-          forcedLocale: gqlNode.forcedLocale || gqlNode.locale,
-        })),
+        blocks: context.nodeModel.getNodesByIds({ ids: blockIds }),
         links: context.nodeModel.getNodesByIds({ ids: linkedItemIds }),
       };
     },

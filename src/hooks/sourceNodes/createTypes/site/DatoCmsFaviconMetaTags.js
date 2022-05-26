@@ -4,9 +4,11 @@ module.exports = ({ actions, schema }) => {
       name: 'DatoCmsFaviconMetaTags',
       extensions: { infer: false },
       fields: {
-        tags: 'JSON',
+        tags: {
+          type: 'JSON',
+          resolve: node => node,
+        },
       },
-      interfaces: [`Node`],
     }),
   ]);
 };

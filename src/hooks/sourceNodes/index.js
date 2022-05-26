@@ -25,14 +25,10 @@ module.exports = async (
     previewMode,
     instancePrefix,
     apiUrl,
-    localeFallbacks: rawLocaleFallbacks,
-    localesToGenerate,
     pageSize,
     logApiCalls,
   },
 ) => {
-  const localeFallbacks = rawLocaleFallbacks || {};
-
   if (!apiToken) {
     const errorText = `API token must be provided!`;
     reporter.panic(
@@ -62,8 +58,6 @@ module.exports = async (
     actions,
     getNode,
     getNodesByType,
-    localeFallbacks,
-    localesToGenerate,
     schema,
     store,
     cache,

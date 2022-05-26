@@ -20,6 +20,9 @@ exports.createSchemaCustomization = withForcedPreviewMode(
   createSchemaCustomization,
 );
 
+const createResolvers = require('./hooks/createResolvers');
+exports.createResolvers = createResolvers;
+
 const sourceNodes = require('./hooks/sourceNodes');
 exports.sourceNodes = withForcedPreviewMode(sourceNodes);
 

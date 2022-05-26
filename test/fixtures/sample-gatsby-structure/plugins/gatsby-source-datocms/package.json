@@ -1,5 +1,5 @@
 {
-  "name": "wrapper",
+  "name": "gatsby-source-datocms",
   "version": "1.0.0",
   "description": "",
   "main": "gatsby-node.js",

@@ -1,17 +1,14 @@
 module.exports = {
   plugins: [
     {
-      resolve: `wrapper`,
+      resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATOCMS_API_TOKEN,
         pageSize: 30,
-        localeFallbacks: {
-          it: ['en'],
-        },
       },
     },
     {
-      resolve: `wrapper`,
+      resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATOCMS_API_TOKEN,
         environment: 'alternative-environment',

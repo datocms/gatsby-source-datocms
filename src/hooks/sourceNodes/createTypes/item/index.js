@@ -4,10 +4,40 @@ const { camelizeKeys, localizedRead } = require('datocms-client');
 const simpleField = require('./fields/simpleField');
 const simpleFieldReturnCamelizedKeys = require('./fields/simpleFieldReturnCamelizedKeys');
 const itemNodeId = require('../utils/itemNodeId');
+const { seoTagsBuilder, JsonApiEntity } = require('datocms-client');
+
+function getI18n(args, context, info, mainLocale) {
+  if (args.locale) {
+    context.sourceDatocms.localeState.set(info, args.locale);
+  }
+
+  if (args.fallbackLocales) {
+    context.sourceDatocms.fallbackLocalesState.set(info, args.fallbackLocales);
+  }
+
+  const locale = context.sourceDatocms.localeState.get(info) || mainLocale;
+
+  return {
+    locale,
+    fallbacks: {
+      [locale]: context.sourceDatocms.fallbackLocalesState.get(info) || [],
+    },
+  };
+}
+
+function getAllLocalesI18n(node, args, context, info) {
+  context.sourceDatocms.localeState.set(info, node.locale);
+  context.sourceDatocms.fallbackLocalesState.set(info, []);
+
+  return {
+    locale: node.locale,
+    fallbacks: {},
+  };
+}
 
 module.exports = ({
   entitiesRepo,
-  localeFallbacks,
+  fallbackLocales,
   actions,
   schema,
   generateType,
@@ -30,11 +60,15 @@ module.exports = ({
     seo: simpleFieldReturnCamelizedKeys(generateType('SeoField')),
     slug: simpleField('String'),
     string: simpleField('String'),
-    text: require('./fields/text'),
+    text: simpleField('String'),
     video: simpleFieldReturnCamelizedKeys('DatoCmsVideoField'),
   };
 
   const gqlItemTypeName = itemType => generateType(pascalize(itemType.apiKey));
+
+  const siteEntity = entitiesRepo.site;
+  const allLocales = siteEntity.locales;
+  const mainLocale = allLocales[0];
 
   entitiesRepo.findEntitiesOfType('item_type').forEach(entity => {
     const type = gqlItemTypeName(entity);
@@ -65,14 +99,22 @@ module.exports = ({
           [camelize(field.apiKey)]: {
             type,
             ...(extensions ? { extensions } : {}),
-            resolve: (node, _args, context) => {
-              const i18n = { locale: node.locale, fallbacks: localeFallbacks };
+            args: field.localized
+              ? {
+                  locale: `String`,
+                  fallbackLocales: `[String!]`,
+                }
+              : undefined,
+            resolve: (node, args, context, info) => {
+              const i18n = getI18n(args, context, info, mainLocale);
+
               const value = localizedRead(
                 node.entityPayload.attributes,
                 field.apiKey,
                 field.localized,
                 i18n,
               );
+
               return resolveForSimpleField(
                 value,
                 context,
@@ -88,11 +130,9 @@ module.exports = ({
           objectAssign(acc, {
             [`${camelize(field.apiKey)}Node`]: {
               type: nodeType,
-              resolve: (node, args, context) => {
-                const i18n = {
-                  locale: node.locale,
-                  fallbacks: localeFallbacks,
-                };
+              resolve: (node, args, context, info) => {
+                const i18n = getI18n(args, context, info, mainLocale);
+
                 const value = localizedRead(
                   node.entityPayload.attributes,
                   field.apiKey,
@@ -125,11 +165,9 @@ module.exports = ({
                 locale: 'String',
                 value: {
                   type,
-                  resolve: (node, args, context) => {
-                    const i18n = {
-                      locale: node.locale,
-                      fallbacks: localeFallbacks,
-                    };
+                  resolve: (node, args, context, info) => {
+                    const i18n = getAllLocalesI18n(node, args, context, info);
+
                     const value = localizedRead(
                       node.entityPayload.attributes,
                       field.apiKey,
@@ -149,11 +187,14 @@ module.exports = ({
                   ? {
                       valueNode: {
                         type: nodeType,
-                        resolve: (node, args, context) => {
-                          const i18n = {
-                            locale: node.locale,
-                            fallbacks: localeFallbacks,
-                          };
+                        resolve: (node, args, context, info) => {
+                          const i18n = getAllLocalesI18n(
+                            node,
+                            args,
+                            context,
+                            info,
+                          );
+
                           const value = localizedRead(
                             node.entityPayload.attributes,
                             field.apiKey,
@@ -212,12 +253,7 @@ module.exports = ({
             const parentId = node.entityPayload.attributes.parent_id;
             if (parentId) {
               return context.nodeModel.getNodeById({
-                id: itemNodeId(
-                  parentId,
-                  node.locale,
-                  entitiesRepo,
-                  generateType,
-                ),
+                id: itemNodeId(parentId, entitiesRepo, generateType),
               });
             }
           },
@@ -246,28 +282,56 @@ module.exports = ({
       });
     }
 
+    const firstLocalizedField = entity.fields.find(f => f.localized);
+    const someFieldsLocalized = !!firstLocalizedField;
+
     actions.createTypes([
       schema.buildObjectType({
         name: type,
         extensions: { infer: false },
         fields: objectAssign(fields, {
           meta: {
-            type: 'DatoCmsMetaField',
+            type: 'DatoCmsMetaField!',
             resolve: node => camelizeKeys(node.entityPayload.meta),
           },
           originalId: {
-            type: 'String',
+            type: 'String!',
             resolve: node => {
               return node.entityPayload.id;
             },
           },
-          locale: 'String',
+          ...(firstLocalizedField
+            ? {
+                locales: {
+                  type: '[String!]!',
+                  resolve: node => {
+                    return Object.keys(
+                      node.entityPayload.attributes[firstLocalizedField.apiKey],
+                    );
+                  },
+                },
+              }
+            : {}),
           seoMetaTags: {
             type: generateType('SeoMetaTags'),
-            resolve: (node, args, context) => {
-              return context.nodeModel.getNodeById({
-                id: generateType(`SeoMetaTags-${node.id}`),
-              });
+            args: someFieldsLocalized
+              ? {
+                  locale: `String`,
+                  fallbackLocales: `[String!]`,
+                }
+              : undefined,
+            resolve: (node, args, context, info) => {
+              const i18n = getI18n(args, context, info, mainLocale);
+
+              const tags = seoTagsBuilder(
+                new JsonApiEntity(node.entityPayload, entitiesRepo),
+                entitiesRepo,
+                i18n,
+              );
+
+              return {
+                tags,
+              };
             },
           },
           model: {

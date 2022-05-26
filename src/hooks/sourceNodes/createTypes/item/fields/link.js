@@ -25,12 +25,7 @@ module.exports = ({
       resolveForSimpleField: (fieldValue, context, node) => {
         if (fieldValue) {
           return context.nodeModel.getNodeById({
-            id: itemNodeId(
-              fieldValue,
-              node.forcedLocale || node.locale,
-              entitiesRepo,
-              generateType,
-            ),
+            id: itemNodeId(fieldValue, entitiesRepo, generateType),
           });
         }
       },
@@ -52,12 +47,7 @@ module.exports = ({
     resolveForSimpleField: (fieldValue, context, node) => {
       if (fieldValue) {
         return context.nodeModel.getNodeById({
-          id: itemNodeId(
-            fieldValue,
-            node.forcedLocale || node.locale,
-            entitiesRepo,
-            generateType,
-          ),
+          id: itemNodeId(fieldValue, entitiesRepo, generateType),
         });
       }
     },

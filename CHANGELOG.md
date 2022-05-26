@@ -64,7 +64,7 @@ plugins: [
     resolve: `gatsby-source-datocms`,
     options: {
       // In this example, if some field value is missing in Italian, fall back to English
-      localeFallbacks: {
+      fallbackLocales: {
         it: ['en'],
       },
     },

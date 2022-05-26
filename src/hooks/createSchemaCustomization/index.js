@@ -1,6 +1,7 @@
 const { pascalize } = require('humps');
 const createTypes = require('../sourceNodes/createTypes');
 const { prefixId, CODES } = require('../../errorMap');
+const CascadedContext = require('../../cascadedContext');
 
 const { getLoader } = require('../../utils');
 
@@ -21,13 +22,14 @@ module.exports = async (
     environment,
     apiUrl,
     instancePrefix,
-    localeFallbacks: rawLocaleFallbacks,
-    localesToGenerate,
     pageSize,
     logApiCalls,
   },
 ) => {
-  const localeFallbacks = rawLocaleFallbacks || {};
+  const localeState = new CascadedContext({ reporter });
+  const fallbackLocalesState = new CascadedContext({ reporter });
+
+  actions.createResolverContext({ localeState, fallbackLocalesState });
 
   if (!apiToken) {
     const errorText = `API token must be provided!`;
@@ -56,8 +58,6 @@ module.exports = async (
     actions,
     getNode,
     getNodesByType,
-    localeFallbacks,
-    localesToGenerate,
     schema,
     store,
     cache,

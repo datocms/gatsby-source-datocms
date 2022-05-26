@@ -27,16 +27,9 @@ module.exports = ({
       type: `[${gqlItemTypeName(linkedItemType)}]`,
       resolveForSimpleField: (fieldValue, context, node) => {
         const ids = (fieldValue || []).map(id =>
-          itemNodeId(
-            id,
-            node.forcedLocale || node.locale,
-            entitiesRepo,
-            generateType,
-          ),
+          itemNodeId(id, entitiesRepo, generateType),
         );
-        return context.nodeModel
-          .getNodesByIds({ ids })
-          .map(n => ({ ...n, forcedLocale: node.forcedLocale || node.locale }));
+        return context.nodeModel.getNodesByIds({ ids });
       },
     };
   }
@@ -57,16 +50,9 @@ module.exports = ({
     type: `[${unionType}]`,
     resolveForSimpleField: (fieldValue, context, node) => {
       const ids = (fieldValue || []).map(id =>
-        itemNodeId(
-          id,
-          node.forcedLocale || node.locale,
-          entitiesRepo,
-          generateType,
-        ),
+        itemNodeId(id, entitiesRepo, generateType),
       );
-      return context.nodeModel
-        .getNodesByIds({ ids })
-        .map(n => ({ ...n, forcedLocale: node.forcedLocale || node.locale }));
+      return context.nodeModel.getNodesByIds({ ids });
     },
   };
 };

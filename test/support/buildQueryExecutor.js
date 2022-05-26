@@ -1,3 +1,4 @@
+require('regenerator-runtime/runtime');
 const { bootstrap } = require('gatsby/dist/bootstrap');
 const reporter = require('gatsby-cli/lib/reporter');
 const { setStore } = require('gatsby-cli/lib/reporter/redux');
@@ -22,8 +23,10 @@ module.exports = async function buildQueryExecutor(apiToken) {
     },
   });
 
-  return async query => {
+  const executeQuery = async query => {
     const result = await gatsbyNodeGraphQLFunction(query, {}, {});
     return result;
   };
+
+  return [executeQuery];
 };
