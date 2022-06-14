@@ -68,7 +68,7 @@ const shouldUpgradeGatsbyVersion =
   lt(gatsbyVersion, GATSBY_VERSION_MANIFEST_V2) && !gatsbyVersionIsPrerelease;
 
 // We only want to create one manifest for all locales, in the future we'll have a more robust solution for node manifests and locales.
-const nodeManifestsIdsCreatedSet = new Set()
+const nodeManifestsIdsCreatedSet = new Set();
 
 const datocmsCreateNodeManifest = ({ node, context }) => {
   try {
@@ -97,7 +97,7 @@ const datocmsCreateNodeManifest = ({ node, context }) => {
         node,
         updatedAtUTC: updatedAt,
       });
-      nodeManifestsIdsCreatedSet.add(manifestId)
+      nodeManifestsIdsCreatedSet.add(manifestId);
     } else if (!createNodeManifestIsSupported && !warnOnceForNoSupport) {
       console.warn(
         `DatoCMS: Your version of Gatsby core doesn't support Content Sync (via the unstable_createNodeManifest action). Please upgrade to the latest version to use Content Sync in your site.`,
