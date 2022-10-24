@@ -256,7 +256,7 @@ import { StructuredText } from 'react-datocms';
 <div>
   {
     <StructuredText
-      structuredText={data.blogPost.content}
+      data={data.blogPost.content}
       renderInlineRecord={({ record }) => {
         switch (record.__typename) {
           case 'DatoCmsArticle':
