@@ -2184,10 +2184,10 @@
       ],
       "meta": {
         "createdAt": "2020-09-22T15:46:24.300+01:00",
-        "updatedAt": "2022-05-24T13:35:00.380+01:00",
+        "updatedAt": "2022-05-26T09:20:19.717+01:00",
         "status": "published",
         "isValid": true,
-        "publishedAt": "2022-05-24T13:35:00.450+01:00",
+        "publishedAt": "2022-05-26T09:20:19.798+01:00",
         "__typename": "DatoCmsMetaField"
       },
       "seoMetaTags": {
@@ -2243,7 +2243,7 @@
             "tagName": "meta",
             "attributes": {
               "property": "article:modified_time",
-              "content": "2022-05-24T12:35:00Z"
+              "content": "2022-05-26T08:20:19Z"
             }
           },
           {
@@ -2322,15 +2322,12 @@
         "tree": false,
         "modularBlock": false,
         "draftModeActive": false,
-        "allLocalesRequired": true,
+        "allLocalesRequired": false,
         "collectionAppeareance": "table",
         "hasSingletonItem": false,
         "originalId": "313513"
       }
     },
-    "datoCmsOptionalLocalesModel": {
-      "title": "English title",
-      "boolean": false
-    }
+    "datoCmsOptionalLocalesModel": null
   }
 }
