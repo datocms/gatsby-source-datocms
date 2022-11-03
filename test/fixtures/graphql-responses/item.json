@@ -1315,10 +1315,7 @@
         },
         {
           "locale": "it",
-          "value": {
-            "id": "DatoCmsArticle-7364344-it",
-            "singleLineString": "Stringa semplice"
-          }
+          "value": null
         }
       ],
       "advancedSingleLink": {
