@@ -39,7 +39,6 @@ module.exports = function buildItemNode(
         node => {
           node.locale = locale;
           node.entityPayload = entity.payload;
-          node.digest = entity.meta.updatedAt;
 
           entity.itemType.fields
             .filter(field => field.fieldType === 'text')
@@ -67,7 +66,6 @@ module.exports = function buildItemNode(
                 node => {
                   node.internal.mediaType = mediaType;
                   node.internal.content = value || '';
-                  node.digest = entity.meta.updatedAt;
                 },
               );
 
@@ -78,7 +76,6 @@ module.exports = function buildItemNode(
             generateType('SeoMetaTags'),
             node.id,
             node => {
-              node.digest = entity.meta.updatedAt;
               node.itemNodeId = `${type}-${entity.id}-${locale}`;
               node.locale = locale;
             },
