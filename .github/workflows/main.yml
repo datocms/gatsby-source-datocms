@@ -24,10 +24,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies (Gatsby ${{ matrix.gatsby-version }})
         run: |
-          node -e "const fs = require('fs'); packageJson = JSON.parse(fs.readFileSync('package.json')); packageJson.devDependencies.gatsby = process.env.GATSBY_VERSION; fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));"
+          node -e "const fs = require('fs'); packageJson = JSON.parse(fs.readFileSync('package.json')); packageJson.devDependencies.gatsby = process.env.GATSBY_VERSION; packageJson.engines.node = '>=' + process.env.NODE_VERSION; fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));"
           yarn install --no-lockfile
         env:
           GATSBY_VERSION: ${{ matrix.gatsby-version }}
+          NODE_VERSION: ${{ matrix.node-version }}
       - name: Run tests
         run: |
           cat node_modules/gatsby/package.json | grep "\"version\""
