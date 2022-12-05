@@ -9,12 +9,24 @@ jobs:
     strategy:
       matrix:
         node-version: ['14.x', '16.x', '18.x']
-        gatsby-version: ['^3.0.0', '^4.0.0', '^5.0.0']
+        gatsby-versions:
+          - gatsby: '^4.0.0'
+            gatsby-plugin-image: '^2.0.0'
+            gatsby-transformer-remark: '^5.0.0'
+          - gatsby: '^5.0.0'
+            gatsby-plugin-image: '^3.0.0'
+            gatsby-transformer-remark: '^6.0.0'
         exclude:
           - node-version: '14.x'
-            gatsby-version: '^5.0.0'
+            gatsby-versions:
+              - gatsby: '^5.0.0'
+                gatsby-plugin-image: '^3.0.0'
+                gatsby-transformer-remark: '^6.0.0'
           - node-version: '16.x'
-            gatsby-version: '^5.0.0'
+            gatsby-versions:
+              - gatsby: '^5.0.0'
+                gatsby-plugin-image: '^3.0.0'
+                gatsby-transformer-remark: '^6.0.0'
 
     steps:
       - uses: actions/checkout@v2
@@ -24,10 +36,21 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies (Gatsby ${{ matrix.gatsby-version }})
         run: |
-          node -e "const fs = require('fs'); packageJson = JSON.parse(fs.readFileSync('package.json')); packageJson.devDependencies.gatsby = process.env.GATSBY_VERSION; packageJson.engines.node = '>=' + process.env.NODE_VERSION; fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));"
+          node -e "
+            const fs = require('fs'); 
+            packageJson = JSON.parse(fs.readFileSync('package.json')); 
+            packageJson.devDependencies.gatsby = process.env.GATSBY_VERSION; 
+            packageJson.devDependencies['gatsby-plugin-image'] = process.env.GATSBY_IMAGE_VERSION; 
+            packageJson.devDependencies['gatsby-plugin-sharp'] = process.env.GATSBY_VERSION; 
+            packageJson.devDependencies['gatsby-transformer-remark'] = process.env.GATSBY_TRANSFORMER_VERSION; 
+            packageJson.engines.node = '>=' + process.env.NODE_VERSION; 
+            fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
+          "
           yarn install --no-lockfile
         env:
-          GATSBY_VERSION: ${{ matrix.gatsby-version }}
+          GATSBY_VERSION: ${{ matrix.gatsby-versions.gatsby }}
+          GATSBY_IMAGE_VERSION: ${{ matrix.gatsby-versions.gatsby-plugin-image }}
+          GATSBY_TRANSFORMER_VERSION: ${{ matrix.gatsby-versions.gatsby-transformer-remark }}
           NODE_VERSION: ${{ matrix.node-version }}
       - name: Run tests
         run: |
