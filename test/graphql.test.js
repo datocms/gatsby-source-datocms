@@ -25,7 +25,6 @@ test('focalPoints', async () => {
             y
           }
           url
-
           urlWithFocalPoint: url(
             imgixParams: { w: "150", h: "40", fit: "crop" }
           )
@@ -33,7 +32,6 @@ test('focalPoints', async () => {
             maxWidth: 150
             imgixParams: { w: "150", h: "40", fit: "crop" }
           ) {
-            tracedSVG
             base64
             src
             srcSet
@@ -43,18 +41,10 @@ test('focalPoints', async () => {
             forceBlurhash: true
             imgixParams: { w: "150", h: "40", fit: "crop" }
           ) {
-            tracedSVG
             base64
             src
             srcSet
           }
-
-          tracedSvgFluidGatsbyImage: gatsbyImageData(
-            width: 150
-            placeholder: TRACED_SVG
-            layout: CONSTRAINED
-            imgixParams: { w: "150", h: "40", fit: "crop" }
-          )
           dominantSvgFluidGatsbyImage: gatsbyImageData(
             width: 150
             placeholder: DOMINANT_COLOR
@@ -82,7 +72,6 @@ test('focalPoints', async () => {
             maxWidth: 150
             imgixParams: { w: "150", h: "40", fit: "crop" }
           ) {
-            tracedSVG
             base64
             src
             srcSet
@@ -92,18 +81,10 @@ test('focalPoints', async () => {
             forceBlurhash: true
             imgixParams: { w: "150", h: "40", fit: "crop" }
           ) {
-            tracedSVG
             base64
             src
             srcSet
           }
-
-          tracedSvgFluidGatsbyImage: gatsbyImageData(
-            width: 150
-            placeholder: TRACED_SVG
-            layout: CONSTRAINED
-            imgixParams: { w: "150", h: "40", fit: "crop" }
-          )
           dominantSvgFluidGatsbyImage: gatsbyImageData(
             width: 150
             placeholder: DOMINANT_COLOR
@@ -125,6 +106,67 @@ test('focalPoints', async () => {
             x
             y
           }
+        }
+      }
+    }
+  `);
+
+  expect(result).toMatchSnapshot();
+});
+
+test('tracedSVG', async () => {
+  const result = await executeQuery(/* GraphQL */ `
+    {
+      datoCmsArticle(originalId: { eq: "7364344" }) {
+        singleAsset {
+          fluid(
+            maxWidth: 150
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          ) {
+            tracedSVG
+          }
+          blurhashFluid: fluid(
+            maxWidth: 150
+            forceBlurhash: true
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          ) {
+            tracedSVG
+          }
+          tracedSvgFluidGatsbyImage: gatsbyImageData(
+            width: 150
+            placeholder: TRACED_SVG
+            layout: CONSTRAINED
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
+        }
+        assetGallery {
+          fluid(
+            maxWidth: 150
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          ) {
+            tracedSVG
+          }
+          blurhashFluid: fluid(
+            maxWidth: 150
+            forceBlurhash: true
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          ) {
+            tracedSVG
+          }
+          tracedSvgFluidGatsbyImage: gatsbyImageData(
+            width: 150
+            placeholder: TRACED_SVG
+            layout: CONSTRAINED
+            imgixParams: { w: "150", h: "40", fit: "crop" }
+          )
+        }
+      }
+      assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
+        fixed(width: 300) {
+          tracedSVG
+        }
+        fluid(maxWidth: 300) {
+          tracedSVG
         }
       }
     }
@@ -210,38 +252,33 @@ test('auto=format', async () => {
 });
 
 test('force blurhash', async () => {
-  const result = await executeQuery(
-    /* GraphQL */
-    `
-      {
-        datoCmsAsset(originalId: { eq: "2643791" }) {
-          fixed(width: 300) {
-            base64
-          }
-          fluid(maxWidth: 300) {
-            base64
-          }
-          forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) {
-            base64
-          }
-          forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) {
-            base64
-          }
+  const result = await executeQuery(/* GraphQL */ `
+    {
+      datoCmsAsset(originalId: { eq: "2643791" }) {
+        fixed(width: 300) {
+          base64
         }
-
-        assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
-          fixed(width: 300) {
-            base64
-            tracedSVG
-          }
-          fluid(maxWidth: 300) {
-            base64
-            tracedSVG
-          }
+        fluid(maxWidth: 300) {
+          base64
+        }
+        forceBlurhashFixed: fixed(width: 300, forceBlurhash: true) {
+          base64
+        }
+        forceBlurhashFluid: fluid(maxWidth: 300, forceBlurhash: true) {
+          base64
         }
       }
-    `,
-  );
+
+      assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
+        fixed(width: 300) {
+          base64
+        }
+        fluid(maxWidth: 300) {
+          base64
+        }
+      }
+    }
+  `);
   expect(result).toMatchSnapshot();
 });
 
