@@ -1,5 +1,8 @@
 const { render } = require('datocms-structured-text-to-html-string');
 const buildQueryExecutor = require('./support/buildQueryExecutor');
+const { version } = require('gatsby/package.json');
+
+const gatsbyMajorVersion = parseInt(version.split('.')[0]);
 
 jest.setTimeout(60000);
 
@@ -114,66 +117,69 @@ test('focalPoints', async () => {
   expect(result).toMatchSnapshot();
 });
 
-test('tracedSVG', async () => {
-  const result = await executeQuery(/* GraphQL */ `
-    {
-      datoCmsArticle(originalId: { eq: "7364344" }) {
-        singleAsset {
-          fluid(
-            maxWidth: 150
-            imgixParams: { w: "150", h: "40", fit: "crop" }
-          ) {
-            tracedSVG
+// https://github.com/gatsbyjs/gatsby/discussions/37104
+if (gatsbyMajorVersion < 5) {
+  test('tracedSVG', async () => {
+    const result = await executeQuery(/* GraphQL */ `
+      {
+        datoCmsArticle(originalId: { eq: "7364344" }) {
+          singleAsset {
+            fluid(
+              maxWidth: 150
+              imgixParams: { w: "150", h: "40", fit: "crop" }
+            ) {
+              tracedSVG
+            }
+            blurhashFluid: fluid(
+              maxWidth: 150
+              forceBlurhash: true
+              imgixParams: { w: "150", h: "40", fit: "crop" }
+            ) {
+              tracedSVG
+            }
+            tracedSvgFluidGatsbyImage: gatsbyImageData(
+              width: 150
+              placeholder: TRACED_SVG
+              layout: CONSTRAINED
+              imgixParams: { w: "150", h: "40", fit: "crop" }
+            )
           }
-          blurhashFluid: fluid(
-            maxWidth: 150
-            forceBlurhash: true
-            imgixParams: { w: "150", h: "40", fit: "crop" }
-          ) {
-            tracedSVG
+          assetGallery {
+            fluid(
+              maxWidth: 150
+              imgixParams: { w: "150", h: "40", fit: "crop" }
+            ) {
+              tracedSVG
+            }
+            blurhashFluid: fluid(
+              maxWidth: 150
+              forceBlurhash: true
+              imgixParams: { w: "150", h: "40", fit: "crop" }
+            ) {
+              tracedSVG
+            }
+            tracedSvgFluidGatsbyImage: gatsbyImageData(
+              width: 150
+              placeholder: TRACED_SVG
+              layout: CONSTRAINED
+              imgixParams: { w: "150", h: "40", fit: "crop" }
+            )
           }
-          tracedSvgFluidGatsbyImage: gatsbyImageData(
-            width: 150
-            placeholder: TRACED_SVG
-            layout: CONSTRAINED
-            imgixParams: { w: "150", h: "40", fit: "crop" }
-          )
         }
-        assetGallery {
-          fluid(
-            maxWidth: 150
-            imgixParams: { w: "150", h: "40", fit: "crop" }
-          ) {
+        assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
+          fixed(width: 300) {
             tracedSVG
           }
-          blurhashFluid: fluid(
-            maxWidth: 150
-            forceBlurhash: true
-            imgixParams: { w: "150", h: "40", fit: "crop" }
-          ) {
+          fluid(maxWidth: 300) {
             tracedSVG
           }
-          tracedSvgFluidGatsbyImage: gatsbyImageData(
-            width: 150
-            placeholder: TRACED_SVG
-            layout: CONSTRAINED
-            imgixParams: { w: "150", h: "40", fit: "crop" }
-          )
         }
       }
-      assetWhichIsSvg: datoCmsAsset(originalId: { eq: "10015565" }) {
-        fixed(width: 300) {
-          tracedSVG
-        }
-        fluid(maxWidth: 300) {
-          tracedSVG
-        }
-      }
-    }
-  `);
+    `);
 
-  expect(result).toMatchSnapshot();
-});
+    expect(result).toMatchSnapshot();
+  });
+}
 
 test('auto=format', async () => {
   const result = await executeQuery(/* GraphQL */ `
