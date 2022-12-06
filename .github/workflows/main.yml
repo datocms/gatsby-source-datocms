@@ -4,32 +4,36 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
-        node-version: ["14.x", "16.x"]
-        gatsby-version: ["^3.0.0", "^4.0.0"]
-        # exclude:
-        # - node-version: "12.x"
-        #   gatsby-version: "^4.0.0"
+        node-version: ['14.x', '16.x', '18.x']
+        gatsby-version: ['3', '4', '5']
+        exclude:
+          - node-version: '14.x'
+            gatsby-version: '5'
+          - node-version: '16.x'
+            gatsby-version: '5'
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies (Gatsby ${{ matrix.gatsby-version }})
-      run: |
-        node -e "const fs = require('fs'); packageJson = JSON.parse(fs.readFileSync('package.json')); packageJson.devDependencies.gatsby = process.env.GATSBY_VERSION; fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));"
-        yarn install --no-lockfile
-      env:
-        GATSBY_VERSION: ${{ matrix.gatsby-version }}
-    - name: Run tests
-      run: |
-        cat node_modules/gatsby/package.json | grep "\"version\""
-        yarn test
-      env:
-        CI: true
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies (Gatsby ${{ matrix.gatsby-version }})
+        run: |
+          node .github/patchVersions.js
+          cat package.json
+          yarn install --no-lockfile
+        env:
+          GATSBY_VERSION: ${{ matrix.gatsby-version }}
+          NODE_VERSION: ${{ matrix.node-version }}
+      - name: Run tests
+        run: |
+          cat node_modules/gatsby/package.json | grep "\"version\""
+          yarn test
+        env:
+          CI: true
