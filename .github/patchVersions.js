@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const gatsbyVersion = parseInt(process.env.GATSBY_VERSION);
-const pluginImageVersion = Math.max(gatsbyVersion - 3, 1);
+const pluginImageVersion = gatsbyVersion - 2;
 const pluginSharpImageVersion = gatsbyVersion;
 const transformerRemarkVersion = gatsbyVersion + 1;
 
