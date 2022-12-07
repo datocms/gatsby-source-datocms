@@ -98,68 +98,78 @@ module.exports = async (
 
     changesActivity.start();
 
-    switch (entityType) {
-      case 'item':
-        if (['publish', 'update', 'create'].includes(eventType)) {
-          const payload = await loader.client.items.find(
-            entityId,
-            {
-              version: previewMode ? 'current' : 'published',
-              include: 'nested_items',
-            },
-            { deserializeResponse: false },
-          );
-          loader.entitiesRepo.upsertEntities(payload);
-        } else if (['unpublish', 'delete'].includes(eventType)) {
-          loader.entitiesRepo.destroyEntities('item', [entityId]);
-        } else {
-          reporter.warn(`Invalid event type ${eventType}`);
-        }
-        break;
+    try {
+      switch (entityType) {
+        case 'item':
+          if (['publish', 'update', 'create'].includes(eventType)) {
+            const payload = await loader.client.items.find(
+              entityId,
+              {
+                version: previewMode ? 'current' : 'published',
+                include: 'nested_items',
+              },
+              { deserializeResponse: false },
+            );
+            loader.entitiesRepo.upsertEntities(payload);
+          } else if (['unpublish', 'delete'].includes(eventType)) {
+            loader.entitiesRepo.destroyEntities('item', [entityId]);
+          } else {
+            reporter.warn(`Invalid event type ${eventType}`);
+          }
+          break;
 
-      case 'upload':
-        if (['create', 'update'].includes(eventType)) {
-          const payload = await loader.client.uploads.find(
-            entityId,
-            {},
-            { deserializeResponse: false },
-          );
-          loader.entitiesRepo.upsertEntities(payload);
-        } else if (['delete'].includes(eventType)) {
-          loader.entitiesRepo.destroyEntities('upload', [entityId]);
-        } else {
-          reporter.warn(`Invalid event type ${eventType}`);
-        }
-        break;
-      default:
-        reporter.warn(`Invalid entity type ${entityType}`);
-        break;
-    }
-    changesActivity.end();
-    return;
-  }
-
-  Object.keys(loader.entitiesRepo.entities).forEach(entityType => {
-    loader.entitiesRepo.findEntitiesOfType(entityType).forEach(entity => {
-      createNodeFromEntity(entity, context);
-    });
-  });
-
-  if (process.env.NODE_ENV !== `production` && !disableLiveReload) {
-    const queue = new Queue(1, Infinity);
-
-    loader.watch(loadPromise => {
-      queue.add(async () => {
-        const activity = reporter.activityTimer(
-          `detected change in DatoCMS content, loading new data`,
-          { parentSpan },
+        case 'upload':
+          if (['create', 'update'].includes(eventType)) {
+            const payload = await loader.client.uploads.find(
+              entityId,
+              {},
+              { deserializeResponse: false },
+            );
+            loader.entitiesRepo.upsertEntities(payload);
+          } else if (['delete'].includes(eventType)) {
+            loader.entitiesRepo.destroyEntities('upload', [entityId]);
+          } else {
+            reporter.warn(`Invalid event type ${eventType}`);
+          }
+          break;
+        default:
+          reporter.warn(`Invalid entity type ${entityType}`);
+          break;
+      }
+      changesActivity.end();
+      return;
+    } catch (err) {
+      if (instancePrefix) {
+        reporter.info(
+          `Could not find ${entityType} ${entityId} in ${instancePrefix}. The item might belong to another DatoCMS instance.`,
         );
-        activity.start();
+      } else {
+        reporter.panicBuild(err);
+      }
+    }
 
-        await loadPromise;
-
-        activity.end();
+    Object.keys(loader.entitiesRepo.entities).forEach(entityType => {
+      loader.entitiesRepo.findEntitiesOfType(entityType).forEach(entity => {
+        createNodeFromEntity(entity, context);
       });
     });
+
+    if (process.env.NODE_ENV !== `production` && !disableLiveReload) {
+      const queue = new Queue(1, Infinity);
+
+      loader.watch(loadPromise => {
+        queue.add(async () => {
+          const activity = reporter.activityTimer(
+            `detected change in DatoCMS content, loading new data`,
+            { parentSpan },
+          );
+          activity.start();
+
+          await loadPromise;
+
+          activity.end();
+        });
+      });
+    }
   }
 };
