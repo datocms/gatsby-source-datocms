@@ -136,8 +136,6 @@ module.exports = async (
           reporter.warn(`Invalid entity type ${entityType}`);
           break;
       }
-      changesActivity.end();
-      return;
     } catch (err) {
       if (instancePrefix) {
         reporter.info(
@@ -148,28 +146,31 @@ module.exports = async (
       }
     }
 
-    Object.keys(loader.entitiesRepo.entities).forEach(entityType => {
-      loader.entitiesRepo.findEntitiesOfType(entityType).forEach(entity => {
-        createNodeFromEntity(entity, context);
+    changesActivity.end();
+    return;
+  }
+
+  Object.keys(loader.entitiesRepo.entities).forEach(entityType => {
+    loader.entitiesRepo.findEntitiesOfType(entityType).forEach(entity => {
+      createNodeFromEntity(entity, context);
+    });
+  });
+
+  if (process.env.NODE_ENV !== `production` && !disableLiveReload) {
+    const queue = new Queue(1, Infinity);
+
+    loader.watch(loadPromise => {
+      queue.add(async () => {
+        const activity = reporter.activityTimer(
+          `detected change in DatoCMS content, loading new data`,
+          { parentSpan },
+        );
+        activity.start();
+
+        await loadPromise;
+
+        activity.end();
       });
     });
-
-    if (process.env.NODE_ENV !== `production` && !disableLiveReload) {
-      const queue = new Queue(1, Infinity);
-
-      loader.watch(loadPromise => {
-        queue.add(async () => {
-          const activity = reporter.activityTimer(
-            `detected change in DatoCMS content, loading new data`,
-            { parentSpan },
-          );
-          activity.start();
-
-          await loadPromise;
-
-          activity.end();
-        });
-      });
-    }
   }
 };

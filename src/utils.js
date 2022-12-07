@@ -73,10 +73,8 @@ const datocmsCreateNodeManifest = ({ node, context }) => {
     const createNodeManifestIsSupported =
       typeof unstable_createNodeManifest === `function`;
     const updatedAt = node?.entityPayload?.meta?.updated_at;
-    const nodeNeedsManifestCreated = updatedAt && node?.locale;
 
-    const shouldCreateNodeManifest =
-      createNodeManifestIsSupported && nodeNeedsManifestCreated;
+    const shouldCreateNodeManifest = createNodeManifestIsSupported && updatedAt;
 
     if (shouldCreateNodeManifest) {
       if (shouldUpgradeGatsbyVersion && !warnOnceToUpgradeGatsby) {

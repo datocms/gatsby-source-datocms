@@ -13,8 +13,8 @@
     "build": "babel src --out-dir . --ignore __tests__",
     "watch": "babel -w src --out-dir . --ignore __tests__",
     "prepublish": "cross-env NODE_ENV=production yarn build",
-    "test-v4": "jest --forceExit",
-    "test": "jest --forceExit --testNamePattern='^(?!tracedSVG)'"
+    "test-v4": "yarn build && jest --forceExit",
+    "test": "yarn build && jest --forceExit --testNamePattern='^(?!tracedSVG)'"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
