@@ -63,14 +63,9 @@ class CascadedContext {
     if (lastCascade) {
       // Since we pulled this out of the cascade keys,
       // there is always a T for this key
-      this.reporter.verbose(
-        `found this active locale from context:`,
-        this.cascadeMap.get(lastCascade),
-      );
       return this.cascadeMap.get(lastCascade);
     }
 
-    this.reporter.verbose(`fallback to default locale`);
     return null;
   }
 
