@@ -7,10 +7,10 @@ const resolveUsingAttribute = (key, definition) => ({
   },
 });
 
-module.exports = ({ actions, schema }) => {
+module.exports = ({ actions, schema, generateType }) => {
   actions.createTypes([
     schema.buildObjectType({
-      name: 'DatoCmsGlobalSeo',
+      name: generateType('GlobalSeo'),
       extensions: { infer: false },
       fields: {
         siteName: resolveUsingAttribute('site_name', { type: 'String' }),
@@ -22,7 +22,7 @@ module.exports = ({ actions, schema }) => {
           type: 'String',
         }),
         fallbackSeo: {
-          type: 'DatoCmsSeoField',
+          type: generateType('SeoField'),
           resolve: node => {
             const result = camelizeKeys(node.fallback_seo);
             return result;

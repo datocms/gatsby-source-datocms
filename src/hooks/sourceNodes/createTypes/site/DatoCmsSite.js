@@ -52,7 +52,7 @@ module.exports = ({ actions, schema, generateType }) => {
           type: 'Boolean',
         }),
         globalSeo: {
-          type: 'DatoCmsGlobalSeo',
+          type: generateType('GlobalSeo'),
           args: {
             locale: `String`,
             fallbackLocales: `[String!]`,
