@@ -37,13 +37,13 @@ jobs:
         if: matrix.os == '4.24.0'
         run: |
           cat node_modules/gatsby/package.json | grep "\"version\""
-          yarn test
+          yarn test-v4
         env:
           CI: true
       - name: Run tests
         if: matrix.os != '4.24.0'
         run: |
           cat node_modules/gatsby/package.json | grep "\"version\""
-          yarn test -- --testNamePattern='^(?!tracedSVG)'
+          yarn test
         env:
           CI: true
