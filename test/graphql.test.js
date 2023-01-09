@@ -798,6 +798,53 @@ test('items', async () => {
   expect(result).toMatchSnapshot();
 });
 
+test('items (parallel)', async () => {
+  const getQuery = locale => /* GraphQL */ `
+    {
+      article: datoCmsArticle(originalId: {eq: "7364344"}, locale: "${locale}") {
+        __typename
+        originalId
+        id
+        locales
+        singleLineString
+        singleLink {
+          id
+          singleLineString
+        }
+        multipleLinks {
+          id
+          singleLineString
+        }
+        advancedMultipleLinks {
+          __typename
+          ... on DatoCmsArticle {
+            singleLineString
+          }
+          ... on DatoCmsSecondaryModel {
+            title
+          }
+        }
+      }
+      allDatoCmsOptionalLocalesModel(locale: "it", fallbackLocales: ["en"]) {
+        nodes {
+          originalId
+          title
+          boolean
+        }
+      }
+    }
+  `;
+
+  const [result1, result2] = await Promise.all([
+    executeQuery(getQuery(`en`)),
+    executeQuery(getQuery(`it`)),
+  ]);
+
+  // we compare results of queries running in parallel to results of queries running one by one
+  expect(await executeQuery(getQuery(`en`))).toEqual(result1);
+  expect(await executeQuery(getQuery(`it`))).toEqual(result2);
+});
+
 test('structured text', async () => {
   const query = /* GraphQL */ `
     {
