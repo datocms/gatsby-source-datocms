@@ -26,10 +26,20 @@ module.exports = async (
     logApiCalls,
   },
 ) => {
-  const localeState = new CascadedContext({ reporter });
-  const fallbackLocalesState = new CascadedContext({ reporter });
-
-  actions.createResolverContext({ localeState, fallbackLocalesState });
+  const statePerQuery = new WeakMap();
+  actions.createResolverContext({
+    getQueryContext: key => {
+      let queryState = statePerQuery.get(key);
+      if (!queryState) {
+        queryState = {
+          localeState: new CascadedContext({ reporter }),
+          fallbackLocalesState: new CascadedContext({ reporter }),
+        };
+        statePerQuery.set(key, queryState);
+      }
+      return queryState;
+    },
+  });
 
   if (!apiToken) {
     const errorText = `API token must be provided!`;
