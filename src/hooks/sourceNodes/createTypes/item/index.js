@@ -7,29 +7,22 @@ const itemNodeId = require('../utils/itemNodeId');
 const { seoTagsBuilder, JsonApiEntity } = require('datocms-client');
 
 function getI18n(args, context, info, mainLocale) {
+  const queryContext = context.sourceDatocms.getQueryContext(context);
+
   if (args.locale) {
-    context.sourceDatocms
-      .getQueryContext(context)
-      .localeState.set(info, args.locale);
+    queryContext.localeState.set(info, args.locale);
   }
 
   if (args.fallbackLocales) {
-    context.sourceDatocms
-      .getQueryContext(context)
-      .fallbackLocalesState.set(info, args.fallbackLocales);
+    queryContext.fallbackLocalesState.set(info, args.fallbackLocales);
   }
 
-  const locale =
-    context.sourceDatocms.getQueryContext(context).localeState.get(info) ||
-    mainLocale;
+  const locale = queryContext.localeState.get(info) || mainLocale;
 
   return {
     locale,
     fallbacks: {
-      [locale]:
-        context.sourceDatocms
-          .getQueryContext(context)
-          .fallbackLocalesState.get(info) || [],
+      [locale]: queryContext.fallbackLocalesState.get(info) || [],
     },
   };
 }
