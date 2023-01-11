@@ -35,22 +35,16 @@ module.exports = (
             fallbackLocales: { type: '[String!]' },
           },
           resolve: async (parent, args, context, info) => {
-            if (context.sourceDatocms.localeState) {
-              context.sourceDatocms.localeState.clear(info);
-            }
-            if (context.sourceDatocms.fallbackLocales) {
-              context.sourceDatocms.fallbackLocales.clear(info);
-            }
-
             if (args.locale) {
-              context.sourceDatocms.localeState.set(info, args.locale);
+              sourceDatocms
+                .getQueryContext(context)
+                .localeState.set(info, args.locale);
             }
 
             if (args.fallbackLocales) {
-              context.sourceDatocms.fallbackLocalesState.set(
-                info,
-                args.fallbackLocales,
-              );
+              context.sourceDatocms
+                .getQueryContext(context)
+                .fallbackLocalesState.set(info, args.fallbackLocales);
             }
 
             const { locale, fallbackLocales, ...argsWithoutLocale } = args;

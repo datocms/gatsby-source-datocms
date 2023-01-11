@@ -2,19 +2,28 @@ const { localizedRead } = require('datocms-client');
 
 function getI18n(args, context, info, mainLocale) {
   if (args.locale) {
-    context.sourceDatocms.localeState.set(info, args.locale);
+    context.sourceDatocms
+      .getQueryContext(context)
+      .localeState.set(info, args.locale);
   }
 
   if (args.fallbackLocales) {
-    context.sourceDatocms.fallbackLocalesState.set(info, args.fallbackLocales);
+    context.sourceDatocms
+      .getQueryContext(context)
+      .fallbackLocalesState.set(info, args.fallbackLocales);
   }
 
-  const locale = context.sourceDatocms.localeState.get(info) || mainLocale;
+  const locale =
+    context.sourceDatocms.getQueryContext(context).localeState.get(info) ||
+    mainLocale;
 
   return {
     locale,
     fallbacks: {
-      [locale]: context.sourceDatocms.fallbackLocalesState.get(info) || [],
+      [locale]:
+        context.sourceDatocms
+          .getQueryContext(context)
+          .fallbackLocalesState.get(info) || [],
     },
   };
 }
