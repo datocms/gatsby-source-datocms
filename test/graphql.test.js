@@ -447,9 +447,58 @@ test('items', async () => {
           value
         }
         multipleParagraphText
+        itMultipleParagraphText: multipleParagraphText(locale: "it")
+        multipleParagraphTextNode {
+          id
+          internal {
+            content
+          }
+          childMarkdownRemark {
+            html
+            timeToRead
+          }
+        }
+        itMultipleParagraphTextNode: multipleParagraphTextNode(locale: "it") {
+          id
+          childMarkdownRemark {
+            html
+          }
+        }
+        itViaFallbackMultipleParagraphTextNode: multipleParagraphTextNode(locale: "jp", fallbackLocales: ["it"]) {
+          id
+          childMarkdownRemark {
+            html
+          }
+        }
         _allMultipleParagraphTextLocales {
           locale
           value
+          valueNode {
+            id
+            internal {
+              content
+            }
+            childMarkdownRemark {
+              html
+              timeToRead
+            }
+          }
+        }
+        unlocalizedMultipleParagraphText
+        unlocalizedMultipleParagraphTextNode {
+          id
+          internal {
+            content
+          }
+          childMarkdownRemark {
+            html
+            headings {
+              id
+              value
+              depth
+            }
+            timeToRead
+          }
         }
         singleAsset {
           ${fileFields}

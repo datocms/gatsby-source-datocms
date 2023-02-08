@@ -1212,10 +1212,41 @@ Foo
 
 ![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)
 ",
+          "valueNode": Object {
+            "childMarkdownRemark": Object {
+              "html": "<p>Multiple paragraph text</p>
+<p><img src=\\"https://www.datocms-assets.com/34723/1620629638-plant.jpeg\\" alt=\\"\\"></p>
+<p>Foo</p>
+<p><img src=\\"https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg\\" alt=\\"\\"></p>",
+              "timeToRead": 1,
+            },
+            "id": "DatoCmsTextNode-7364344-en-multipleParagraphText",
+            "internal": Object {
+              "content": "Multiple paragraph text
+
+![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)
+
+
+Foo
+
+![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)
+",
+            },
+          },
         },
         Object {
           "locale": "it",
           "value": "Paragrafi multipli",
+          "valueNode": Object {
+            "childMarkdownRemark": Object {
+              "html": "<p>Paragrafi multipli</p>",
+              "timeToRead": 1,
+            },
+            "id": "DatoCmsTextNode-7364344-it-multipleParagraphText",
+            "internal": Object {
+              "content": "Paragrafi multipli",
+            },
+          },
         },
       ],
       "_allSeoLocales": Array [
@@ -2209,6 +2240,19 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
       "floatingPointNumber": 3.14,
       "id": "DatoCmsArticle-7364344",
       "integerNumber": 42,
+      "itMultipleParagraphText": "Paragrafi multipli",
+      "itMultipleParagraphTextNode": Object {
+        "childMarkdownRemark": Object {
+          "html": "<p>Paragrafi multipli</p>",
+        },
+        "id": "DatoCmsTextNode-7364344-it-multipleParagraphText",
+      },
+      "itViaFallbackMultipleParagraphTextNode": Object {
+        "childMarkdownRemark": Object {
+          "html": "<p>Paragrafi multipli</p>",
+        },
+        "id": "DatoCmsTextNode-7364344-it-multipleParagraphText",
+      },
       "json": "{
   \\"foo\\": \\"english\\"
 }",
@@ -2224,9 +2268,9 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
         "__typename": "DatoCmsMetaField",
         "createdAt": "2020-09-22T15:46:24.300+01:00",
         "isValid": true,
-        "publishedAt": "2022-05-26T09:20:19.798+01:00",
+        "publishedAt": "2023-02-08T12:10:05.407+00:00",
         "status": "published",
-        "updatedAt": "2022-05-26T09:20:19.717+01:00",
+        "updatedAt": "2023-02-08T12:10:05.316+00:00",
       },
       "model": Object {
         "allLocalesRequired": false,
@@ -2303,6 +2347,27 @@ Foo
 
 ![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)
 ",
+      "multipleParagraphTextNode": Object {
+        "childMarkdownRemark": Object {
+          "html": "<p>Multiple paragraph text</p>
+<p><img src=\\"https://www.datocms-assets.com/34723/1620629638-plant.jpeg\\" alt=\\"\\"></p>
+<p>Foo</p>
+<p><img src=\\"https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg\\" alt=\\"\\"></p>",
+          "timeToRead": 1,
+        },
+        "id": "DatoCmsTextNode-7364344-en-multipleParagraphText",
+        "internal": Object {
+          "content": "Multiple paragraph text
+
+![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)
+
+
+Foo
+
+![](https://image.mux.com/4kQ900rt02gnY2oecSmMdc3MH87sjxr2Mi/thumbnail.jpg)
+",
+        },
+      },
       "originalId": "7364344",
       "seo": Object {
         "description": "English SEO Description",
@@ -2363,7 +2428,7 @@ Foo
           },
           Object {
             "attributes": Object {
-              "content": "2022-05-26T08:20:19Z",
+              "content": "2023-02-08T12:10:05Z",
               "property": "article:modified_time",
             },
             "tagName": "meta",
@@ -2945,6 +3010,25 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "type": "root",
           },
           "schema": "dast",
+        },
+      },
+      "unlocalizedMultipleParagraphText": "Unlocalized multiple paragraph text
+
+![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)
+",
+      "unlocalizedMultipleParagraphTextNode": Object {
+        "childMarkdownRemark": Object {
+          "headings": Array [],
+          "html": "<p>Unlocalized multiple paragraph text</p>
+<p><img src=\\"https://www.datocms-assets.com/34723/1620629638-plant.jpeg\\" alt=\\"\\"></p>",
+          "timeToRead": 1,
+        },
+        "id": "DatoCmsTextNode-7364344-unlocalizedMultipleParagraphText",
+        "internal": Object {
+          "content": "Unlocalized multiple paragraph text
+
+![](https://www.datocms-assets.com/34723/1620629638-plant.jpeg)
+",
         },
       },
     },

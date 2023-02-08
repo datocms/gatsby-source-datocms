@@ -66,7 +66,7 @@ module.exports = ({
     seo: simpleFieldReturnCamelizedKeys(generateType('SeoField')),
     slug: simpleField('String'),
     string: simpleField('String'),
-    text: simpleField('String'),
+    text: require('./fields/text'),
     video: simpleFieldReturnCamelizedKeys('DatoCmsVideoField'),
   };
 
@@ -136,6 +136,12 @@ module.exports = ({
           objectAssign(acc, {
             [`${camelize(field.apiKey)}Node`]: {
               type: nodeType,
+              args: field.localized
+                ? {
+                    locale: `String`,
+                    fallbackLocales: `[String!]`,
+                  }
+                : undefined,
               resolve: (node, args, context, info) => {
                 const i18n = getI18n(args, context, info, mainLocale);
 
@@ -145,6 +151,7 @@ module.exports = ({
                   field.localized,
                   i18n,
                 );
+
                 return resolveForNodeField(
                   value,
                   context,
