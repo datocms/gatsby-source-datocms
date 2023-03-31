@@ -2320,7 +2320,7 @@
         "modularBlock": false,
         "draftModeActive": false,
         "allLocalesRequired": false,
-        "collectionAppeareance": "table",
+        "collectionAppearance": "table",
         "hasSingletonItem": false,
         "originalId": "313513"
       }

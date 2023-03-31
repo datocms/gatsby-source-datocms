@@ -47,9 +47,9 @@ module.exports = function buildItemNode(
 
               let mediaType = 'text/plain';
 
-              if (field.appeareance.editor === 'markdown') {
+              if (field.appearance.editor === 'markdown') {
                 mediaType = 'text/markdown';
-              } else if (field.appeareance.editor === 'wysiwyg') {
+              } else if (field.appearance.editor === 'wysiwyg') {
                 mediaType = 'text/html';
               }
 

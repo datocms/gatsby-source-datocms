@@ -7,7 +7,7 @@ const attributes = [
   'localized',
   'validators',
   'position',
-  'appeareance',
+  'appearance',
   'defaultValue',
 ];
 

@@ -10,7 +10,7 @@ const attributes = [
   'modularBlock',
   'draftModeActive',
   'allLocalesRequired',
-  'collectionAppeareance',
+  'collectionAppearance',
   'hasSingletonItem',
 ];
 
