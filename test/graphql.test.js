@@ -784,7 +784,7 @@ Suite('items', async () => {
           modularBlock
           draftModeActive
           allLocalesRequired
-          collectionAppeareance
+          collectionAppearance
           hasSingletonItem
           originalId
         }

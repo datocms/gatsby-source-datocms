@@ -13,7 +13,7 @@ module.exports = ({ actions, schema, generateType }) => {
         modularBlock: 'Boolean',
         draftModeActive: 'Boolean',
         allLocalesRequired: 'Boolean',
-        collectionAppeareance: 'String',
+        collectionAppearance: 'String',
         hasSingletonItem: 'Boolean',
         originalId: 'String',
         fields: {
