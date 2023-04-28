@@ -11915,10 +11915,10 @@ not@^0.1.0:
   resolved "https://registry.yarnpkg.com/not/-/not-0.1.0.tgz#c9691c1746c55dcfbe54cbd8bd4ff041bc2b519d"
   integrity sha1-yWkcF0bFXc++VMvYvU/wQbwrUZ0=
 
-np@^7.6.3:
-  version "7.6.3"
-  resolved "https://registry.yarnpkg.com/np/-/np-7.6.3.tgz#da3eeb750fa8d583f658b02a16f1199a11c9e10f"
-  integrity sha512-GTFNvIhu/cZqzUhil/AlISCiipYeAUVx0JtyjtmumFJvWogSewUSAshFi5MSMc6BOj9C98s8NAFZiqlHb2wQPQ==
+np@^7.7.0:
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/np/-/np-7.7.0.tgz#7fbf2495f6395bcc702b84ca38c4a125363fd5a5"
+  integrity sha512-G4HfO6JUl7iKOX1qfYHM/kG5ApqqZ4ma8YjtVAJoyS5VdKkGE/OdSG3cOE9Lwr71klNz9n6KIZmPRnh0L7qM1Q==
   dependencies:
     "@samverschueren/stream-to-observable" "^0.3.1"
     any-observable "^0.5.1"
