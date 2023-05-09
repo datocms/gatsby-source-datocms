@@ -27,20 +27,6 @@ function getI18n(args, context, info, mainLocale) {
   };
 }
 
-function getAllLocalesI18n(node, args, context, info) {
-  context.sourceDatocms
-    .getQueryContext(context)
-    .localeState.set(info, node.locale);
-  context.sourceDatocms
-    .getQueryContext(context)
-    .fallbackLocalesState.set(info, []);
-
-  return {
-    locale: node.locale,
-    fallbacks: {},
-  };
-}
-
 module.exports = ({
   entitiesRepo,
   fallbackLocales,
@@ -179,7 +165,12 @@ module.exports = ({
                 value: {
                   type,
                   resolve: (node, args, context, info) => {
-                    const i18n = getAllLocalesI18n(node, args, context, info);
+                    const i18n = getI18n(
+                      { locale: node.locale },
+                      context,
+                      info,
+                      node.locale,
+                    );
 
                     const value = localizedRead(
                       node.entityPayload.attributes,
@@ -187,6 +178,7 @@ module.exports = ({
                       field.localized,
                       i18n,
                     );
+
                     return resolveForSimpleField(
                       value,
                       context,
@@ -201,11 +193,11 @@ module.exports = ({
                       valueNode: {
                         type: nodeType,
                         resolve: (node, args, context, info) => {
-                          const i18n = getAllLocalesI18n(
-                            node,
-                            args,
+                          const i18n = getI18n(
+                            { locale: node.locale },
                             context,
                             info,
+                            node.locale,
                           );
 
                           const value = localizedRead(
@@ -232,7 +224,21 @@ module.exports = ({
           objectAssign(acc, {
             [`_all${pascalize(field.apiKey)}Locales`]: {
               type: `[${allLocalesTypeName}]`,
-              resolve: node => {
+              args: {
+                fallbackLocales: '[String!]',
+              },
+              resolve: (node, args, context, info) => {
+                const queryContext = context.sourceDatocms.getQueryContext(
+                  context,
+                );
+
+                if (args.fallbackLocales) {
+                  queryContext.fallbackLocalesState.set(
+                    info,
+                    args.fallbackLocales,
+                  );
+                }
+
                 const locales = Object.keys(
                   node.entityPayload.attributes[field.apiKey] || {},
                 );

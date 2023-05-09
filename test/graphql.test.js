@@ -847,6 +847,43 @@ test('items', async () => {
   expect(result).toMatchSnapshot();
 });
 
+test('_allXXXLocales with fallback', async () => {
+  const query = /* GraphQL */ `
+    {
+      noFallback: allDatoCmsOptionalLocalesModel {
+        nodes {
+          _allTitleLocales {
+            locale
+            value
+          }
+        }
+      }
+      fallbackToplevel: allDatoCmsOptionalLocalesModel(
+        fallbackLocales: ["en"]
+      ) {
+        nodes {
+          _allTitleLocales {
+            locale
+            value
+          }
+        }
+      }
+      fallbackAllLocales: allDatoCmsOptionalLocalesModel {
+        nodes {
+          _allTitleLocales(fallbackLocales: ["en"]) {
+            locale
+            value
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await executeQuery(query);
+
+  expect(result).toMatchSnapshot();
+});
+
 test('items (parallel)', async () => {
   const getQuery = locale => /* GraphQL */ `
     {

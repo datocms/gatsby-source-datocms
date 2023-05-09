@@ -1,5 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`_allXXXLocales with fallback 1`] = `
+Object {
+  "data": Object {
+    "fallbackAllLocales": Object {
+      "nodes": Array [
+        Object {
+          "_allTitleLocales": Array [
+            Object {
+              "locale": "en",
+              "value": "English title",
+            },
+          ],
+        },
+        Object {
+          "_allTitleLocales": Array [
+            Object {
+              "locale": "en",
+              "value": "English title",
+            },
+            Object {
+              "locale": "it",
+              "value": "English title",
+            },
+          ],
+        },
+      ],
+    },
+    "fallbackToplevel": Object {
+      "nodes": Array [
+        Object {
+          "_allTitleLocales": Array [
+            Object {
+              "locale": "en",
+              "value": "English title",
+            },
+          ],
+        },
+        Object {
+          "_allTitleLocales": Array [
+            Object {
+              "locale": "en",
+              "value": "English title",
+            },
+            Object {
+              "locale": "it",
+              "value": "English title",
+            },
+          ],
+        },
+      ],
+    },
+    "noFallback": Object {
+      "nodes": Array [
+        Object {
+          "_allTitleLocales": Array [
+            Object {
+              "locale": "en",
+              "value": "English title",
+            },
+          ],
+        },
+        Object {
+          "_allTitleLocales": Array [
+            Object {
+              "locale": "en",
+              "value": "English title",
+            },
+            Object {
+              "locale": "it",
+              "value": null,
+            },
+          ],
+        },
+      ],
+    },
+  },
+}
+`;
+
 exports[`assets 1`] = `
 Object {
   "data": Object {
