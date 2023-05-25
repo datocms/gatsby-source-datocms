@@ -17,9 +17,9 @@ module.exports = function buildItemNode(entity, { generateType }) {
       const camelizedApiKey = camelize(field.apiKey);
 
       const mediaType =
-        field.appeareance.editor === 'markdown'
+        field.appearance.editor === 'markdown'
           ? 'text/markdown'
-          : field.appeareance.editor === 'wysiwyg'
+          : field.appearance.editor === 'wysiwyg'
           ? 'text/html'
           : 'text/plain';
 
