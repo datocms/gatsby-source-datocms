@@ -10,7 +10,7 @@ const attributes = [
   'modularBlock',
   'draftModeActive',
   'allLocalesRequired',
-  'collectionAppeareance',
+  'collectionAppearance',
   'hasSingletonItem',
 ];
 
@@ -21,6 +21,9 @@ module.exports = function buildItemTypeNode(entity, { generateType }) {
     });
 
     node.originalId = entity.id;
-    node.fields___NODE = entity.fields.map(field => `DatoCmsField-${field.id}`);
+    node.collectionAppeareance = entity.collectionAppearance;
+    node.fields___NODE = entity.fields.map(
+      field => `${generateType('Field')}-${field.id}`,
+    );
   });
 };

@@ -12,7 +12,7 @@ module.exports = ({ actions, schema, generateType }) => {
         position: 'Int',
         appeareance: 'JSON',
         defaultValue: 'JSON',
-        originalId: 'String',
+        originalId: 'String!',
       },
       interfaces: ['Node'],
     }),

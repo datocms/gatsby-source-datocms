@@ -818,6 +818,7 @@ test('items', async () => {
         }
         model {
           id
+          originalId
           name
           singleton
           sortable
@@ -830,6 +831,13 @@ test('items', async () => {
           collectionAppeareance
           hasSingletonItem
           originalId
+          fields {
+            id
+            originalId
+            label
+            fieldType
+            appeareance
+          }
         }
       }
       allDatoCmsOptionalLocalesModel(locale: "it", fallbackLocales: ["en"]) {

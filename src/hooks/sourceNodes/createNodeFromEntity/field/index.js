@@ -7,7 +7,7 @@ const attributes = [
   'localized',
   'validators',
   'position',
-  'appeareance',
+  'appearance',
   'defaultValue',
 ];
 
@@ -17,6 +17,7 @@ module.exports = function buildFieldNode(entity, { generateType }) {
       node[attribute] = entity[attribute];
     });
 
+    node.appeareance = entity.appearance;
     node.originalId = entity.id;
   });
 };

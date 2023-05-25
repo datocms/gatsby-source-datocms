@@ -15,9 +15,9 @@ module.exports = ({ actions, schema, generateType }) => {
         allLocalesRequired: 'Boolean',
         collectionAppeareance: 'String',
         hasSingletonItem: 'Boolean',
-        originalId: 'String',
+        originalId: 'String!',
         fields: {
-          type: 'DatoCmsFaviconMetaTags',
+          type: `[${generateType('Field')}!]`,
           extensions: {
             link: { by: 'id', from: 'fields___NODE' },
           },
