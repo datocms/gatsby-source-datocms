@@ -27,7 +27,7 @@ jobs:
         run: |
           node .github/patchVersions.js
           cat package.json
-          yarn install --no-lockfile
+          yarn install
         env:
           GATSBY_VERSION: ${{ matrix.gatsby-version }}
           NODE_VERSION: ${{ matrix.node-version }}
