@@ -437,6 +437,41 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?crop=focalpoint&dpr=1
 }
 `;
 
+exports[`filter by locale 1`] = `
+Object {
+  "data": Object {
+    "enResults": Object {
+      "nodes": Array [
+        Object {
+          "locales": Array [
+            "en",
+          ],
+          "title": "English title",
+        },
+        Object {
+          "locales": Array [
+            "en",
+            "it",
+          ],
+          "title": "English title",
+        },
+      ],
+    },
+    "itResults": Object {
+      "nodes": Array [
+        Object {
+          "locales": Array [
+            "en",
+            "it",
+          ],
+          "title": null,
+        },
+      ],
+    },
+  },
+}
+`;
+
 exports[`focalPoints 1`] = `
 Object {
   "data": Object {
