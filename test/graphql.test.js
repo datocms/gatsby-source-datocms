@@ -855,6 +855,35 @@ test('items', async () => {
   expect(result).toMatchSnapshot();
 });
 
+test('filter by locale', async () => {
+  const query = /* GraphQL */ `
+    {
+      itResults: allDatoCmsOptionalLocalesModel(
+        locale: "it"
+        filter: { locales: { in: ["it"] } }
+      ) {
+        nodes {
+          locales
+          title
+        }
+      }
+      enResults: allDatoCmsOptionalLocalesModel(
+        locale: "en"
+        filter: { locales: { in: ["en"] } }
+      ) {
+        nodes {
+          locales
+          title
+        }
+      }
+    }
+  `;
+
+  const result = await executeQuery(query);
+
+  expect(result).toMatchSnapshot();
+});
+
 test('_allXXXLocales with fallback', async () => {
   const query = /* GraphQL */ `
     {
