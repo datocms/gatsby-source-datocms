@@ -4,14 +4,27 @@ const resizeUrl = require('./resizeUrl');
 const queryString = require('query-string');
 const { fetchRemoteFile } = require('gatsby-core-utils');
 
+var magicNumbersToMimeType = {
+  ffd8ffe0: 'image/jpeg',
+  '89504e47': 'image/png',
+  '47494638': 'image/gif',
+  '52494646': 'image/webp',
+};
+
 async function download(url, cache) {
   const absolutePath = await fetchRemoteFile({ url, cache });
-  const base64 = (await fs.readFile(absolutePath)).toString(`base64`);
+  const fileBody = await fs.readFile(absolutePath);
+  const base64 = fileBody.toString(`base64`);
+  const magicNumber = fileBody.toString('hex', 0, 4);
+
   const extension = path
     .extname(absolutePath)
     .split('.')
     .pop();
-  return `data:image/${extension};base64,${base64}`;
+
+  const mimeType = magicNumbersToMimeType[magicNumber] || `image/${extension}`;
+
+  return `data:${mimeType};base64,${base64}`;
 }
 
 module.exports = async (

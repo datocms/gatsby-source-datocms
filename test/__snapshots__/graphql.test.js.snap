@@ -2585,7 +2585,19 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "appeareance": Object {
               "addons": Array [],
               "editor": "seo",
-              "parameters": Object {},
+              "parameters": Object {
+                "fields": Array [
+                  "title",
+                  "description",
+                  "image",
+                  "twitter_card",
+                ],
+                "previews": Array [
+                  "google",
+                  "twitter",
+                  "facebook",
+                ],
+              },
             },
             "fieldType": "seo",
             "id": "DatoCmsField-1400203",
