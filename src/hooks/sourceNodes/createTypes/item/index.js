@@ -46,6 +46,7 @@ module.exports = ({
     json: simpleField('JSON'),
     lat_lon: simpleField('DatoCmsLatLonField'),
     link: require('./fields/link'),
+    single_block: require('./fields/link'),
     links: require('./fields/richText'),
     rich_text: require('./fields/richText'),
     structured_text: require('./fields/structuredText'),

@@ -733,6 +733,49 @@ test('items', async () => {
             }
           }
         }
+        singleBlock {
+          title
+          originalId
+          singleLink {
+            singleLineString
+          }
+          multipleLinks {
+            singleLineString
+          }
+          innerModularContent {
+            title
+            originalId
+            singleLink {
+              singleLineString
+            }
+            multipleLinks {
+              singleLineString
+            }
+          }
+        }
+        _allSingleBlockLocales {
+          locale
+          value {
+            title
+            originalId
+            singleLink {
+              singleLineString
+            }
+            multipleLinks {
+              singleLineString
+            }
+            innerModularContent {
+              title
+              originalId
+              singleLink {
+                singleLineString
+              }
+              multipleLinks {
+                singleLineString
+              }
+            }
+          }
+        }
         structuredText {
           value
           blocks {

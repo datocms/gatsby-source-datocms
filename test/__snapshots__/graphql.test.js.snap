@@ -623,10 +623,10 @@ Object {
     },
     "datoCmsAsset": Object {
       "fixed": Object {
-        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAQCAYAAAD52jQlAAAAAXNSR0IArs4c6QAAA/lJREFUOE99lF1MHFUUx/937szOfgy7QJdv6UqBTYFaLWqghQf0odbqg9GwPpj62WiaaC0F0pIYM22NLzVprTHVplGTouCuYqopWpuw29ImtMDSrXxIWxbRZQWWAlt2YT9m5voAVUKJv7d77zm/e5KTcwhWIUPmZMhat75ug16j21QjP6AkYhP+hfEpB1zq6vi14FZflGKAAICnyCDF1unP8DHFyygdLjauH7tqaTgNAAyMMDCyOvce90kdcKluyHxj/4c3ulKVI5pJAJJJIUU05o2so8uiQ4SAsB68KciQ73OsyVIlSx86Cw54R8SD7Gx+w1/YftQEALeK3hFXx6888/89yBxQSggcGgFhABgAOLIMz/9A4qNTBnoAvzZGAeCn27ypK6XBbdRwlknSl2SSTDEwspy3hBvyv3IA8G1uMI3q6jcGUb+RoS6vubDpFQACAPRhXyqcjLYXNl4LmN5jXuN+9aKw/+WVHo5B5p6ArFxPabL3mRuPA8DXN25ylzP4vX15wlC/JTVgZtpzv33Qkh08fc6GzcY9QX/LVrUqu3UyOo+ZTB03+GR6FABCtaUMAAgADNLGnTFe+S5HkQyhnORbls+ecQW9Abv/z1BFeDxSbiuztm8pzgmGJ2ZN8yd9h9P2lL2vmKW71z/tbSOPZnz14huVn5Dt1UEGEAIwnkHmWh6MNyRFXvERJSxJ4lNVgRlvpgnSpp0PdYgJdnFqZtaQSCZJjKl0yG4eq7RaZlJ0oFaH/d0yW1pwtH/sAQBBstwH4qx1UodrkHwk21O3CeRhEKZkWXiVKcLivHu4mq/I8+kpZVRHmZiVPh9PEDXSem2HUJI2aNmUGYzMxCRChWQijN4y2ZEAAN7hcqgAUF/KZsf8rYu8pGdxXoxEjl86GqGwZr7wiIeoCq9G4uxOa0+N1n1nNx9USpO5+pdicW6KJFQiUF4PXdQCIASA3Os6cTkc2HJqV3hxImJePHX1hDXA10zvEE5IPOUWW7xVkb7ZXcLf2mORDAqWa4A5qqhUFKZjqkrnJTJXvvf1EAAwyEtSBpkQyOqwuyIt0THRrJ9UbEFxAbr8oqHg4LhxsnvuY3tcQFIfhUq0b9oy9D1lvrmB3a3P+peLwgjqXovxuE0UuZMDgEPL09N9JVQyIom2SZsRd9OE5LjK/fj4kVevfL7BuPWXfJyPZVuhW1CFY77DxwqHdL8DwAXbvpJztoM9avH6L/w59GkAoADggUcDgLbw5b5vy7tOpoP0ThvopbfPN3UAwM1xT+DnUGezpaB6dMEkaO3Tne6CmhrO84dHy8+tFG4Zjb7vpcSZAVF3oX/CM4f/g7GlmXbWOilbsThWzPoam4qRfwBJSbVMmVCusAAAAABJRU5ErkJggg==",
+        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAQCAYAAAD52jQlAAAAAXNSR0IArs4c6QAAA3xJREFUOE+1kV1sU1UAx//33Hva2/Z2t+tKV+Y29xEU6hYSMBDwA4lK4kIwkuzFTOJHGIoJgh3iB8OqhIRE8EGjxmiMhocFH8wIQXjABzDA5rp16xyjoHSp67Sb/f64vV/HB6MUQ33z93r+v19OzuFQgxF5oN1SYRtBaLTCzIVy2b60GUGl1r4aUuvgss/izMrkBAdtlPLGtOzIz16RBz6tta+mZnTvtSNT12XhiC7yMJkhU0rv/rmBsFr7ampGAWDnI23BmzJG7aCISXr8eL19EADG0E8Z+mkt7z+j+GyXNuIQds56UFmw07dCoeASAExJVteI7Dw35dj/WsT2asu/tTtGx5qC9km8cu8cAv6XprVykXAvfxsNnwSAMRyQtYGuYtrDW22MP6pyiF5wDPTdMToq7btv3BF4HwBOJ+JipM22e6qFTiQbhKhM+Z5jh/t8v314qp1fI+x6XJDuZ+sazmS1CpJeXpx90FWujgoAELHu36qZxleSLrjDbQeuy28/PJyILw3F5zK/JBaKqzv8nrNSnaU1lcqKWlrtYUwfb+pqvnRtMhNj3fVDTz7RFe4/VxX9Es+KkWb+Rd1CAZ7L2Ovo5vV5dWK5yy50tHgvUaJfLhQUQQMjqkDI1TYpsV4Syy4bNT3bOt5sb3bPF/KlesYYx3EcAwAuiCAJNhZsX/Sukld6rF0iT3TZZa0wxTCLV26udW5oDzP+L4PUOTQlXeLV89EHqN8z4+z0LmplxWpwvA5eGl+xp6cCAEIQQRO/o/h895gaK8eynECIllNQOBF5vUDQYN9i+VHkiGnkS3xuePIhNp7eYSa0btIoPqO0ev4gJmM8MQTOqNgAVP55UwBA/1rd/OjXkhZLLSt/M3vINodN6S32j6lBuNLZmY3KRGoH5rU1hQYeupfCVTY0G+FSJY3pToeQX77nqcxtHwUAHMexq73H3ZUfEp/QRfOerNMAuatxejGWdCyGUu+05iDDChhMH/7eK130zeTCu4e2RwEgiV7pJ+x7ThdxY7XywcVbNwUQCiU7qY2s8DQJMDQ1Vyrj9KajL8zv/e7gtpV17JC/SB+1ZArKu5OHj/3tnPEF/GMW/nM3X7chqWfeQxy3R/taxa+3q8L5VSV1nWTyy94YCsQxFACACwAeG+wefNrnsHUid8sZdZOUIlgOaoJKVVW8gTj+H/4EHRV1jvCKLR0AAAAASUVORK5CYII=",
       },
       "fluid": Object {
-        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAASCAYAAACw50UTAAAAAXNSR0IArs4c6QAABIBJREFUOE+dU2lslFUUPe9920xn6UynQwdoaVlKK2hLWCr4A9oEg5iUuKQswaD+qWAoEWilQMi8RkQMJpIAAUmMCRKjSEQjGFliq1XTpDRthWGZFrpAaDvtdBk6ne373vNHOxG1YOL58/LOu/fm3vPOBR4PIlAmPeH9P0EmIwXOSARrjVp35X5nGKsFRQMR6CaEtGujoi0P1usEjE+W+yjoZGRN8Q0CAL95tFbisC606NLbmqQcTOXa2T43fiBl8wgAnPm/kyUlOZ63+0SLc5e4ato22Jy2SxzN3/0+ANSCyeNxjF5FuSIg/qXCpJ0DwNcT55YC9/Y2h+hycYvzjl34t67X9gFAf5lPdFiqPASML8bJBAEReIzMEACpBZMn62Bz4d6ic7P3isOFe1YBgG8+UwGgzln1RbOlsrHJVvly25wKLVknmUfHCUYBoARMJyCCMUZ9OVWeYVTNDmJH1ket8e4g4ZveaT1wEQACvoAKAF2z1F9TtZTFFk6/Cd1Xbl8w7cwmgEjWowKMEjBOANFkf5c1uKtyGWO8sVMvuDydnruZbuq+a9N6psTF862HTk3p+64hw7o4bZ3/zY835Gxa0nLXGu7Vw3H4Z2opjaUZMQCoYROdEzAuUGH3kR1ns+Mmr23E8AohaO57hXdipVneP4osp39+Rq431sy4ZJfN88IP+rOVvsi6KE+kFS2d2ROZnlJ/LVOF5ZW8Ld7XngsDgJd5BQDIAHB+RsrpDM1ZWh8fghRVNkbeOno2pzAr8FS6M2BZXXAoNBRSiJ6QQmO6phgGuWVRp0yTlDANjpjVpZkXtEXGTyvmuu7dvN3lAfAQE19LGBjtKjCWUIvqXJ7nyIsLri/ITvO7M0zhGGjC6Bx0K1NTw5zDoFyXZLNCfHFOpoa5bh8bM5tmukYU6AhHE1aZSD3Z29beEEIQQsjfnSE+/3FOKBJ3DkSiGp3uHhiuuVIddciJnC0rDo/d6/NIntRBRA2S+MW/4OGVnmqRpV5K37H8eKy71yXJKleoGs3a/moTIUQAE25hxeML4evotzwYjaYQQUOhfZe9tmv89VGP+Q5VuWRYTcHQ976i4f31xyJf9n7q7lNyFQ2ykRASNYjE4zASsShp33ZEBcYtSQAgOUbHsQse0j84a+jEtf3WACnpdUWjtLxwvYsLEfvMv4f0xp5VVAl9aTzQadUcnhScWtX6wVZ/5UnbA9vc4RJWogMAA6MMjMsAgJoaAkAMXbxO9abgV46AyAyLMITV1OXITm9vr7s9dVDF/LmZZtiDUdgHErfeyE/dWBEw3C8QEgMQEygzt2HnSxFF7OYiVMl01MrAX75s/j2IqFvuNFm5KV/3pA/wkYbl5Wt8AHxYeTDT2x+uftpkrnaFkIs6dv8IcL+2mMkldUz/dkZOha7IH9oUK/rjwx7cfWRVJzQSAIBlLG1zjK+wcdpxqIW1sGImszqmA0DxMpa/cjSxYWEkdODF9iNxAEIApLRw77TzqaDgCoGMQdSxUfwDJLm6STA2fmdg9JNF5cqjsXgyyJ/4m/Pdiy8hqQAAAABJRU5ErkJggg==",
+        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAASCAYAAACw50UTAAAAAXNSR0IArs4c6QAAA+1JREFUOE+tk1lsVFUAhv9zl9mXLtOZTvfQ1jaAhQbaqKCEFyWEpDGlxZD4RKXRRLF1SoxivAkxNCS+iBoJAXkwJtLGGOOSGBEURFyGFmnrlM6ULkNp7dBllt65c+65xxdKWpTpi9/rl//LyTk5QBY4FFM2vxYkm7zgDbztXiK7CPgNzhEBESJmTY8M0sk/W9HDsm0BQMomgx558Ik5KO44e4yLBJJBMJMjjHxo31CHsbXjQjYZGDrWO+TCqbQZWGJpJM0GhnOl3otjSjrbbpmscQBoc7q7brn5iB0mTDj5Xwcr8t+5p8gQXvVn264ZR/D1xUG73D7ohTFhlQ7ju67UPcNn8qVj/fbAT0FH174QDjsfnD70QcOOgNecZK40JM7AjctV0s62cPdZAMYVdFhdLW52PUIPbr7FTiDDoMIYScjy0zsXuseWG6tO3mfreuNXZ+cjAHDJxDf9Vmr+JOoVwvNuYdTL8NSA8rE3euqbEmuDYx9x5TSVN9cOT7v1WZ0yRMpNlr7tDrqyJwHAKA75kibxpIOLTQnKNk6d/LIteicRGZ+ae3c4mtxjxLWyss3e7115jmqqqhR3tb0G+OfVlQU3r5ZYz8fEzB7brvIjHU/WpDq/eiA+VGZ5zy5Zm8aNNJguNWeuTXzm21gaK/Y5poRtwgeaSkUJQCbDJKob8k2nnF9sktIeNWOyNxZ/zdPsUmNtYXg8OpsLYGE5ThQoQryONprtsmdDTV4VMxirq/SEcj3OFKc606YTuXKhPck554QQQiRRGJ9fsrk0nnHpVJIrchMyYyTDuKzreqy6c//g/ThWcOejL9brOpwaoSKBQOOn+15Iu2W9aP+W00xVbbBJGlkyBPVyZEv6l9kX4Tf/kHeg8ayeTFkgCIRwQ1sXH75GFMW4fy3LJJMZEJmIPKEZyU+HAlKItqb22t4kkihwnajatyMNWjD2PKbZ4/a0gFQJvwoKEMoFQTQoFwgN+v0igH/HZVGcz0wuFqV6QkfkKNux4DHSloqCkDpwu1jtDQd4VNsmSsC8k8dvlEiCT+VavbcoMha7QSr8j6ZI+1YKAOfQIraih62Kx86PyLx/7n3b30aNLuhgDmks3+8ZDQUjBYsCr6zymuBYzMC2xIYvVlify1GZ85nWrYsAcBcvuwYQaNEtxksA3kIaF1bFf+9PMO4Qb9tsxFdMLTlJQ7uyo+PZfgDY3aDUb9foaxV2fqgwjvwzfyijy7tzaBF/LLUcoGbpqEhEu2ZQHyIP+aG7G5TCWl1vNBlksvv60b6Vrr1eWb9OzzRb1cTxV8InNABQoAijm6hfk4hF5hIxWZdmzvx8PPFf7f+NfwDPEMf2dzjr3wAAAABJRU5ErkJggg==",
       },
       "forceBlurhashFixed": Object {
         "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAATCAMAAAC9bj0JAAAAtFBMVEXAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHAKoHNKC3VAAAAPHRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8xMjM0NTY3ODk6OzzSxYW5AAAAw0lEQVR42mWRyXIDMQhEBWiZ8f//aE62JJa0EmcWp4sDVa+aFiintySTq6dD+WgKOY34B1rL7Fm6fQCprVCYcJ93UCBKRtC4O5iJU4hLNruHQ3HpTxDhyZfiCtYkogBd/AJqLUUwyp2Z/QTbvjcAN4LHxgG2x2PHfmQuTBg236BBtWY4dDnCQ38AJVqF9MQssurXER29UAi5mdrSX8ZTVWcVDtfZe38dIM2vsSEdITp6v23+HK3gVqbDPk5iL8NT7fzDbw3EbHnrenJcAAAAAElFTkSuQmCC",
@@ -1665,6 +1665,40 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
           },
         },
       ],
+      "_allSingleBlockLocales": Array [
+        Object {
+          "locale": "en",
+          "value": Object {
+            "innerModularContent": Array [],
+            "multipleLinks": Array [
+              Object {
+                "singleLineString": "Single line string",
+              },
+            ],
+            "originalId": "Ks-Ts9b3QP6JjP9_gjMKHQ",
+            "singleLink": Object {
+              "singleLineString": "Single line string",
+            },
+            "title": "Single 1",
+          },
+        },
+        Object {
+          "locale": "it",
+          "value": Object {
+            "innerModularContent": Array [],
+            "multipleLinks": Array [
+              Object {
+                "singleLineString": "Stringa semplice",
+              },
+            ],
+            "originalId": "B7qCt24dTmaEJEljW0vn_g",
+            "singleLink": Object {
+              "singleLineString": "Stringa semplice",
+            },
+            "title": "Blocco singolo 1",
+          },
+        },
+      ],
       "_allSingleLineStringLocales": Array [
         Object {
           "locale": "en",
@@ -2382,9 +2416,9 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
         "__typename": "DatoCmsMetaField",
         "createdAt": "2020-09-22T15:46:24.300+01:00",
         "isValid": true,
-        "publishedAt": "2023-02-08T12:10:05.407+00:00",
+        "publishedAt": "2024-01-23T15:50:24.486+00:00",
         "status": "published",
-        "updatedAt": "2023-02-08T12:10:05.316+00:00",
+        "updatedAt": "2024-01-23T15:50:24.365+00:00",
       },
       "model": Object {
         "allLocalesRequired": false,
@@ -2675,6 +2709,19 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
           Object {
             "appeareance": Object {
               "addons": Array [],
+              "editor": "framed_single_block",
+              "parameters": Object {
+                "startCollapsed": false,
+              },
+            },
+            "fieldType": "single_block",
+            "id": "DatoCmsField-ZO6yKrCFSlmHJz0OZWRiSA",
+            "label": "Single block",
+            "originalId": "ZO6yKrCFSlmHJz0OZWRiSA",
+          },
+          Object {
+            "appeareance": Object {
+              "addons": Array [],
               "editor": "structured_text",
               "parameters": Object {
                 "blocksStartCollapsed": false,
@@ -2863,7 +2910,7 @@ Foo
           },
           Object {
             "attributes": Object {
-              "content": "2023-02-08T12:10:05Z",
+              "content": "2024-01-23T15:50:24Z",
               "property": "article:modified_time",
             },
             "tagName": "meta",
@@ -3157,6 +3204,19 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
         "url": "https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format",
         "video": null,
         "width": 100,
+      },
+      "singleBlock": Object {
+        "innerModularContent": Array [],
+        "multipleLinks": Array [
+          Object {
+            "singleLineString": "Single line string",
+          },
+        ],
+        "originalId": "Ks-Ts9b3QP6JjP9_gjMKHQ",
+        "singleLink": Object {
+          "singleLineString": "Single line string",
+        },
+        "title": "Single 1",
       },
       "singleLineString": "Single line string",
       "singleLink": Object {

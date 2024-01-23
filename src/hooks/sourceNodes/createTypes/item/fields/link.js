@@ -11,7 +11,10 @@ module.exports = ({
 }) => {
   const parentItemTypeName = gqlItemTypeName(parentItemType);
 
-  const itemTypeIds = field.validators.itemItemType.itemTypes;
+  const itemTypeIds =
+    field.validators[
+      field.fieldType === 'single_block' ? 'singleBlockBlocks' : 'itemItemType'
+    ].itemTypes;
 
   if (itemTypeIds.length === 0) {
     return { type: 'String' };
