@@ -10,7 +10,7 @@ module.exports = ({ actions, schema, generateType }) => {
         localized: 'Boolean',
         validators: 'JSON',
         position: 'Int',
-        appeareance: 'JSON',
+        appearance: 'JSON',
         defaultValue: 'JSON',
         originalId: 'String!',
       },

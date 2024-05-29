@@ -17,7 +17,7 @@ module.exports = function buildFieldNode(entity, { generateType }) {
       node[attribute] = entity[attribute];
     });
 
-    node.appeareance = entity.appearance;
+    node.appearance = entity.appearance;
     node.originalId = entity.id;
   });
 };

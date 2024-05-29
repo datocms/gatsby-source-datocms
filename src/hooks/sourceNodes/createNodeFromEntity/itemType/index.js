@@ -21,7 +21,7 @@ module.exports = function buildItemTypeNode(entity, { generateType }) {
     });
 
     node.originalId = entity.id;
-    node.collectionAppeareance = entity.collectionAppearance;
+    node.collectionAppearance = entity.collectionAppearance;
     node.fields___NODE = entity.fields.map(
       field => `${generateType('Field')}-${field.id}`,
     );

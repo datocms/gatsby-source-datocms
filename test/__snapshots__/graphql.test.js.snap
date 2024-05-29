@@ -2423,11 +2423,11 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
       "model": Object {
         "allLocalesRequired": false,
         "apiKey": "article",
-        "collectionAppeareance": "table",
+        "collectionAppearance": "table",
         "draftModeActive": false,
         "fields": Array [
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "single_line",
               "parameters": Object {
@@ -2440,7 +2440,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400188",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "markdown",
               "parameters": Object {
@@ -2465,7 +2465,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400189",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "markdown",
               "parameters": Object {
@@ -2490,7 +2490,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "10432981",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "file",
               "parameters": Object {},
@@ -2501,7 +2501,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400190",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "gallery",
               "parameters": Object {},
@@ -2512,7 +2512,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400191",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "video",
               "parameters": Object {},
@@ -2523,7 +2523,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400192",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "date_picker",
               "parameters": Object {},
@@ -2534,7 +2534,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400193",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "date_time_picker",
               "parameters": Object {},
@@ -2545,7 +2545,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400194",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "integer",
               "parameters": Object {},
@@ -2556,7 +2556,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400195",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "float",
               "parameters": Object {},
@@ -2567,7 +2567,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400196",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "boolean",
               "parameters": Object {},
@@ -2578,7 +2578,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400197",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "map",
               "parameters": Object {},
@@ -2589,7 +2589,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400198",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "color_picker",
               "parameters": Object {
@@ -2603,7 +2603,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400199",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "slug",
               "parameters": Object {
@@ -2616,7 +2616,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400200",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "seo",
               "parameters": Object {
@@ -2639,7 +2639,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400203",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "link_select",
               "parameters": Object {},
@@ -2650,7 +2650,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400204",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "link_select",
               "parameters": Object {},
@@ -2661,7 +2661,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400351",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "links_select",
               "parameters": Object {},
@@ -2672,7 +2672,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400205",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "links_select",
               "parameters": Object {},
@@ -2683,7 +2683,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400352",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "json",
               "parameters": Object {},
@@ -2694,7 +2694,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400206",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "rich_text",
               "parameters": Object {
@@ -2707,7 +2707,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "1400207",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "framed_single_block",
               "parameters": Object {
@@ -2720,7 +2720,7 @@ https://www.datocms-assets.com/34723/1620629638-plant.jpeg?auto=format&dpr=0.6&f
             "originalId": "ZO6yKrCFSlmHJz0OZWRiSA",
           },
           Object {
-            "appeareance": Object {
+            "appearance": Object {
               "addons": Array [],
               "editor": "structured_text",
               "parameters": Object {

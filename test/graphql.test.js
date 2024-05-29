@@ -871,7 +871,7 @@ test('items', async () => {
           modularBlock
           draftModeActive
           allLocalesRequired
-          collectionAppeareance
+          collectionAppearance
           hasSingletonItem
           originalId
           fields {
@@ -879,7 +879,7 @@ test('items', async () => {
             originalId
             label
             fieldType
-            appeareance
+            appearance
           }
         }
       }
