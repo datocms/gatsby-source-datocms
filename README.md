@@ -1,7 +1,9 @@
 <!--datocms-autoinclude-header start-->
+
 <a href="https://www.datocms.com/"><img src="https://www.datocms.com/images/full_logo.svg" height="60"></a>
 
 👉 [Visit the DatoCMS homepage](https://www.datocms.com) or see [What is DatoCMS?](#what-is-datocms)
+
 <!--datocms-autoinclude-header end-->
 
 [![Node.js CI](https://github.com/datocms/gatsby-source-datocms/actions/workflows/main.yml/badge.svg)](https://github.com/datocms/gatsby-source-datocms/actions/workflows/main.yml)
@@ -14,20 +16,26 @@ Source plugin for pulling models and records into Gatsby from DatoCMS administra
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Install](#install)
-- [Sample project](#sample-project)
+- [Sample projects](#sample-projects)
 - [How to use](#how-to-use)
 - [How to query](#how-to-query)
   - [Accessing records](#accessing-records)
   - [Multiple-paragraph text fields](#multiple-paragraph-text-fields)
   - [Modular content fields](#modular-content-fields)
   - [Structured text fields](#structured-text-fields)
-  - [Favicon meta tags](#favicon-meta-tags)
   - [SEO meta tags](#seo-meta-tags)
+  - [Favicon meta tags](#favicon-meta-tags)
   - [Tree-like collections](#tree-like-collections)
   - [Single instance models](#single-instance-models)
   - [Localized fields](#localized-fields)
+    - [Locale fallbacks](#locale-fallbacks)
 - [Integration with Gatsby Image](#integration-with-gatsby-image)
+  - [For Gatsby v3+ (currently in beta)](#for-gatsby-v3-currently-in-beta)
+  - [Compatibility with the deprecated `gatsby-image` component](#compatibility-with-the-deprecated-gatsby-image-component)
+    - [Responsive fluid](#responsive-fluid)
+    - [Responsive fixed](#responsive-fixed)
 - [Field customisations](#field-customisations)
 - [Connecting to multiple DatoCMS projects](#connecting-to-multiple-datocms-projects)
 - [Configuring Content Previews](#configuring-content-previews)
@@ -732,9 +740,10 @@ This will allow you to perform all the queries with a specific token and disting
 
 Configuration will be handled for you when using DatoCMS Quick Connect on Gatsby Cloud. However, if you'd prefer not to use Quick Connect and manually setup the integration, instructions can be found [here](https://support.gatsbyjs.com/hc/en-us/articles/360052324454-Connecting-to-DatoCMS).
 
-<!--datocms-autoinclude-footer start-->
------------------
+## <!--datocms-autoinclude-footer start-->
+
 # What is DatoCMS?
+
 <a href="https://www.datocms.com/"><img src="https://www.datocms.com/images/full_logo.svg" height="60"></a>
 
 [DatoCMS](https://www.datocms.com/) is the REST & GraphQL Headless CMS for the modern web.
@@ -749,6 +758,7 @@ Trusted by over 25,000 enterprise businesses, agency partners, and individuals a
 - 🆕 Stay up to date on new features and fixes on the [changelog](https://www.datocms.com/product-updates)
 
 **Our featured repos:**
+
 - [datocms/react-datocms](https://github.com/datocms/react-datocms): React helper components for images, Structured Text rendering, and more
 - [datocms/js-rest-api-clients](https://github.com/datocms/js-rest-api-clients): Node and browser JavaScript clients for updating and administering your content. For frontend fetches, we recommend using our [GraphQL Content Delivery API](https://www.datocms.com/docs/content-delivery-api) instead.
 - [datocms/cli](https://github.com/datocms/cli): Command-line interface that includes our [Contentful importer](https://github.com/datocms/cli/tree/main/packages/cli-plugin-contentful) and [Wordpress importer](https://github.com/datocms/cli/tree/main/packages/cli-plugin-wordpress)
@@ -757,4 +767,5 @@ Trusted by over 25,000 enterprise businesses, agency partners, and individuals a
 - Frontend examples in different frameworks: [Next.js](https://github.com/datocms/nextjs-demo), [Vue](https://github.com/datocms/vue-datocms) and [Nuxt](https://github.com/datocms/nuxtjs-demo), [Svelte](https://github.com/datocms/datocms-svelte) and [SvelteKit](https://github.com/datocms/sveltekit-demo), [Astro](https://github.com/datocms/datocms-astro-blog-demo), [Remix](https://github.com/datocms/remix-example). See [all our starter templates](https://www.datocms.com/marketplace/starters).
 
 Or see [all our public repos](https://github.com/orgs/datocms/repositories?q=&type=public&language=&sort=stargazers)
+
 <!--datocms-autoinclude-footer end-->

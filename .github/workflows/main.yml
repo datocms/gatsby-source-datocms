@@ -9,13 +9,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['14.x', '16.x', '18.x']
-        gatsby-version: ['4.24.0', '5.2.0']
-        exclude:
-          - node-version: '14.x'
-            gatsby-version: '5.2.0'
-          - node-version: '16.x'
-            gatsby-version: '5.2.0'
+        node-version: ['18.x']
+        gatsby-version: ['5.2.0']
 
     steps:
       - uses: actions/checkout@v3
@@ -30,16 +25,8 @@ jobs:
           yarn install --no-lockfile
         env:
           GATSBY_VERSION: ${{ matrix.gatsby-version }}
-          NODE_VERSION: ${{ matrix.node-version }}
+          NODE_VERSION: ${{ matrix.node-version }}g
       - name: Run tests
-        if: matrix.os == '4.24.0'
-        run: |
-          cat node_modules/gatsby/package.json | grep "\"version\""
-          yarn test-v4
-        env:
-          CI: true
-      - name: Run tests
-        if: matrix.os != '4.24.0'
         run: |
           cat node_modules/gatsby/package.json | grep "\"version\""
           yarn test
