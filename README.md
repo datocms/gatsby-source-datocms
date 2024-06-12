@@ -8,11 +8,17 @@
 
 [![Node.js CI](https://github.com/datocms/gatsby-source-datocms/actions/workflows/main.yml/badge.svg)](https://github.com/datocms/gatsby-source-datocms/actions/workflows/main.yml)
 
-# gatsby-source-datocms
+# WARNING: MAINTENANCE MODE. NOT RECOMMENDED FOR NEW PROJECTS #
 
-Source plugin for pulling models and records into Gatsby from DatoCMS administrative areas. It creates links between records so they can be queried in Gatsby using GraphQL.
+**As of June 2024, due to upstream changes at Gatsby and Netlify, this plugin is now in maintenance mode and no new features will be added. We will still accept critical bug reports and fixes, but will not further develop or support this plugin otherwise. We recommend that new DatoCMS projects use the [Gatsby GraphQL source plugin](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-graphql) instead of this one.**
 
-**IMPORTANT**: If you use this plugin, you will not be able to write queries as described in the [DatoCMS Content Delivery API documentation](https://www.datocms.com/docs/content-delivery-api/). Content will be exposed using [Gatsby's schema-generation](https://www.gatsbyjs.org/docs/schema-generation/). If you want to directly use our GraphQL API in Gatsby, consider using the [gatsby-source-graphql](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-graphql) plugin instead.
+# ~~gatsby-source-datocms~~
+
+~~Source plugin for pulling models and records into Gatsby from DatoCMS administrative areas. It creates links between records so they can be queried in Gatsby using GraphQL.~~
+
+~~**IMPORTANT**: If you use this plugin, you will not be able to write queries as described in the [DatoCMS Content Delivery API documentation](https://www.datocms.com/docs/content-delivery-api/). Content will be exposed using [Gatsby's schema-generation](https://www.gatsbyjs.org/docs/schema-generation/). If you want to directly use our GraphQL API in Gatsby, consider using the [gatsby-source-graphql](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-graphql) plugin instead.~~
+
+June 2024 Update: Please read above warning. We suggest using the [Gatsby GraphQL source plugin](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-graphql) instead. This plugin is now on minimal life support.
 
 ## Table of Contents
 
