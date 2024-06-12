@@ -13,6 +13,7 @@ module.exports = ({ actions, schema }) => {
         updatedAt: dateType,
         publishedAt: dateType,
         firstPublishedAt: dateType,
+        unpublishingScheduledAt: dateType,
         isValid: 'Boolean',
         status: 'String',
       },
