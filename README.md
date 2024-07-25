@@ -1,9 +1,8 @@
-<!--datocms-autoinclude-header start-->
-
-<a href="https://www.datocms.com/"><img src="https://www.datocms.com/images/full_logo.svg" height="60"></a>
+<!--datocms-autoinclude-header start--><a href="https://www.datocms.com/"><img src="https://www.datocms.com/images/full_logo.svg" height="60"></a>
 
 👉 [Visit the DatoCMS homepage](https://www.datocms.com) or see [What is DatoCMS?](#what-is-datocms)
 
+---
 <!--datocms-autoinclude-header end-->
 
 [![Node.js CI](https://github.com/datocms/gatsby-source-datocms/actions/workflows/main.yml/badge.svg)](https://github.com/datocms/gatsby-source-datocms/actions/workflows/main.yml)
